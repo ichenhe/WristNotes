@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:gravity="center_horizontal">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:gravity="center_horizontal">
+
+		<TextView
+			android:id="@+id/passwordText"
+			android:layout_marginBottom="20dp"
+			style="@style/titleText"
+			android:text="欢迎"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:layout_marginBottom="15dp"
+			android:paddingRight="10dp"
+			android:paddingLeft="10dp">
+
+			<EditText
+				android:layout_height="60dp"
+				android:inputType="textMultiLine"
+				android:layout_width="wrap_content"
+				android:id="@+id/startEdit"
+				android:ems="9"
+				android:textColor="#A5A5A5"
+				android:background="#303030"
+				android:lines="2"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="创建"
+				android:layout_width="52dp"
+				android:textSize="14sp"
+				android:onClick="startbutton2"
+				android:textColor="#000000"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="欢迎使用本应用！你可以钦定新建一个路径来存放各种学习资(xiao)料(chao)，如不需要创建文件夹请直接点击下面的按钮进入应用"
+			android:layout_width="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:paddingLeft="15dp"
+			android:paddingRight="15dp"
+			android:textSize="14sp"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="查看帮助"
+			android:layout_width="match_parent"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			style="@style/button"
+			android:layout_marginBottom="10dp"
+			android:onClick="startButton"/>
+
+		<Button
+			android:text="进入应用"
+			style="@style/button"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:onClick="startButton1"
+			android:layout_marginBottom="30dp"/>
+
+	</LinearLayout>
+
+</ScrollView>
+

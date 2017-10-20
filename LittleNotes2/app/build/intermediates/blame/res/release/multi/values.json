@@ -1,0 +1,224 @@
+[
+    {
+        "outputFile": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 38,
+                    "endOffset": 89
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 1,
+                        "startOffset": 53,
+                        "endColumn": 35,
+                        "endOffset": 87
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 94,
+                    "endColumn": 50,
+                    "endOffset": 140
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 1,
+                        "startOffset": 96,
+                        "endColumn": 47,
+                        "endOffset": 142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 145,
+                    "endColumn": 51,
+                    "endOffset": 192
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 1,
+                        "startOffset": 144,
+                        "endColumn": 48,
+                        "endOffset": 191
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 197,
+                    "endColumn": 51,
+                    "endOffset": 244
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 1,
+                        "startOffset": 194,
+                        "endColumn": 48,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 249,
+                    "endColumn": 52,
+                    "endOffset": 297
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 1,
+                        "startOffset": 243,
+                        "endColumn": 49,
+                        "endOffset": 291
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 302,
+                    "endColumn": 42,
+                    "endOffset": 340
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 42,
+                        "endOffset": 94
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 345,
+                    "endColumn": 609,
+                    "endOffset": 950
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 1,
+                        "startOffset": 295,
+                        "endColumn": 606,
+                        "endOffset": 900
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 955,
+                    "endLine": 10,
+                    "endColumn": 9,
+                    "endOffset": 1039
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 3,
+                        "endColumn": 9,
+                        "endOffset": 139
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1044,
+                    "endLine": 19,
+                    "endColumn": 9,
+                    "endOffset": 1447
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 1,
+                        "startOffset": 587,
+                        "endLine": 24,
+                        "endColumn": 9,
+                        "endOffset": 991
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1452,
+                    "endLine": 27,
+                    "endColumn": 9,
+                    "endOffset": 1824
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 1,
+                        "startOffset": 995,
+                        "endLine": 33,
+                        "endColumn": 9,
+                        "endOffset": 1367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1829,
+                    "endLine": 37,
+                    "endColumn": 9,
+                    "endOffset": 2269
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 1,
+                        "startOffset": 142,
+                        "endLine": 14,
+                        "endColumn": 9,
+                        "endOffset": 584
+                    }
+                }
+            }
+        ]
+    }
+]

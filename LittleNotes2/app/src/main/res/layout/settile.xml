@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="联系作者"
+			android:layout_width="match_parent"
+			style="@style/titleText"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="有意见或建议？\n想学习编程或其它知识？\n想看一群基佬的恩♂爱日常？\n欢迎加入作者常驻的技术交♂流群！\nQQ群号：287474030"
+			android:layout_width="wrap_content"
+			android:gravity="center"
+			android:padding="10dp"
+			android:textSize="16sp"/>
+
+		<ImageView
+			android:layout_height="100dp"
+			android:layout_width="wrap_content"
+			android:src="@drawable/logo"/>
+
+		<ImageView
+			android:layout_height="185dp"
+			android:layout_width="135dp"
+			android:src="@drawable/qrcode"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="作者：luern0313，setTile工作室给予技术支持&#xD;\nB站：luern0313，有发过视频哦，欢迎围观！"
+			android:layout_width="wrap_content"
+			android:textSize="16sp"
+			android:padding="10dp"
+			android:layout_marginBottom="25dp"/>
+
+	</LinearLayout>
+
+</ScrollView>
+

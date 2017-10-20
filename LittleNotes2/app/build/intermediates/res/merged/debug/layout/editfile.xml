@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<ScrollView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:id="@+id/editfileScrollView1">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="编辑文档"
+				android:layout_width="match_parent"
+				style="@style/titleText"/>
+
+			<EditText
+				android:layout_height="match_parent"
+				android:inputType="textMultiLine"
+				android:layout_width="match_parent"
+				android:id="@+id/editfileEdit"
+				android:textSize="14sp"
+				android:textColor="#A0A0A0"
+				android:layout_marginLeft="15dp"
+				android:layout_marginRight="15dp"
+				android:layout_marginBottom="35dp"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="bottom"
+		android:layout_alignParentBottom="true">
+
+		<Button
+			android:layout_height="40dp"
+			android:text="保存"
+			android:layout_width="wrap_content"
+			android:layout_weight="4"
+			android:gravity="top|right"
+			android:paddingRight="22sp"
+			android:paddingTop="10dp"
+			android:textSize="16sp"
+			android:textColor="#CCCCCC"
+			android:id="@+id/editfileButton1"
+			android:onClick="editfileButton1"/>
+
+		<Button
+			android:layout_height="40dp"
+			android:text="←┘"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:gravity="top|left"
+			android:padding="10dp"
+			android:textSize="16sp"
+			android:textColor="#CCCCCC"
+			android:id="@+id/editfileButton2"
+			android:onClick="editfileButton2"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

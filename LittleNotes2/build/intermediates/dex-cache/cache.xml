@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\9844f462840394d1886ca665e613499f20651b0d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="F:\lpr\Android\LittleNotes2\app\build\intermediates\pre-dexed\debug\classes_28e1e1526072f7ab1f2fcc9ed48750b14c85b12a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\9844f462840394d1886ca665e613499f20651b0d\output\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="F:\lpr\Android\LittleNotes2\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_10b84c80c568fc7a659983a3c091f5e85111a418.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="F:\lpr\Android\LittleNotes2\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_6612208642286ab90664a8c9b4ab93711260353b.jar" />
+    </item>
+
+</items>

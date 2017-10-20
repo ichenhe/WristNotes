@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\passlist.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\passlist.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\icon_2.jpg",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_2.jpg"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\passbutton.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\passbutton.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\icon.jpg",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon.jpg"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\logo.png",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\icon_1.jpg",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_1.jpg"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\qrcode.jpg",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\qrcode.jpg"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable\\donation.jpg",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\donation.jpg"
+    }
+]
