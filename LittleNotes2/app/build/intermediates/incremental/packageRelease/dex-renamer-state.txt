@@ -1,4 +1,4 @@
-#Thu Oct 19 13:06:14 CST 2017
-base.0=F\:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+#Sat Oct 21 12:53:52 CST 2017
+base.0=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=F\:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex
+file.0=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

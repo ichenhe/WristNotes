@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.stl.engcopy.test">
+    package="com.stl.wristNotes.test">
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.stl.engcopy"
+                     android:targetPackage="com.stl.wristNotes"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.stl.engcopy"/>
+                     android:label="Tests for com.stl.wristNotes"/>
 </manifest>

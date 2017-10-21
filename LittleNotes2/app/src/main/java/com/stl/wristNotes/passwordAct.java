@@ -105,7 +105,7 @@ public class passwordAct extends Activity
 							}
 							else
 							{
-								Toast.makeText(passctx, "密码不对，你一定是假的沛然", Toast.LENGTH_SHORT).show();
+								Toast.makeText(passctx, "密码错错错错误！", Toast.LENGTH_SHORT).show();
 								passedit.setText("");
 							}
 						}

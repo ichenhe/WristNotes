@@ -217,13 +217,14 @@ public class menuAct extends Activity
 						if(sharedPreferences.getString("touchHideText", "关闭") == "开启")
 						{
 							editor.putString("touchHideText", "关闭");
+							Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
 						}
 						else
 						{
 							editor.putString("touchHideText", "开启");
+							Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
 						}
 						editor.commit();
-						Toast.makeText(ctx, "已" + sharedPreferences.getString("touchHideText", "关闭") + "触摸隐藏文字！", Toast.LENGTH_SHORT).show();
 						finish();
 					}
 					else if(s.indexOf("启动应用隐藏文字") != -1)

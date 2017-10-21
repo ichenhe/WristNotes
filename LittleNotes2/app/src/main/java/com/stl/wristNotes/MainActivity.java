@@ -78,18 +78,7 @@ public class MainActivity extends Activity
 			pass = 1;
 		}
 		textView = (TextView) findViewById(R.id.mainTextView);
-		if(sharedPreferences.getString("startHideText", "关闭") == "开启")
-		{
-			textView.setTextColor(Color.argb(0, 0, 0, 0));
-			isalpha = 1;
-		}
-		else
-		{
-			textView.setTextColor(Color.argb(255, light*8, light*8, light*8));
-			isalpha = 0;
-		}
-		textView.setTextSize(sharedPreferences.getInt("bs", 14));
-		
+
 		try
 		{
 			if(!new File(filepath+filename).exists())
@@ -114,6 +103,25 @@ public class MainActivity extends Activity
 		{
 			Toast.makeText(ctx, "错误！"+e.toString(), Toast.LENGTH_SHORT).show();
 		}
+
+		if(sharedPreferences.getString("startHideText", "关闭") == "开启")
+		{
+			textView.setTextColor(Color.argb(0, 0, 0, 0));
+			isalpha = 1;
+		}
+		else
+		{
+			if(!new File(filepath+filename).exists())
+			{
+				textView.setTextColor(Color.argb(255, 203, 203, 203));
+			}
+			else
+			{
+				textView.setTextColor(Color.argb(255, light*8, light*8, light*8));
+			}
+			isalpha = 0;
+		}
+		textView.setTextSize(sharedPreferences.getInt("bs", 14));
 		
 		textView.setClickable(true);
 		textView.setOnClickListener(new OnClickListener() {
