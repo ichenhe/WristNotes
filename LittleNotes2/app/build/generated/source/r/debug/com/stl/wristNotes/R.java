@@ -8,76 +8,4506 @@
 package com.stl.wristNotes;
 
 public final class R {
+    public static final class anim {
+        public static final int front_scale_in_ticwear=0x7f040000;
+        public static final int front_scale_out_ticwear=0x7f040001;
+        public static final int scale_in_ticwear=0x7f040002;
+        public static final int scale_out_ticwear=0x7f040003;
+        public static final int slide_in_ticwear=0x7f040004;
+        public static final int slide_out_ticwear=0x7f040005;
+    }
+    public static final class animator {
+        public static final int widget_check_appear=0x7f050000;
+        public static final int widget_check_disappear=0x7f050001;
+        public static final int widget_two_state_color_to_off=0x7f050002;
+        public static final int widget_two_state_color_to_on=0x7f050003;
+        public static final int widget_two_state_scale_large=0x7f050004;
+        public static final int widget_two_state_scale_press=0x7f050005;
+        public static final int widget_two_state_scale_small=0x7f050006;
+        public static final int widget_two_state_scale_vertical_large=0x7f050007;
+        public static final int widget_two_state_scale_vertical_small=0x7f050008;
+    }
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layoutManager=0x7f010065;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int reverseLayout=0x7f010067;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int spanCount=0x7f010066;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int stackFromEnd=0x7f010068;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_CirclePageIndicatorStyle=0x7f010000;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_allowNumericMonths=0x7f010049;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_amPmSelectedBackgroundColor=0x7f010071;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_behavior_overlapTop=0x7f01006e;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_behavior_peekHeight=0x7f01001d;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_borderBottom=0x7f010061;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_borderLeft=0x7f010062;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_borderRight=0x7f010063;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_borderTop=0x7f010060;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_borderWidth=0x7f01004f;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_calendarSelectedTextColor=0x7f010048;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_centered=0x7f01001e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_circularDrawableStyle=0x7f010050;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+         */
+        public static final int tic_collapsedTitleGravity=0x7f01003e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_collapsedTitleTextAppearance=0x7f01003a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_contentScrim=0x7f01003b;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_inAnimDuration=0x7f01002d;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_cpd_inStepPercent=0x7f01002e;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_initialAngle=0x7f010024;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_keepDuration=0x7f01002c;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_maxSweepAngle=0x7f010028;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_minSweepAngle=0x7f010027;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_outAnimDuration=0x7f01002f;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int tic_cpd_padding=0x7f010023;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_cpd_progress=0x7f010025;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_progressAlpha=0x7f010030;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>determinate</code></td><td>0x00000000</td><td></td></tr>
+<tr><td><code>indeterminate</code></td><td>0x00000001</td><td></td></tr>
+<tr><td><code>buffer</code></td><td>0x00000002</td><td></td></tr>
+<tr><td><code>query</code></td><td>0x00000003</td><td></td></tr>
+</table>
+         */
+        public static final int tic_cpd_progressMode=0x7f010031;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_cpd_reverse=0x7f010029;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_rotateDuration=0x7f01002a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_cpd_secondaryProgress=0x7f010026;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_cpd_strokeSize=0x7f010022;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+         */
+        public static final int tic_cpd_transformDuration=0x7f01002b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_dialogContentStyle=0x7f010001;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expanded=0x7f010018;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+         */
+        public static final int tic_expandedTitleGravity=0x7f01003f;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expandedTitleMargin=0x7f010034;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expandedTitleMarginBottom=0x7f010038;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expandedTitleMarginEnd=0x7f010037;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expandedTitleMarginStart=0x7f010035;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_expandedTitleMarginTop=0x7f010036;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_expandedTitleTextAppearance=0x7f010039;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tic_fabSize=0x7f01004d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_headerLayout=0x7f01005e;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_headerRemoveIconIfEmpty=0x7f01005f;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_headerSelectedTextColor=0x7f010070;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_hideWheelUntilFocused=0x7f01005d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_iconButtonBarButtonStyle=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_iconButtonBarNegativeButtonStyle=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_iconButtonBarNeutralButtonStyle=0x7f010004;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_iconButtonBarPositiveButtonStyle=0x7f010005;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_internalLayout=0x7f01005b;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_internalMaxHeight=0x7f010058;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_internalMaxWidth=0x7f01005a;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_internalMinHeight=0x7f010057;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_internalMinWidth=0x7f010059;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_keylines=0x7f010041;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_layout_anchor=0x7f010045;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td></td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td></td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+         */
+        public static final int tic_layout_anchorGravity=0x7f010047;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_behavior=0x7f010044;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>pin</code></td><td>1</td><td></td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int tic_layout_collapseMode=0x7f010032;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_collapseParallaxMultiplier=0x7f010033;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_keyline=0x7f010046;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_overScrollLimit=0x7f01001c;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_removeBorders=0x7f010064;
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td></td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td></td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td></td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td></td></tr>
+<tr><td><code>snap</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>overScrollBounce</code></td><td>0x20</td><td></td></tr>
+</table>
+         */
+        public static final int tic_layout_scrollFlags=0x7f010019;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_layout_scrollInterpolator=0x7f01001a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_layout_scrollResistanceFactor=0x7f01001b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_legacyLayout=0x7f01006f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_listItemLayout=0x7f010017;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_listLayout=0x7f010014;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_minimizeTranslationX=0x7f010051;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_minimizeTranslationY=0x7f010052;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_multiChoiceItemLayout=0x7f010015;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_negativeButtonIcon=0x7f01004b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_numberPickerStyle=0x7f010006;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>bounce</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int tic_overScrollEffect=0x7f010043;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_pageColor=0x7f01001f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_positiveButtonIcon=0x7f01004a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceActivityStyle=0x7f010007;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceCenteredStyle=0x7f010008;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceFragmentListStyle=0x7f010009;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_preferenceFragmentPaddingSide=0x7f01000a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceFragmentStyle=0x7f01000b;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceFrameLayoutStyle=0x7f01000c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceHeaderPanelStyle=0x7f01000d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferenceListStyle=0x7f01000e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_preferencePanelStyle=0x7f01000f;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_pressedTranslationZ=0x7f01004e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_primaryButtonStyle=0x7f010010;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_rippleColor=0x7f01004c;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_scaleFactor=0x7f010069;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_scroll_bar_bgColor=0x7f01006c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_scroll_bar_margin=0x7f01006b;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_scroll_bar_strokeWidth=0x7f01006a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_scroll_bar_sweepColor=0x7f01006d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_seekBarPreferenceStyle=0x7f010011;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_selectionDivider=0x7f010054;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_selectionDividerHeight=0x7f010055;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_selectionDividersDistance=0x7f010056;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_singleChoiceItemLayout=0x7f010016;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_snap=0x7f010020;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int tic_solidColor=0x7f010053;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_statusBarBackground=0x7f010042;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_statusBarScrim=0x7f01003c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_strokeWidth=0x7f010021;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_titleEnabled=0x7f010040;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_toolbarId=0x7f01003d;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_vb_bgColor=0x7f010073;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_vb_btnImageSize=0x7f010074;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_vb_thumbImage=0x7f010076;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_vb_thumbLeftImage=0x7f010077;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_vb_touchPadding=0x7f010075;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int tic_vb_valueColor=0x7f010072;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_virtualButtonPressedDrawable=0x7f01005c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_windowAppBarStyle=0x7f010012;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int tic_windowIconStyle=0x7f010013;
+    }
+    public static final class bool {
+        public static final int tic_preferences_prefer_dual_pane=0x7f080000;
     }
     public static final class color {
-        public static final int gray=0x7f040000;
+        public static final int bright_foreground_disabled_ticwear_dark=0x7f090000;
+        public static final int gray=0x7f090001;
+        public static final int hint_foreground_ticwear_dark=0x7f090002;
+        public static final int primary_text_default_ticwear_dark=0x7f090003;
+        public static final int primary_text_ticwear_dark=0x7f09003a;
+        public static final int secondary_text_default_ticwear_dark=0x7f090004;
+        public static final int secondary_text_ticwear_dark=0x7f09003b;
+        public static final int tic_background_mask_dark=0x7f090005;
+        public static final int tic_basic_amber=0x7f090006;
+        public static final int tic_basic_amber_darken=0x7f090007;
+        public static final int tic_basic_amber_lighten=0x7f090008;
+        public static final int tic_basic_brown=0x7f090009;
+        public static final int tic_basic_brown_darken=0x7f09000a;
+        public static final int tic_basic_brown_lighten=0x7f09000b;
+        public static final int tic_basic_cyan=0x7f09000c;
+        public static final int tic_basic_cyan_darken=0x7f09000d;
+        public static final int tic_basic_cyan_lighten=0x7f09000e;
+        public static final int tic_basic_dark_cyan=0x7f09000f;
+        public static final int tic_basic_dark_cyan_darken=0x7f090010;
+        public static final int tic_basic_dark_cyan_lighten=0x7f090011;
+        public static final int tic_basic_deep_blue=0x7f090012;
+        public static final int tic_basic_deep_blue_darken=0x7f090013;
+        public static final int tic_basic_deep_blue_lighten=0x7f090014;
+        public static final int tic_basic_deep_orange=0x7f090015;
+        public static final int tic_basic_deep_orange_darken=0x7f090016;
+        public static final int tic_basic_deep_orange_lighten=0x7f090017;
+        public static final int tic_basic_deep_purple=0x7f090018;
+        public static final int tic_basic_deep_purple_darken=0x7f090019;
+        public static final int tic_basic_deep_purple_lighten=0x7f09001a;
+        public static final int tic_basic_gold_grey=0x7f09001b;
+        public static final int tic_basic_gold_grey_darken=0x7f09001c;
+        public static final int tic_basic_gold_grey_lighten=0x7f09001d;
+        public static final int tic_basic_green=0x7f09001e;
+        public static final int tic_basic_green_darken=0x7f09001f;
+        public static final int tic_basic_green_lighten=0x7f090020;
+        public static final int tic_basic_indigo=0x7f090021;
+        public static final int tic_basic_indigo_darken=0x7f090022;
+        public static final int tic_basic_indigo_lighten=0x7f090023;
+        public static final int tic_basic_light_green=0x7f090024;
+        public static final int tic_basic_light_green_darken=0x7f090025;
+        public static final int tic_basic_light_green_lighten=0x7f090026;
+        public static final int tic_basic_orange=0x7f090027;
+        public static final int tic_basic_orange_darken=0x7f090028;
+        public static final int tic_basic_orange_lighten=0x7f090029;
+        public static final int tic_basic_pink=0x7f09002a;
+        public static final int tic_basic_pink_darken=0x7f09002b;
+        public static final int tic_basic_pink_lighten=0x7f09002c;
+        public static final int tic_basic_red=0x7f09002d;
+        public static final int tic_basic_red_darken=0x7f09002e;
+        public static final int tic_basic_red_lighten=0x7f09002f;
+        public static final int tic_basic_warm_grey=0x7f090030;
+        public static final int tic_basic_warm_grey_darken=0x7f090031;
+        public static final int tic_basic_warm_grey_lighten=0x7f090032;
+        public static final int tic_basic_yellow=0x7f090033;
+        public static final int tic_basic_yellow_darken=0x7f090034;
+        public static final int tic_basic_yellow_lighten=0x7f090035;
+        public static final int tic_separator_background_dark=0x7f090036;
+        public static final int tic_separator_background_edge_dark=0x7f090037;
+        public static final int tic_widget_background_dark=0x7f090038;
+        public static final int tic_widget_foreground_dark=0x7f090039;
+    }
+    public static final class dimen {
+        public static final int alert_dialog_button_translate_horizontal=0x7f060006;
+        public static final int alert_dialog_button_translate_vertical=0x7f060007;
+        public static final int alert_dialog_message_padding_horizontal=0x7f060000;
+        public static final int alert_dialog_round_button_padding_horizontal_full=0x7f060001;
+        public static final int alert_dialog_round_button_padding_horizontal_pair=0x7f060002;
+        public static final int alert_dialog_round_padding=0x7f060008;
+        public static final int alert_dialog_round_padding_bottom=0x7f060009;
+        public static final int design_over_scroll_limit=0x7f06000a;
+        public static final int disabled_alpha_ticwear_dark=0x7f06000b;
+        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f06000c;
+        public static final int item_touch_helper_swipe_escape_max_velocity=0x7f06000d;
+        public static final int item_touch_helper_swipe_escape_velocity=0x7f06000e;
+        public static final int preference_fragment_padding_bottom_ticwear=0x7f06000f;
+        public static final int preference_fragment_padding_side_ticwear=0x7f060010;
+        public static final int preference_icon_frame_margin_diff=0x7f060011;
+        public static final int preference_icon_frame_margin_end=0x7f060012;
+        public static final int preference_padding_vertical=0x7f060013;
+        public static final int preference_screen_header_padding_side_ticwear=0x7f060014;
+        public static final int preference_screen_header_vertical_padding_ticwear=0x7f060015;
+        public static final int preference_screen_side_margin_negative_ticwear=0x7f060016;
+        public static final int preference_screen_side_margin_ticwear=0x7f060017;
+        public static final int tic_alert_dialog_button_alpha=0x7f060018;
+        public static final int tic_compound_button_drawable_size=0x7f060019;
+        public static final int tic_compound_button_drawable_size_small=0x7f06001a;
+        public static final int tic_design_appbar_elevation=0x7f06001b;
+        public static final int tic_design_fab_border_width=0x7f06001c;
+        public static final int tic_design_fab_elevation=0x7f06001d;
+        public static final int tic_design_fab_image_size=0x7f06001e;
+        public static final int tic_design_fab_size_mini=0x7f06001f;
+        public static final int tic_design_fab_size_normal=0x7f060020;
+        public static final int tic_design_fab_translation_z_pressed=0x7f060021;
+        public static final int tic_disabled_alpha=0x7f060022;
+        public static final int tic_list_item_icon_frame_size_large=0x7f060023;
+        public static final int tic_list_item_icon_frame_size_normal=0x7f060024;
+        public static final int tic_list_item_icon_frame_size_small=0x7f060025;
+        public static final int tic_list_item_icon_src_size=0x7f060026;
+        public static final int tic_list_item_padding_horizontal_large_ticwear=0x7f060003;
+        public static final int tic_list_item_padding_horizontal_ticwear=0x7f060027;
+        public static final int tic_list_item_status_box_size_large=0x7f060028;
+        public static final int tic_list_item_status_box_size_normal=0x7f060029;
+        public static final int tic_list_item_status_box_size_small=0x7f06002a;
+        public static final int tic_list_item_text_margin_normal=0x7f06002b;
+        public static final int tic_list_padding_bottom_ticwear=0x7f06002c;
+        public static final int tic_list_padding_top_ticwear=0x7f06002d;
+        public static final int tic_list_title_padding_top_ticwear=0x7f06002e;
+        public static final int tic_menu_item_content_margin_large=0x7f06002f;
+        public static final int tic_menu_item_content_margin_small=0x7f060030;
+        public static final int tic_menu_item_icon_padding_1=0x7f060031;
+        public static final int tic_menu_item_icon_padding_2=0x7f060032;
+        public static final int tic_menu_item_icon_padding_3=0x7f060033;
+        public static final int tic_menu_item_icon_size_1=0x7f060034;
+        public static final int tic_menu_item_icon_size_2=0x7f060035;
+        public static final int tic_menu_item_icon_size_3=0x7f060036;
+        public static final int tic_menu_item_margin_horizontal_large=0x7f060037;
+        public static final int tic_menu_item_margin_horizontal_small=0x7f060038;
+        public static final int tic_menu_item_title_size_1=0x7f060039;
+        public static final int tic_menu_item_title_size_2=0x7f06003a;
+        public static final int tic_menu_item_title_size_3=0x7f06003b;
+        public static final int tic_page_horizontal_padding_normal=0x7f060004;
+        public static final int tic_page_horizontal_padding_small=0x7f060005;
+        public static final int tic_primary_button_height=0x7f06003c;
+        public static final int tic_primary_button_width=0x7f06003d;
+        public static final int tic_round_button_size_large=0x7f06003e;
+        public static final int tic_round_button_size_mini=0x7f06003f;
+        public static final int tic_round_button_size_normal=0x7f060040;
+        public static final int tic_round_button_src_padding_large=0x7f060041;
+        public static final int tic_round_button_src_padding_mini=0x7f060042;
+        public static final int tic_round_button_src_padding_normal=0x7f060043;
+        public static final int tic_text_line_spacing_extra=0x7f060044;
+        public static final int tic_text_line_spacing_multiplier=0x7f060045;
+        public static final int tic_text_size_body_1_ticwear=0x7f060046;
+        public static final int tic_text_size_body_2_ticwear=0x7f060047;
+        public static final int tic_text_size_button_ticwear=0x7f060048;
+        public static final int tic_text_size_caption_ticwear=0x7f060049;
+        public static final int tic_text_size_extra_extra_large=0x7f06004a;
+        public static final int tic_text_size_extra_large=0x7f06004b;
+        public static final int tic_text_size_extra_small=0x7f06004c;
+        public static final int tic_text_size_headline_ticwear=0x7f06004d;
+        public static final int tic_text_size_large_1=0x7f06004e;
+        public static final int tic_text_size_large_2=0x7f06004f;
+        public static final int tic_text_size_large_ticwear=0x7f060050;
+        public static final int tic_text_size_medium_1=0x7f060051;
+        public static final int tic_text_size_medium_2=0x7f060052;
+        public static final int tic_text_size_medium_ticwear=0x7f060053;
+        public static final int tic_text_size_small_1=0x7f060054;
+        public static final int tic_text_size_small_2=0x7f060055;
+        public static final int tic_text_size_small_ticwear=0x7f060056;
+        public static final int tic_text_size_subhead_ticwear=0x7f060057;
+        public static final int tic_text_size_title_ticwear=0x7f060058;
+        public static final int tic_timepicker_ampm_horizontal_padding=0x7f060059;
+        public static final int tic_timepicker_ampm_label_size=0x7f06005a;
+        public static final int tic_timepicker_ampm_vertical_padding=0x7f06005b;
+        public static final int tic_timepicker_extra_time_label_margin=0x7f06005c;
+        public static final int tic_timepicker_header_height=0x7f06005d;
+        public static final int tic_timepicker_minimum_margin_sides=0x7f06005e;
+        public static final int tic_timepicker_minimum_margin_top_bottom=0x7f06005f;
+        public static final int tic_timepicker_pm_top_padding=0x7f060060;
+        public static final int tic_timepicker_radial_picker_dimen=0x7f060061;
+        public static final int tic_timepicker_separator_padding=0x7f060062;
+        public static final int tic_timepicker_time_label_size=0x7f060063;
     }
     public static final class drawable {
-        public static final int clr_normal=0x7f02000a;
-        public static final int clr_pressed=0x7f02000b;
+        public static final int clr_normal=0x7f020041;
+        public static final int clr_pressed=0x7f020042;
         public static final int donation=0x7f020000;
         public static final int ic_account_minus=0x7f020001;
         public static final int ic_launcher=0x7f020002;
         public static final int icon=0x7f020003;
         public static final int icon_1=0x7f020004;
         public static final int icon_2=0x7f020005;
-        public static final int list_normal=0x7f02000c;
-        public static final int list_pressed=0x7f02000d;
+        public static final int list_normal=0x7f020043;
+        public static final int list_pressed=0x7f020044;
         public static final int logo=0x7f020006;
-        public static final int passbutton=0x7f020007;
-        public static final int passlist=0x7f020008;
-        public static final int qrcode=0x7f020009;
+        public static final int number_picker_divider_ticwear=0x7f020007;
+        public static final int passbutton=0x7f020008;
+        public static final int passlist=0x7f020009;
+        public static final int qrcode=0x7f02000a;
+        public static final int tic_ic_btn_cancel=0x7f02000b;
+        public static final int tic_ic_btn_next=0x7f02000c;
+        public static final int tic_ic_btn_ok=0x7f02000d;
+        public static final int tic_ic_check=0x7f02000e;
+        public static final int tic_ic_check_anim_to_off=0x7f02000f;
+        public static final int tic_ic_check_anim_to_on=0x7f020010;
+        public static final int tic_ic_check_full=0x7f020011;
+        public static final int tic_ic_check_off=0x7f020012;
+        public static final int tic_ic_check_off_disabled=0x7f020013;
+        public static final int tic_ic_check_on=0x7f020014;
+        public static final int tic_ic_check_on_disabled=0x7f020015;
+        public static final int tic_ic_check_small=0x7f020016;
+        public static final int tic_ic_check_small_anim_to_off=0x7f020017;
+        public static final int tic_ic_check_small_anim_to_on=0x7f020018;
+        public static final int tic_ic_check_small_full=0x7f020019;
+        public static final int tic_ic_check_small_off=0x7f02001a;
+        public static final int tic_ic_check_small_off_disabled=0x7f02001b;
+        public static final int tic_ic_check_small_on=0x7f02001c;
+        public static final int tic_ic_check_small_on_disabled=0x7f02001d;
+        public static final int tic_ic_enter=0x7f02001e;
+        public static final int tic_ic_enter_disabled=0x7f02001f;
+        public static final int tic_ic_enter_normal=0x7f020020;
+        public static final int tic_ic_minus_32px=0x7f020021;
+        public static final int tic_ic_plus_32px=0x7f020022;
+        public static final int tic_ic_radio=0x7f020023;
+        public static final int tic_ic_radio_anim_to_off=0x7f020024;
+        public static final int tic_ic_radio_anim_to_on=0x7f020025;
+        public static final int tic_ic_radio_full=0x7f020026;
+        public static final int tic_ic_radio_off=0x7f020027;
+        public static final int tic_ic_radio_off_disabled=0x7f020028;
+        public static final int tic_ic_radio_on=0x7f020029;
+        public static final int tic_ic_radio_on_disabled=0x7f02002a;
+        public static final int tic_ic_radio_small=0x7f02002b;
+        public static final int tic_ic_radio_small_anim_to_off=0x7f02002c;
+        public static final int tic_ic_radio_small_anim_to_on=0x7f02002d;
+        public static final int tic_ic_radio_small_full=0x7f02002e;
+        public static final int tic_ic_radio_small_off=0x7f02002f;
+        public static final int tic_ic_radio_small_off_disabled=0x7f020030;
+        public static final int tic_ic_radio_small_on=0x7f020031;
+        public static final int tic_ic_radio_small_on_disabled=0x7f020032;
+        public static final int tic_ic_switch=0x7f020033;
+        public static final int tic_ic_switch_anim_to_off=0x7f020034;
+        public static final int tic_ic_switch_anim_to_on=0x7f020035;
+        public static final int tic_ic_switch_full=0x7f020036;
+        public static final int tic_ic_switch_off=0x7f020037;
+        public static final int tic_ic_switch_off_disabled=0x7f020038;
+        public static final int tic_ic_switch_on=0x7f020039;
+        public static final int tic_ic_switch_on_disabled=0x7f02003a;
+        public static final int tic_ic_volumenone_32px=0x7f02003b;
+        public static final int tic_ic_volumeup_32px=0x7f02003c;
+        public static final int tic_round_item_icon_background=0x7f02003d;
+        public static final int tic_selectable_round_item_background=0x7f02003e;
+        public static final int tic_separator_horizontal=0x7f02003f;
+        public static final int time_picker_header_ticwear=0x7f020040;
     }
     public static final class id {
-        public static final int editfileButton1=0x7f070002;
-        public static final int editfileButton2=0x7f070003;
-        public static final int editfileEdit=0x7f070001;
-        public static final int editfileScrollView1=0x7f070000;
-        public static final int filedoList=0x7f070007;
-        public static final int filedoText=0x7f070006;
-        public static final int fileselectList=0x7f070005;
-        public static final int fileselectText=0x7f070004;
-        public static final int helpTextView1=0x7f070009;
-        public static final int helpTextView2=0x7f070008;
-        public static final int inputButton=0x7f07000c;
-        public static final int inputEdit=0x7f07000b;
-        public static final int inputText=0x7f07000a;
-        public static final int mainTextView=0x7f07000d;
-        public static final int menuList=0x7f07000f;
-        public static final int menuText=0x7f07000e;
-        public static final int menulistText=0x7f070010;
-        public static final int passwordButton=0x7f070013;
-        public static final int passwordEdit=0x7f070012;
-        public static final int passwordText=0x7f070011;
-        public static final int pattern_lock_view=0x7f070014;
-        public static final int startEdit=0x7f070015;
+        public static final int back_button=0x7f0a005f;
+        public static final int bottom=0x7f0a0011;
+        public static final int bounce=0x7f0a001b;
+        public static final int buffer=0x7f0a000a;
+        public static final int button_bar=0x7f0a005e;
+        public static final int center=0x7f0a0012;
+        public static final int center_horizontal=0x7f0a0013;
+        public static final int center_vertical=0x7f0a0014;
+        public static final int clip_horizontal=0x7f0a001c;
+        public static final int clip_vertical=0x7f0a001d;
+        public static final int contentPanel=0x7f0a0025;
+        public static final int custom=0x7f0a002c;
+        public static final int customPanel=0x7f0a002b;
+        public static final int determinate=0x7f0a000b;
+        public static final int editfileButton1=0x7f0a0043;
+        public static final int editfileButton2=0x7f0a0044;
+        public static final int editfileEdit=0x7f0a0042;
+        public static final int editfileScrollView1=0x7f0a0041;
+        public static final int end=0x7f0a0015;
+        public static final int enterAlways=0x7f0a0004;
+        public static final int enterAlwaysCollapsed=0x7f0a0005;
+        public static final int enterWidget=0x7f0a0066;
+        public static final int exitUntilCollapsed=0x7f0a0006;
+        public static final int filedoList=0x7f0a0048;
+        public static final int filedoText=0x7f0a0047;
+        public static final int fileselectList=0x7f0a0046;
+        public static final int fileselectText=0x7f0a0045;
+        public static final int fill=0x7f0a001e;
+        public static final int fill_horizontal=0x7f0a001f;
+        public static final int fill_vertical=0x7f0a0016;
+        public static final int headers=0x7f0a005a;
+        public static final int helpTextView1=0x7f0a004a;
+        public static final int helpTextView2=0x7f0a0049;
+        public static final int iconButton1=0x7f0a0036;
+        public static final int iconButton2=0x7f0a0034;
+        public static final int iconButton3=0x7f0a0035;
+        public static final int icon_background=0x7f0a0063;
+        public static final int icon_frame=0x7f0a0062;
+        public static final int indeterminate=0x7f0a000c;
+        public static final int inputButton=0x7f0a004d;
+        public static final int inputEdit=0x7f0a004c;
+        public static final int inputText=0x7f0a004b;
+        public static final int item_touch_helper_previous_elevation=0x7f0a0000;
+        public static final int left=0x7f0a0017;
+        public static final int list_footer=0x7f0a005b;
+        public static final int mainTextView=0x7f0a004e;
+        public static final int max=0x7f0a0071;
+        public static final int menuList=0x7f0a0050;
+        public static final int menuText=0x7f0a004f;
+        public static final int menulistText=0x7f0a0054;
+        public static final int message=0x7f0a0028;
+        public static final int min=0x7f0a0070;
+        public static final int mini=0x7f0a0020;
+        public static final int next_button=0x7f0a0061;
+        public static final int none=0x7f0a000e;
+        public static final int normal=0x7f0a0021;
+        public static final int numberpicker_input=0x7f0a0055;
+        public static final int off=0x7f0a0073;
+        public static final int on=0x7f0a0072;
+        public static final int overScrollBounce=0x7f0a0007;
+        public static final int parallax=0x7f0a000f;
+        public static final int parentPanel=0x7f0a0022;
+        public static final int passwordButton=0x7f0a0058;
+        public static final int passwordEdit=0x7f0a0057;
+        public static final int passwordText=0x7f0a0056;
+        public static final int pattern_lock_view=0x7f0a0059;
+        public static final int pin=0x7f0a0010;
+        public static final int prefs=0x7f0a005d;
+        public static final int prefs_frame=0x7f0a005c;
+        public static final int query=0x7f0a000d;
+        public static final int right=0x7f0a0018;
+        public static final int scroll=0x7f0a0008;
+        public static final int scrollIndicatorDown=0x7f0a002a;
+        public static final int scrollIndicatorUp=0x7f0a0026;
+        public static final int scrollView=0x7f0a0027;
+        public static final int seekbar=0x7f0a006f;
+        public static final int select_dialog_listview=0x7f0a0068;
+        public static final int skip_button=0x7f0a0060;
+        public static final int snap=0x7f0a0009;
+        public static final int start=0x7f0a0019;
+        public static final int startEdit=0x7f0a0069;
+        public static final int switchWidget=0x7f0a0067;
+        public static final int textButton1=0x7f0a0032;
+        public static final int textButton2=0x7f0a002e;
+        public static final int textButton3=0x7f0a0030;
+        public static final int textButtonPanel=0x7f0a002d;
+        public static final int textSpace1=0x7f0a0033;
+        public static final int textSpace2=0x7f0a002f;
+        public static final int textSpace3=0x7f0a0031;
+        public static final int textSpacerNoButtons=0x7f0a0029;
+        public static final int text_frame=0x7f0a0064;
+        public static final int tic_amPm=0x7f0a006e;
+        public static final int tic_calendar_view=0x7f0a003b;
+        public static final int tic_datePicker=0x7f0a003c;
+        public static final int tic_datetimeContainer=0x7f0a003d;
+        public static final int tic_datetimeIndicator=0x7f0a003e;
+        public static final int tic_day=0x7f0a0039;
+        public static final int tic_decrement=0x7f0a0001;
+        public static final int tic_divider=0x7f0a006c;
+        public static final int tic_hour=0x7f0a006b;
+        public static final int tic_increment=0x7f0a0002;
+        public static final int tic_menu_linear_layout_1=0x7f0a0051;
+        public static final int tic_menu_linear_layout_2=0x7f0a0052;
+        public static final int tic_menu_list_layout=0x7f0a0053;
+        public static final int tic_minute=0x7f0a006d;
+        public static final int tic_month=0x7f0a0038;
+        public static final int tic_numberPicker=0x7f0a003f;
+        public static final int tic_pickers=0x7f0a0037;
+        public static final int tic_timePicker=0x7f0a0040;
+        public static final int tic_timePickerLayout=0x7f0a006a;
+        public static final int tic_view_offset_helper=0x7f0a0003;
+        public static final int tic_year=0x7f0a003a;
+        public static final int title_template=0x7f0a0024;
+        public static final int top=0x7f0a001a;
+        public static final int topPanel=0x7f0a0023;
+        public static final int volume_seekbar=0x7f0a0065;
+    }
+    public static final class integer {
+        public static final int design_anim_button_state=0x7f0b0000;
+        public static final int design_anim_button_state_half=0x7f0b0001;
+        public static final int design_anim_list_item_state_change=0x7f0b0002;
+        public static final int design_anim_scale_button_press=0x7f0b0003;
+        public static final int design_factor_over_scroll_bounce=0x7f0b0004;
+        public static final int design_factor_title_scale=0x7f0b0005;
+        public static final int design_time_action_idle_timeout=0x7f0b0006;
+        public static final int design_time_action_idle_timeout_short=0x7f0b0007;
+        public static final int preference_fragment_scrollbarStyle_ticwear=0x7f0b0008;
+        public static final int preference_screen_header_scrollbarStyle_ticwear=0x7f0b0009;
+        public static final int preferences_left_pane_weight_ticwear=0x7f0b000a;
+        public static final int preferences_right_pane_weight_ticwear=0x7f0b000b;
+        public static final int tic_svg_btn_radius=0x7f0b000c;
     }
     public static final class layout {
         public static final int about=0x7f030000;
-        public static final int donation=0x7f030001;
-        public static final int editfile=0x7f030002;
-        public static final int fileselect=0x7f030003;
-        public static final int filetodo=0x7f030004;
-        public static final int help=0x7f030005;
-        public static final int input=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int menu=0x7f030008;
-        public static final int menulist=0x7f030009;
-        public static final int password=0x7f03000a;
-        public static final int patternlock=0x7f03000b;
-        public static final int seekbar=0x7f03000c;
-        public static final int settile=0x7f03000d;
-        public static final int start=0x7f03000e;
+        public static final int alert_dialog_ticwear=0x7f030001;
+        public static final int date_picker_ticwear=0x7f030002;
+        public static final int dialog_date_picker=0x7f030003;
+        public static final int dialog_datetime_picker=0x7f030004;
+        public static final int dialog_number_picker=0x7f030005;
+        public static final int dialog_time_picker=0x7f030006;
+        public static final int donation=0x7f030007;
+        public static final int editfile=0x7f030008;
+        public static final int fileselect=0x7f030009;
+        public static final int filetodo=0x7f03000a;
+        public static final int help=0x7f03000b;
+        public static final int input=0x7f03000c;
+        public static final int list_content_ticklable=0x7f03000d;
+        public static final int main=0x7f03000e;
+        public static final int menu=0x7f03000f;
+        public static final int menu_floating_layout_ticwear=0x7f030010;
+        public static final int menu_item_view_ticwear=0x7f030011;
+        public static final int menu_list_item_close_ticwear=0x7f030012;
+        public static final int menu_list_item_view_ticwear=0x7f030013;
+        public static final int menulist=0x7f030014;
+        public static final int number_picker_ticwear=0x7f030015;
+        public static final int number_picker_with_selector_wheel_ticwear=0x7f030016;
+        public static final int password=0x7f030017;
+        public static final int patternlock=0x7f030018;
+        public static final int preference_activity_list_layout=0x7f030019;
+        public static final int preference_centered_ticwear=0x7f03001a;
+        public static final int preference_fragment_list_layout=0x7f03001b;
+        public static final int preference_information_ticwear=0x7f03001c;
+        public static final int preference_list_content=0x7f03001d;
+        public static final int preference_list_content_single=0x7f03001e;
+        public static final int preference_list_fragment=0x7f03001f;
+        public static final int preference_ticwear=0x7f030020;
+        public static final int preference_volume=0x7f030021;
+        public static final int preference_widget_checkbox=0x7f030022;
+        public static final int preference_widget_enter=0x7f030023;
+        public static final int preference_widget_switch=0x7f030024;
+        public static final int seekbar=0x7f030025;
+        public static final int select_dialog_item_ticwear=0x7f030026;
+        public static final int select_dialog_multichoice_ticwear=0x7f030027;
+        public static final int select_dialog_singlechoice_ticwear=0x7f030028;
+        public static final int select_dialog_ticwear=0x7f030029;
+        public static final int settile=0x7f03002a;
+        public static final int start=0x7f03002b;
+        public static final int time_picker_ticwear=0x7f03002c;
+        public static final int volume_bar_ticwear=0x7f03002d;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int helptext=0x7f050001;
+        public static final int alarm_sound_default=0x7f070000;
+        public static final int app_name=0x7f07000d;
+        public static final int back_button_label=0x7f070001;
+        public static final int capital_off=0x7f070002;
+        public static final int capital_on=0x7f070003;
+        public static final int date_picker_dialog_title=0x7f070004;
+        public static final int helptext=0x7f07000e;
+        public static final int next_button_label=0x7f070005;
+        public static final int notification_sound_default=0x7f070006;
+        public static final int ringtone_default=0x7f070007;
+        public static final int ringtone_picker_title=0x7f070008;
+        public static final int ringtone_silent=0x7f070009;
+        public static final int ringtone_unknown=0x7f07000a;
+        public static final int skip_button_label=0x7f07000b;
+        public static final int tic_svg_btn_check_on=0x7f07000f;
+        public static final int tic_svg_btn_enter=0x7f070010;
+        public static final int tic_svg_btn_radio_on=0x7f070011;
+        public static final int tic_svg_btn_switch_off=0x7f070012;
+        public static final int tic_svg_btn_switch_on=0x7f070013;
+        public static final int tic_svg_btn_two_state_bg=0x7f070014;
+        public static final int tic_svg_btn_two_state_half_bg=0x7f070015;
+        public static final int tic_svg_btn_two_state_zero_bg=0x7f070016;
+        public static final int tic_appbar_scrolling_view_behavior=0x7f070017;
+        public static final int tic_font_family_body_1_ticwear=0x7f070018;
+        public static final int tic_font_family_body_2_ticwear=0x7f070019;
+        public static final int tic_font_family_button_ticwear=0x7f07001a;
+        public static final int tic_font_family_caption_ticwear=0x7f07001b;
+        public static final int tic_font_family_headline_ticwear=0x7f07001c;
+        public static final int tic_font_family_menu_ticwear=0x7f07001d;
+        public static final int tic_font_family_subhead_ticwear=0x7f07001e;
+        public static final int tic_font_family_ticwear=0x7f07001f;
+        public static final int tic_font_family_title_ticwear=0x7f070020;
+        public static final int time_picker_dialog_title=0x7f07000c;
     }
     public static final class style {
-        public static final int AppTheme=0x7f060000;
-        public static final int button=0x7f060001;
-        public static final int listview=0x7f060002;
-        public static final int titleText=0x7f060003;
+        public static final int AlertDialog_Ticwear=0x7f0c0000;
+        public static final int Animation=0x7f0c0001;
+        public static final int Animation_Ticwear=0x7f0c0002;
+        /** <item name="android:fragmentOpenEnterAnimation">@animator/fragment_open_enter</item>
+<item name="android:fragmentOpenExitAnimation">@animator/fragment_open_exit</item>
+<item name="android:fragmentCloseEnterAnimation">@animator/fragment_close_enter</item>
+<item name="android:fragmentCloseExitAnimation">@animator/fragment_close_exit</item>
+<item name="android:fragmentFadeEnterAnimation">@animator/fragment_fade_enter</item>
+<item name="android:fragmentFadeExitAnimation">@animator/fragment_fade_exit</item>
+         */
+        public static final int Animation_Ticwear_Activity=0x7f0c0003;
+        public static final int Animation_Ticwear_Activity_Translucent=0x7f0c0004;
+        public static final int Animation_Ticwear_Dialog=0x7f0c0005;
+        public static final int Animation_Ticwear_Dialog_NonSwipe=0x7f0c0006;
+        public static final int AppTheme=0x7f0c0007;
+        public static final int Preference=0x7f0c0008;
+        public static final int Preference_Ticwear=0x7f0c0009;
+        public static final int Preference_Ticwear_Centered=0x7f0c000a;
+        public static final int Preference_Ticwear_CheckBoxPreference=0x7f0c000b;
+        public static final int Preference_Ticwear_DialogPreference=0x7f0c000c;
+        public static final int Preference_Ticwear_Information=0x7f0c000d;
+        public static final int Preference_Ticwear_PreferenceScreen=0x7f0c000e;
+        public static final int Preference_Ticwear_RingtonePreference=0x7f0c000f;
+        public static final int Preference_Ticwear_SwitchPreference=0x7f0c0010;
+        public static final int Preference_Ticwear_VolumePreference=0x7f0c0011;
+        public static final int PreferenceActivity=0x7f0c0012;
+        public static final int PreferenceActivity_Ticwear=0x7f0c0013;
+        public static final int PreferenceFragment=0x7f0c0014;
+        public static final int PreferenceFragment_Ticwear=0x7f0c0015;
+        public static final int PreferenceFragmentList_Ticwear=0x7f0c0016;
+        public static final int PreferenceHeaderList_Ticwear=0x7f0c0017;
+        public static final int PreferenceHeaderPanel=0x7f0c0018;
+        public static final int PreferenceHeaderPanel_Ticwear=0x7f0c0019;
+        public static final int PreferencePanel=0x7f0c001a;
+        public static final int PreferencePanel_Ticwear=0x7f0c001b;
+        public static final int TextAppearance=0x7f0c001c;
+        public static final int TextAppearance_Ticwear=0x7f0c001d;
+        public static final int TextAppearance_Ticwear_Body1=0x7f0c001e;
+        public static final int TextAppearance_Ticwear_Body2=0x7f0c001f;
+        public static final int TextAppearance_Ticwear_Button=0x7f0c0020;
+        public static final int TextAppearance_Ticwear_Caption=0x7f0c0021;
+        public static final int TextAppearance_Ticwear_CollapsingToolbar_Expanded=0x7f0c0022;
+        public static final int TextAppearance_Ticwear_DialogContent=0x7f0c0023;
+        public static final int TextAppearance_Ticwear_DialogWindowTitle=0x7f0c0024;
+        public static final int TextAppearance_Ticwear_Headline=0x7f0c0025;
+        public static final int TextAppearance_Ticwear_Inverse=0x7f0c0026;
+        public static final int TextAppearance_Ticwear_Large=0x7f0c0027;
+        public static final int TextAppearance_Ticwear_Large_Inverse=0x7f0c0028;
+        public static final int TextAppearance_Ticwear_Medium=0x7f0c0029;
+        public static final int TextAppearance_Ticwear_Medium_Inverse=0x7f0c002a;
+        public static final int TextAppearance_Ticwear_Small=0x7f0c002b;
+        public static final int TextAppearance_Ticwear_Small_Inverse=0x7f0c002c;
+        public static final int TextAppearance_Ticwear_Subhead=0x7f0c002d;
+        public static final int TextAppearance_Ticwear_Subhead_Inverse=0x7f0c002e;
+        public static final int TextAppearance_Ticwear_TimePicker_AmPmLabel=0x7f0c002f;
+        public static final int TextAppearance_Ticwear_TimePicker_TimeLabel=0x7f0c0030;
+        public static final int TextAppearance_Ticwear_Title=0x7f0c0031;
+        public static final int TextAppearance_Ticwear_Title_Inverse=0x7f0c0032;
+        public static final int TextAppearance_Ticwear_TitleBar_Title=0x7f0c0033;
+        public static final int TextAppearance_Ticwear_Widget=0x7f0c0034;
+        public static final int TextAppearance_Ticwear_Widget_Button=0x7f0c0035;
+        public static final int TextAppearance_Ticwear_WindowTitle=0x7f0c0036;
+        public static final int TextAppearance_Ticwear_WindowTitle_Small=0x7f0c0037;
+        public static final int Theme_Ticwear=0x7f0c0038;
+        public static final int Theme_Ticwear_BaseDialog=0x7f0c0039;
+        public static final int Theme_Ticwear_Dialog=0x7f0c003a;
+        public static final int Theme_Ticwear_Dialog_Alert=0x7f0c003b;
+        public static final int Theme_Ticwear_Dialog_Alert_Compact=0x7f0c003c;
+        public static final int Theme_Ticwear_Dialog_Alert_ContextMenu=0x7f0c003d;
+        public static final int Theme_Ticwear_Dialog_Alert_Datetime=0x7f0c003e;
+        public static final int Theme_Ticwear_Dialog_Alert_NonSwipe=0x7f0c003f;
+        public static final int Theme_Ticwear_Dialog_Alert_SameButtonStyle=0x7f0c0040;
+        public static final int Theme_Ticwear_Dialog_BaseAlert=0x7f0c0041;
+        public static final int Theme_Ticwear_Fullscreen=0x7f0c0042;
+        public static final int Widget=0x7f0c0043;
+        public static final int Widget_Ticwear=0x7f0c0044;
+        public static final int Widget_Ticwear_AppBarLayout=0x7f0c0045;
+        public static final int Widget_Ticwear_CirclePageIndicator=0x7f0c0046;
+        public static final int Widget_Ticwear_CircularProgressDrawable=0x7f0c0047;
+        public static final int Widget_Ticwear_CircularProgressDrawable_Dialog=0x7f0c0048;
+        public static final int Widget_Ticwear_CollapsingToolbar=0x7f0c0049;
+        public static final int Widget_Ticwear_CompoundButton=0x7f0c004a;
+        public static final int Widget_Ticwear_CompoundButton_CheckBox=0x7f0c004b;
+        public static final int Widget_Ticwear_CompoundButton_RadioButton=0x7f0c004c;
+        public static final int Widget_Ticwear_CompoundButton_Switch=0x7f0c004d;
+        public static final int Widget_Ticwear_CoordinatorLayout=0x7f0c004e;
+        public static final int Widget_Ticwear_DatePicker=0x7f0c004f;
+        public static final int Widget_Ticwear_FloatingActionButton=0x7f0c0050;
+        public static final int Widget_Ticwear_FloatingActionButton_Dialog=0x7f0c0051;
+        public static final int Widget_Ticwear_FloatingActionButton_Dialog_Negative=0x7f0c0052;
+        public static final int Widget_Ticwear_ImageButton=0x7f0c0053;
+        public static final int Widget_Ticwear_ImageButton_Large=0x7f0c0054;
+        public static final int Widget_Ticwear_ImageButton_Mini=0x7f0c0055;
+        public static final int Widget_Ticwear_ImageButton_Normal=0x7f0c0056;
+        public static final int Widget_Ticwear_ListItem=0x7f0c0057;
+        public static final int Widget_Ticwear_ListView=0x7f0c0058;
+        public static final int Widget_Ticwear_ListView_Dialog=0x7f0c0059;
+        public static final int Widget_Ticwear_ListView_Dialog_Compact=0x7f0c005a;
+        public static final int Widget_Ticwear_NumberPicker=0x7f0c005b;
+        public static final int Widget_Ticwear_PreferenceFrameLayout=0x7f0c005c;
+        public static final int Widget_Ticwear_PrimaryButton=0x7f0c005d;
+        public static final int Widget_Ticwear_ScrollBar=0x7f0c005e;
+        public static final int Widget_Ticwear_TimePicker=0x7f0c005f;
+        public static final int Widget_Ticwear_VolumeBar=0x7f0c0060;
+        public static final int Widget_Ticwear_VolumeBar_Volume=0x7f0c0061;
+        public static final int WindowAppBar=0x7f0c0062;
+        public static final int WindowAppBar_Ticwear=0x7f0c0063;
+        public static final int WindowAppBar_Ticwear_Minimize=0x7f0c0064;
+        public static final int WindowAppBar_Ticwear_Small=0x7f0c0065;
+        public static final int WindowIcon=0x7f0c0066;
+        public static final int WindowIcon_Ticwear=0x7f0c0067;
+        public static final int WindowTitle=0x7f0c0068;
+        public static final int WindowTitle_Ticwear=0x7f0c0069;
+        public static final int WindowTitle_Ticwear_Small=0x7f0c006a;
+        public static final int button=0x7f0c006b;
+        public static final int listview=0x7f0c006c;
+        public static final int titleText=0x7f0c006d;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a AlertDialog.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AlertDialog_android_bottomBright android:bottomBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_bottomDark android:bottomDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_bottomMedium android:bottomMedium}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_buttonPanelSideLayout android:buttonPanelSideLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_centerBright android:centerBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_centerDark android:centerDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_centerMedium android:centerMedium}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_fullBright android:fullBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_fullDark android:fullDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_horizontalProgressLayout android:horizontalProgressLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_layout android:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_progressLayout android:progressLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_topBright android:topBright}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_android_topDark android:topDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_tic_listItemLayout com.stl.wristNotes:tic_listItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_tic_listLayout com.stl.wristNotes:tic_listLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_tic_multiChoiceItemLayout com.stl.wristNotes:tic_multiChoiceItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #AlertDialog_tic_singleChoiceItemLayout com.stl.wristNotes:tic_singleChoiceItemLayout}</code></td><td></td></tr>
+           </table>
+           @see #AlertDialog_android_bottomBright
+           @see #AlertDialog_android_bottomDark
+           @see #AlertDialog_android_bottomMedium
+           @see #AlertDialog_android_buttonPanelSideLayout
+           @see #AlertDialog_android_centerBright
+           @see #AlertDialog_android_centerDark
+           @see #AlertDialog_android_centerMedium
+           @see #AlertDialog_android_fullBright
+           @see #AlertDialog_android_fullDark
+           @see #AlertDialog_android_horizontalProgressLayout
+           @see #AlertDialog_android_layout
+           @see #AlertDialog_android_progressLayout
+           @see #AlertDialog_android_topBright
+           @see #AlertDialog_android_topDark
+           @see #AlertDialog_tic_listItemLayout
+           @see #AlertDialog_tic_listLayout
+           @see #AlertDialog_tic_multiChoiceItemLayout
+           @see #AlertDialog_tic_singleChoiceItemLayout
+         */
+        public static final int[] AlertDialog = {
+            0x010100c6, 0x010100c7, 0x010100c8, 0x010100c9,
+            0x010100ca, 0x010100cb, 0x010100cc, 0x010100cd,
+            0x010100ce, 0x010100cf, 0x010100f2, 0x0116003b,
+            0x01160040, 0x01160041, 0x7f010014, 0x7f010015,
+            0x7f010016, 0x7f010017
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#bottomBright}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:bottomBright
+        */
+        public static final int AlertDialog_android_bottomBright = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#bottomDark}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:bottomDark
+        */
+        public static final int AlertDialog_android_bottomDark = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#bottomMedium}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:bottomMedium
+        */
+        public static final int AlertDialog_android_bottomMedium = 8;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#buttonPanelSideLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:buttonPanelSideLayout
+        */
+        public static final int AlertDialog_android_buttonPanelSideLayout = 11;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#centerBright}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:centerBright
+        */
+        public static final int AlertDialog_android_centerBright = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#centerDark}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:centerDark
+        */
+        public static final int AlertDialog_android_centerDark = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#centerMedium}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:centerMedium
+        */
+        public static final int AlertDialog_android_centerMedium = 9;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fullBright}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:fullBright
+        */
+        public static final int AlertDialog_android_fullBright = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fullDark}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:fullDark
+        */
+        public static final int AlertDialog_android_fullDark = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#horizontalProgressLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:horizontalProgressLayout
+        */
+        public static final int AlertDialog_android_horizontalProgressLayout = 13;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:layout
+        */
+        public static final int AlertDialog_android_layout = 10;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#progressLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:progressLayout
+        */
+        public static final int AlertDialog_android_progressLayout = 12;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#topBright}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:topBright
+        */
+        public static final int AlertDialog_android_topBright = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#topDark}
+          attribute's value can be found in the {@link #AlertDialog} array.
+          @attr name android:topDark
+        */
+        public static final int AlertDialog_android_topDark = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_listItemLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_listItemLayout
+        */
+        public static final int AlertDialog_tic_listItemLayout = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_listLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_listLayout
+        */
+        public static final int AlertDialog_tic_listLayout = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_multiChoiceItemLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_multiChoiceItemLayout
+        */
+        public static final int AlertDialog_tic_multiChoiceItemLayout = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_singleChoiceItemLayout}
+          attribute's value can be found in the {@link #AlertDialog} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_singleChoiceItemLayout
+        */
+        public static final int AlertDialog_tic_singleChoiceItemLayout = 16;
+        /** Attributes that can be used with a AppBarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_android_elevation android:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_tic_expanded com.stl.wristNotes:tic_expanded}</code></td><td></td></tr>
+           </table>
+           @see #AppBarLayout_android_background
+           @see #AppBarLayout_android_elevation
+           @see #AppBarLayout_tic_expanded
+         */
+        public static final int[] AppBarLayout = {
+            0x010100d4, 0x01010440, 0x7f010018
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #AppBarLayout} array.
+          @attr name android:background
+        */
+        public static final int AppBarLayout_android_background = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#elevation}
+          attribute's value can be found in the {@link #AppBarLayout} array.
+          @attr name android:elevation
+        */
+        public static final int AppBarLayout_android_elevation = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expanded}
+          attribute's value can be found in the {@link #AppBarLayout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expanded
+        */
+        public static final int AppBarLayout_tic_expanded = 2;
+        /** Attributes that can be used with a AppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_tic_layout_overScrollLimit com.stl.wristNotes:tic_layout_overScrollLimit}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_tic_layout_scrollFlags com.stl.wristNotes:tic_layout_scrollFlags}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_tic_layout_scrollInterpolator com.stl.wristNotes:tic_layout_scrollInterpolator}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppBarLayout_LayoutParams_tic_layout_scrollResistanceFactor com.stl.wristNotes:tic_layout_scrollResistanceFactor}</code></td><td></td></tr>
+           </table>
+           @see #AppBarLayout_LayoutParams_tic_layout_overScrollLimit
+           @see #AppBarLayout_LayoutParams_tic_layout_scrollFlags
+           @see #AppBarLayout_LayoutParams_tic_layout_scrollInterpolator
+           @see #AppBarLayout_LayoutParams_tic_layout_scrollResistanceFactor
+         */
+        public static final int[] AppBarLayout_LayoutParams = {
+            0x7f010019, 0x7f01001a, 0x7f01001b, 0x7f01001c
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_overScrollLimit}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_overScrollLimit
+        */
+        public static final int AppBarLayout_LayoutParams_tic_layout_overScrollLimit = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_scrollFlags}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>scroll</code></td><td>0x1</td><td></td></tr>
+<tr><td><code>exitUntilCollapsed</code></td><td>0x2</td><td></td></tr>
+<tr><td><code>enterAlways</code></td><td>0x4</td><td></td></tr>
+<tr><td><code>enterAlwaysCollapsed</code></td><td>0x8</td><td></td></tr>
+<tr><td><code>snap</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>overScrollBounce</code></td><td>0x20</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_layout_scrollFlags
+        */
+        public static final int AppBarLayout_LayoutParams_tic_layout_scrollFlags = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_scrollInterpolator}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_layout_scrollInterpolator
+        */
+        public static final int AppBarLayout_LayoutParams_tic_layout_scrollInterpolator = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_scrollResistanceFactor}
+          attribute's value can be found in the {@link #AppBarLayout_LayoutParams} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_scrollResistanceFactor
+        */
+        public static final int AppBarLayout_LayoutParams_tic_layout_scrollResistanceFactor = 2;
+        /** Attributes that can be used with a BottomSheetBehavior_Params.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #BottomSheetBehavior_Params_tic_behavior_peekHeight com.stl.wristNotes:tic_behavior_peekHeight}</code></td><td></td></tr>
+           </table>
+           @see #BottomSheetBehavior_Params_tic_behavior_peekHeight
+         */
+        public static final int[] BottomSheetBehavior_Params = {
+            0x7f01001d
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_behavior_peekHeight}
+          attribute's value can be found in the {@link #BottomSheetBehavior_Params} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_behavior_peekHeight
+        */
+        public static final int BottomSheetBehavior_Params_tic_behavior_peekHeight = 0;
+        /** Attributes that can be used with a CheckBoxPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CheckBoxPreference_android_disableDependentsState android:disableDependentsState}</code></td><td></td></tr>
+           <tr><td><code>{@link #CheckBoxPreference_android_summaryOff android:summaryOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #CheckBoxPreference_android_summaryOn android:summaryOn}</code></td><td></td></tr>
+           </table>
+           @see #CheckBoxPreference_android_disableDependentsState
+           @see #CheckBoxPreference_android_summaryOff
+           @see #CheckBoxPreference_android_summaryOn
+         */
+        public static final int[] CheckBoxPreference = {
+            0x010101ef, 0x010101f0, 0x010101f1
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#disableDependentsState}
+          attribute's value can be found in the {@link #CheckBoxPreference} array.
+          @attr name android:disableDependentsState
+        */
+        public static final int CheckBoxPreference_android_disableDependentsState = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summaryOff}
+          attribute's value can be found in the {@link #CheckBoxPreference} array.
+          @attr name android:summaryOff
+        */
+        public static final int CheckBoxPreference_android_summaryOff = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summaryOn}
+          attribute's value can be found in the {@link #CheckBoxPreference} array.
+          @attr name android:summaryOn
+        */
+        public static final int CheckBoxPreference_android_summaryOn = 0;
+        /** Attributes that can be used with a CirclePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_fillColor android:fillColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_orientation android:orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_radius android:radius}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_strokeColor android:strokeColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_tic_centered com.stl.wristNotes:tic_centered}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_tic_pageColor com.stl.wristNotes:tic_pageColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_tic_snap com.stl.wristNotes:tic_snap}</code></td><td></td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_tic_strokeWidth com.stl.wristNotes:tic_strokeWidth}</code></td><td></td></tr>
+           </table>
+           @see #CirclePageIndicator_android_background
+           @see #CirclePageIndicator_android_fillColor
+           @see #CirclePageIndicator_android_orientation
+           @see #CirclePageIndicator_android_radius
+           @see #CirclePageIndicator_android_strokeColor
+           @see #CirclePageIndicator_tic_centered
+           @see #CirclePageIndicator_tic_pageColor
+           @see #CirclePageIndicator_tic_snap
+           @see #CirclePageIndicator_tic_strokeWidth
+         */
+        public static final int[] CirclePageIndicator = {
+            0x010100c4, 0x010100d4, 0x010101a8, 0x01010404,
+            0x01010406, 0x7f01001e, 0x7f01001f, 0x7f010020,
+            0x7f010021
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+          @attr name android:background
+        */
+        public static final int CirclePageIndicator_android_background = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fillColor}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+          @attr name android:fillColor
+        */
+        public static final int CirclePageIndicator_android_fillColor = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#orientation}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+          @attr name android:orientation
+        */
+        public static final int CirclePageIndicator_android_orientation = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#radius}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+          @attr name android:radius
+        */
+        public static final int CirclePageIndicator_android_radius = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#strokeColor}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+          @attr name android:strokeColor
+        */
+        public static final int CirclePageIndicator_android_strokeColor = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_centered}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_centered
+        */
+        public static final int CirclePageIndicator_tic_centered = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_pageColor}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_pageColor
+        */
+        public static final int CirclePageIndicator_tic_pageColor = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_snap}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_snap
+        */
+        public static final int CirclePageIndicator_tic_snap = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_strokeWidth}
+          attribute's value can be found in the {@link #CirclePageIndicator} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_strokeWidth
+        */
+        public static final int CirclePageIndicator_tic_strokeWidth = 8;
+        /** Attributes that can be used with a CircularProgressDrawable.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_inAnimDuration com.stl.wristNotes:tic_cpd_inAnimDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_inStepPercent com.stl.wristNotes:tic_cpd_inStepPercent}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_initialAngle com.stl.wristNotes:tic_cpd_initialAngle}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_keepDuration com.stl.wristNotes:tic_cpd_keepDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_maxSweepAngle com.stl.wristNotes:tic_cpd_maxSweepAngle}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_minSweepAngle com.stl.wristNotes:tic_cpd_minSweepAngle}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_outAnimDuration com.stl.wristNotes:tic_cpd_outAnimDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_padding com.stl.wristNotes:tic_cpd_padding}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_progress com.stl.wristNotes:tic_cpd_progress}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_progressAlpha com.stl.wristNotes:tic_cpd_progressAlpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_progressMode com.stl.wristNotes:tic_cpd_progressMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_reverse com.stl.wristNotes:tic_cpd_reverse}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_rotateDuration com.stl.wristNotes:tic_cpd_rotateDuration}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_secondaryProgress com.stl.wristNotes:tic_cpd_secondaryProgress}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_strokeSize com.stl.wristNotes:tic_cpd_strokeSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularProgressDrawable_tic_cpd_transformDuration com.stl.wristNotes:tic_cpd_transformDuration}</code></td><td></td></tr>
+           </table>
+           @see #CircularProgressDrawable_tic_cpd_inAnimDuration
+           @see #CircularProgressDrawable_tic_cpd_inStepPercent
+           @see #CircularProgressDrawable_tic_cpd_initialAngle
+           @see #CircularProgressDrawable_tic_cpd_keepDuration
+           @see #CircularProgressDrawable_tic_cpd_maxSweepAngle
+           @see #CircularProgressDrawable_tic_cpd_minSweepAngle
+           @see #CircularProgressDrawable_tic_cpd_outAnimDuration
+           @see #CircularProgressDrawable_tic_cpd_padding
+           @see #CircularProgressDrawable_tic_cpd_progress
+           @see #CircularProgressDrawable_tic_cpd_progressAlpha
+           @see #CircularProgressDrawable_tic_cpd_progressMode
+           @see #CircularProgressDrawable_tic_cpd_reverse
+           @see #CircularProgressDrawable_tic_cpd_rotateDuration
+           @see #CircularProgressDrawable_tic_cpd_secondaryProgress
+           @see #CircularProgressDrawable_tic_cpd_strokeSize
+           @see #CircularProgressDrawable_tic_cpd_transformDuration
+         */
+        public static final int[] CircularProgressDrawable = {
+            0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025,
+            0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029,
+            0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d,
+            0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_inAnimDuration}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_inAnimDuration
+        */
+        public static final int CircularProgressDrawable_tic_cpd_inAnimDuration = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_inStepPercent}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_cpd_inStepPercent
+        */
+        public static final int CircularProgressDrawable_tic_cpd_inStepPercent = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_initialAngle}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_initialAngle
+        */
+        public static final int CircularProgressDrawable_tic_cpd_initialAngle = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_keepDuration}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_keepDuration
+        */
+        public static final int CircularProgressDrawable_tic_cpd_keepDuration = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_maxSweepAngle}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_maxSweepAngle
+        */
+        public static final int CircularProgressDrawable_tic_cpd_maxSweepAngle = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_minSweepAngle}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_minSweepAngle
+        */
+        public static final int CircularProgressDrawable_tic_cpd_minSweepAngle = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_outAnimDuration}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_outAnimDuration
+        */
+        public static final int CircularProgressDrawable_tic_cpd_outAnimDuration = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_padding}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.stl.wristNotes:tic_cpd_padding
+        */
+        public static final int CircularProgressDrawable_tic_cpd_padding = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_progress}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_cpd_progress
+        */
+        public static final int CircularProgressDrawable_tic_cpd_progress = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_progressAlpha}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_progressAlpha
+        */
+        public static final int CircularProgressDrawable_tic_cpd_progressAlpha = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_progressMode}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>determinate</code></td><td>0x00000000</td><td></td></tr>
+<tr><td><code>indeterminate</code></td><td>0x00000001</td><td></td></tr>
+<tr><td><code>buffer</code></td><td>0x00000002</td><td></td></tr>
+<tr><td><code>query</code></td><td>0x00000003</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_cpd_progressMode
+        */
+        public static final int CircularProgressDrawable_tic_cpd_progressMode = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_reverse}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_cpd_reverse
+        */
+        public static final int CircularProgressDrawable_tic_cpd_reverse = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_rotateDuration}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_rotateDuration
+        */
+        public static final int CircularProgressDrawable_tic_cpd_rotateDuration = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_secondaryProgress}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_cpd_secondaryProgress
+        */
+        public static final int CircularProgressDrawable_tic_cpd_secondaryProgress = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_strokeSize}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_cpd_strokeSize
+        */
+        public static final int CircularProgressDrawable_tic_cpd_strokeSize = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_cpd_transformDuration}
+          attribute's value can be found in the {@link #CircularProgressDrawable} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be an integer value, such as "<code>100</code>".
+          @attr name com.stl.wristNotes:tic_cpd_transformDuration
+        */
+        public static final int CircularProgressDrawable_tic_cpd_transformDuration = 9;
+        /** Attributes that can be used with a CollapsingAppBarLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_tic_layout_collapseMode com.stl.wristNotes:tic_layout_collapseMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingAppBarLayout_LayoutParams_tic_layout_collapseParallaxMultiplier com.stl.wristNotes:tic_layout_collapseParallaxMultiplier}</code></td><td></td></tr>
+           </table>
+           @see #CollapsingAppBarLayout_LayoutParams_tic_layout_collapseMode
+           @see #CollapsingAppBarLayout_LayoutParams_tic_layout_collapseParallaxMultiplier
+         */
+        public static final int[] CollapsingAppBarLayout_LayoutParams = {
+            0x7f010032, 0x7f010033
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_collapseMode}
+          attribute's value can be found in the {@link #CollapsingAppBarLayout_LayoutParams} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>pin</code></td><td>1</td><td></td></tr>
+<tr><td><code>parallax</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_layout_collapseMode
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_tic_layout_collapseMode = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_collapseParallaxMultiplier}
+          attribute's value can be found in the {@link #CollapsingAppBarLayout_LayoutParams} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_collapseParallaxMultiplier
+        */
+        public static final int CollapsingAppBarLayout_LayoutParams_tic_layout_collapseParallaxMultiplier = 1;
+        /** Attributes that can be used with a CollapsingToolbarLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_android_title android:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_collapsedTitleGravity com.stl.wristNotes:tic_collapsedTitleGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_collapsedTitleTextAppearance com.stl.wristNotes:tic_collapsedTitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_contentScrim com.stl.wristNotes:tic_contentScrim}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleGravity com.stl.wristNotes:tic_expandedTitleGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleMargin com.stl.wristNotes:tic_expandedTitleMargin}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleMarginBottom com.stl.wristNotes:tic_expandedTitleMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleMarginEnd com.stl.wristNotes:tic_expandedTitleMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleMarginStart com.stl.wristNotes:tic_expandedTitleMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleMarginTop com.stl.wristNotes:tic_expandedTitleMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_expandedTitleTextAppearance com.stl.wristNotes:tic_expandedTitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_statusBarScrim com.stl.wristNotes:tic_statusBarScrim}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_titleEnabled com.stl.wristNotes:tic_titleEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #CollapsingToolbarLayout_tic_toolbarId com.stl.wristNotes:tic_toolbarId}</code></td><td></td></tr>
+           </table>
+           @see #CollapsingToolbarLayout_android_title
+           @see #CollapsingToolbarLayout_tic_collapsedTitleGravity
+           @see #CollapsingToolbarLayout_tic_collapsedTitleTextAppearance
+           @see #CollapsingToolbarLayout_tic_contentScrim
+           @see #CollapsingToolbarLayout_tic_expandedTitleGravity
+           @see #CollapsingToolbarLayout_tic_expandedTitleMargin
+           @see #CollapsingToolbarLayout_tic_expandedTitleMarginBottom
+           @see #CollapsingToolbarLayout_tic_expandedTitleMarginEnd
+           @see #CollapsingToolbarLayout_tic_expandedTitleMarginStart
+           @see #CollapsingToolbarLayout_tic_expandedTitleMarginTop
+           @see #CollapsingToolbarLayout_tic_expandedTitleTextAppearance
+           @see #CollapsingToolbarLayout_tic_statusBarScrim
+           @see #CollapsingToolbarLayout_tic_titleEnabled
+           @see #CollapsingToolbarLayout_tic_toolbarId
+         */
+        public static final int[] CollapsingToolbarLayout = {
+            0x010101e1, 0x7f010034, 0x7f010035, 0x7f010036,
+            0x7f010037, 0x7f010038, 0x7f010039, 0x7f01003a,
+            0x7f01003b, 0x7f01003c, 0x7f01003d, 0x7f01003e,
+            0x7f01003f, 0x7f010040
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#title}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+          @attr name android:title
+        */
+        public static final int CollapsingToolbarLayout_android_title = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_collapsedTitleGravity}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_collapsedTitleGravity
+        */
+        public static final int CollapsingToolbarLayout_tic_collapsedTitleGravity = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_collapsedTitleTextAppearance}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_collapsedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_tic_collapsedTitleTextAppearance = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_contentScrim}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_contentScrim
+        */
+        public static final int CollapsingToolbarLayout_tic_contentScrim = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleGravity}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_expandedTitleGravity
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleGravity = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleMargin}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expandedTitleMargin
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleMargin = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleMarginBottom}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expandedTitleMarginBottom
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleMarginBottom = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleMarginEnd}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expandedTitleMarginEnd
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleMarginEnd = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleMarginStart}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expandedTitleMarginStart
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleMarginStart = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleMarginTop}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_expandedTitleMarginTop
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleMarginTop = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_expandedTitleTextAppearance}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_expandedTitleTextAppearance
+        */
+        public static final int CollapsingToolbarLayout_tic_expandedTitleTextAppearance = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_statusBarScrim}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_statusBarScrim
+        */
+        public static final int CollapsingToolbarLayout_tic_statusBarScrim = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_titleEnabled}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_titleEnabled
+        */
+        public static final int CollapsingToolbarLayout_tic_titleEnabled = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_toolbarId}
+          attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_toolbarId
+        */
+        public static final int CollapsingToolbarLayout_tic_toolbarId = 10;
+        /** Attributes that can be used with a CoordinatorLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_tic_keylines com.stl.wristNotes:tic_keylines}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_tic_overScrollEffect com.stl.wristNotes:tic_overScrollEffect}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_tic_statusBarBackground com.stl.wristNotes:tic_statusBarBackground}</code></td><td></td></tr>
+           </table>
+           @see #CoordinatorLayout_tic_keylines
+           @see #CoordinatorLayout_tic_overScrollEffect
+           @see #CoordinatorLayout_tic_statusBarBackground
+         */
+        public static final int[] CoordinatorLayout = {
+            0x7f010041, 0x7f010042, 0x7f010043
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_keylines}
+          attribute's value can be found in the {@link #CoordinatorLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_keylines
+        */
+        public static final int CoordinatorLayout_tic_keylines = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_overScrollEffect}
+          attribute's value can be found in the {@link #CoordinatorLayout} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>bounce</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_overScrollEffect
+        */
+        public static final int CoordinatorLayout_tic_overScrollEffect = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_statusBarBackground}
+          attribute's value can be found in the {@link #CoordinatorLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_statusBarBackground
+        */
+        public static final int CoordinatorLayout_tic_statusBarBackground = 1;
+        /** Attributes that can be used with a CoordinatorLayout_LayoutParams.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_tic_layout_anchor com.stl.wristNotes:tic_layout_anchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_tic_layout_anchorGravity com.stl.wristNotes:tic_layout_anchorGravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_tic_layout_behavior com.stl.wristNotes:tic_layout_behavior}</code></td><td></td></tr>
+           <tr><td><code>{@link #CoordinatorLayout_LayoutParams_tic_layout_keyline com.stl.wristNotes:tic_layout_keyline}</code></td><td></td></tr>
+           </table>
+           @see #CoordinatorLayout_LayoutParams_android_layout_gravity
+           @see #CoordinatorLayout_LayoutParams_tic_layout_anchor
+           @see #CoordinatorLayout_LayoutParams_tic_layout_anchorGravity
+           @see #CoordinatorLayout_LayoutParams_tic_layout_behavior
+           @see #CoordinatorLayout_LayoutParams_tic_layout_keyline
+         */
+        public static final int[] CoordinatorLayout_LayoutParams = {
+            0x010100b3, 0x7f010044, 0x7f010045, 0x7f010046,
+            0x7f010047
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+          @attr name android:layout_gravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_android_layout_gravity = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_anchor}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_layout_anchor
+        */
+        public static final int CoordinatorLayout_LayoutParams_tic_layout_anchor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_anchorGravity}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td></td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td></td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td></td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td></td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td></td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td></td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td></td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td></td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td></td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td></td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td></td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td></td></tr>
+<tr><td><code>start</code></td><td>0x00800003</td><td></td></tr>
+<tr><td><code>end</code></td><td>0x00800005</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_layout_anchorGravity
+        */
+        public static final int CoordinatorLayout_LayoutParams_tic_layout_anchorGravity = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_behavior}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_behavior
+        */
+        public static final int CoordinatorLayout_LayoutParams_tic_layout_behavior = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_keyline}
+          attribute's value can be found in the {@link #CoordinatorLayout_LayoutParams} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_keyline
+        */
+        public static final int CoordinatorLayout_LayoutParams_tic_layout_keyline = 3;
+        /** Attributes that can be used with a DatePicker.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #DatePicker_android_calendarTextColor android:calendarTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_calendarViewShown android:calendarViewShown}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_datePickerMode android:datePickerMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_dayOfWeekBackground android:dayOfWeekBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_dayOfWeekTextAppearance android:dayOfWeekTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_endYear android:endYear}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_firstDayOfWeek android:firstDayOfWeek}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_headerBackground android:headerBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_headerDayOfMonthTextAppearance android:headerDayOfMonthTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_headerMonthTextAppearance android:headerMonthTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_headerYearTextAppearance android:headerYearTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_maxDate android:maxDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_minDate android:minDate}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_spinnersShown android:spinnersShown}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_startYear android:startYear}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_yearListItemTextAppearance android:yearListItemTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_android_yearListSelectorColor android:yearListSelectorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_tic_allowNumericMonths com.stl.wristNotes:tic_allowNumericMonths}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_tic_calendarSelectedTextColor com.stl.wristNotes:tic_calendarSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_tic_headerSelectedTextColor com.stl.wristNotes:tic_headerSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_tic_internalLayout com.stl.wristNotes:tic_internalLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #DatePicker_tic_legacyLayout com.stl.wristNotes:tic_legacyLayout}</code></td><td></td></tr>
+           </table>
+           @see #DatePicker_android_calendarTextColor
+           @see #DatePicker_android_calendarViewShown
+           @see #DatePicker_android_datePickerMode
+           @see #DatePicker_android_dayOfWeekBackground
+           @see #DatePicker_android_dayOfWeekTextAppearance
+           @see #DatePicker_android_endYear
+           @see #DatePicker_android_firstDayOfWeek
+           @see #DatePicker_android_headerBackground
+           @see #DatePicker_android_headerDayOfMonthTextAppearance
+           @see #DatePicker_android_headerMonthTextAppearance
+           @see #DatePicker_android_headerYearTextAppearance
+           @see #DatePicker_android_maxDate
+           @see #DatePicker_android_minDate
+           @see #DatePicker_android_spinnersShown
+           @see #DatePicker_android_startYear
+           @see #DatePicker_android_yearListItemTextAppearance
+           @see #DatePicker_android_yearListSelectorColor
+           @see #DatePicker_tic_allowNumericMonths
+           @see #DatePicker_tic_calendarSelectedTextColor
+           @see #DatePicker_tic_headerSelectedTextColor
+           @see #DatePicker_tic_internalLayout
+           @see #DatePicker_tic_legacyLayout
+         */
+        public static final int[] DatePicker = {
+            0x0101012f, 0x0101017c, 0x0101017d, 0x0101033d,
+            0x0101033f, 0x01010340, 0x0101034b, 0x0101034c,
+            0x01010494, 0x01010495, 0x01010496, 0x01010497,
+            0x01010498, 0x01010499, 0x0101049a, 0x0101049b,
+            0x010104b3, 0x7f010048, 0x7f010049, 0x7f01005b,
+            0x7f01006f, 0x7f010070
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#calendarTextColor}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:calendarTextColor
+        */
+        public static final int DatePicker_android_calendarTextColor = 15;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#calendarViewShown}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:calendarViewShown
+        */
+        public static final int DatePicker_android_calendarViewShown = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#datePickerMode}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:datePickerMode
+        */
+        public static final int DatePicker_android_datePickerMode = 16;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dayOfWeekBackground}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:dayOfWeekBackground
+        */
+        public static final int DatePicker_android_dayOfWeekBackground = 8;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dayOfWeekTextAppearance}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:dayOfWeekTextAppearance
+        */
+        public static final int DatePicker_android_dayOfWeekTextAppearance = 9;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#endYear}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:endYear
+        */
+        public static final int DatePicker_android_endYear = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#firstDayOfWeek}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:firstDayOfWeek
+        */
+        public static final int DatePicker_android_firstDayOfWeek = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:headerBackground
+        */
+        public static final int DatePicker_android_headerBackground = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerDayOfMonthTextAppearance}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:headerDayOfMonthTextAppearance
+        */
+        public static final int DatePicker_android_headerDayOfMonthTextAppearance = 11;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerMonthTextAppearance}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:headerMonthTextAppearance
+        */
+        public static final int DatePicker_android_headerMonthTextAppearance = 10;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerYearTextAppearance}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:headerYearTextAppearance
+        */
+        public static final int DatePicker_android_headerYearTextAppearance = 12;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#maxDate}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:maxDate
+        */
+        public static final int DatePicker_android_maxDate = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#minDate}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:minDate
+        */
+        public static final int DatePicker_android_minDate = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#spinnersShown}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:spinnersShown
+        */
+        public static final int DatePicker_android_spinnersShown = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#startYear}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:startYear
+        */
+        public static final int DatePicker_android_startYear = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#yearListItemTextAppearance}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:yearListItemTextAppearance
+        */
+        public static final int DatePicker_android_yearListItemTextAppearance = 13;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#yearListSelectorColor}
+          attribute's value can be found in the {@link #DatePicker} array.
+          @attr name android:yearListSelectorColor
+        */
+        public static final int DatePicker_android_yearListSelectorColor = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_allowNumericMonths}
+          attribute's value can be found in the {@link #DatePicker} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_allowNumericMonths
+        */
+        public static final int DatePicker_tic_allowNumericMonths = 18;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_calendarSelectedTextColor}
+          attribute's value can be found in the {@link #DatePicker} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_calendarSelectedTextColor
+        */
+        public static final int DatePicker_tic_calendarSelectedTextColor = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_headerSelectedTextColor}
+          attribute's value can be found in the {@link #DatePicker} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_headerSelectedTextColor
+        */
+        public static final int DatePicker_tic_headerSelectedTextColor = 21;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalLayout}
+          attribute's value can be found in the {@link #DatePicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_internalLayout
+        */
+        public static final int DatePicker_tic_internalLayout = 19;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_legacyLayout}
+          attribute's value can be found in the {@link #DatePicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_legacyLayout
+        */
+        public static final int DatePicker_tic_legacyLayout = 20;
+        /** Attributes that can be used with a DialogPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #DialogPreference_android_dialogIcon android:dialogIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_android_dialogLayout android:dialogLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_android_dialogMessage android:dialogMessage}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_android_dialogTitle android:dialogTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_android_negativeButtonText android:negativeButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_android_positiveButtonText android:positiveButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_tic_negativeButtonIcon com.stl.wristNotes:tic_negativeButtonIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #DialogPreference_tic_positiveButtonIcon com.stl.wristNotes:tic_positiveButtonIcon}</code></td><td></td></tr>
+           </table>
+           @see #DialogPreference_android_dialogIcon
+           @see #DialogPreference_android_dialogLayout
+           @see #DialogPreference_android_dialogMessage
+           @see #DialogPreference_android_dialogTitle
+           @see #DialogPreference_android_negativeButtonText
+           @see #DialogPreference_android_positiveButtonText
+           @see #DialogPreference_tic_negativeButtonIcon
+           @see #DialogPreference_tic_positiveButtonIcon
+         */
+        public static final int[] DialogPreference = {
+            0x010101f2, 0x010101f3, 0x010101f4, 0x010101f5,
+            0x010101f6, 0x010101f7, 0x7f01004a, 0x7f01004b
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dialogIcon}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:dialogIcon
+        */
+        public static final int DialogPreference_android_dialogIcon = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dialogLayout}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:dialogLayout
+        */
+        public static final int DialogPreference_android_dialogLayout = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dialogMessage}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:dialogMessage
+        */
+        public static final int DialogPreference_android_dialogMessage = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dialogTitle}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:dialogTitle
+        */
+        public static final int DialogPreference_android_dialogTitle = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#negativeButtonText}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:negativeButtonText
+        */
+        public static final int DialogPreference_android_negativeButtonText = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#positiveButtonText}
+          attribute's value can be found in the {@link #DialogPreference} array.
+          @attr name android:positiveButtonText
+        */
+        public static final int DialogPreference_android_positiveButtonText = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_negativeButtonIcon}
+          attribute's value can be found in the {@link #DialogPreference} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_negativeButtonIcon
+        */
+        public static final int DialogPreference_tic_negativeButtonIcon = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_positiveButtonIcon}
+          attribute's value can be found in the {@link #DialogPreference} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_positiveButtonIcon
+        */
+        public static final int DialogPreference_tic_positiveButtonIcon = 6;
+        /** Attributes that can be used with a EdgeEffect.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #EdgeEffect_android_colorEdgeEffect android:colorEdgeEffect}</code></td><td></td></tr>
+           </table>
+           @see #EdgeEffect_android_colorEdgeEffect
+         */
+        public static final int[] EdgeEffect = {
+            0x010104ce
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#colorEdgeEffect}
+          attribute's value can be found in the {@link #EdgeEffect} array.
+          @attr name android:colorEdgeEffect
+        */
+        public static final int EdgeEffect_android_colorEdgeEffect = 0;
+        /** Attributes that can be used with a FloatingActionButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_borderWidth com.stl.wristNotes:tic_borderWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_circularDrawableStyle com.stl.wristNotes:tic_circularDrawableStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_fabSize com.stl.wristNotes:tic_fabSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_minimizeTranslationX com.stl.wristNotes:tic_minimizeTranslationX}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_minimizeTranslationY com.stl.wristNotes:tic_minimizeTranslationY}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_pressedTranslationZ com.stl.wristNotes:tic_pressedTranslationZ}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_tic_rippleColor com.stl.wristNotes:tic_rippleColor}</code></td><td></td></tr>
+           </table>
+           @see #FloatingActionButton_tic_borderWidth
+           @see #FloatingActionButton_tic_circularDrawableStyle
+           @see #FloatingActionButton_tic_fabSize
+           @see #FloatingActionButton_tic_minimizeTranslationX
+           @see #FloatingActionButton_tic_minimizeTranslationY
+           @see #FloatingActionButton_tic_pressedTranslationZ
+           @see #FloatingActionButton_tic_rippleColor
+         */
+        public static final int[] FloatingActionButton = {
+            0x7f01004c, 0x7f01004d, 0x7f01004e, 0x7f01004f,
+            0x7f010050, 0x7f010051, 0x7f010052
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_borderWidth}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_borderWidth
+        */
+        public static final int FloatingActionButton_tic_borderWidth = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_circularDrawableStyle}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_circularDrawableStyle
+        */
+        public static final int FloatingActionButton_tic_circularDrawableStyle = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_fabSize}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>mini</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.stl.wristNotes:tic_fabSize
+        */
+        public static final int FloatingActionButton_tic_fabSize = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_minimizeTranslationX}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_minimizeTranslationX
+        */
+        public static final int FloatingActionButton_tic_minimizeTranslationX = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_minimizeTranslationY}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_minimizeTranslationY
+        */
+        public static final int FloatingActionButton_tic_minimizeTranslationY = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_pressedTranslationZ}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_pressedTranslationZ
+        */
+        public static final int FloatingActionButton_tic_pressedTranslationZ = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_rippleColor}
+          attribute's value can be found in the {@link #FloatingActionButton} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_rippleColor
+        */
+        public static final int FloatingActionButton_tic_rippleColor = 0;
+        /** Attributes that can be used with a ListPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ListPreference_android_entries android:entries}</code></td><td></td></tr>
+           <tr><td><code>{@link #ListPreference_android_entryValues android:entryValues}</code></td><td></td></tr>
+           </table>
+           @see #ListPreference_android_entries
+           @see #ListPreference_android_entryValues
+         */
+        public static final int[] ListPreference = {
+            0x010100b2, 0x010101f8
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#entries}
+          attribute's value can be found in the {@link #ListPreference} array.
+          @attr name android:entries
+        */
+        public static final int ListPreference_android_entries = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#entryValues}
+          attribute's value can be found in the {@link #ListPreference} array.
+          @attr name android:entryValues
+        */
+        public static final int ListPreference_android_entryValues = 1;
+        /** Attributes that can be used with a MultiSelectListPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MultiSelectListPreference_android_entries android:entries}</code></td><td></td></tr>
+           <tr><td><code>{@link #MultiSelectListPreference_android_entryValues android:entryValues}</code></td><td></td></tr>
+           </table>
+           @see #MultiSelectListPreference_android_entries
+           @see #MultiSelectListPreference_android_entryValues
+         */
+        public static final int[] MultiSelectListPreference = {
+            0x010100b2, 0x010101f8
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#entries}
+          attribute's value can be found in the {@link #MultiSelectListPreference} array.
+          @attr name android:entries
+        */
+        public static final int MultiSelectListPreference_android_entries = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#entryValues}
+          attribute's value can be found in the {@link #MultiSelectListPreference} array.
+          @attr name android:entryValues
+        */
+        public static final int MultiSelectListPreference_android_entryValues = 1;
+        /** Attributes that can be used with a NumberPicker.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #NumberPicker_tic_hideWheelUntilFocused com.stl.wristNotes:tic_hideWheelUntilFocused}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_internalLayout com.stl.wristNotes:tic_internalLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_internalMaxHeight com.stl.wristNotes:tic_internalMaxHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_internalMaxWidth com.stl.wristNotes:tic_internalMaxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_internalMinHeight com.stl.wristNotes:tic_internalMinHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_internalMinWidth com.stl.wristNotes:tic_internalMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_selectionDivider com.stl.wristNotes:tic_selectionDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_selectionDividerHeight com.stl.wristNotes:tic_selectionDividerHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_selectionDividersDistance com.stl.wristNotes:tic_selectionDividersDistance}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_solidColor com.stl.wristNotes:tic_solidColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #NumberPicker_tic_virtualButtonPressedDrawable com.stl.wristNotes:tic_virtualButtonPressedDrawable}</code></td><td></td></tr>
+           </table>
+           @see #NumberPicker_tic_hideWheelUntilFocused
+           @see #NumberPicker_tic_internalLayout
+           @see #NumberPicker_tic_internalMaxHeight
+           @see #NumberPicker_tic_internalMaxWidth
+           @see #NumberPicker_tic_internalMinHeight
+           @see #NumberPicker_tic_internalMinWidth
+           @see #NumberPicker_tic_selectionDivider
+           @see #NumberPicker_tic_selectionDividerHeight
+           @see #NumberPicker_tic_selectionDividersDistance
+           @see #NumberPicker_tic_solidColor
+           @see #NumberPicker_tic_virtualButtonPressedDrawable
+         */
+        public static final int[] NumberPicker = {
+            0x7f010053, 0x7f010054, 0x7f010055, 0x7f010056,
+            0x7f010057, 0x7f010058, 0x7f010059, 0x7f01005a,
+            0x7f01005b, 0x7f01005c, 0x7f01005d
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_hideWheelUntilFocused}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_hideWheelUntilFocused
+        */
+        public static final int NumberPicker_tic_hideWheelUntilFocused = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalLayout}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_internalLayout
+        */
+        public static final int NumberPicker_tic_internalLayout = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalMaxHeight}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_internalMaxHeight
+        */
+        public static final int NumberPicker_tic_internalMaxHeight = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalMaxWidth}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_internalMaxWidth
+        */
+        public static final int NumberPicker_tic_internalMaxWidth = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalMinHeight}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_internalMinHeight
+        */
+        public static final int NumberPicker_tic_internalMinHeight = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalMinWidth}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_internalMinWidth
+        */
+        public static final int NumberPicker_tic_internalMinWidth = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_selectionDivider}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_selectionDivider
+        */
+        public static final int NumberPicker_tic_selectionDivider = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_selectionDividerHeight}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_selectionDividerHeight
+        */
+        public static final int NumberPicker_tic_selectionDividerHeight = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_selectionDividersDistance}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_selectionDividersDistance
+        */
+        public static final int NumberPicker_tic_selectionDividersDistance = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_solidColor}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.stl.wristNotes:tic_solidColor
+        */
+        public static final int NumberPicker_tic_solidColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_virtualButtonPressedDrawable}
+          attribute's value can be found in the {@link #NumberPicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_virtualButtonPressedDrawable
+        */
+        public static final int NumberPicker_tic_virtualButtonPressedDrawable = 9;
+        /** Attributes that can be used with a Preference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Preference_android_defaultValue android:defaultValue}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_dependency android:dependency}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_enabled android:enabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_fragment android:fragment}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_icon android:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_key android:key}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_layout android:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_order android:order}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_persistent android:persistent}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_selectable android:selectable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_shouldDisableView android:shouldDisableView}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_summary android:summary}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_title android:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #Preference_android_widgetLayout android:widgetLayout}</code></td><td></td></tr>
+           </table>
+           @see #Preference_android_defaultValue
+           @see #Preference_android_dependency
+           @see #Preference_android_enabled
+           @see #Preference_android_fragment
+           @see #Preference_android_icon
+           @see #Preference_android_key
+           @see #Preference_android_layout
+           @see #Preference_android_order
+           @see #Preference_android_persistent
+           @see #Preference_android_selectable
+           @see #Preference_android_shouldDisableView
+           @see #Preference_android_summary
+           @see #Preference_android_title
+           @see #Preference_android_widgetLayout
+         */
+        public static final int[] Preference = {
+            0x01010002, 0x0101000d, 0x0101000e, 0x010100f2,
+            0x010101e1, 0x010101e6, 0x010101e8, 0x010101e9,
+            0x010101ea, 0x010101eb, 0x010101ec, 0x010101ed,
+            0x010101ee, 0x010102e3
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#defaultValue}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:defaultValue
+        */
+        public static final int Preference_android_defaultValue = 11;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#dependency}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:dependency
+        */
+        public static final int Preference_android_dependency = 10;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#enabled}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:enabled
+        */
+        public static final int Preference_android_enabled = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fragment}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:fragment
+        */
+        public static final int Preference_android_fragment = 13;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#icon}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:icon
+        */
+        public static final int Preference_android_icon = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#key}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:key
+        */
+        public static final int Preference_android_key = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:layout
+        */
+        public static final int Preference_android_layout = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#order}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:order
+        */
+        public static final int Preference_android_order = 8;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#persistent}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:persistent
+        */
+        public static final int Preference_android_persistent = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#selectable}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:selectable
+        */
+        public static final int Preference_android_selectable = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#shouldDisableView}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:shouldDisableView
+        */
+        public static final int Preference_android_shouldDisableView = 12;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summary}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:summary
+        */
+        public static final int Preference_android_summary = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#title}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:title
+        */
+        public static final int Preference_android_title = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#widgetLayout}
+          attribute's value can be found in the {@link #Preference} array.
+          @attr name android:widgetLayout
+        */
+        public static final int Preference_android_widgetLayout = 9;
+        /** Attributes that can be used with a PreferenceActivity.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceActivity_android_layout android:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceActivity_tic_headerLayout com.stl.wristNotes:tic_headerLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceActivity_tic_headerRemoveIconIfEmpty com.stl.wristNotes:tic_headerRemoveIconIfEmpty}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceActivity_android_layout
+           @see #PreferenceActivity_tic_headerLayout
+           @see #PreferenceActivity_tic_headerRemoveIconIfEmpty
+         */
+        public static final int[] PreferenceActivity = {
+            0x010100f2, 0x7f01005e, 0x7f01005f
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout}
+          attribute's value can be found in the {@link #PreferenceActivity} array.
+          @attr name android:layout
+        */
+        public static final int PreferenceActivity_android_layout = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_headerLayout}
+          attribute's value can be found in the {@link #PreferenceActivity} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_headerLayout
+        */
+        public static final int PreferenceActivity_tic_headerLayout = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_headerRemoveIconIfEmpty}
+          attribute's value can be found in the {@link #PreferenceActivity} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_headerRemoveIconIfEmpty
+        */
+        public static final int PreferenceActivity_tic_headerRemoveIconIfEmpty = 2;
+        /** Attributes that can be used with a PreferenceFragment.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceFragment_android_layout android:layout}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceFragment_android_layout
+         */
+        public static final int[] PreferenceFragment = {
+            0x010100f2
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout}
+          attribute's value can be found in the {@link #PreferenceFragment} array.
+          @attr name android:layout
+        */
+        public static final int PreferenceFragment_android_layout = 0;
+        /** Attributes that can be used with a PreferenceFrameLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_tic_borderBottom com.stl.wristNotes:tic_borderBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_tic_borderLeft com.stl.wristNotes:tic_borderLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_tic_borderRight com.stl.wristNotes:tic_borderRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_tic_borderTop com.stl.wristNotes:tic_borderTop}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceFrameLayout_tic_borderBottom
+           @see #PreferenceFrameLayout_tic_borderLeft
+           @see #PreferenceFrameLayout_tic_borderRight
+           @see #PreferenceFrameLayout_tic_borderTop
+         */
+        public static final int[] PreferenceFrameLayout = {
+            0x7f010060, 0x7f010061, 0x7f010062, 0x7f010063
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_borderBottom}
+          attribute's value can be found in the {@link #PreferenceFrameLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_borderBottom
+        */
+        public static final int PreferenceFrameLayout_tic_borderBottom = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_borderLeft}
+          attribute's value can be found in the {@link #PreferenceFrameLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_borderLeft
+        */
+        public static final int PreferenceFrameLayout_tic_borderLeft = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_borderRight}
+          attribute's value can be found in the {@link #PreferenceFrameLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_borderRight
+        */
+        public static final int PreferenceFrameLayout_tic_borderRight = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_borderTop}
+          attribute's value can be found in the {@link #PreferenceFrameLayout} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_borderTop
+        */
+        public static final int PreferenceFrameLayout_tic_borderTop = 0;
+        /** Attributes that can be used with a PreferenceFrameLayout_Layout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceFrameLayout_Layout_tic_layout_removeBorders com.stl.wristNotes:tic_layout_removeBorders}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceFrameLayout_Layout_tic_layout_removeBorders
+         */
+        public static final int[] PreferenceFrameLayout_Layout = {
+            0x7f010064
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_layout_removeBorders}
+          attribute's value can be found in the {@link #PreferenceFrameLayout_Layout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_layout_removeBorders
+        */
+        public static final int PreferenceFrameLayout_Layout_tic_layout_removeBorders = 0;
+        /** Attributes that can be used with a PreferenceGroup.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceGroup_android_orderingFromXml android:orderingFromXml}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceGroup_android_orderingFromXml
+         */
+        public static final int[] PreferenceGroup = {
+            0x010101e7
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#orderingFromXml}
+          attribute's value can be found in the {@link #PreferenceGroup} array.
+          @attr name android:orderingFromXml
+        */
+        public static final int PreferenceGroup_android_orderingFromXml = 0;
+        /** Attributes that can be used with a PreferenceHeader.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_breadCrumbShortTitle android:breadCrumbShortTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_breadCrumbTitle android:breadCrumbTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_fragment android:fragment}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_icon android:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_id android:id}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_summary android:summary}</code></td><td></td></tr>
+           <tr><td><code>{@link #PreferenceHeader_android_title android:title}</code></td><td></td></tr>
+           </table>
+           @see #PreferenceHeader_android_breadCrumbShortTitle
+           @see #PreferenceHeader_android_breadCrumbTitle
+           @see #PreferenceHeader_android_fragment
+           @see #PreferenceHeader_android_icon
+           @see #PreferenceHeader_android_id
+           @see #PreferenceHeader_android_summary
+           @see #PreferenceHeader_android_title
+         */
+        public static final int[] PreferenceHeader = {
+            0x01010002, 0x010100d0, 0x010101e1, 0x010101e9,
+            0x010102e3, 0x01010303, 0x01010304
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#breadCrumbShortTitle}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:breadCrumbShortTitle
+        */
+        public static final int PreferenceHeader_android_breadCrumbShortTitle = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#breadCrumbTitle}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:breadCrumbTitle
+        */
+        public static final int PreferenceHeader_android_breadCrumbTitle = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fragment}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:fragment
+        */
+        public static final int PreferenceHeader_android_fragment = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#icon}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:icon
+        */
+        public static final int PreferenceHeader_android_icon = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#id}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:id
+        */
+        public static final int PreferenceHeader_android_id = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summary}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:summary
+        */
+        public static final int PreferenceHeader_android_summary = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#title}
+          attribute's value can be found in the {@link #PreferenceHeader} array.
+          @attr name android:title
+        */
+        public static final int PreferenceHeader_android_title = 2;
+        /** Attributes that can be used with a RecyclerView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RecyclerView_android_orientation android:orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_layoutManager com.stl.wristNotes:layoutManager}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_reverseLayout com.stl.wristNotes:reverseLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_spanCount com.stl.wristNotes:spanCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_stackFromEnd com.stl.wristNotes:stackFromEnd}</code></td><td></td></tr>
+           </table>
+           @see #RecyclerView_android_orientation
+           @see #RecyclerView_layoutManager
+           @see #RecyclerView_reverseLayout
+           @see #RecyclerView_spanCount
+           @see #RecyclerView_stackFromEnd
+         */
+        public static final int[] RecyclerView = {
+            0x010100c4, 0x7f010065, 0x7f010066, 0x7f010067,
+            0x7f010068
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#orientation}
+          attribute's value can be found in the {@link #RecyclerView} array.
+          @attr name android:orientation
+        */
+        public static final int RecyclerView_android_orientation = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#layoutManager}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:layoutManager
+        */
+        public static final int RecyclerView_layoutManager = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#reverseLayout}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:reverseLayout
+        */
+        public static final int RecyclerView_reverseLayout = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#spanCount}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:spanCount
+        */
+        public static final int RecyclerView_spanCount = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#stackFromEnd}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:stackFromEnd
+        */
+        public static final int RecyclerView_stackFromEnd = 4;
+        /** Attributes that can be used with a RingtonePreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RingtonePreference_android_ringtoneType android:ringtoneType}</code></td><td></td></tr>
+           <tr><td><code>{@link #RingtonePreference_android_showDefault android:showDefault}</code></td><td></td></tr>
+           <tr><td><code>{@link #RingtonePreference_android_showSilent android:showSilent}</code></td><td></td></tr>
+           </table>
+           @see #RingtonePreference_android_ringtoneType
+           @see #RingtonePreference_android_showDefault
+           @see #RingtonePreference_android_showSilent
+         */
+        public static final int[] RingtonePreference = {
+            0x010101f9, 0x010101fa, 0x010101fb
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#ringtoneType}
+          attribute's value can be found in the {@link #RingtonePreference} array.
+          @attr name android:ringtoneType
+        */
+        public static final int RingtonePreference_android_ringtoneType = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#showDefault}
+          attribute's value can be found in the {@link #RingtonePreference} array.
+          @attr name android:showDefault
+        */
+        public static final int RingtonePreference_android_showDefault = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#showSilent}
+          attribute's value can be found in the {@link #RingtonePreference} array.
+          @attr name android:showSilent
+        */
+        public static final int RingtonePreference_android_showSilent = 2;
+        /** Attributes that can be used with a ScalableTextView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScalableTextView_tic_scaleFactor com.stl.wristNotes:tic_scaleFactor}</code></td><td></td></tr>
+           </table>
+           @see #ScalableTextView_tic_scaleFactor
+         */
+        public static final int[] ScalableTextView = {
+            0x7f010069
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_scaleFactor}
+          attribute's value can be found in the {@link #ScalableTextView} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_scaleFactor
+        */
+        public static final int ScalableTextView_tic_scaleFactor = 0;
+        /** Attributes that can be used with a ScrollBar.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrollBar_tic_scroll_bar_bgColor com.stl.wristNotes:tic_scroll_bar_bgColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_tic_scroll_bar_margin com.stl.wristNotes:tic_scroll_bar_margin}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_tic_scroll_bar_strokeWidth com.stl.wristNotes:tic_scroll_bar_strokeWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_tic_scroll_bar_sweepColor com.stl.wristNotes:tic_scroll_bar_sweepColor}</code></td><td></td></tr>
+           </table>
+           @see #ScrollBar_tic_scroll_bar_bgColor
+           @see #ScrollBar_tic_scroll_bar_margin
+           @see #ScrollBar_tic_scroll_bar_strokeWidth
+           @see #ScrollBar_tic_scroll_bar_sweepColor
+         */
+        public static final int[] ScrollBar = {
+            0x7f01006a, 0x7f01006b, 0x7f01006c, 0x7f01006d
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_scroll_bar_bgColor}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_scroll_bar_bgColor
+        */
+        public static final int ScrollBar_tic_scroll_bar_bgColor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_scroll_bar_margin}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_scroll_bar_margin
+        */
+        public static final int ScrollBar_tic_scroll_bar_margin = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_scroll_bar_strokeWidth}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_scroll_bar_strokeWidth
+        */
+        public static final int ScrollBar_tic_scroll_bar_strokeWidth = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_scroll_bar_sweepColor}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_scroll_bar_sweepColor
+        */
+        public static final int ScrollBar_tic_scroll_bar_sweepColor = 3;
+        /** Attributes that can be used with a ScrollingViewBehavior_Params.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrollingViewBehavior_Params_tic_behavior_overlapTop com.stl.wristNotes:tic_behavior_overlapTop}</code></td><td></td></tr>
+           </table>
+           @see #ScrollingViewBehavior_Params_tic_behavior_overlapTop
+         */
+        public static final int[] ScrollingViewBehavior_Params = {
+            0x7f01006e
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_behavior_overlapTop}
+          attribute's value can be found in the {@link #ScrollingViewBehavior_Params} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_behavior_overlapTop
+        */
+        public static final int ScrollingViewBehavior_Params_tic_behavior_overlapTop = 0;
+        /** Attributes that can be used with a SeekBarPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SeekBarPreference_android_layout android:layout}</code></td><td></td></tr>
+           </table>
+           @see #SeekBarPreference_android_layout
+         */
+        public static final int[] SeekBarPreference = {
+            0x010100f2
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#layout}
+          attribute's value can be found in the {@link #SeekBarPreference} array.
+          @attr name android:layout
+        */
+        public static final int SeekBarPreference_android_layout = 0;
+        /** Attributes that can be used with a SwitchPreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SwitchPreference_android_disableDependentsState android:disableDependentsState}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_android_summaryOff android:summaryOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_android_summaryOn android:summaryOn}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_android_switchTextOff android:switchTextOff}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchPreference_android_switchTextOn android:switchTextOn}</code></td><td></td></tr>
+           </table>
+           @see #SwitchPreference_android_disableDependentsState
+           @see #SwitchPreference_android_summaryOff
+           @see #SwitchPreference_android_summaryOn
+           @see #SwitchPreference_android_switchTextOff
+           @see #SwitchPreference_android_switchTextOn
+         */
+        public static final int[] SwitchPreference = {
+            0x010101ef, 0x010101f0, 0x010101f1, 0x0101036b,
+            0x0101036c
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#disableDependentsState}
+          attribute's value can be found in the {@link #SwitchPreference} array.
+          @attr name android:disableDependentsState
+        */
+        public static final int SwitchPreference_android_disableDependentsState = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summaryOff}
+          attribute's value can be found in the {@link #SwitchPreference} array.
+          @attr name android:summaryOff
+        */
+        public static final int SwitchPreference_android_summaryOff = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#summaryOn}
+          attribute's value can be found in the {@link #SwitchPreference} array.
+          @attr name android:summaryOn
+        */
+        public static final int SwitchPreference_android_summaryOn = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#switchTextOff}
+          attribute's value can be found in the {@link #SwitchPreference} array.
+          @attr name android:switchTextOff
+        */
+        public static final int SwitchPreference_android_switchTextOff = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#switchTextOn}
+          attribute's value can be found in the {@link #SwitchPreference} array.
+          @attr name android:switchTextOn
+        */
+        public static final int SwitchPreference_android_switchTextOn = 3;
+        /** Attributes that can be used with a TextAppearance.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextAppearance_android_elegantTextHeight android:elegantTextHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_fontFamily android:fontFamily}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_fontFeatureSettings android:fontFeatureSettings}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_letterSpacing android:letterSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_shadowColor android:shadowColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_shadowDx android:shadowDx}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_shadowDy android:shadowDy}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_shadowRadius android:shadowRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textAllCaps android:textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColor android:textColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorHighlight android:textColorHighlight}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorHint android:textColorHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textColorLink android:textColorLink}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textSize android:textSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_textStyle android:textStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextAppearance_android_typeface android:typeface}</code></td><td></td></tr>
+           </table>
+           @see #TextAppearance_android_elegantTextHeight
+           @see #TextAppearance_android_fontFamily
+           @see #TextAppearance_android_fontFeatureSettings
+           @see #TextAppearance_android_letterSpacing
+           @see #TextAppearance_android_shadowColor
+           @see #TextAppearance_android_shadowDx
+           @see #TextAppearance_android_shadowDy
+           @see #TextAppearance_android_shadowRadius
+           @see #TextAppearance_android_textAllCaps
+           @see #TextAppearance_android_textColor
+           @see #TextAppearance_android_textColorHighlight
+           @see #TextAppearance_android_textColorHint
+           @see #TextAppearance_android_textColorLink
+           @see #TextAppearance_android_textSize
+           @see #TextAppearance_android_textStyle
+           @see #TextAppearance_android_typeface
+         */
+        public static final int[] TextAppearance = {
+            0x01010095, 0x01010096, 0x01010097, 0x01010098,
+            0x01010099, 0x0101009a, 0x0101009b, 0x01010161,
+            0x01010162, 0x01010163, 0x01010164, 0x0101038c,
+            0x010103ac, 0x0101045d, 0x010104b6, 0x010104b7
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#elegantTextHeight}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:elegantTextHeight
+        */
+        public static final int TextAppearance_android_elegantTextHeight = 13;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fontFamily}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:fontFamily
+        */
+        public static final int TextAppearance_android_fontFamily = 12;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#fontFeatureSettings}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:fontFeatureSettings
+        */
+        public static final int TextAppearance_android_fontFeatureSettings = 15;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#letterSpacing}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:letterSpacing
+        */
+        public static final int TextAppearance_android_letterSpacing = 14;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#shadowColor}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:shadowColor
+        */
+        public static final int TextAppearance_android_shadowColor = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#shadowDx}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:shadowDx
+        */
+        public static final int TextAppearance_android_shadowDx = 8;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#shadowDy}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:shadowDy
+        */
+        public static final int TextAppearance_android_shadowDy = 9;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#shadowRadius}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:shadowRadius
+        */
+        public static final int TextAppearance_android_shadowRadius = 10;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textAllCaps}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textAllCaps
+        */
+        public static final int TextAppearance_android_textAllCaps = 11;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColor}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textColor
+        */
+        public static final int TextAppearance_android_textColor = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColorHighlight}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textColorHighlight
+        */
+        public static final int TextAppearance_android_textColorHighlight = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColorHint}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textColorHint
+        */
+        public static final int TextAppearance_android_textColorHint = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColorLink}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textColorLink
+        */
+        public static final int TextAppearance_android_textColorLink = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textSize}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textSize
+        */
+        public static final int TextAppearance_android_textSize = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textStyle}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:textStyle
+        */
+        public static final int TextAppearance_android_textStyle = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#typeface}
+          attribute's value can be found in the {@link #TextAppearance} array.
+          @attr name android:typeface
+        */
+        public static final int TextAppearance_android_typeface = 1;
+        /** Attributes that can be used with a TimePicker.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TimePicker_android_amPmBackgroundColor android:amPmBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_amPmTextColor android:amPmTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_headerAmPmTextAppearance android:headerAmPmTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_headerBackground android:headerBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_headerTimeTextAppearance android:headerTimeTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_numbersBackgroundColor android:numbersBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_numbersSelectorColor android:numbersSelectorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_numbersTextColor android:numbersTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_android_timePickerMode android:timePickerMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_tic_amPmSelectedBackgroundColor com.stl.wristNotes:tic_amPmSelectedBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_tic_headerSelectedTextColor com.stl.wristNotes:tic_headerSelectedTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_tic_internalLayout com.stl.wristNotes:tic_internalLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #TimePicker_tic_legacyLayout com.stl.wristNotes:tic_legacyLayout}</code></td><td></td></tr>
+           </table>
+           @see #TimePicker_android_amPmBackgroundColor
+           @see #TimePicker_android_amPmTextColor
+           @see #TimePicker_android_headerAmPmTextAppearance
+           @see #TimePicker_android_headerBackground
+           @see #TimePicker_android_headerTimeTextAppearance
+           @see #TimePicker_android_numbersBackgroundColor
+           @see #TimePicker_android_numbersSelectorColor
+           @see #TimePicker_android_numbersTextColor
+           @see #TimePicker_android_timePickerMode
+           @see #TimePicker_tic_amPmSelectedBackgroundColor
+           @see #TimePicker_tic_headerSelectedTextColor
+           @see #TimePicker_tic_internalLayout
+           @see #TimePicker_tic_legacyLayout
+         */
+        public static final int[] TimePicker = {
+            0x0101012f, 0x0101049f, 0x010104a0, 0x010104a1,
+            0x010104a2, 0x010104a3, 0x010104a4, 0x010104a5,
+            0x010104b4, 0x7f01005b, 0x7f01006f, 0x7f010070,
+            0x7f010071
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#amPmBackgroundColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:amPmBackgroundColor
+        */
+        public static final int TimePicker_android_amPmBackgroundColor = 7;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#amPmTextColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:amPmTextColor
+        */
+        public static final int TimePicker_android_amPmTextColor = 6;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerAmPmTextAppearance}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:headerAmPmTextAppearance
+        */
+        public static final int TimePicker_android_headerAmPmTextAppearance = 2;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:headerBackground
+        */
+        public static final int TimePicker_android_headerBackground = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#headerTimeTextAppearance}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:headerTimeTextAppearance
+        */
+        public static final int TimePicker_android_headerTimeTextAppearance = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#numbersBackgroundColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:numbersBackgroundColor
+        */
+        public static final int TimePicker_android_numbersBackgroundColor = 4;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#numbersSelectorColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:numbersSelectorColor
+        */
+        public static final int TimePicker_android_numbersSelectorColor = 5;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#numbersTextColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:numbersTextColor
+        */
+        public static final int TimePicker_android_numbersTextColor = 3;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#timePickerMode}
+          attribute's value can be found in the {@link #TimePicker} array.
+          @attr name android:timePickerMode
+        */
+        public static final int TimePicker_android_timePickerMode = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_amPmSelectedBackgroundColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_amPmSelectedBackgroundColor
+        */
+        public static final int TimePicker_tic_amPmSelectedBackgroundColor = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_headerSelectedTextColor}
+          attribute's value can be found in the {@link #TimePicker} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_headerSelectedTextColor
+        */
+        public static final int TimePicker_tic_headerSelectedTextColor = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_internalLayout}
+          attribute's value can be found in the {@link #TimePicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_internalLayout
+        */
+        public static final int TimePicker_tic_internalLayout = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_legacyLayout}
+          attribute's value can be found in the {@link #TimePicker} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_legacyLayout
+        */
+        public static final int TimePicker_tic_legacyLayout = 10;
+        /** Attributes that can be used with a VolumeBar.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_bgColor com.stl.wristNotes:tic_vb_bgColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_btnImageSize com.stl.wristNotes:tic_vb_btnImageSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_thumbImage com.stl.wristNotes:tic_vb_thumbImage}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_thumbLeftImage com.stl.wristNotes:tic_vb_thumbLeftImage}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_touchPadding com.stl.wristNotes:tic_vb_touchPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #VolumeBar_tic_vb_valueColor com.stl.wristNotes:tic_vb_valueColor}</code></td><td></td></tr>
+           </table>
+           @see #VolumeBar_tic_vb_bgColor
+           @see #VolumeBar_tic_vb_btnImageSize
+           @see #VolumeBar_tic_vb_thumbImage
+           @see #VolumeBar_tic_vb_thumbLeftImage
+           @see #VolumeBar_tic_vb_touchPadding
+           @see #VolumeBar_tic_vb_valueColor
+         */
+        public static final int[] VolumeBar = {
+            0x7f010072, 0x7f010073, 0x7f010074, 0x7f010075,
+            0x7f010076, 0x7f010077
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_bgColor}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_vb_bgColor
+        */
+        public static final int VolumeBar_tic_vb_bgColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_btnImageSize}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_vb_btnImageSize
+        */
+        public static final int VolumeBar_tic_vb_btnImageSize = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_thumbImage}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_vb_thumbImage
+        */
+        public static final int VolumeBar_tic_vb_thumbImage = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_thumbLeftImage}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.stl.wristNotes:tic_vb_thumbLeftImage
+        */
+        public static final int VolumeBar_tic_vb_thumbLeftImage = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_touchPadding}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_vb_touchPadding
+        */
+        public static final int VolumeBar_tic_vb_touchPadding = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.stl.wristNotes.R.attr#tic_vb_valueColor}
+          attribute's value can be found in the {@link #VolumeBar} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.stl.wristNotes:tic_vb_valueColor
+        */
+        public static final int VolumeBar_tic_vb_valueColor = 0;
+        /** Attributes that can be used with a VolumePreference.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #VolumePreference_android_streamType android:streamType}</code></td><td></td></tr>
+           </table>
+           @see #VolumePreference_android_streamType
+         */
+        public static final int[] VolumePreference = {
+            0x01010209
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#streamType}
+          attribute's value can be found in the {@link #VolumePreference} array.
+          @attr name android:streamType
+        */
+        public static final int VolumePreference_android_streamType = 0;
+    };
 }

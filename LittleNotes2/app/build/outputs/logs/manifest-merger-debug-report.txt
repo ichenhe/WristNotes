@@ -39,6 +39,8 @@ ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidM
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:11:19-62
 application
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:13:5-79:19
+MERGED from [com.ticwear:ticdesign:1.0.0] C:\Users\Administrator\.android\build-cache\c877203d59e6ec91f4df164854c0c6d28831c4e6\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.android\build-cache\9844f462840394d1886ca665e613499f20651b0d\output\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:16:9-41
 	android:allowBackup
@@ -119,6 +121,9 @@ ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidM
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:77:4-49
 uses-sdk
 INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.ticwear:ticdesign:1.0.0] C:\Users\Administrator\.android\build-cache\c877203d59e6ec91f4df164854c0c6d28831c4e6\output\AndroidManifest.xml:21:5-23:41
+MERGED from [com.android.support:recyclerview-v7:23.2.1] C:\Users\Administrator\.android\build-cache\70050e357a9abaefc047011a391ad34ee5f6d016\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.android\build-cache\9844f462840394d1886ca665e613499f20651b0d\output\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml
 		INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml

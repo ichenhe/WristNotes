@@ -1,5 +1,124 @@
 [
     {
+        "outputFile": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w240dp-v13\\values-w240dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 70,
+                    "endOffset": 121
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 70,
+                        "endOffset": 121
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 126,
+                    "endColumn": 80,
+                    "endOffset": 202
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 126,
+                        "endColumn": 80,
+                        "endOffset": 202
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 207,
+                    "endColumn": 80,
+                    "endOffset": 283
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 207,
+                        "endColumn": 80,
+                        "endOffset": 283
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 288,
+                    "endColumn": 77,
+                    "endOffset": 361
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 288,
+                        "endColumn": 77,
+                        "endOffset": 361
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 366,
+                    "endColumn": 65,
+                    "endOffset": 427
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 366,
+                        "endColumn": 65,
+                        "endOffset": 427
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 432,
+                    "endColumn": 64,
+                    "endOffset": 492
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\values-w240dp-v13\\values-w240dp-v13.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 432,
+                        "endColumn": 64,
+                        "endOffset": 492
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w240dp-v13\\values-w240dp-v13.xml",
         "map": [
             {
