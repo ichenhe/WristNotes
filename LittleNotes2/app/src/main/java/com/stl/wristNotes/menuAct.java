@@ -214,7 +214,7 @@ public class menuAct extends Activity
 					}
 					else if(s.indexOf("触摸隐藏文字") != -1)
 					{
-						if(sharedPreferences.getString("touchHideText", "关闭") == "开启")
+						if(sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
 						{
 							editor.putString("touchHideText", "关闭");
 							Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
@@ -229,7 +229,7 @@ public class menuAct extends Activity
 					}
 					else if(s.indexOf("启动应用隐藏文字") != -1)
 					{
-						if(sharedPreferences.getString("startHideText", "关闭") == "开启")
+						if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
 						{
 							editor.putString("startHideText", "关闭");
 						}
