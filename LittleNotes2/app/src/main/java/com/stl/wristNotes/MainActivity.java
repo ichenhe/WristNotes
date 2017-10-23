@@ -8,6 +8,8 @@ import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import java.io.*;
+import android.content.pm.*;
+import android.content.pm.PackageManager.*;
 
 public class MainActivity extends Activity 
 {
@@ -16,7 +18,7 @@ public class MainActivity extends Activity
 	//light:亮度:3
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
-	
+
 	//外部-input
 	public static String inputtitle = "";
 	public static String inputset = "";
@@ -33,7 +35,7 @@ public class MainActivity extends Activity
 	public static String filedopath = "";
 	//外部-help
 	public static int helpor = 1;
-	
+
 	Context ctx = this;
 	public static int pass = 0;
 	int isalpha = 0;
@@ -47,34 +49,41 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,  WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
-		
+
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
-		filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory()+"/0学习文档/");
+		filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/");
 		filename = sharedPreferences.getString("filename", "1.txt");
 		light = sharedPreferences.getInt("light", 6);
 		startHideText = sharedPreferences.getString("startHideText", "关闭");
-		
+
 		//createFloatView()
-		
+
 		textView = (TextView) findViewById(R.id.mainTextView);
 
-		if(sharedPreferences.getInt("isUpdated", 0) == 0)
-		{
-			editor.putInt("isUpdated", 1);
-			editor.commit();
-			Intent startint = new Intent(ctx, updated.class);
-			startActivity(startint);
-		}
-		
+		PackageManager pm = ctx.getPackageManager();//context为当前Activity上下文 
 		try
 		{
-			if(!new File(filepath+filename).exists())
+			PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
+			if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
+			{
+				editor.putInt("isUpdated", pi.versionCode);
+				editor.commit();
+				Intent startint = new Intent(ctx, updated.class);
+				startActivity(startint);
+			}
+		}
+		catch (PackageManager.NameNotFoundException e)
+		{}
+
+		try
+		{
+			if (!new File(filepath + filename).exists())
 			{
 				textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档\n\n\n");
 				textView.setTextColor(Color.argb(255, 203, 203, 203));
 				isalpha = 0;
-				if(!new File(filepath).exists())
+				if (!new File(filepath).exists())
 				{
 					Intent startint = new Intent(ctx, startAct.class);
 					startActivity(startint);
@@ -84,35 +93,35 @@ public class MainActivity extends Activity
 			}
 			else
 			{
-				textView.setText(fileReader(filepath+filename));
+				textView.setText(fileReader(filepath + filename));
 			}
 		}
 		catch (Exception e)
 		{
-			Toast.makeText(ctx, "错误！"+e.toString(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(ctx, "错误！" + e.toString(), Toast.LENGTH_SHORT).show();
 		}
 
-		if(sharedPreferences.getString("startHideText", "关闭") == "开启")
+		if (sharedPreferences.getString("startHideText", "关闭") == "开启")
 		{
 			textView.setTextColor(Color.argb(0, 0, 0, 0));
 			isalpha = 1;
 		}
 		else
 		{
-			if(!new File(filepath+filename).exists())
+			if (!new File(filepath + filename).exists())
 			{
 				textView.setTextColor(Color.argb(255, 203, 203, 203));
 			}
 			else
 			{
-				textView.setTextColor(Color.argb(255, light*8, light*8, light*8));
+				textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
 			}
 			isalpha = 0;
 		}
-		
-		if(!sharedPreferences.getString("password", "").equals(""))
+
+		if (!sharedPreferences.getString("password", "").equals(""))
 		{
-			if(sharedPreferences.getString("passtext", "").equals("  再次输入  ")||sharedPreferences.getString("passtext", "").equals("  设定新密码  ")||sharedPreferences.getString("passtext", "").equals("  输入原密码  ")||sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
+			if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
 			{
 				pass = 1;
 				editor.putString("passtext", "输入密码");
@@ -132,21 +141,21 @@ public class MainActivity extends Activity
 		{
 			pass = 1;
 		}
-		
+
 		textView.setTextSize(sharedPreferences.getInt("bs", 14));
-		
+
 		textView.setClickable(true);
 		textView.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View p1)
 				{
-					if(pass == 1 && sharedPreferences.getString("touchHideText", "关闭") == "开启")
+					if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭") == "开启")
 					{
 						textView.setTextColor(Color.argb(0, 0, 0, 0));
 						isalpha = 1;
 					}
-					else if(pass == 0)
+					else if (pass == 0)
 					{
 						Intent passwordint = new Intent(ctx, passwordAct.class);
 						startActivity(passwordint);
@@ -159,9 +168,9 @@ public class MainActivity extends Activity
 				@Override
 				public boolean onLongClick(View p1)
 				{
-					if(pass == 1)
+					if (pass == 1)
 					{
-						if(isalpha == 0 /*|| startHideText.equals("关闭")*/)
+						if (isalpha == 0)
 						{
 							cho = 0;
 							Intent menuint = new Intent(ctx, menuAct.class);
@@ -169,7 +178,7 @@ public class MainActivity extends Activity
 						}
 						else
 						{
-							textView.setTextColor(Color.argb(255, light*8, light*8, light*8));
+							textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
 							isalpha = 0;
 						}
 					}
@@ -182,21 +191,23 @@ public class MainActivity extends Activity
 				}
 			});
     }
-	
-	public static String fileReader(String path) throws IOException {
+
+	public static String fileReader(String path) throws IOException
+	{
         FileReader reader = new FileReader(path);
         BufferedReader bReader = new BufferedReader(reader);
 		StringBuffer temp = new StringBuffer();
 		String temp1 = "";
-        while((temp1=bReader.readLine()) !=null) {
+        while ((temp1 = bReader.readLine()) != null)
+		{
             //Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
-			temp.append(temp1+"\n");
+			temp.append(temp1 + "\n");
         }
         bReader.close();
-		textView.setTextColor(Color.argb(255, light*8, light*8, light*8));
+		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
 		return temp.toString();
     }
-	
+
 	private boolean isAdded = false; // 是否已增加悬浮窗
 	private static WindowManager wm;
 	private static WindowManager.LayoutParams params;
@@ -205,7 +216,8 @@ public class MainActivity extends Activity
 	/**
 	 * 创建悬浮窗
 	 */
-	private void createFloatView() {
+	private void createFloatView()
+	{
 		btn_floatView = new Button(getApplicationContext());
 		//btn_floatView.setBackground();
 
@@ -243,8 +255,10 @@ public class MainActivity extends Activity
         // 设置悬浮窗的Touch监听
         btn_floatView.setOnTouchListener(new OnTouchListener() {
 
-				public boolean onTouch(View v, MotionEvent event) {
-					switch(event.getAction()) {
+				public boolean onTouch(View v, MotionEvent event)
+				{
+					switch (event.getAction())
+					{
 						case MotionEvent.ACTION_DOWN:
 							Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
 							break;

@@ -14,7 +14,7 @@
 			android:layout_height="wrap_content"
 			android:text="腕上小纸条\n已升级至最新版！"
 			android:layout_width="match_parent"
-			android:paddingTop="15dp"
+			android:paddingTop="20dp"
 			android:gravity="center"
 			android:textStyle="bold"
 			android:textSize="18sp"/>
@@ -23,25 +23,32 @@
 			android:layout_height="100dp"
 			android:layout_width="100dp"
 			android:src="@drawable/icon"
-			android:layout_marginTop="10dp"/>
+			android:layout_marginTop="5dp"/>
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="当前版本：1.14\n更新内容：\n◆优化应用逻辑\n◆修复若干BUG"
+			android:text="当前版本：1.14\n更新内容：\n◆增加更新日志和更新欢迎界面\n◆优化应用逻辑\n◆修复若干BUG"
 			android:layout_width="wrap_content"
 			android:padding="15dp"/>
 
 		<Button
 			android:layout_height="wrap_content"
 			android:text="查看更新日志"
-			android:layout_width="wrap_content"
-			style="@style/button"/>
+			android:layout_width="match_parent"
+			style="@style/button"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+			android:onClick="update1"/>
 
 		<Button
 			android:layout_height="wrap_content"
 			android:text="我知道了"
-			android:layout_width="wrap_content"
-			style="@style/button"/>
+			android:layout_width="match_parent"
+			style="@style/button"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+			android:onClick="update2"
+			android:layout_marginBottom="20dp"/>
 
 	</LinearLayout>
 

@@ -32,4 +32,10 @@ public class aboutAct extends Activity
 		Intent startint = new Intent(ctx, donationAct.class);
 		startActivity(startint);
 	}
+	public void about4(View view)//更新日志
+	{
+		MainActivity.helpor = 3;
+		Intent startint = new Intent(ctx, helpAct.class);
+		startActivity(startint);
+	}
 }
