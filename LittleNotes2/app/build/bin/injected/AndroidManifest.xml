@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.stl.wristNotes"
-	android:versionCode="39"
-	android:versionName="1.12">
+	android:versionCode="41"
+	android:versionName="1.14">
 
 	<uses-sdk
 		android:minSdkVersion="21"
@@ -110,6 +110,11 @@
 
 		<activity
 			android:name="com.stl.wristNotes.donationAct">
+
+		</activity>
+
+		<activity
+			android:name="com.stl.wristNotes.updated">
 
 		</activity>
 

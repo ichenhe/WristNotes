@@ -56,29 +56,17 @@ public class MainActivity extends Activity
 		startHideText = sharedPreferences.getString("startHideText", "关闭");
 		
 		//createFloatView()
-		if(!sharedPreferences.getString("password", "").equals(""))
-		{
-			if(sharedPreferences.getString("passtext", "").equals("  再次输入  ")||sharedPreferences.getString("passtext", "").equals("  设定新密码  ")||sharedPreferences.getString("passtext", "").equals("  输入原密码  ")||sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
-			{
-				pass = 1;
-				editor.putString("passtext", "输入密码");
-				editor.commit();
-				Intent passwordint = new Intent(ctx, passwordAct.class);
-				startActivity(passwordint);
-			}
-			else
-			{
-				pass = 0;
-				Intent passwordint = new Intent(ctx, passwordAct.class);
-				startActivity(passwordint);
-			}
-		}
-		else
-		{
-			pass = 1;
-		}
+		
 		textView = (TextView) findViewById(R.id.mainTextView);
 
+		if(sharedPreferences.getInt("isUpdated", 0) == 0)
+		{
+			editor.putInt("isUpdated", 1);
+			editor.commit();
+			Intent startint = new Intent(ctx, updated.class);
+			startActivity(startint);
+		}
+		
 		try
 		{
 			if(!new File(filepath+filename).exists())
@@ -121,6 +109,30 @@ public class MainActivity extends Activity
 			}
 			isalpha = 0;
 		}
+		
+		if(!sharedPreferences.getString("password", "").equals(""))
+		{
+			if(sharedPreferences.getString("passtext", "").equals("  再次输入  ")||sharedPreferences.getString("passtext", "").equals("  设定新密码  ")||sharedPreferences.getString("passtext", "").equals("  输入原密码  ")||sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
+			{
+				pass = 1;
+				editor.putString("passtext", "输入密码");
+				editor.commit();
+				Intent passwordint = new Intent(ctx, passwordAct.class);
+				startActivity(passwordint);
+			}
+			else
+			{
+				pass = 0;
+				textView.setTextColor(Color.argb(255, 0, 0, 0));
+				Intent passwordint = new Intent(ctx, passwordAct.class);
+				startActivity(passwordint);
+			}
+		}
+		else
+		{
+			pass = 1;
+		}
+		
 		textView.setTextSize(sharedPreferences.getInt("bs", 14));
 		
 		textView.setClickable(true);

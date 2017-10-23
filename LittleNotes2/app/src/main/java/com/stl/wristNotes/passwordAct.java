@@ -6,6 +6,7 @@ import android.widget.*;
 import android.view.*;
 import android.content.*;
 import android.view.View.*;
+import android.graphics.*;
 
 public class passwordAct extends Activity
 {
@@ -101,6 +102,7 @@ public class passwordAct extends Activity
 							{
 								//Intent passint = new Intent(passwordAct.this,MainActivity.class);
 								MainActivity.pass = 1;
+								MainActivity.textView.setTextColor(Color.argb(255, MainActivity.light*8, MainActivity.light*8, MainActivity.light*8));
 								finish();
 							}
 							else

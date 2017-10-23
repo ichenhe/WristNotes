@@ -76,5 +76,9 @@
 		<activity
 			android:name="com.stl.wristNotes.donationAct">
 		</activity>
+		
+		<activity
+			android:name="com.stl.wristNotes.updated">	
+		</activity>
     </application>
 </manifest>
