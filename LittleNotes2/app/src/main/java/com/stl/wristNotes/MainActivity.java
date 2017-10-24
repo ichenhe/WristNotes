@@ -150,16 +150,7 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭") == "开启")
-					{
-						textView.setTextColor(Color.argb(0, 0, 0, 0));
-						isalpha = 1;
-					}
-					else if (pass == 0)
-					{
-						Intent passwordint = new Intent(ctx, passwordAct.class);
-						startActivity(passwordint);
-					}
+					textClick();
 				}
 			});
 
@@ -168,29 +159,48 @@ public class MainActivity extends Activity
 				@Override
 				public boolean onLongClick(View p1)
 				{
-					if (pass == 1)
-					{
-						if (isalpha == 0)
-						{
-							cho = 0;
-							Intent menuint = new Intent(ctx, menuAct.class);
-							startActivity(menuint);
-						}
-						else
-						{
-							textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-							isalpha = 0;
-						}
-					}
-					else
-					{
-						Intent passwordint = new Intent(ctx, passwordAct.class);
-						startActivity(passwordint);
-					}
+					textLongClick();
 					return true;
 				}
 			});
     }
+
+	public void textClick()
+	{
+		if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭") == "开启")
+		{
+			textView.setTextColor(Color.argb(0, 0, 0, 0));
+			isalpha = 1;
+		}
+		else if (pass == 0)
+		{
+			Intent passwordint = new Intent(ctx, passwordAct.class);
+			startActivity(passwordint);
+		}
+	}
+
+	public void textLongClick()
+	{
+		if (pass == 1)
+		{
+			if (isalpha == 0)
+			{
+				cho = 0;
+				Intent menuint = new Intent(ctx, menuAct.class);
+				startActivity(menuint);
+			}
+			else
+			{
+				textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+				isalpha = 0;
+			}
+		}
+		else
+		{
+			Intent passwordint = new Intent(ctx, passwordAct.class);
+			startActivity(passwordint);
+		}
+	}
 
 	public static String fileReader(String path) throws IOException
 	{
@@ -207,6 +217,21 @@ public class MainActivity extends Activity
 		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
 		return temp.toString();
     }
+
+	//挠挠
+	public boolean onSingleTapSidePanel(MotionEvent e)
+	{
+		//Toast.makeText(ctx, "挠挠单击！", Toast.LENGTH_SHORT).show();
+		textClick();
+		return false;
+	}
+	public boolean onLongPressSidePanel(MotionEvent e)
+	{
+		//Toast.makeText(ctx, "挠挠长按！", Toast.LENGTH_SHORT).show();
+		textLongClick();
+		return false;
+	}
+
 
 	private boolean isAdded = false; // 是否已增加悬浮窗
 	private static WindowManager wm;

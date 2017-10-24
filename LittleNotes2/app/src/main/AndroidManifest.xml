@@ -80,5 +80,9 @@
 		<activity
 			android:name="com.stl.wristNotes.updated">	
 		</activity>
+		
+		<activity
+			android:name="com.stl.wristNotes.ftpAct">	
+		</activity>
     </application>
 </manifest>

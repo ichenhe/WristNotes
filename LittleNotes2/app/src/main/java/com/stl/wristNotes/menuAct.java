@@ -61,7 +61,7 @@ public class menuAct extends Activity
 
 		if (MainActivity.cho == 0)
 		{
-			String[] menu_main = new String[] { "文档选择", "编辑文档", "显示设置", "偏好设置", "手表优化", "帮助", "关于" };
+			String[] menu_main = new String[] { "文档选择", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_main);
 			menutitle.setText("设置");
 		}
@@ -241,9 +241,10 @@ public class menuAct extends Activity
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
 						finish();
 					}
-					else if(s.equals("上下空出行数") || s.equals("左右空出像素数"))
+					else if(s.equals("FTP文件传输"))
 					{
-						Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！", Toast.LENGTH_LONG).show();
+						passint = new Intent(ctx, ftpAct.class);
+						startActivity(passint);
 					}
 				}
 			});

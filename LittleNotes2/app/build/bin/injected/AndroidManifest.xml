@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.stl.wristNotes"
-	android:versionCode="42"
-	android:versionName="1.14">
+	android:versionCode="43"
+	android:versionName="1.20">
 
 	<uses-sdk
 		android:minSdkVersion="21"
@@ -115,6 +115,11 @@
 
 		<activity
 			android:name="com.stl.wristNotes.updated">
+
+		</activity>
+
+		<activity
+			android:name="com.stl.wristNotes.ftpAct">
 
 		</activity>
 
