@@ -69,6 +69,7 @@ public final class R {
         public static final int seekbar=0x7f03000c;
         public static final int settile=0x7f03000d;
         public static final int start=0x7f03000e;
+        public static final int updated=0x7f03000f;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

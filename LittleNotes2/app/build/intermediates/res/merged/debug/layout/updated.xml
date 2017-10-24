@@ -11,25 +11,19 @@
 		android:gravity="center">
 
 		<TextView
-			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:paddingTop="30dp"
-			android:text="腕上小纸条\n 已升级至最新版！"
-			android:textSize="18sp"
-			android:textStyle="bold" />
-
-		<TextView
+			android:text="腕上小纸条\n已升级至最新版！"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
+			android:paddingTop="20dp"
 			android:gravity="center"
-			android:paddingTop="5dp"
-			android:text="应用持续更新，欢迎常来看看！" />
+			android:textStyle="bold"
+			android:textSize="18sp"/>
 
 		<ImageView
 			android:layout_height="100dp"
 			android:layout_width="100dp"
-			android:src="@drawable/icon"/>
+			android:src="@drawable/icon"
+			android:layout_marginTop="5dp"/>
 
 		<TextView
 			android:layout_height="wrap_content"

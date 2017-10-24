@@ -24,6 +24,10 @@
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
     },
     {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\updated.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\updated.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\patternlock.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\patternlock.xml"
     },
@@ -40,12 +44,12 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menu.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\seekbar.xml",
