@@ -24,9 +24,17 @@ public class ftpAct extends Activity
 	static {
 		System.setProperty("java.net.preferIPv6Addresses", "false");
 	}
+
 	Context ctx = this;
 	private FtpServer mFtpServer;
+
+	EditText ftpedit1;
+	EditText ftpedit2;
+	EditText ftpedit3;
+	TextView ftpText1;
+	TextView ftpText2;
 	ToggleButton togglebutton;
+
 	boolean isWifi = false;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -36,9 +44,13 @@ public class ftpAct extends Activity
 
 		isWifi = isWifi(ctx);
 
-		TextView ftpText1 = (TextView) findViewById(R.id.ftpTextView1);//上
-		TextView ftpText2 = (TextView) findViewById(R.id.ftpTextView2);//下
+		ftpedit1 = (EditText) findViewById(R.id.ftpEditText1);//用户名
+		ftpedit2 = (EditText) findViewById(R.id.ftpEditText2);//根目录
+		ftpedit3 = (EditText) findViewById(R.id.ftpEditText3);//端口
+		ftpText1 = (TextView) findViewById(R.id.ftpTextView1);//上
+		ftpText2 = (TextView) findViewById(R.id.ftpTextView2);//下
 
+		ftpedit2.setText(Environment.getExternalStorageDirectory().toString());
 		if (isWifi) ftpText1.setText("Wi-Fi已连接，请确保两设备在同一Wi-Fi下");
 
 		togglebutton = (ToggleButton) findViewById(R.id.ftpToggleButton1);
@@ -47,23 +59,32 @@ public class ftpAct extends Activity
 				{
 					if (togglebutton.isChecked())
 					{
-						/*FtpServerFactory serverFactory = new FtpServerFactory();
-						 BaseUser user = new BaseUser();
-						 user.setName("anonymous");
-						 user.setHomeDirectory(Environment.getExternalStorageDirectory().toString());
-						 List<Authority> authorities = new ArrayList<Authority>();
-						 authorities.add(new WritePermission());
-						 user.setAuthorities(authorities);
-						 serverFactory.getUserManager().save(user);
-						 FtpServer server = serverFactory.createServer();
-						 server.start();
-						 FtpServerFactory serverFactory = new FtpServerFactory();
-						 FtpServer server = serverFactory.createServer();
-						 server.start();*/
-						startFtpServer();
-					}   
+						if (isWifi)
+						{
+							if (!new File(ftpedit2.getText().toString()).exists()) 
+							{
+								Toast.makeText(ctx, "文件夹路径不存在！！请检查后重试", Toast.LENGTH_SHORT).show();
+								togglebutton.setChecked(false);
+							}
+							else if (!new File(ftpedit2.getText().toString()).isDirectory())
+							{
+								Toast.makeText(ctx, "请输入一个文件夹路径(默认就可以)", Toast.LENGTH_SHORT).show();
+								togglebutton.setChecked(false);
+							}
+							else
+							{
+								startFtpServer();
+								ftpText2.setText("FTP已开启！\n用户名为"+ftpedit1.getText().toString()+"\n模式为被动\n电脑端请在文件浏览器中输入\"ftp://"+"");
+							}
+						}
+						else
+						{
+							Toast.makeText(ctx, "Wi-Fi未链接，请先连接Wi-Fi！", Toast.LENGTH_LONG).show();
+							togglebutton.setChecked(false);
+						}
+					}
 					else
-					{              
+					{
 						onDestroy();
 					}      
 				}});
@@ -74,73 +95,29 @@ public class ftpAct extends Activity
 	{
 		FtpServerFactory serverFactory = new FtpServerFactory();
 
+		BaseUser user = new BaseUser();
+		user.setName(ftpedit1.getText().toString());
+		user.setHomeDirectory(Environment.getExternalStorageDirectory().toString());
+		List<Authority> authorities = new ArrayList<Authority>();
+		authorities.add(new WritePermission());
+		user.setAuthorities(authorities);
+
 		ListenerFactory factory = new ListenerFactory();
 
 		// set the port of the listener
-		int port = 2221;
-		factory.setPort(port);
+		factory.setPort(Integer.parseInt(ftpedit3.getText().toString()));
 
-		FIleUtils fu = new FIleUtils(ctxt);
-        try
-		{
-			File file = new File(path);
-			if (!file.isDirectory())
-			{
-				file.mkdir();
-			}
-            fu.createFile(path + "ftpserver.properties");
-            String str = "" +
-				"ftpserver.user.admin.username=admin\n" +
-				"ftpserver.user.admin.userpassword=bff4d7685c1475b68c016c478a728b6e\n" +
-				"ftpserver.user.admin.homedirectory=/mnt/sdcard\n" +
-				"ftpserver.user.admin.enableflag=true\n" +  
-				"ftpserver.user.admin.writepermission=true\n" +
-				"ftpserver.user.admin.maxloginnumber=250\n" +
-				"ftpserver.user.admin.maxloginperip=250\n" +
-				"ftpserver.user.admin.idletime=300\n" +
-				"ftpserver.user.admin.uploadrate=10000\n" +  
-				"ftpserver.user.admin.downloadrate=10000\n";
 
-            fu.writeFile(str, path + "ftpserver.properties");
-
-            File files=new File(path + "ftpserver.properties");
-
-            PropertiesUserManagerFactory usermanagerfactory = new PropertiesUserManagerFactory();
-            usermanagerfactory.setFile(files);
-            serverFactory.setUserManager(usermanagerfactory.createUserManager());}
 		// replace the default listener
 		serverFactory.addListener("default", factory.createListener());
-
-
-		// start the server
-		FtpServer server = serverFactory.createServer();
-		this.mFtpServer = server;
 		try
 		{
+			serverFactory.getUserManager().save(user);
+			FtpServer server = serverFactory.createServer();
 			server.start();
 		}
 		catch (FtpException e)
-		{
-			e.printStackTrace();
-		}
-		/*FtpServerFactory serverFactory = new FtpServerFactory();
-
-		 BaseUser user = new BaseUser();
-		 user.setName("anonymous");
-		 user.setHomeDirectory(Environment.getExternalStorageDirectory().toString());
-
-		 List<Authority> authorities = new ArrayList<Authority>();
-		 authorities.add(new WritePermission());
-
-		 user.setAuthorities(authorities);
-		 try
-		 {
-		 serverFactory.getUserManager().save(user);
-		 FtpServer server = serverFactory.createServer();
-		 server.start();
-		 }
-		 catch (FtpException e)
-		 {}*/
+		{}
 
 	}
 

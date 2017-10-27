@@ -25,7 +25,7 @@
 			android:paddingRight="20dp"
 			android:paddingTop="10dp"
 			android:paddingBottom="5dp"
-			android:text="Wi-Fi未链接，请先连接Wi-Fi"/>
+			android:text="Wi-Fi未链接，请先连接 Wi-Fi"/>
 
 		<LinearLayout
 			android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
 
 			<TextView
 				android:layout_height="wrap_content"
-				android:text="根目录"
+				android:text="用户名"
 				android:layout_width="wrap_content"
 				android:textSize="16sp"
 				android:layout_marginRight="5dp"/>
@@ -62,7 +62,7 @@
 
 			<TextView
 				android:layout_height="wrap_content"
-				android:text="端口"
+				android:text="根目录"
 				android:layout_width="wrap_content"
 				android:textSize="16sp"
 				android:layout_marginRight="5dp"/>
@@ -72,6 +72,30 @@
 				android:ems="10"
 				android:layout_width="match_parent"
 				android:id="@+id/ftpEditText2"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:paddingRight="20dp"
+			android:paddingLeft="20dp"
+			android:layout_marginBottom="5dp"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="端口"
+				android:layout_width="wrap_content"
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:id="@+id/ftpEditText3"/>
 
 		</LinearLayout>
 
@@ -104,7 +128,7 @@
 			android:paddingLeft="20dp"
 			android:textSize="18sp"
 			android:text="如无特殊需要无需修改上方选项，点击开关打开FTP"
-			android:paddingBottom="35dp"/>
+			android:paddingBottom="40dp"/>
 
 	</LinearLayout>
 
