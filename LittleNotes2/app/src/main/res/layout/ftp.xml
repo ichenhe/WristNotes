@@ -23,7 +23,7 @@
 			android:id="@+id/ftpTextView1"
 			android:paddingLeft="20dp"
 			android:paddingRight="20dp"
-			android:paddingTop="5dp"
+			android:paddingTop="10dp"
 			android:paddingBottom="5dp"
 			android:text="Wi-Fi未链接，请先连接Wi-Fi"/>
 
@@ -40,7 +40,8 @@
 				android:layout_height="wrap_content"
 				android:text="根目录"
 				android:layout_width="wrap_content"
-				android:textSize="16sp"/>
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
 
 			<EditText
 				android:layout_height="wrap_content"
@@ -63,7 +64,8 @@
 				android:layout_height="wrap_content"
 				android:text="端口"
 				android:layout_width="wrap_content"
-				android:textSize="16sp"/>
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
 
 			<EditText
 				android:layout_height="wrap_content"
@@ -83,7 +85,8 @@
 				android:layout_height="wrap_content"
 				android:text="FTP开关"
 				android:layout_width="wrap_content"
-				android:textSize="18sp"/>
+				android:textSize="18sp"
+				android:layout_marginRight="5dp"/>
 
 			<ToggleButton
 				android:layout_height="wrap_content"
@@ -100,7 +103,8 @@
 			android:paddingRight="20dp"
 			android:paddingLeft="20dp"
 			android:textSize="18sp"
-			android:text="如无特殊需要无需修改上方选项，点击开关打开FTP"/>
+			android:text="如无特殊需要无需修改上方选项，点击开关打开FTP"
+			android:paddingBottom="35dp"/>
 
 	</LinearLayout>
 
