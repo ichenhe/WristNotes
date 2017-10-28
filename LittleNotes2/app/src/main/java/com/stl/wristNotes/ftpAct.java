@@ -78,7 +78,7 @@ public class ftpAct extends Activity
 								else
 								{
 									startFtpServer();
-									ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，模式为被动\n电脑端请在文件浏览器中输入\"ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + "\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp");
+									ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，模式为被动\n\n电脑端请在文件浏览器中输入\"ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + "\"\n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp");
 								}
 							}
 							else

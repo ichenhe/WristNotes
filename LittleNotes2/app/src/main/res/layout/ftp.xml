@@ -48,7 +48,8 @@
 				android:ems="10"
 				android:layout_width="match_parent"
 				android:id="@+id/ftpEditText1"
-				android:text="user"/>
+				android:text="user"
+				android:textSize="16sp"/>
 
 		</LinearLayout>
 
@@ -72,7 +73,8 @@
 				android:layout_height="wrap_content"
 				android:ems="10"
 				android:layout_width="match_parent"
-				android:id="@+id/ftpEditText2"/>
+				android:id="@+id/ftpEditText2"
+				android:textSize="16sp"/>
 
 		</LinearLayout>
 
@@ -97,7 +99,8 @@
 				android:ems="10"
 				android:layout_width="match_parent"
 				android:id="@+id/ftpEditText3"
-				android:text="2221"/>
+				android:text="2221"
+				android:textSize="16sp"/>
 
 		</LinearLayout>
 
@@ -128,7 +131,7 @@
 			android:paddingTop="5dp"
 			android:paddingRight="20dp"
 			android:paddingLeft="20dp"
-			android:textSize="18sp"
+			android:textSize="16sp"
 			android:text="如无特殊需要无需修改上方选项，点击开关打开FTP"
 			android:paddingBottom="40dp"/>
 
