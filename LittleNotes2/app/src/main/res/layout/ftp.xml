@@ -47,7 +47,8 @@
 				android:layout_height="wrap_content"
 				android:ems="10"
 				android:layout_width="match_parent"
-				android:id="@+id/ftpEditText1"/>
+				android:id="@+id/ftpEditText1"
+				android:text="user"/>
 
 		</LinearLayout>
 
@@ -95,7 +96,8 @@
 				android:layout_height="wrap_content"
 				android:ems="10"
 				android:layout_width="match_parent"
-				android:id="@+id/ftpEditText3"/>
+				android:id="@+id/ftpEditText3"
+				android:text="2221"/>
 
 		</LinearLayout>
 

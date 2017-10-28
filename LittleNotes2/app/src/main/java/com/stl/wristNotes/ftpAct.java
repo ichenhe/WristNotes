@@ -17,6 +17,7 @@ import org.apache.ftpserver.ftplet.*;
 import org.apache.ftpserver.listener.*;
 import java.io.*;
 import org.apache.ftpserver.usermanager.*;
+import java.net.*;
 
 
 public class ftpAct extends Activity
@@ -40,6 +41,7 @@ public class ftpAct extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,  WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.ftp);
 
 		isWifi = isWifi(ctx);
@@ -59,34 +61,42 @@ public class ftpAct extends Activity
 				{
 					if (togglebutton.isChecked())
 					{
-						if (isWifi)
+						if (!(ftpedit1.getText().toString().equals("") || ftpedit2.getText().toString().equals("") || ftpedit3.getText().toString().equals("")))
 						{
-							if (!new File(ftpedit2.getText().toString()).exists()) 
+							if (isWifi)
 							{
-								Toast.makeText(ctx, "文件夹路径不存在！！请检查后重试", Toast.LENGTH_SHORT).show();
-								togglebutton.setChecked(false);
-							}
-							else if (!new File(ftpedit2.getText().toString()).isDirectory())
-							{
-								Toast.makeText(ctx, "请输入一个文件夹路径(默认就可以)", Toast.LENGTH_SHORT).show();
-								togglebutton.setChecked(false);
+								if (!new File(ftpedit2.getText().toString()).exists()) 
+								{
+									Toast.makeText(ctx, "文件夹路径不存在！！请检查后重试", Toast.LENGTH_SHORT).show();
+									togglebutton.setChecked(false);
+								}
+								else if (!new File(ftpedit2.getText().toString()).isDirectory())
+								{
+									Toast.makeText(ctx, "请输入一个文件夹路径(默认就可以)", Toast.LENGTH_SHORT).show();
+									togglebutton.setChecked(false);
+								}
+								else
+								{
+									startFtpServer();
+									ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，模式为被动\n电脑端请在文件浏览器中输入\"ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + "\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp");
+								}
 							}
 							else
 							{
-								startFtpServer();
-								ftpText2.setText("FTP已开启！\n用户名为"+ftpedit1.getText().toString()+"\n模式为被动\n电脑端请在文件浏览器中输入\"ftp://"+"");
+								Toast.makeText(ctx, "Wi-Fi未链接，请先连接Wi-Fi！", Toast.LENGTH_LONG).show();
+								togglebutton.setChecked(false);
 							}
 						}
 						else
 						{
-							Toast.makeText(ctx, "Wi-Fi未链接，请先连接Wi-Fi！", Toast.LENGTH_LONG).show();
+							Toast.makeText(ctx, "请将信息填写完整！", Toast.LENGTH_LONG).show();
 							togglebutton.setChecked(false);
 						}
 					}
 					else
 					{
 						onDestroy();
-					}      
+					}
 				}});
 
 	}
@@ -142,5 +152,40 @@ public class ftpAct extends Activity
 			return true;
 		}
 		return false;
+	}
+
+	public static String getHostIP()
+	{
+		String hostIp = null;
+		try
+		{
+			Enumeration nis = NetworkInterface.getNetworkInterfaces();
+			InetAddress ia = null;
+			while (nis.hasMoreElements())
+			{
+				NetworkInterface ni = (NetworkInterface) nis.nextElement();
+				Enumeration<InetAddress> ias = ni.getInetAddresses();
+				while (ias.hasMoreElements())
+				{
+					ia = ias.nextElement();
+					if (ia instanceof Inet6Address)
+					{
+						continue;
+						// skip ipv6
+					}
+					String ip = ia.getHostAddress();
+					if (!"127.0.0.1".equals(ip))
+					{
+						hostIp = ia.getHostAddress();
+						break;
+					}
+				}
+			}
+		}
+		catch (SocketException e)
+		{
+			e.printStackTrace();
+		}
+		return hostIp;
 	}
 }
