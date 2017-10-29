@@ -96,6 +96,7 @@ public class ftpAct extends Activity
 					else
 					{
 						onDestroy();
+						ftpText2.setText("如无特殊需要无需修改上方选项，点击开关打开FTP");
 					}
 				}});
 
