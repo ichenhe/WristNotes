@@ -33,7 +33,7 @@
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="当前版本：1.14\n更新内容：\n◆增加更新日志和更新欢迎界面\n◆优化应用逻辑\n◆修复若干BUG"
+			android:text="当前版本：1.20\n更新内容：\n◆增加FTP，可以用电脑或手机向手表传文件\n◆可以用挠挠控制文字隐藏显示等(Ticwatch)\n◆修复若干BUG"
 			android:layout_width="wrap_content"
 			android:padding="15dp"/>
 
