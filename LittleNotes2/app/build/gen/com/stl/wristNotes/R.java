@@ -14,20 +14,18 @@ public final class R {
         public static final int gray=0x7f040000;
     }
     public static final class drawable {
-        public static final int clr_normal=0x7f02000a;
-        public static final int clr_pressed=0x7f02000b;
+        public static final int clr_normal=0x7f020008;
+        public static final int clr_pressed=0x7f020009;
         public static final int donation=0x7f020000;
         public static final int ic_account_minus=0x7f020001;
         public static final int ic_launcher=0x7f020002;
         public static final int icon=0x7f020003;
-        public static final int icon_1=0x7f020004;
-        public static final int icon_2=0x7f020005;
-        public static final int list_normal=0x7f02000c;
-        public static final int list_pressed=0x7f02000d;
-        public static final int logo=0x7f020006;
-        public static final int passbutton=0x7f020007;
-        public static final int passlist=0x7f020008;
-        public static final int qrcode=0x7f020009;
+        public static final int list_normal=0x7f02000a;
+        public static final int list_pressed=0x7f02000b;
+        public static final int logo=0x7f020004;
+        public static final int passbutton=0x7f020005;
+        public static final int passlist=0x7f020006;
+        public static final int qrcode=0x7f020007;
     }
     public static final class id {
         public static final int editfileButton1=0x7f070002;
