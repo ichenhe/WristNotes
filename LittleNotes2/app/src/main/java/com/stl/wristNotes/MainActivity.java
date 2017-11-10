@@ -167,7 +167,7 @@ public class MainActivity extends Activity
 
 	public void textClick()
 	{
-		if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭") == "开启")
+		if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
 		{
 			textView.setTextColor(Color.argb(0, 0, 0, 0));
 			isalpha = 1;
