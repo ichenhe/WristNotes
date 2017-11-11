@@ -57,6 +57,15 @@ public class MainActivity extends Activity
 		light = sharedPreferences.getInt("light", 6);
 		startHideText = sharedPreferences.getString("startHideText", "关闭");
 
+		Intent intent = getIntent();
+		String action = intent.getAction();
+		if (intent.ACTION_VIEW.equals(action))
+		{
+			Toast.makeText(ctx, intent.getDataString(), Toast.LENGTH_LONG).show();
+			filepath = intent.getDataString();
+			filename = "";
+		}
+
 		//createFloatView()
 
 		textView = (TextView) findViewById(R.id.mainTextView);
@@ -101,7 +110,7 @@ public class MainActivity extends Activity
 			Toast.makeText(ctx, "错误！" + e.toString(), Toast.LENGTH_SHORT).show();
 		}
 
-		if (sharedPreferences.getString("startHideText", "关闭") == "开启")
+		if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
 		{
 			textView.setTextColor(Color.argb(0, 0, 0, 0));
 			isalpha = 1;
