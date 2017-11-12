@@ -118,7 +118,7 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("显示设置") || s.equals("偏好设置") || s.equals("手表优化"))
 					{
-						MainActivity.cho = position;
+						MainActivity.cho = position - 1;
 						menuintent = new Intent(ctx, menuAct.class);
 						startActivity(menuintent);
 						finish();
