@@ -22,7 +22,7 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:padding="10dp"
-			android:text="如果你认为这个应用很好用或帮到了你，就请捐助下吧！感谢您的支持！"
+			android:text="如果你认为这个应用很好用或帮到了你，就请捐助一两元钱吧！"
 			android:textSize="16sp"/>
 
 		<ImageView

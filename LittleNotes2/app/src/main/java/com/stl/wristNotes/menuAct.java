@@ -61,7 +61,7 @@ public class menuAct extends Activity
 
 		if (MainActivity.cho == 0)
 		{
-			String[] menu_main = new String[] { "文档选择", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
+			String[] menu_main = new String[] { "文档选择", "我的小说", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_main);
 			menutitle.setText("设置");
 		}
@@ -144,13 +144,13 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("5") || s.equals("6"))
 					{
-						MainActivity.textView.setTextColor(Color.argb(255, (1 + Integer.parseInt(s)) * 8, (1 + Integer.parseInt(s)) * 8, (1 + Integer.parseInt(s)) * 8));
+						MainActivity.textView.setTextColor(Color.argb(255, (1 + Integer.parseInt(s)) * 12, (1 + Integer.parseInt(s)) * 12, (1 + Integer.parseInt(s)) * 12));
 						editor.putInt("light", 1 + Integer.parseInt(s));
 						editor.commit();
 						Toast.makeText(ctx, "已调整亮度", Toast.LENGTH_SHORT).show();
 						finish();
 					}
-					else if (s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16") || s.equals("18") || s.equals("20"))
+					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16") || s.equals("18") || s.equals("20"))
 					{
 						MainActivity.textView.setTextSize(Integer.parseInt(s));
 						editor.putInt("bs", Integer.parseInt(s));
@@ -245,6 +245,10 @@ public class menuAct extends Activity
 					{
 						passint = new Intent(ctx, ftpAct.class);
 						startActivity(passint);
+					}
+					else if(s.equals("我的小说"))
+					{
+						Toast.makeText(ctx, "还未制作完成，请期待下一版！", Toast.LENGTH_LONG).show();
 					}
 				}
 			});

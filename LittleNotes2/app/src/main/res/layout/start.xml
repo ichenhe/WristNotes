@@ -40,7 +40,7 @@
 			<Button
 				android:layout_height="wrap_content"
 				android:text="创建"
-				android:layout_width="52dp"
+				android:layout_width="55dp"
 				android:textSize="14sp"
 				android:onClick="startbutton2"
 				android:textColor="#000000"/>

@@ -24,7 +24,7 @@ public class helpAct extends Activity
 		else if(MainActivity.helpor == 3)
 		{
 			helptitel.setText("更新日志");
-			helptext.setText("v1.20\n◆增加FTP，可以用电脑或手机向手表传文件\n◆可以用挠挠控制文字隐藏显示等(Ticwatch)\n◆修复若干BUG\n\nv1.14\n◆增加更新日志和更新欢迎界面\n◆优化应用逻辑\n◆修复若干BUG");
+			helptext.setText("v1.20\n◆增加FTP功能，可以用电脑或手机向手表传文件\n◆可以用本应用直接从其它文件管理器中打开文件，或直接打开蓝牙传来的文件\n◆可以用挠挠控制文字隐藏显示等（限Ticwatch）\n◆优化应用界面\n◆修复一大堆BUG\n\nv1.14\n◆增加更新日志和更新欢迎界面\n◆优化应用逻辑\n◆修复若干BUG");
 			MainActivity.helpor = 1;
 		}
 	}

@@ -10,6 +10,7 @@ import android.widget.*;
 import java.io.*;
 import android.content.pm.*;
 import android.content.pm.PackageManager.*;
+import java.net.*;
 
 public class MainActivity extends Activity 
 {
@@ -61,9 +62,27 @@ public class MainActivity extends Activity
 		String action = intent.getAction();
 		if (intent.ACTION_VIEW.equals(action))
 		{
-			Toast.makeText(ctx, intent.getDataString(), Toast.LENGTH_LONG).show();
-			filepath = intent.getDataString();
-			filename = "";
+			filepath = intent.getDataString()/*.replaceAll("%(?![0-9a-fA-F]{2})", "%25")*/;
+			try
+			{
+				filepath = URLDecoder.decode(filepath, "UTF-8");
+			}
+			catch (UnsupportedEncodingException e)
+			{
+				Toast.makeText(ctx, "路径解码错误。。我也不知道怎么办", Toast.LENGTH_LONG).show();
+			}
+			String[] filet1 = filepath.split("/");
+			filepath = "/";
+			for (int i = 3; i < filet1.length - 1; i++)
+			{
+				filepath += filet1[i] + "/";
+			}
+			filename = filet1[filet1.length - 1];
+
+			editor.putString("filename", filename);
+			editor.putString("filepath", filepath);
+			editor.commit();
+			Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
 		}
 
 		//createFloatView()
