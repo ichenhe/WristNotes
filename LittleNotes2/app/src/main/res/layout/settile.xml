@@ -19,7 +19,7 @@
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="有意见或建议？\n想学习编程或其它知识？\n想看一群基佬的恩♂爱日常？\n欢迎加入作者常驻的技术交♂流群！\nQQ群号：680497357"
+			android:text="有意见或建议？\n想反馈BUG？\n欢迎加入作者常驻的产品交流群！\nQQ群号：287474030"
 			android:layout_width="wrap_content"
 			android:gravity="center"
 			android:padding="10dp"
