@@ -61,7 +61,7 @@ public class menuAct extends Activity
 
 		if (MainActivity.cho == 0)
 		{
-			String[] menu_main = new String[] { "文档选择", "我的小说", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
+			String[] menu_main = new String[] { "打开文档", "我的小说", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_main);
 			menutitle.setText("设置");
 		}
@@ -103,7 +103,7 @@ public class menuAct extends Activity
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
 					String s =(String) l.getItemAtPosition(position);
-					if (s.equals("文档选择"))
+					if (s.equals("打开文档"))
 					{
 						MainActivity.filewillpath = "";
 						menuintent = new Intent(ctx, fileselectAct.class);
