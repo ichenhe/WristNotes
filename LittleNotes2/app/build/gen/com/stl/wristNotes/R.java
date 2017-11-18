@@ -56,6 +56,7 @@ public final class R {
         public static final int passwordText=0x7f070017;
         public static final int pattern_lock_view=0x7f07001a;
         public static final int startEdit=0x7f07001b;
+        public static final int startbutt=0x7f07001c;
     }
     public static final class layout {
         public static final int about=0x7f030000;
