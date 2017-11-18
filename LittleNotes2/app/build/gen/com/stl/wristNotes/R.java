@@ -47,16 +47,18 @@ public final class R {
         public static final int inputButton=0x7f070012;
         public static final int inputEdit=0x7f070011;
         public static final int inputText=0x7f070010;
-        public static final int mainTextView=0x7f070013;
-        public static final int menuList=0x7f070015;
-        public static final int menuText=0x7f070014;
-        public static final int menulistText=0x7f070016;
-        public static final int passwordButton=0x7f070019;
-        public static final int passwordEdit=0x7f070018;
-        public static final int passwordText=0x7f070017;
-        public static final int pattern_lock_view=0x7f07001a;
-        public static final int startEdit=0x7f07001b;
-        public static final int startbutt=0x7f07001c;
+        public static final int mainButtonLeft=0x7f070013;
+        public static final int mainButtonRight=0x7f070015;
+        public static final int mainTextView=0x7f070014;
+        public static final int menuList=0x7f070017;
+        public static final int menuText=0x7f070016;
+        public static final int menulistText=0x7f070018;
+        public static final int passwordButton=0x7f07001b;
+        public static final int passwordEdit=0x7f07001a;
+        public static final int passwordText=0x7f070019;
+        public static final int pattern_lock_view=0x7f07001c;
+        public static final int startEdit=0x7f07001d;
+        public static final int startbutt=0x7f07001e;
     }
     public static final class layout {
         public static final int about=0x7f030000;

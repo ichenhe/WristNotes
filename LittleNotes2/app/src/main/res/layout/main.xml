@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:gravity="top|left"
-	android:layout_gravity="top|left"
-	android:background="#000000">
+	android:layout_width="match_parent"
+	android:orientation="horizontal">
 
-	<TextView
+	<Button
+		android:layout_height="match_parent"
+		android:layout_width="28dp"
+		android:id="@+id/mainButtonLeft"/>
+
+	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:id="@+id/mainTextView"
-		android:paddingTop="50dp"
-		android:paddingBottom="50dp"
-		android:paddingLeft="25dp"
-		android:paddingRight="25dp"/>
+		android:gravity="top|left"
+		android:layout_weight="1.0"
+		android:layout_marginBottom="0dp">
 
-</ScrollView>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/mainTextView"
+			android:paddingTop="50dp"
+			android:paddingBottom="50dp"/>
+
+	</ScrollView>
+
+	<Button
+		android:layout_height="match_parent"
+		android:layout_width="28dp"
+		android:id="@+id/mainButtonRight"/>
+
+</LinearLayout>
+
