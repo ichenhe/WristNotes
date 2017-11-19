@@ -3,12 +3,15 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="match_parent"
 	android:layout_width="match_parent"
-	android:orientation="horizontal">
+	android:orientation="horizontal"
+	android:background="#000000">
 
 	<Button
-		android:layout_height="match_parent"
-		android:layout_width="28dp"
-		android:id="@+id/mainButtonLeft"/>
+		android:layout_height="wrap_content"
+		android:layout_width="30dp"
+		android:id="@+id/mainButtonLeft"
+		android:text="◀"
+		android:layout_gravity="center"/>
 
 	<ScrollView
 		android:layout_width="match_parent"
@@ -17,19 +20,37 @@
 		android:layout_weight="1.0"
 		android:layout_marginBottom="0dp">
 
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:id="@+id/mainTextView"
-			android:paddingTop="50dp"
-			android:paddingBottom="50dp"/>
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_height="45dp"
+				android:text="23:17\n1/366  66%"
+				android:layout_width="match_parent"
+				android:gravity="bottom|center"
+				android:paddingBottom="5dp"
+				android:textStyle="bold"
+				android:textColor="#969696"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/mainTextView"
+				android:paddingBottom="50dp"
+				android:gravity="left|center_horizontal"/>
+
+		</LinearLayout>
 
 	</ScrollView>
 
 	<Button
-		android:layout_height="match_parent"
-		android:layout_width="28dp"
-		android:id="@+id/mainButtonRight"/>
+		android:layout_height="wrap_content"
+		android:layout_width="30dp"
+		android:id="@+id/mainButtonRight"
+		android:text="▶"
+		android:layout_gravity="center"/>
 
 </LinearLayout>
 

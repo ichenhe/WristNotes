@@ -58,6 +58,7 @@ public class MainActivity extends Activity
 		light = sharedPreferences.getInt("light", 6);
 		startHideText = sharedPreferences.getString("startHideText", "关闭");
 
+		//setVisibility(View.INVISIBLE);
 		Intent intent = getIntent();
 		String action = intent.getAction();
 		if (intent.ACTION_VIEW.equals(action))
@@ -191,6 +192,8 @@ public class MainActivity extends Activity
 					return true;
 				}
 			});
+			
+		
     }
 
 	public void textClick()
@@ -241,6 +244,20 @@ public class MainActivity extends Activity
             //Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
 			temp.append(temp1 + "\n");
         }
+        bReader.close();
+		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+		return temp.toString();
+    }
+	
+	public static String novelReader(String path, int page) throws IOException
+	{
+        FileReader reader = new FileReader(path);
+        BufferedReader bReader = new BufferedReader(reader);
+		StringBuffer temp = new StringBuffer();
+		bReader.skip(page*500);
+		char[] ch = new char[500];
+		bReader.read(ch, 0, 500);
+		for(char b : ch) temp.append(b);
         bReader.close();
 		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
 		return temp.toString();

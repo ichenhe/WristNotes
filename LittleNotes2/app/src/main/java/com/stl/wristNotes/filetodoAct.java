@@ -21,7 +21,7 @@ public class filetodoAct extends Activity
 		TextView title = (TextView) findViewById(R.id.filedoText);
 		ListView listView = (ListView) findViewById(R.id.filedoList);
 		
-		String[] todo = new String[] { "用隐私模式打开", "打开为...", "重命名", "分享", "删除", "属性" };
+		String[] todo = new String[] { "用隐私模式打开", "用小说模式打开", "打开为...", "重命名", "分享", "删除", "属性" };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, todo);
 		title.setText(MainActivity.filedofile);
 		listView.setAdapter(adapter);
@@ -46,9 +46,15 @@ public class filetodoAct extends Activity
 							Toast.makeText(ctx, "打开文件错误！" + e.toString(), Toast.LENGTH_SHORT).show();
 						}
 					}
-					else if(s.equals("mm"))
+					else if(s.equals("用小说模式打开"))
 					{
-						
+						try
+						{
+							MainActivity.textView.setText(MainActivity.novelReader(MainActivity.filedopath, 0));
+							Toast.makeText(ctx, "成功打开小说:" + s, Toast.LENGTH_SHORT);
+						}
+						catch (IOException e)
+						{}
 					}
 					else
 					{

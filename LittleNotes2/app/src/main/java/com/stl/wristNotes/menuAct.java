@@ -61,7 +61,7 @@ public class menuAct extends Activity
 
 		if (MainActivity.cho == 0)
 		{
-			String[] menu_main = new String[] { "打开文档", "我的小说", "编辑文档", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
+			String[] menu_main = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_main);
 			menutitle.setText("设置");
 		}
@@ -73,7 +73,7 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 2)
 		{
-			String[] menu_display = new String[] { "调整亮度：" + (sharedPreferences.getInt("light", 6) - 1), "字号选择：" + sharedPreferences.getInt("bs", 14) };
+			String[] menu_display = new String[] { "调整亮度：" + (sharedPreferences.getInt("light", 6) - 1), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_display);
 			menutitle.setText("显示设置");
 		}
