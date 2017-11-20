@@ -42,6 +42,9 @@ public class MainActivity extends Activity
 	int isalpha = 0;
 	public static int light;
 	public static TextView textView;
+	public static Button mainLeft;
+	public static Button mainRight;
+	public static TextView mainHint;
 	public static int cho = 0;
 	String startHideText;
     @Override
@@ -192,6 +195,34 @@ public class MainActivity extends Activity
 					return true;
 				}
 			});
+
+		mainLeft = (Button) findViewById(R.id.mainButtonLeft);
+		mainLeft.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View p1)
+			{
+
+			}
+		});
+
+		mainRight = (Button) findViewById(R.id.mainButtonRight);
+		mainRight.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View p1)
+			{
+
+			}
+		});
+
+		mainHint = (TextView) findViewById(R.id.mainHint);
+		mainHint.setClickable(true);
+		mainHint.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View p1)
+			{
+
+			}
+		});
 			
 		
     }
