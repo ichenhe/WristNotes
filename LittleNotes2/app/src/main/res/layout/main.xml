@@ -9,6 +9,7 @@
 
 	<Button
 		android:id="@+id/mainButtonLeft"
+		style="@android:style/Widget.DeviceDefault.Button"
 		android:layout_width="30dp"
 		android:layout_height="60dp"
 		android:layout_gravity="center"

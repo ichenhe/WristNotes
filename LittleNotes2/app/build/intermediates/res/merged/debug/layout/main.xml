@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_height="match_parent"
-	android:gravity="top|left"
-	android:layout_gravity="top|left"
+	android:layout_width="match_parent"
+	android:orientation="horizontal"
 	android:background="#000000">
 
-	<TextView
+	<Button
+		android:id="@+id/mainButtonLeft"
+		android:layout_width="30dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:background="@color/gray"
+		android:text="◀"
+		android:textSize="14sp"
+		android:textStyle="bold" />
+
+	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:id="@+id/mainTextView"
-		android:paddingTop="50dp"
-		android:paddingBottom="50dp"
-		android:paddingLeft="25dp"
-		android:paddingRight="25dp"/>
+		android:gravity="top|left"
+		android:layout_weight="1.0"
+		android:layout_marginBottom="0dp">
 
-</ScrollView>
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/mainHint"
+				android:layout_width="match_parent"
+				android:layout_height="45dp"
+				android:gravity="bottom|center"
+				android:paddingBottom="5dp"
+				android:text="23:17\n1/366  66%"
+				android:textColor="#969696"
+				android:textStyle="bold" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/mainTextView"
+				android:paddingBottom="50dp"
+				android:gravity="left|center_horizontal"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<Button
+		android:id="@+id/mainButtonRight"
+		android:layout_width="30dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:background="@color/gray"
+		android:text="▶"
+		android:textStyle="bold" />
+
+</LinearLayout>
+
