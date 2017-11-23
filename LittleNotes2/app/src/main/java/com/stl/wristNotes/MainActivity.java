@@ -15,7 +15,8 @@ import android.content.pm.PackageManager.*;
 
 import java.net.*;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity
+{
     //filename:最后打开文件名:...0学习文档
     //filepath:最后打开文件路径:1.txt
     //light:亮度:3
@@ -49,9 +50,13 @@ public class MainActivity extends Activity {
     public static TextView mainHint;
     public static int cho = 0;
     String startHideText;
+    public static int mode = 0;
+    //0 普通
+    //1 小说
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
@@ -62,20 +67,25 @@ public class MainActivity extends Activity {
         filename = sharedPreferences.getString("filename", "1.txt");
         light = sharedPreferences.getInt("light", 6);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
+        mode = sharedPreferences.getInt("mode", 0);
 
         //setVisibility(View.INVISIBLE);
         Intent intent = getIntent();
         String action = intent.getAction();
-        if (intent.ACTION_VIEW.equals(action)) {
+        if (intent.ACTION_VIEW.equals(action))
+        {
             filepath = intent.getDataString()/*.replaceAll("%(?![0-9a-fA-F]{2})", "%25")*/;
-            try {
+            try
+            {
                 filepath = URLDecoder.decode(filepath, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
+            } catch (UnsupportedEncodingException e)
+            {
                 Toast.makeText(ctx, "路径解码错误。。我也不知道怎么办", Toast.LENGTH_LONG).show();
             }
             String[] filet1 = filepath.split("/");
             filepath = "/";
-            for (int i = 3; i < filet1.length - 1; i++) {
+            for (int i = 3; i < filet1.length - 1; i++)
+            {
                 filepath += filet1[i] + "/";
             }
             filename = filet1[filet1.length - 1];
@@ -91,105 +101,136 @@ public class MainActivity extends Activity {
         textView = (TextView) findViewById(R.id.mainTextView);
 
         PackageManager pm = ctx.getPackageManager();//context为当前Activity上下文
-        try {
+        try
+        {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
-            if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode) {
+            if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
+            {
                 editor.putInt("isUpdated", pi.versionCode);
                 editor.commit();
                 Intent startint = new Intent(ctx, updated.class);
                 startActivity(startint);
             }
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e)
+        {
         }
 
-        try {
-            if (!new File(filepath + filename).exists()) {
+        try
+        {
+            if (!new File(filepath + filename).exists())
+            {
                 textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
                 isalpha = 0;
-                if (!new File(filepath).exists()) {
+                if (!new File(filepath).exists())
+                {
                     Intent startint = new Intent(ctx, startAct.class);
                     startActivity(startint);
                     editor.putString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
                     editor.commit();
                 }
-            } else {
+            }
+            else
+            {
                 textView.setText(fileReader(filepath + filename));
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Toast.makeText(ctx, "错误！" + e.toString(), Toast.LENGTH_SHORT).show();
         }
 
-        if (sharedPreferences.getString("startHideText", "关闭").equals("开启")) {
+        if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
+        {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-        } else {
-            if (!new File(filepath + filename).exists()) {
+        }
+        else
+        {
+            if (!new File(filepath + filename).exists())
+            {
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
-            } else {
+            }
+            else
+            {
                 textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
             }
             isalpha = 0;
         }
 
-        if (!sharedPreferences.getString("password", "").equals("")) {
-            if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 ")) {
+        if (!sharedPreferences.getString("password", "").equals(""))
+        {
+            if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
+            {
                 pass = 1;
                 editor.putString("passtext", "输入密码");
                 editor.commit();
                 Intent passwordint = new Intent(ctx, passwordAct.class);
                 startActivity(passwordint);
-            } else {
+            }
+            else
+            {
                 pass = 0;
                 textView.setTextColor(Color.argb(255, 0, 0, 0));
                 Intent passwordint = new Intent(ctx, passwordAct.class);
                 startActivity(passwordint);
             }
-        } else {
+        }
+        else
+        {
             pass = 1;
         }
 
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
 
         textView.setClickable(true);
-        textView.setOnClickListener(new OnClickListener() {
+        textView.setOnClickListener(new OnClickListener()
+        {
 
             @Override
-            public void onClick(View p1) {
+            public void onClick(View p1)
+            {
                 textClick();
             }
         });
 
-        textView.setOnLongClickListener(new OnLongClickListener() {
+        textView.setOnLongClickListener(new OnLongClickListener()
+        {
 
             @Override
-            public boolean onLongClick(View p1) {
+            public boolean onLongClick(View p1)
+            {
                 textLongClick();
                 return true;
             }
         });
 
         mainLeft = (Button) findViewById(R.id.mainButtonLeft);
-        mainLeft.setOnClickListener(new OnClickListener() {
+        mainLeft.setOnClickListener(new OnClickListener()
+        {
             @Override
-            public void onClick(View p1) {
+            public void onClick(View p1)
+            {
 
             }
         });
 
         mainRight = (Button) findViewById(R.id.mainButtonRight);
-        mainRight.setOnClickListener(new OnClickListener() {
+        mainRight.setOnClickListener(new OnClickListener()
+        {
             @Override
-            public void onClick(View p1) {
+            public void onClick(View p1)
+            {
 
             }
         });
 
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainHint.setClickable(true);
-        mainHint.setOnClickListener(new OnClickListener() {
+        mainHint.setOnClickListener(new OnClickListener()
+        {
             @Override
-            public void onClick(View p1) {
+            public void onClick(View p1)
+            {
 
             }
         });
@@ -197,38 +238,51 @@ public class MainActivity extends Activity {
 
     }
 
-    public void textClick() {
-        if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启")) {
+    public void textClick()
+    {
+        if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
+        {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-        } else if (pass == 0) {
+        }
+        else if (pass == 0)
+        {
             Intent passwordint = new Intent(ctx, passwordAct.class);
             startActivity(passwordint);
         }
     }
 
-    public void textLongClick() {
-        if (pass == 1) {
-            if (isalpha == 0) {
+    public void textLongClick()
+    {
+        if (pass == 1)
+        {
+            if (isalpha == 0)
+            {
                 cho = 0;
                 Intent menuint = new Intent(ctx, menuAct.class);
                 startActivity(menuint);
-            } else {
+            }
+            else
+            {
                 textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
                 isalpha = 0;
             }
-        } else {
+        }
+        else
+        {
             Intent passwordint = new Intent(ctx, passwordAct.class);
             startActivity(passwordint);
         }
     }
 
-    public static String fileReader(String path) throws IOException {
+    public static String fileReader(String path) throws IOException
+    {
         FileReader reader = new FileReader(path);
         BufferedReader bReader = new BufferedReader(reader);
         StringBuffer temp = new StringBuffer();
         String temp1 = "";
-        while ((temp1 = bReader.readLine()) != null) {
+        while ((temp1 = bReader.readLine()) != null)
+        {
             //Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
             temp.append(temp1 + "\n");
         }
@@ -237,7 +291,8 @@ public class MainActivity extends Activity {
         return temp.toString();
     }
 
-    public static String novelReader(String path, int page) throws IOException {
+    public static String novelReader(String path, int page) throws IOException
+    {
         FileReader reader = new FileReader(path);
         BufferedReader bReader = new BufferedReader(reader);
         StringBuffer temp = new StringBuffer();
@@ -251,13 +306,15 @@ public class MainActivity extends Activity {
     }
 
     //挠挠
-    public boolean onSingleTapSidePanel(MotionEvent e) {
+    public boolean onSingleTapSidePanel(MotionEvent e)
+    {
         //Toast.makeText(ctx, "挠挠单击！", Toast.LENGTH_SHORT).show();
         textClick();
         return false;
     }
 
-    public boolean onLongPressSidePanel(MotionEvent e) {
+    public boolean onLongPressSidePanel(MotionEvent e)
+    {
         //Toast.makeText(ctx, "挠挠长按！", Toast.LENGTH_SHORT).show();
         textLongClick();
         return false;
@@ -272,7 +329,8 @@ public class MainActivity extends Activity {
     /**
      * 创建悬浮窗
      */
-    private void createFloatView() {
+    private void createFloatView()
+    {
         btn_floatView = new Button(getApplicationContext());
         //btn_floatView.setBackground();
 
@@ -308,10 +366,13 @@ public class MainActivity extends Activity {
         params.x = 0;
         params.y = 0;
         // 设置悬浮窗的Touch监听
-        btn_floatView.setOnTouchListener(new OnTouchListener() {
+        btn_floatView.setOnTouchListener(new OnTouchListener()
+        {
 
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                switch (event.getAction())
+                {
                     case MotionEvent.ACTION_DOWN:
                         Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
                         break;
