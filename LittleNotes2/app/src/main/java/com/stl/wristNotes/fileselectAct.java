@@ -162,7 +162,16 @@ public class fileselectAct extends Activity
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        finish();
+                        try
+                        {
+
+                            openNovel();
+                            finish();
+                        } catch (IOException e)
+                        {
+                            Toast.makeText(fileselectCtx, "打开文件错误！" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener()
@@ -175,12 +184,11 @@ public class fileselectAct extends Activity
                             Toast.makeText(fileselectCtx, "正在打开..请稍后...", Toast.LENGTH_SHORT).show();
                             openFile();
                             finish();
+                            Toast.makeText(fileselectCtx, "成功打开文件:" + s, Toast.LENGTH_SHORT).show();
                         } catch (IOException e)
                         {
                             Toast.makeText(fileselectCtx, "打开文件错误！" + e.toString(), Toast.LENGTH_SHORT).show();
                         }
-                        Toast.makeText(fileselectCtx, "成功打开文件:" + s, Toast.LENGTH_SHORT).show();
-                        finish();
 
                     }
                 }).show();
