@@ -157,6 +157,11 @@
 
 		</activity>
 
+		<activity
+			android:name="com.stl.wristNotes.novelAct">
+
+		</activity>
+
 	</application>
 
 </manifest>

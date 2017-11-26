@@ -69,7 +69,10 @@ public class MainActivity extends Activity
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
 
-        //setVisibility(View.INVISIBLE);
+		mainLeft = (Button) findViewById(R.id.mainButtonLeft);
+		mainRight = (Button) findViewById(R.id.mainButtonRight);
+		mainHint = (TextView) findViewById(R.id.mainHint);
+
         Intent intent = getIntent();
         String action = intent.getAction();
         if (intent.ACTION_VIEW.equals(action))
@@ -78,7 +81,8 @@ public class MainActivity extends Activity
             try
             {
                 filepath = URLDecoder.decode(filepath, "UTF-8");
-            } catch (UnsupportedEncodingException e)
+            }
+			catch (UnsupportedEncodingException e)
             {
                 Toast.makeText(ctx, "路径解码错误。。我也不知道怎么办", Toast.LENGTH_LONG).show();
             }
@@ -90,10 +94,17 @@ public class MainActivity extends Activity
             }
             filename = filet1[filet1.length - 1];
 
-            editor.putString("filename", filename);
-            editor.putString("filepath", filepath);
-            editor.commit();
-            Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
+			if (new File(filepath + filename).length() < 716800)
+			{
+				editor.putString("filename", filename);
+				editor.putString("filepath", filepath);
+				editor.commit();
+				Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
+			}
+			else
+			{
+				fileselectAct.bigFile(ctx, sharedPreferences, editor, filepath, filename);
+			}
         }
 
         //createFloatView()
@@ -111,9 +122,17 @@ public class MainActivity extends Activity
                 Intent startint = new Intent(ctx, updated.class);
                 startActivity(startint);
             }
-        } catch (PackageManager.NameNotFoundException e)
+        }
+		catch (PackageManager.NameNotFoundException e)
         {
         }
+
+		if (mode == 0)
+		{
+			mainLeft.setVisibility(View.INVISIBLE);
+			mainRight.setVisibility(View.INVISIBLE);
+			mainHint.setVisibility(View.INVISIBLE);
+		}
 
         try
         {
@@ -134,7 +153,8 @@ public class MainActivity extends Activity
             {
                 textView.setText(fileReader(filepath + filename));
             }
-        } catch (Exception e)
+        }
+		catch (Exception e)
         {
             Toast.makeText(ctx, "错误！" + e.toString(), Toast.LENGTH_SHORT).show();
         }
@@ -184,56 +204,52 @@ public class MainActivity extends Activity
 
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
-        {
-
-            @Override
-            public void onClick(View p1)
-            {
-                textClick();
-            }
-        });
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					textClick();
+				}
+			});
 
         textView.setOnLongClickListener(new OnLongClickListener()
-        {
+			{
 
-            @Override
-            public boolean onLongClick(View p1)
-            {
-                textLongClick();
-                return true;
-            }
-        });
+				@Override
+				public boolean onLongClick(View p1)
+				{
+					textLongClick();
+					return true;
+				}
+			});
 
-        mainLeft = (Button) findViewById(R.id.mainButtonLeft);
         mainLeft.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
+			{
+				@Override
+				public void onClick(View p1)
+				{
 
-            }
-        });
+				}
+			});
 
-        mainRight = (Button) findViewById(R.id.mainButtonRight);
         mainRight.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
+			{
+				@Override
+				public void onClick(View p1)
+				{
 
-            }
-        });
+				}
+			});
 
-        mainHint = (TextView) findViewById(R.id.mainHint);
         mainHint.setClickable(true);
         mainHint.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
+			{
+				@Override
+				public void onClick(View p1)
+				{
 
-            }
-        });
+				}
+			});
 
 
     }
@@ -335,7 +351,7 @@ public class MainActivity extends Activity
         //btn_floatView.setBackground();
 
         wm = (WindowManager) getApplicationContext()
-                .getSystemService(Context.WINDOW_SERVICE);
+			.getSystemService(Context.WINDOW_SERVICE);
         params = new WindowManager.LayoutParams();
 
         // 设置window type
@@ -349,7 +365,7 @@ public class MainActivity extends Activity
 
         // 设置Window flag
         params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-                | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+			| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         /*
          * 下面的flags属性的效果形同“锁定”。
          * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
@@ -367,19 +383,19 @@ public class MainActivity extends Activity
         params.y = 0;
         // 设置悬浮窗的Touch监听
         btn_floatView.setOnTouchListener(new OnTouchListener()
-        {
+			{
 
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                switch (event.getAction())
-                {
-                    case MotionEvent.ACTION_DOWN:
-                        Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
-                        break;
-                }
-                return true;
-            }
-        });
+				public boolean onTouch(View v, MotionEvent event)
+				{
+					switch (event.getAction())
+					{
+						case MotionEvent.ACTION_DOWN:
+							Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
+							break;
+					}
+					return true;
+				}
+			});
 
         wm.addView(btn_floatView, params);
         wm.updateViewLayout(btn_floatView, params);
