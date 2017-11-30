@@ -18,34 +18,32 @@
 			style="@style/titleText"
 			android:text="欢迎"/>
 
-		<LinearLayout
+		<EditText
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:orientation="horizontal"
-			android:gravity="center"
-			android:layout_marginBottom="15dp"
-			android:paddingRight="10dp"
-			android:paddingLeft="10dp">
+			android:inputType="textMultiLine"
+			android:layout_width="match_parent"
+			android:id="@+id/startEdit"
+			android:ems="9"
+			android:textColor="#A5A5A5"
+			android:background="#303030"
+			android:lines="2"
+			android:layout_marginRight="10dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginBottom="2dp"/>
 
-			<EditText
-				android:layout_height="60dp"
-				android:inputType="textMultiLine"
-				android:layout_width="wrap_content"
-				android:id="@+id/startEdit"
-				android:ems="9"
-				android:textColor="#A5A5A5"
-				android:background="#303030"
-				android:lines="2"/>
-
-			<Button
-				android:layout_height="wrap_content"
-				android:text="创建"
-				android:layout_width="55dp"
-				android:textSize="14sp"
-				android:onClick="startbutton2"
-				android:textColor="#000000"/>
-
-		</LinearLayout>
+		<Button
+			android:layout_height="wrap_content"
+			android:text="创建"
+			android:layout_width="match_parent"
+			android:textSize="14sp"
+			android:onClick="startbutton2"
+			android:layout_toRightOf="@id/startEdit"
+			android:layout_centerInParent="true"
+			android:id="@+id/startbutt"
+			style="@style/button"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+			android:layout_marginBottom="5dp"/>
 
 		<TextView
 			android:layout_height="wrap_content"

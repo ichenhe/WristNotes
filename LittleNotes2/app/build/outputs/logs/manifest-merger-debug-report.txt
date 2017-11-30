@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:2:1-102:12
+ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:2:1-106:12
 	package
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml
@@ -58,7 +58,7 @@ ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidM
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:20:16-58
 application
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:22:5-101:19
+ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:22:5-105:19
 	android:label
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:25:9-41
 	android:allowBackup
@@ -159,6 +159,10 @@ activity#com.stl.wristNotes.ftpAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:98:3-100:14
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:99:4-44
+activity#com.stl.wristNotes.novelAct
+ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:102:3-104:14
+	android:name
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:103:4-46
 uses-sdk
 INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 	android:targetSdkVersion

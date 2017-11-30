@@ -54,12 +54,13 @@ public final class R {
         public static final int menuList=0x7f070018;
         public static final int menuText=0x7f070017;
         public static final int menulistText=0x7f070019;
-        public static final int passwordButton=0x7f07001c;
-        public static final int passwordEdit=0x7f07001b;
-        public static final int passwordText=0x7f07001a;
-        public static final int pattern_lock_view=0x7f07001d;
-        public static final int startEdit=0x7f07001e;
-        public static final int startbutt=0x7f07001f;
+        public static final int myNovel=0x7f07001a;
+        public static final int passwordButton=0x7f07001d;
+        public static final int passwordEdit=0x7f07001c;
+        public static final int passwordText=0x7f07001b;
+        public static final int pattern_lock_view=0x7f07001e;
+        public static final int startEdit=0x7f07001f;
+        public static final int startbutt=0x7f070020;
     }
     public static final class layout {
         public static final int about=0x7f030000;
@@ -73,12 +74,13 @@ public final class R {
         public static final int main=0x7f030008;
         public static final int menu=0x7f030009;
         public static final int menulist=0x7f03000a;
-        public static final int password=0x7f03000b;
-        public static final int patternlock=0x7f03000c;
-        public static final int seekbar=0x7f03000d;
-        public static final int settile=0x7f03000e;
-        public static final int start=0x7f03000f;
-        public static final int updated=0x7f030010;
+        public static final int novel=0x7f03000b;
+        public static final int password=0x7f03000c;
+        public static final int patternlock=0x7f03000d;
+        public static final int seekbar=0x7f03000e;
+        public static final int settile=0x7f03000f;
+        public static final int start=0x7f030010;
+        public static final int updated=0x7f030011;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
