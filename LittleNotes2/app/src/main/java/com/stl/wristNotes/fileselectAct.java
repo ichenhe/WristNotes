@@ -180,8 +180,10 @@ public class fileselectAct extends Activity
         {
             int j = 0;
             JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-            List<String> novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("$♂$")));
-            Toast.makeText(fileselectCtx, novelpath.size() + "", Toast.LENGTH_LONG).show();
+            List<String> novelpath = new ArrayList<>();
+            if (novellist.getString("path").contains("$♂$")) novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("$♂$")));
+            Toast.makeText(fileselectCtx, novelpath.size() + " no", Toast.LENGTH_LONG).show();
+
             for (int i = 0; i < novelpath.size(); i++)
             {
                 if (novelpath.get(i).equals(path + name))
@@ -193,6 +195,7 @@ public class fileselectAct extends Activity
             if (j == 0)//第一次打开
             {
                 novelpath.add(path + name);
+                Toast.makeText(fileselectCtx, join(novelpath.toArray(new String[novelpath.size()]), "$♂$"), Toast.LENGTH_LONG).show();
                 novellist.put("path", join(novelpath.toArray(new String[novelpath.size()]), "$♂$"));
                 MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
                 MainActivity.mode = 1;
@@ -240,11 +243,13 @@ public class fileselectAct extends Activity
     private static String join(String[] strs, String splitter)
     {
         StringBuffer sb = new StringBuffer();
-        for (String s : strs)
+        sb.append(strs[0]);
+        for (int i = 1; i < strs.length; i++)
         {
-            sb.append(s + splitter);
+            Toast.makeText(fileselectCtx, strs[i], Toast.LENGTH_SHORT);
+            sb.append(splitter + strs[i]);
         }
-        return sb.toString().substring(0, sb.toString().length() - 1);
+        return sb.toString();
     }
 
 }
