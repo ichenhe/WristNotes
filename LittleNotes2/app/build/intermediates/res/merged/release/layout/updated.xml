@@ -11,13 +11,14 @@
 		android:gravity="center">
 
 		<TextView
+			android:id="@+id/updateText"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:paddingTop="30dp"
 			android:text="腕上小纸条\n 已升级至最新版！"
 			android:textSize="18sp"
-			android:textStyle="bold" />
+			android:textStyle="bold"/>
 
 		<TextView
 			android:layout_width="match_parent"

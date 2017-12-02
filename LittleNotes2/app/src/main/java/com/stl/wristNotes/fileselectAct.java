@@ -26,6 +26,7 @@ public class fileselectAct extends Activity
     String[] filelist2;
     String s;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -111,7 +112,6 @@ public class fileselectAct extends Activity
                     if (new File(fileselecttitle.getText().toString() + s).length() < 716800)
                     {
                         openFile(editor, fileselecttitle.getText().toString(), s);
-                        Toast.makeText(fileselectCtx, "成功打开文件:" + s, Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else
@@ -133,7 +133,7 @@ public class fileselectAct extends Activity
                     try
                     {
                         MainActivity.filedofile = s;
-                        MainActivity.filedopath = MainActivity.filewillpath + s + "/";
+                        MainActivity.filedopath = MainActivity.filewillpath;
                         Intent helpint = new Intent(fileselectCtx, filetodoAct.class);
                         startActivity(helpint);
 
@@ -166,7 +166,6 @@ public class fileselectAct extends Activity
                     {
                         Toast.makeText(fileselectCtx, "正在打开..请稍后...", Toast.LENGTH_SHORT).show();
                         openFile(ed, path, name);
-                        Toast.makeText(fileselectCtx, "成功打开文件:" + name, Toast.LENGTH_SHORT).show();
                     }
                 }).show();
     }
@@ -175,7 +174,7 @@ public class fileselectAct extends Activity
     {
         try
         {
-            int j = 0;
+            MainActivity.p = 0;
             JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
 			List<String> novelname = new ArrayList<>();
 			if (!novellist.getString("name").equals("")) novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
@@ -189,12 +188,12 @@ public class fileselectAct extends Activity
 				Toast.makeText(fileselectCtx, "第" + i + "个，内容是" + novelpath.get(i) + "原地址是" + path + "%%" + name, Toast.LENGTH_LONG).show();
                 if (novelpath.get(i).equals(path + name))
                 {
-                    j = i + 1;
+                    MainActivity.p = i + 1;
                 }
             }
 
-			Toast.makeText(fileselectCtx, j + "rrr" + novelpath.size(), Toast.LENGTH_LONG).show();
-            if (j == 0)//第一次打开
+			Toast.makeText(fileselectCtx, MainActivity.p + "rrr" + novelpath.size(), Toast.LENGTH_LONG).show();
+            if (MainActivity.p == 0)//第一次打开
             {
 				String nname = name.substring(0, name.length()-name.split("[.]")[name.split("[.]").length-1].length()-1);
 				novelname.add(nname);
@@ -206,18 +205,25 @@ public class fileselectAct extends Activity
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 				
 				MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
-                MainActivity.mode = 1;
                 ed.putString("novelList", novellist.toString());
-                ed.putInt("mode", 1);
+                ed.putString("filepath", path);
+                ed.putString("filename", name);
                 ed.commit();
+                MainActivity.p = 1;
+
                 Toast.makeText(fileselectCtx, "已打开小说 " + nname, Toast.LENGTH_SHORT).show();
             }
             else
             {
-                MainActivity.novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[j - 1]).intValue());
-                MainActivity.mode = 1;
+                MainActivity.textView.setText(MainActivity.novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue()));
                 Toast.makeText(fileselectCtx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
+            MainActivity.mode = 1;
+            ed.putInt("mode", 1);
+            ed.putInt("p", MainActivity.p);
+            ed.commit();
+            MainActivity.filename = name;
+            MainActivity.filepath = path;
             MainActivity.mainLeft.setVisibility(View.VISIBLE);
             MainActivity.mainRight.setVisibility(View.VISIBLE);
             MainActivity.mainHint.setVisibility(View.VISIBLE);
@@ -241,13 +247,14 @@ public class fileselectAct extends Activity
             MainActivity.mainLeft.setVisibility(View.INVISIBLE);
             MainActivity.mainRight.setVisibility(View.INVISIBLE);
             MainActivity.mainHint.setVisibility(View.INVISIBLE);
+            Toast.makeText(fileselectCtx, "成功打开文件:" + name, Toast.LENGTH_SHORT).show();
         } catch (IOException e)
         {
             Toast.makeText(fileselectCtx, "打开文件错误！", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private static String join(String[] strs, String splitter)
+    public static String join(String[] strs, String splitter)
     {
         StringBuffer sb = new StringBuffer();
         sb.append(strs[0]);
