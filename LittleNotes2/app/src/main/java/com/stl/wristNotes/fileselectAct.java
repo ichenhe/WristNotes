@@ -35,10 +35,7 @@ public class fileselectAct extends Activity
         fileselectCtx = this;
         sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        if (MainActivity.filewillpath.equals(""))
-        {
-            MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
-        }
+        if (MainActivity.filewillpath.equals("")) MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
         fileselecttitle = (TextView) findViewById(R.id.fileselectText);
         ListView fileselectView = (ListView) findViewById(R.id.fileselectList);
         fileselecttitle.setText(MainActivity.filewillpath);
@@ -159,7 +156,7 @@ public class fileselectAct extends Activity
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        openNovel(sp, path, name);
+                        openNovel(sp, ed, path, name);
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener()
@@ -174,42 +171,52 @@ public class fileselectAct extends Activity
                 }).show();
     }
 
-    public static void openNovel(SharedPreferences sp, String path, String name)
+    public static void openNovel(SharedPreferences sp, SharedPreferences.Editor ed, String path, String name)
     {
         try
         {
             int j = 0;
             JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+			List<String> novelname = new ArrayList<>();
+			if (!novellist.getString("name").equals("")) novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
             List<String> novelpath = new ArrayList<>();
-            if (novellist.getString("path").contains("$♂$")) novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("$♂$")));
-            Toast.makeText(fileselectCtx, novelpath.size() + " no", Toast.LENGTH_LONG).show();
+            if (!novellist.getString("path").equals("")) novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
+			List<String> novelpage = new ArrayList<>();
+			if (!novellist.getString("page").equals("")) novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 
             for (int i = 0; i < novelpath.size(); i++)
             {
+				Toast.makeText(fileselectCtx, "第" + i + "个，内容是" + novelpath.get(i) + "原地址是" + path + "%%" + name, Toast.LENGTH_LONG).show();
                 if (novelpath.get(i).equals(path + name))
                 {
                     j = i + 1;
                 }
             }
 
+			Toast.makeText(fileselectCtx, j + "rrr" + novelpath.size(), Toast.LENGTH_LONG).show();
             if (j == 0)//第一次打开
             {
+				String nname = name.substring(0, name.length()-name.split("[.]")[name.split("[.]").length-1].length()-1);
+				novelname.add(nname);
                 novelpath.add(path + name);
-                Toast.makeText(fileselectCtx, join(novelpath.toArray(new String[novelpath.size()]), "$♂$"), Toast.LENGTH_LONG).show();
-                novellist.put("path", join(novelpath.toArray(new String[novelpath.size()]), "$♂$"));
-                MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
+				novelpage.add("0");
+				
+                novellist.put("name", join(novelname.toArray(new String[novelname.size()]), "▒"));
+				novellist.put("path", join(novelpath.toArray(new String[novelpath.size()]), "▒"));
+				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+				
+				MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
                 MainActivity.mode = 1;
-                sp.edit().putString("novelList", novellist.toString());
-                sp.edit().putInt("mode", 1);
-                sp.edit().commit();
-
-                Toast.makeText(fileselectCtx, "已打开小说 " + name/*.split(".")[0]*/, Toast.LENGTH_SHORT).show();
+                ed.putString("novelList", novellist.toString());
+                ed.putInt("mode", 1);
+                ed.commit();
+                Toast.makeText(fileselectCtx, "已打开小说 " + nname, Toast.LENGTH_SHORT).show();
             }
             else
             {
-                MainActivity.novelReader(path + name, novellist.getJSONArray("page").getInt(j - 1));
+                MainActivity.novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[j - 1]).intValue());
                 MainActivity.mode = 1;
-                Toast.makeText(fileselectCtx, "已跳转至上次观看位置", Toast.LENGTH_SHORT);
+                Toast.makeText(fileselectCtx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
             MainActivity.mainLeft.setVisibility(View.VISIBLE);
             MainActivity.mainRight.setVisibility(View.VISIBLE);

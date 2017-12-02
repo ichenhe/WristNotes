@@ -14,6 +14,7 @@ import android.content.pm.*;
 import android.content.pm.PackageManager.*;
 
 import java.net.*;
+import org.json.*;
 
 public class MainActivity extends Activity
 {
@@ -48,6 +49,7 @@ public class MainActivity extends Activity
     public static Button mainLeft;
     public static Button mainRight;
     public static TextView mainHint;
+	public static ScrollView mainScrollView;
     public static int cho = 0;
     String startHideText;
     public static int mode = 0;
@@ -68,10 +70,11 @@ public class MainActivity extends Activity
         light = sharedPreferences.getInt("light", 6);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
-
+		JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
 		mainLeft = (Button) findViewById(R.id.mainButtonLeft);
 		mainRight = (Button) findViewById(R.id.mainButtonRight);
 		mainHint = (TextView) findViewById(R.id.mainHint);
+		mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
 
         Intent intent = getIntent();
         String action = intent.getAction();
@@ -237,12 +240,12 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-
+					
 				}
 			});
 
-        mainHint.setClickable(true);
-        mainHint.setOnClickListener(new OnClickListener()
+		mainHint.setClickable(true);
+		mainHint.setOnClickListener(new OnClickListener()
 			{
 				@Override
 				public void onClick(View p1)
@@ -252,137 +255,137 @@ public class MainActivity extends Activity
 			});
 
 
-    }
+	}
 
-    public void textClick()
-    {
-        if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
-        {
-            textView.setTextColor(Color.argb(0, 0, 0, 0));
-            isalpha = 1;
-        }
-        else if (pass == 0)
-        {
-            Intent passwordint = new Intent(ctx, passwordAct.class);
-            startActivity(passwordint);
-        }
-    }
+	public void textClick()
+	{
+		if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
+		{
+			textView.setTextColor(Color.argb(0, 0, 0, 0));
+			isalpha = 1;
+		}
+		else if (pass == 0)
+		{
+			Intent passwordint = new Intent(ctx, passwordAct.class);
+			startActivity(passwordint);
+		}
+	}
 
-    public void textLongClick()
-    {
-        if (pass == 1)
-        {
-            if (isalpha == 0)
-            {
-                cho = 0;
-                Intent menuint = new Intent(ctx, menuAct.class);
-                startActivity(menuint);
-            }
-            else
-            {
-                textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-                isalpha = 0;
-            }
-        }
-        else
-        {
-            Intent passwordint = new Intent(ctx, passwordAct.class);
-            startActivity(passwordint);
-        }
-    }
+	public void textLongClick()
+	{
+		if (pass == 1)
+		{
+			if (isalpha == 0)
+			{
+				cho = 0;
+				Intent menuint = new Intent(ctx, menuAct.class);
+				startActivity(menuint);
+			}
+			else
+			{
+				textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+				isalpha = 0;
+			}
+		}
+		else
+		{
+			Intent passwordint = new Intent(ctx, passwordAct.class);
+			startActivity(passwordint);
+		}
+	}
 
-    public static String fileReader(String path) throws IOException
-    {
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
-        StringBuffer temp = new StringBuffer();
-        String temp1 = "";
-        while ((temp1 = bReader.readLine()) != null)
-        {
-            //Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
-            temp.append(temp1 + "\n");
-        }
-        bReader.close();
-        textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-        return temp.toString();
-    }
+	public static String fileReader(String path) throws IOException
+	{
+		FileReader reader = new FileReader(path);
+		BufferedReader bReader = new BufferedReader(reader);
+		StringBuffer temp = new StringBuffer();
+		String temp1 = "";
+		while ((temp1 = bReader.readLine()) != null)
+		{
+			//Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
+			temp.append(temp1 + "\n");
+		}
+		bReader.close();
+		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+		return temp.toString();
+	}
 
-    public static String novelReader(String path, int page) throws IOException
-    {
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
-        StringBuffer temp = new StringBuffer();
-        bReader.skip(page * 500);
-        char[] ch = new char[500];
-        bReader.read(ch, 0, 500);
-        for (char b : ch) temp.append(b);
-        bReader.close();
-        textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-        return temp.toString();
-    }
+	public static String novelReader(String path, int page) throws IOException
+	{
+		FileReader reader = new FileReader(path);
+		BufferedReader bReader = new BufferedReader(reader);
+		StringBuffer temp = new StringBuffer();
+		bReader.skip(page * 500);
+		char[] ch = new char[500];
+		bReader.read(ch, 0, 500);
+		for (char b : ch) temp.append(b);
+		bReader.close();
+		textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+		return temp.toString();
+	}
 
-    //挠挠
-    public boolean onSingleTapSidePanel(MotionEvent e)
-    {
-        //Toast.makeText(ctx, "挠挠单击！", Toast.LENGTH_SHORT).show();
-        textClick();
-        return false;
-    }
+	//挠挠
+	public boolean onSingleTapSidePanel(MotionEvent e)
+	{
+		//Toast.makeText(ctx, "挠挠单击！", Toast.LENGTH_SHORT).show();
+		textClick();
+		return false;
+	}
 
-    public boolean onLongPressSidePanel(MotionEvent e)
-    {
-        //Toast.makeText(ctx, "挠挠长按！", Toast.LENGTH_SHORT).show();
-        textLongClick();
-        return false;
-    }
+	public boolean onLongPressSidePanel(MotionEvent e)
+	{
+		//Toast.makeText(ctx, "挠挠长按！", Toast.LENGTH_SHORT).show();
+		textLongClick();
+		return false;
+	}
 
 
-    private boolean isAdded = false; // 是否已增加悬浮窗
-    private static WindowManager wm;
-    private static WindowManager.LayoutParams params;
-    private Button btn_floatView;
+	private boolean isAdded = false; // 是否已增加悬浮窗
+	private static WindowManager wm;
+	private static WindowManager.LayoutParams params;
+	private Button btn_floatView;
 
-    /**
-     * 创建悬浮窗
-     */
-    private void createFloatView()
-    {
-        btn_floatView = new Button(getApplicationContext());
-        //btn_floatView.setBackground();
+	/**
+	 * 创建悬浮窗
+	 */
+	private void createFloatView()
+	{
+		btn_floatView = new Button(getApplicationContext());
+		//btn_floatView.setBackground();
 
-        wm = (WindowManager) getApplicationContext()
+		wm = (WindowManager) getApplicationContext()
 			.getSystemService(Context.WINDOW_SERVICE);
-        params = new WindowManager.LayoutParams();
+		params = new WindowManager.LayoutParams();
 
-        // 设置window type
-        params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-        /*
-         * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE;
-         * 那么优先级会降低一些, 即拉下通知栏不可见
-         */
+		// 设置window type
+		params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+		/*
+		 * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE;
+		 * 那么优先级会降低一些, 即拉下通知栏不可见
+		 */
 
-        params.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
+		params.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 
-        // 设置Window flag
-        params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+		// 设置Window flag
+		params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 			| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-        /*
-         * 下面的flags属性的效果形同“锁定”。
-         * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
+		/*
+		 * 下面的flags属性的效果形同“锁定”。
+		 * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
 		 wmParams.flags=LayoutParams.FLAG_NOT_TOUCH_MODAL
 		 | LayoutParams.FLAG_NOT_FOCUSABLE
 		 | LayoutParams.FLAG_NOT_TOUCHABLE;
-         */
+		 */
 
-        // 设置悬浮窗的长得宽
-        params.gravity = Gravity.RIGHT | Gravity.TOP;
-        params.width = 10;
-        params.height = wm.getDefaultDisplay().getHeight();
+		// 设置悬浮窗的长得宽
+		params.gravity = Gravity.RIGHT | Gravity.TOP;
+		params.width = 10;
+		params.height = wm.getDefaultDisplay().getHeight();
 
-        params.x = 0;
-        params.y = 0;
-        // 设置悬浮窗的Touch监听
-        btn_floatView.setOnTouchListener(new OnTouchListener()
+		params.x = 0;
+		params.y = 0;
+		// 设置悬浮窗的Touch监听
+		btn_floatView.setOnTouchListener(new OnTouchListener()
 			{
 
 				public boolean onTouch(View v, MotionEvent event)
@@ -397,10 +400,10 @@ public class MainActivity extends Activity
 				}
 			});
 
-        wm.addView(btn_floatView, params);
-        wm.updateViewLayout(btn_floatView, params);
-        isAdded = true;
-    }
+		wm.addView(btn_floatView, params);
+		wm.updateViewLayout(btn_floatView, params);
+		isAdded = true;
+	}
 
 }
 
