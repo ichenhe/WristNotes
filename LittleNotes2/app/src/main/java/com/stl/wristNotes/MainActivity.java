@@ -70,7 +70,12 @@ public class MainActivity extends Activity
         light = sharedPreferences.getInt("light", 6);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
-		JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+		try
+		{
+			JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+		}
+		catch (JSONException e)
+		{}
 		mainLeft = (Button) findViewById(R.id.mainButtonLeft);
 		mainRight = (Button) findViewById(R.id.mainButtonRight);
 		mainHint = (TextView) findViewById(R.id.mainHint);
