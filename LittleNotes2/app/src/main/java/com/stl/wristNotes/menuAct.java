@@ -112,9 +112,17 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("编辑文档"))
 					{
-						menuintent = new Intent(ctx, editfileAct.class);
-						startActivity(menuintent);
-						finish();
+						if(MainActivity.mode == 0)
+						{
+							menuintent = new Intent(ctx, editfileAct.class);
+							startActivity(menuintent);
+							finish();
+						}
+						else
+						{
+							Toast.makeText(ctx, "小说不支持编辑！", Toast.LENGTH_SHORT).show();
+						}
+						
 					}
 					else if (s.equals("显示设置") || s.equals("偏好设置") || s.equals("手表优化"))
 					{
@@ -248,7 +256,16 @@ public class menuAct extends Activity
 					}
 					else if(s.equals("我的小说"))
 					{
-						Toast.makeText(ctx, "还未制作完成，请期待下一版！", Toast.LENGTH_LONG).show();
+						if(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}").equals("{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"))
+						{
+							Toast.makeText(ctx, "小说列表为空！请先打开一个小说", Toast.LENGTH_LONG).show();
+						}
+						else
+						{
+							passint = new Intent(ctx, novelAct.class);
+							startActivity(passint);
+						}
+						
 					}
 				}
 			});

@@ -48,7 +48,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:paddingBottom="30dp"
-			android:text="呆木\n有趣\n*映丹\n（很抱歉支付宝不能私聊表示感谢）"
+			android:text="呆木\n有趣\n*映丹\n*磊\n*庭瑞\n*子峻\n（很抱歉支付宝不能私聊表示感谢）"
 			android:paddingRight="20dp"
 			android:paddingLeft="20dp"
 			android:gravity="center"/>

@@ -56,9 +56,8 @@ public class filetodoAct extends Activity
                 }
                 else if(s.equals("用小说模式打开"))
                 {
-
-                    fileselectAct.openNovel(sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
-                    Toast.makeText(ctx, "成功打开小说:" + s, Toast.LENGTH_SHORT);
+                    MainActivity.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
+					fileselectAct.fileselectCtx.finish();
                     finish();
                 }
                 else

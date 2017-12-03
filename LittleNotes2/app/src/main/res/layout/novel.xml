@@ -10,12 +10,16 @@
 		android:text="我的小说"
 		android:layout_width="match_parent"
 		style="@style/titleText"/>
-	
+
 	<ListView
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
 		android:id="@+id/myNovel"
-		style="@style/listview"/>
+		style="@style/listview"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:dividerHeight="1dp"/>
+	<include layout = "@layout/mynoveltext"/>
 
 </LinearLayout>
 
