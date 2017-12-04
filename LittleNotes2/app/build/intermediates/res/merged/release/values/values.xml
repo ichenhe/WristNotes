@@ -22,7 +22,7 @@
 		<item name="android:cacheColorHint">#abcdef</item>
 		<!--<item name="android:listSelector">@drawable/passlist</item>-->
 		<!--<item name="android:dividerHeight">6dip</item>-->
-		<item name="android:divider">@null</item>-->
+		<item name="android:divider">#666666</item>
 		<item name="android:headerDividersEnabled">true</item>
 		<item name="android:footerDividersEnabled">true</item>
 	</style>

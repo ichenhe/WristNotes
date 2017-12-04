@@ -156,6 +156,7 @@ public class menuAct extends Activity
 						editor.putInt("light", 1 + Integer.parseInt(s));
 						editor.commit();
 						Toast.makeText(ctx, "已调整亮度", Toast.LENGTH_SHORT).show();
+						MainActivity.light = 1 + Integer.parseInt(s);
 						finish();
 					}
 					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16") || s.equals("18") || s.equals("20"))
