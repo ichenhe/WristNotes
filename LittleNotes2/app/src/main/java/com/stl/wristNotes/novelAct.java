@@ -89,7 +89,7 @@ public class novelAct extends Activity
 					@Override
 					public void onItemClick(AdapterView<?> l, View v, int position, long id)
 					{
-						Toast.makeText(ctx, position + "", Toast.LENGTH_LONG).show();
+						//Toast.makeText(ctx, position + "", Toast.LENGTH_LONG).show();
 					}
 				});
 
