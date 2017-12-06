@@ -64,7 +64,7 @@ public class novelAct extends Activity
 								}
 								else
 								{
-									Toast.makeText(ctx, "不能在小说模式下清除小说！请先打开其它文档再试", Toast.LENGTH_LONG).show();
+									Toast.makeText(ctx, "不能在小说模式下清除小说观看纪录！请先打开其它文档再试", Toast.LENGTH_LONG).show();
 								}
 							}
 						})
