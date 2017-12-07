@@ -3,6 +3,7 @@ package com.stl.wristNotes;
 import android.app.*;
 import android.content.*;
 import android.graphics.*;
+import android.net.*;
 import android.os.*;
 import android.view.*;
 import android.widget.*;
@@ -42,7 +43,7 @@ public class menuAct extends Activity
 						startActivity(menuintent);
 						finish();
 					}
-					else if (MainActivity.cho == 1||MainActivity.cho == 5)
+					else if (MainActivity.cho == 1 || MainActivity.cho == 5)
 					{
 						MainActivity.cho = 2;
 						menuintent = new Intent(ctx, menuAct.class);
@@ -79,7 +80,7 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 3)
 		{
-			String[] menu_per = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护："+mima(), "更改密码", "密码入口伪装" };
+			String[] menu_per = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_per);
 			menutitle.setText("偏好设置");
 		}
@@ -112,7 +113,7 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("编辑文档"))
 					{
-						if(MainActivity.mode == 0)
+						if (MainActivity.mode == 0)
 						{
 							menuintent = new Intent(ctx, editfileAct.class);
 							startActivity(menuintent);
@@ -122,7 +123,7 @@ public class menuAct extends Activity
 						{
 							Toast.makeText(ctx, "小说不支持编辑！", Toast.LENGTH_SHORT).show();
 						}
-						
+
 					}
 					else if (s.equals("显示设置") || s.equals("偏好设置") || s.equals("手表优化"))
 					{
@@ -176,7 +177,7 @@ public class menuAct extends Activity
 					}
 					else if (s.indexOf("密码保护") != -1)
 					{
-						if(mima().equals("关闭"))
+						if (mima().equals("关闭"))
 						{
 							editor.putString("passtext", "  设定新密码  ");
 						}
@@ -189,9 +190,9 @@ public class menuAct extends Activity
 						startActivity(passint);
 						finish();
 					}
-					else if(s.equals("更改密码"))
+					else if (s.equals("更改密码"))
 					{
-						if(mima().equals("开启"))
+						if (mima().equals("开启"))
 						{
 							editor.putString("passtext", "  输入原密码  ");
 							editor.commit();
@@ -204,9 +205,9 @@ public class menuAct extends Activity
 							Toast.makeText(ctx, "你还没开启密码服务呢..", Toast.LENGTH_SHORT).show();
 						}
 					}
-					else if(s.equals("密码入口伪装"))
+					else if (s.equals("密码入口伪装"))
 					{
-						if(mima().equals("开启"))
+						if (mima().equals("开启"))
 						{
 							MainActivity.inputtitle = "密码入口伪装";
 							MainActivity.inputhite = "输入密码";
@@ -221,9 +222,9 @@ public class menuAct extends Activity
 							Toast.makeText(ctx, "你还没开启密码服务呢..", Toast.LENGTH_SHORT).show();
 						}
 					}
-					else if(s.indexOf("触摸隐藏文字") != -1)
+					else if (s.indexOf("触摸隐藏文字") != -1)
 					{
-						if(sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
+						if (sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
 						{
 							editor.putString("touchHideText", "关闭");
 							Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
@@ -236,9 +237,9 @@ public class menuAct extends Activity
 						editor.commit();
 						finish();
 					}
-					else if(s.indexOf("启动应用隐藏文字") != -1)
+					else if (s.indexOf("启动应用隐藏文字") != -1)
 					{
-						if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
+						if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
 						{
 							editor.putString("startHideText", "关闭");
 						}
@@ -250,14 +251,21 @@ public class menuAct extends Activity
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
 						finish();
 					}
-					else if(s.equals("FTP文件传输"))
+					else if (s.equals("FTP文件传输"))
 					{
-						passint = new Intent(ctx, ftpAct.class);
-						startActivity(passint);
+						if (isWifi(ctx))
+						{
+							passint = new Intent(ctx, ftpAct.class);
+							startActivity(passint);
+						}
+						else
+						{
+							Toast.makeText(ctx, "Wi-Fi未链接，请先连接Wi-Fi！", Toast.LENGTH_SHORT).show();
+						}
 					}
-					else if(s.equals("我的小说"))
+					else if (s.equals("我的小说"))
 					{
-						if(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}").equals("{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"))
+						if (sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}").equals("{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"))
 						{
 							Toast.makeText(ctx, "小说列表为空！请先打开一个小说", Toast.LENGTH_LONG).show();
 						}
@@ -266,7 +274,10 @@ public class menuAct extends Activity
 							passint = new Intent(ctx, novelAct.class);
 							startActivity(passint);
 						}
-						
+					}
+					else if(s.equals("主题选择"))
+					{
+						Toast.makeText(ctx, "还未制作完成，请期待下一版！", Toast.LENGTH_LONG).show();
 					}
 				}
 			});
@@ -283,6 +294,18 @@ public class menuAct extends Activity
 			return "开启";
 		}
 	}
+
+	public static boolean isWifi(Context mContext)
+    {
+        ConnectivityManager connectivityManager = (ConnectivityManager) mContext
+			.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetInfo != null && activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI)
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 

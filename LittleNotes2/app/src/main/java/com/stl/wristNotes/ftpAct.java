@@ -22,10 +22,9 @@ import java.net.*;
 
 public class ftpAct extends Activity
 {
-    static {
-        System.setProperty("java.net.preferIPv6Addresses", "false");
-    }
-
+	static {
+		System.setProperty("java.net.preferIPv6Addresses", "false");
+	}
     Context ctx = this;
     private FtpServer mFtpServer;
 
@@ -44,7 +43,7 @@ public class ftpAct extends Activity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,  WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.ftp);
 
-        isWifi = isWifi(ctx);
+        isWifi = menuAct.isWifi(ctx);
 
         ftpedit1 = (EditText) findViewById(R.id.ftpEditText1);//用户名
         ftpedit2 = (EditText) findViewById(R.id.ftpEditText2);//根目录
@@ -142,17 +141,6 @@ public class ftpAct extends Activity
             mFtpServer.stop();
             mFtpServer = null;
         }
-    }
-    private static boolean isWifi(Context mContext)
-    {
-        ConnectivityManager connectivityManager = (ConnectivityManager) mContext
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetInfo != null && activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI)
-        {
-            return true;
-        }
-        return false;
     }
 
     public static String getHostIP()

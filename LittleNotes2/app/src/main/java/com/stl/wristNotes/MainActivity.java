@@ -576,16 +576,16 @@ public class MainActivity extends Activity
 		super.onDestroy();
 		//销毁广播 
 		unregisterReceiver(batteryLevelReceiver);
-	}*/
+	}
 	
     private boolean isAdded = false; // 是否已增加悬浮窗
     private static WindowManager wm;
     private static WindowManager.LayoutParams params;
     private Button btn_floatView;
 
-    /**
+    
      * 创建悬浮窗
-     */
+     
     private void createFloatView()
     {
         btn_floatView = new Button(getApplicationContext());
@@ -597,23 +597,23 @@ public class MainActivity extends Activity
 
         // 设置window type
         params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-        /*
+        
          * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE;
 		 * 那么优先级会降低一些, 即拉下通知栏不可见
-		 */
+		 
 
         params.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 
         // 设置Window flag
         params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-        /*
+        
          * 下面的flags属性的效果形同“锁定”。
 		 * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
 		 wmParams.flags=LayoutParams.FLAG_NOT_TOUCH_MODAL
 		 | LayoutParams.FLAG_NOT_FOCUSABLE
 		 | LayoutParams.FLAG_NOT_TOUCHABLE;
-		 */
+		 
 
         // 设置悬浮窗的长得宽
         params.gravity = Gravity.RIGHT | Gravity.TOP;
@@ -641,7 +641,7 @@ public class MainActivity extends Activity
         wm.addView(btn_floatView, params);
         wm.updateViewLayout(btn_floatView, params);
         isAdded = true;
-    }
+    }*/
 
 }
 

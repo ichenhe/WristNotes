@@ -42,32 +42,39 @@ public class fileselectAct extends Activity
         fileselecttitle.setText(MainActivity.filewillpath);
         fileselecttitle.setClickable(true);
         fileselecttitle.setOnClickListener(new View.OnClickListener()
-        {
-            //@Override
-            public void onClick(View p1)
-            {
-                if (!fileselecttitle.getText().equals("/"))
-                {
-                    String[] filelist3 = MainActivity.filewillpath.split("/");
-                    String filelist4 = "";
-                    for (int i = 0; i < filelist3.length - 1; i++)
-                    {
-                        filelist4 += filelist3[i] + "/";
-                    }
-                    MainActivity.filewillpath = filelist4;
-                    intent = new Intent(fileselectCtx, fileselectAct.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else
-                {
-                    MainActivity.cho = 0;
-                    intent = new Intent(fileselectCtx, menuAct.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
+			{
+				//@Override
+				public void onClick(View p1)
+				{
+					try
+					{
+						if (!fileselecttitle.getText().equals("/"))
+						{
+							String[] filelist3 = MainActivity.filewillpath.split("/");
+							String filelist4 = "";
+							for (int i = 0; i < filelist3.length - 1; i++)
+							{
+								filelist4 += filelist3[i] + "/";
+							}
+							MainActivity.filewillpath = filelist4;
+							intent = new Intent(fileselectCtx, fileselectAct.class);
+							startActivity(intent);
+							finish();
+						}
+						else
+						{
+							MainActivity.cho = 0;
+							intent = new Intent(fileselectCtx, menuAct.class);
+							startActivity(intent);
+							finish();
+						}
+					}
+					catch (Exception e)
+					{
+						finish();
+					}
+				}
+			});
 
         //fileselectwillfile.list();
         try
@@ -82,7 +89,8 @@ public class fileselectAct extends Activity
                 MainActivity.filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
                 filelist = new File(Environment.getExternalStorageDirectory().toString() + "/").list();
             }
-        } catch (Exception e)
+        }
+		catch (Exception e)
         {
             filelist = new File(Environment.getExternalStorageDirectory().toString() + "/").list();
             //Toast.makeText(fileselectCtx, e.toString(), Toast.LENGTH_SHORT).show();
@@ -92,58 +100,59 @@ public class fileselectAct extends Activity
         fileselectView.setAdapter(adapter);
 
         fileselectView.setOnItemClickListener(new OnItemClickListener()
-        {
+			{
 
-            @Override
-            public void onItemClick(AdapterView<?> l, View v, int position, long id)
-            {
-                s = (String) l.getItemAtPosition(position);
-                if (new File(MainActivity.filewillpath + s + "/").isDirectory())
-                {
-                    MainActivity.filewillpath = MainActivity.filewillpath + s + "/";
-                    Intent helpint = new Intent(fileselectCtx, fileselectAct.class);
-                    startActivity(helpint);
-                    finish();
-                }
-                else
-                {
+				@Override
+				public void onItemClick(AdapterView<?> l, View v, int position, long id)
+				{
+					s = (String) l.getItemAtPosition(position);
+					if (new File(MainActivity.filewillpath + s + "/").isDirectory())
+					{
+						MainActivity.filewillpath = MainActivity.filewillpath + s + "/";
+						Intent helpint = new Intent(fileselectCtx, fileselectAct.class);
+						startActivity(helpint);
+						finish();
+					}
+					else
+					{
 //						Intent mainint = new Intent(ctx, MainActivity.class);
 //						startActivity(mainint);
-                    if (new File(fileselecttitle.getText().toString() + s).length() < 716800)
-                    {
-                        MainActivity.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
-                        finish();
-                    }
-                    else
-                    {
-                        MainActivity.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
-                    }
-                }
-            }
-        });
+						if (new File(fileselecttitle.getText().toString() + s).length() < 716800)
+						{
+							MainActivity.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
+							finish();
+						}
+						else
+						{
+							MainActivity.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
+						}
+					}
+				}
+			});
 
         fileselectView.setOnItemLongClickListener(new OnItemLongClickListener()
-        {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
-            {
-                String s = (String) l.getItemAtPosition(position);
-                if (!new File(MainActivity.filewillpath + s + "/").isDirectory())
-                {
-                    try
-                    {
-                        MainActivity.filedofile = s;
-                        MainActivity.filedopath = MainActivity.filewillpath;
-                        Intent helpint = new Intent(fileselectCtx, filetodoAct.class);
-                        startActivity(helpint);
+			{
+				@Override
+				public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
+				{
+					String s = (String) l.getItemAtPosition(position);
+					if (!new File(MainActivity.filewillpath + s + "/").isDirectory())
+					{
+						try
+						{
+							MainActivity.filedofile = s;
+							MainActivity.filedopath = MainActivity.filewillpath;
+							Intent helpint = new Intent(fileselectCtx, filetodoAct.class);
+							startActivity(helpint);
 
-                    } catch (Exception e)
-                    {
-                        Toast.makeText(fileselectCtx, "错误！", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                return true;
-            }
-        });
+						}
+						catch (Exception e)
+						{
+							Toast.makeText(fileselectCtx, "错误！", Toast.LENGTH_SHORT).show();
+						}
+					}
+					return true;
+				}
+			});
     }
 }
