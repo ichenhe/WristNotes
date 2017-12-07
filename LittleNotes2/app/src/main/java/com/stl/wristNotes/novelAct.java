@@ -34,8 +34,8 @@ public class novelAct extends Activity
 			sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 			editor = sharedPreferences.edit();
 			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			ArrayList<String> novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
-			ArrayList<String> novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
+			final ArrayList<String> novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
+			final ArrayList<String> novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
 			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 
 
@@ -89,7 +89,7 @@ public class novelAct extends Activity
 					@Override
 					public void onItemClick(AdapterView<?> l, View v, int position, long id)
 					{
-						//Toast.makeText(ctx, position + "", Toast.LENGTH_LONG).show();
+						MainActivity.openNovel(ctx, sharedPreferences, editor, novelpath.get(position), novelname.get(position));
 					}
 				});
 
