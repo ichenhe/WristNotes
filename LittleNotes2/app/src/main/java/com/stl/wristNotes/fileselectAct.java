@@ -16,6 +16,7 @@ import org.apache.ftpserver.util.*;
 
 public class fileselectAct extends Activity
 {
+	Context ctx = this;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     public static Activity fileselectCtx;
@@ -71,7 +72,7 @@ public class fileselectAct extends Activity
 					}
 					catch (Exception e)
 					{
-						finish();
+						Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭乖乖在这呆着吧", Toast.LENGTH_LONG).show();
 					}
 				}
 			});

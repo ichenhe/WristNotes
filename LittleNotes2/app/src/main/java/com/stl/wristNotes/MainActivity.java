@@ -65,8 +65,8 @@ public class MainActivity extends Activity
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
-
-    @Override
+	IntentFilter batteryLevelFilter;
+	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -277,7 +277,7 @@ public class MainActivity extends Activity
                     editor.putString("novelList", novellist.toString());
                     editor.commit();
 					mainHint.setText(getHintText(sharedPreferences));
-					batteryLevel();
+					//batteryLevel();
                 }
                 catch (Exception e)
                 {
@@ -302,7 +302,7 @@ public class MainActivity extends Activity
                     editor.putString("novelList", novellist.toString());
                     editor.commit();
 					mainHint.setText(getHintText(sharedPreferences));
-					batteryLevel();
+					//batteryLevel();
                 }
                 catch (JSONException e)
                 {
@@ -455,9 +455,6 @@ public class MainActivity extends Activity
 				
 				MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
                 ed.putString("novelList", novellist.toString());
-                ed.putString("filepath", path);
-                ed.putString("filename", name);
-                ed.commit();
                 MainActivity.p = novelname.size();
 
                 Toast.makeText(ctx, "已打开小说 " + nname, Toast.LENGTH_SHORT).show();
@@ -470,6 +467,8 @@ public class MainActivity extends Activity
             MainActivity.mode = 1;
             ed.putInt("mode", 1);
             ed.putInt("p", MainActivity.p);
+			ed.putString("filepath", path);
+			ed.putString("filename", name);
             ed.commit();
             MainActivity.filename = name;
             MainActivity.filepath = path;
@@ -536,7 +535,6 @@ public class MainActivity extends Activity
 		batteryLevelReceiver = new BroadcastReceiver() {
 			public void onReceive(Context context, Intent intent)
 			{
-				context.unregisterReceiver(this);
 				int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
 				int scale = intent.getIntExtra("scale", -1);//获得总电量
 				batteryLevel = -1;
@@ -550,7 +548,7 @@ public class MainActivity extends Activity
 				}
 			}
 		};
-		IntentFilter batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+		batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 		registerReceiver(batteryLevelReceiver, batteryLevelFilter);
 	}
 
@@ -570,15 +568,16 @@ public class MainActivity extends Activity
     }
 
 
-	/*@Override
+	@Override
 	protected void onDestroy()
 	{
 		super.onDestroy();
 		//销毁广播 
-		unregisterReceiver(batteryLevelReceiver);
+		if(mode == 1) unregisterReceiver(batteryLevelReceiver);
+		//ctx.unregisterReceiver(this);
 	}
 	
-    private boolean isAdded = false; // 是否已增加悬浮窗
+   /*private boolean isAdded = false; // 是否已增加悬浮窗
     private static WindowManager wm;
     private static WindowManager.LayoutParams params;
     private Button btn_floatView;

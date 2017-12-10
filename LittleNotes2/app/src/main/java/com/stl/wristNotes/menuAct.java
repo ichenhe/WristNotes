@@ -253,15 +253,8 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("FTP文件传输"))
 					{
-						if (isWifi(ctx))
-						{
-							passint = new Intent(ctx, ftpAct.class);
-							startActivity(passint);
-						}
-						else
-						{
-							Toast.makeText(ctx, "Wi-Fi未链接，请先连接Wi-Fi！", Toast.LENGTH_SHORT).show();
-						}
+						passint = new Intent(ctx, ftpAct.class);
+						startActivity(passint);
 					}
 					else if (s.equals("我的小说"))
 					{
@@ -295,17 +288,6 @@ public class menuAct extends Activity
 		}
 	}
 
-	public static boolean isWifi(Context mContext)
-    {
-        ConnectivityManager connectivityManager = (ConnectivityManager) mContext
-			.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetInfo != null && activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI)
-        {
-            return true;
-        }
-        return false;
-    }
 }
 
 
