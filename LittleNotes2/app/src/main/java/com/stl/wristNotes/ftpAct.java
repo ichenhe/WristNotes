@@ -47,6 +47,7 @@ public class ftpAct extends Activity
         ftpedit3 = (EditText) findViewById(R.id.ftpEditText3);//端口
         ftpText2 = (TextView) findViewById(R.id.ftpTextView2);//下
 
+		ftpedit2.setText(Environment.getExternalStorageDirectory().toString());
 
         togglebutton = (ToggleButton) findViewById(R.id.ftpToggleButton1);
         togglebutton.setOnClickListener(new OnClickListener() {
@@ -108,8 +109,8 @@ public class ftpAct extends Activity
 			// replace the default listener
 			serverFactory.addListener("default", factory.createListener());
             serverFactory.getUserManager().save(user);
-            FtpServer server = serverFactory.createServer();
-            server.start();
+            mFtpServer = serverFactory.createServer();
+            mFtpServer.start();
 			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动\n\n电脑端请在文件浏览器中输入\"ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + "\"\n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
         }
         catch (FtpException e)

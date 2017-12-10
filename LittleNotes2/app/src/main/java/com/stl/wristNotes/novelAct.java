@@ -97,7 +97,7 @@ public class novelAct extends Activity
 		}
         catch (JSONException e)
         {
-            Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装(=_=)", Toast.LENGTH_LONG).show();
 		}
 		catch (Exception e)
 		{
