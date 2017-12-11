@@ -81,6 +81,7 @@ public class MainActivity extends Activity
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
         p = sharedPreferences.getInt("p", 0);
+		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
         try
         {
             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
