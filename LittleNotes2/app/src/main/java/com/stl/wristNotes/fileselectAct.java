@@ -149,7 +149,7 @@ public class fileselectAct extends Activity
 						}
 						catch (Exception e)
 						{
-							Toast.makeText(fileselectCtx, "错误！", Toast.LENGTH_SHORT).show();
+							Toast.makeText(fileselectCtx, "错误错误错误！。。怎么说来着。。err。。ar？-_-#", Toast.LENGTH_SHORT).show();
 						}
 					}
 					return true;

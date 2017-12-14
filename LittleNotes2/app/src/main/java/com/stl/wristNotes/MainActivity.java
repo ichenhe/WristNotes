@@ -401,7 +401,7 @@ public class MainActivity extends Activity
     {
         new AlertDialog.Builder(ctx)
                 .setMessage("您打开的文件过大，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener()
+                .setPositiveButton("小说模式", new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
@@ -409,12 +409,12 @@ public class MainActivity extends Activity
                         openNovel(ctx, sp, ed, path, name);
                     }
                 })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener()
+                .setNegativeButton("普通模式", new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        Toast.makeText(ctx, "正在打开..请稍后...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "正在打开..请稍稍稍稍稍后→_→", Toast.LENGTH_SHORT).show();
                         openFile(ctx, ed, path, name);
                     }
                 }).show();
