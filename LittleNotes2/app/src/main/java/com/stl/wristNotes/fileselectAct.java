@@ -53,14 +53,21 @@ public class fileselectAct extends Activity
 						{
 							String[] filelist3 = MainActivity.filewillpath.split("/");
 							String filelist4 = "";
-							for (int i = 0; i < filelist3.length - 1; i++)
-							{
-								filelist4 += filelist3[i] + "/";
-							}
-							MainActivity.filewillpath = filelist4;
-							intent = new Intent(fileselectCtx, fileselectAct.class);
-							startActivity(intent);
-							finish();
+                            if(filelist3 != null)
+                            {
+                                for (int i = 0; i < filelist3.length - 1; i++)
+                                {
+                                    filelist4 += filelist3[i] + "/";
+                                }
+                                MainActivity.filewillpath = filelist4;
+                                intent = new Intent(fileselectCtx, fileselectAct.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else
+                            {
+                                Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭乖乖在这呆着吧", Toast.LENGTH_LONG).show();
+                            }
 						}
 						else
 						{

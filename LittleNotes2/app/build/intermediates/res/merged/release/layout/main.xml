@@ -35,7 +35,7 @@
 				android:layout_height="45dp"
 				android:gravity="bottom|center"
 				android:paddingBottom="5dp"
-				android:text="23:17\n1/366  66%"
+				android:text="\?\?:\?\?\n\?\?/\?\?\?  \?\?%"
 				android:textColor="#969696"
 				android:textStyle="bold"/>
 
