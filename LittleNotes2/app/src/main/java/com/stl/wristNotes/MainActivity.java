@@ -88,7 +88,7 @@ public class MainActivity extends Activity
         }
         catch (JSONException e)
         {
-            Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装喵", Toast.LENGTH_LONG).show();
         }
         mainLeft = (Button) findViewById(R.id.mainButtonLeft);
         mainRight = (Button) findViewById(R.id.mainButtonRight);
@@ -161,7 +161,7 @@ public class MainActivity extends Activity
             {
                 //Toast.makeText(ctx, filepath + filename + "   " + mode, Toast.LENGTH_SHORT).show();
                 textView.setText(novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()));
-                Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
 				batteryLevel();
             }
@@ -179,7 +179,7 @@ public class MainActivity extends Activity
         {
             if(!new File(filepath + filename).exists())
             {
-                textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档\n\n\n");
+                textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档ww\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
                 isalpha = 0;
                 if(!new File(filepath).exists())
@@ -197,7 +197,7 @@ public class MainActivity extends Activity
         }
         catch (Exception e)
         {
-            Toast.makeText(ctx, "错误！" + e.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_SHORT).show();
         }
 
         if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
