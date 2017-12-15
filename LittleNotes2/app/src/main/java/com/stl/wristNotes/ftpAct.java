@@ -59,12 +59,12 @@ public class ftpAct extends Activity
 						{
 							if (!new File(ftpedit2.getText().toString()).exists())
 							{
-								Toast.makeText(ctx, "文件夹路径不存在！！请检查后重试", Toast.LENGTH_SHORT).show();
+								Toast.makeText(ctx, "在文件夹的迷宫中迷失了。。你确定有这个文件夹吗〒_〒", Toast.LENGTH_SHORT).show();
 								togglebutton.setChecked(false);
 							}
 							else if (!new File(ftpedit2.getText().toString()).isDirectory())
 							{
-								Toast.makeText(ctx, "请输入一个文件夹路径(默认就可以)", Toast.LENGTH_SHORT).show();
+								Toast.makeText(ctx, "请输入一个文！件！夹！路径(还是劝你直接用默认的吧)", Toast.LENGTH_SHORT).show();
 								togglebutton.setChecked(false);
 							}
 							else
@@ -74,14 +74,14 @@ public class ftpAct extends Activity
 						}
 						else
 						{
-							Toast.makeText(ctx, "请将信息填写完整！", Toast.LENGTH_LONG).show();
+							Toast.makeText(ctx, "请将信息填写完整！再耍我我就罢工了", Toast.LENGTH_LONG).show();
 							togglebutton.setChecked(false);
 						}
 					}
 					else
 					{
 						closeFtp();
-						ftpText2.setText("如无特殊需要无需修改上方选项，点击开关打开FTP");
+						ftpText2.setText("如无特♂殊需要无需修改上方选项，点击开关打开FTP");
 					}
 				}});
 

@@ -33,21 +33,20 @@ public class editfileAct extends Activity
 		}
 		catch (IOException e)
 		{
-			Toast.makeText(ctx, "打开文件错误！" + e.toString(), Toast.LENGTH_LONG);
+			Toast.makeText(ctx, "打开文件错！误！了！╮(╯▽╰)╭", Toast.LENGTH_LONG);
 		}
 
 		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
 		{
 			File f = new File(sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/"), sharedPreferences.getString("filename", "1.txt"));
-			FileOutputStream out = null;
 			if (!f.exists())
 			{
-				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（这么长感觉好有B格啊罒▽罒）", Toast.LENGTH_LONG).show();
 			}
 		}
 		else
 		{
-			Toast.makeText(ctx, "外置储存不可用！请检查SD卡或稍后再试", Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
 	}
 	
@@ -64,26 +63,26 @@ public class editfileAct extends Activity
 					out = new FileOutputStream(f);
 					out.write(editfileEdit.getText().toString().getBytes("UTF-8"));
 					out.close();
-					Toast.makeText(ctx, "保存成功！", Toast.LENGTH_SHORT).show();
+					Toast.makeText(ctx, "保存成攻！绝对不是我故意打错字的(*/ω＼*)", Toast.LENGTH_SHORT).show();
 					MainActivity.textView.setText(editfileEdit.getText().toString());
 				}
 				else
 				{
-					Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
+					Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（。。知道不行还点我，再点戳你哦）", Toast.LENGTH_LONG).show();
 				}
 			}
 			catch (FileNotFoundException e)
 			{
-				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（。。知道不行还点我，再点戳你哦）", Toast.LENGTH_LONG).show();
 			}
 			catch (IOException e)
 			{
-				Toast.makeText(ctx, "未知错误..请检查输入的文本再试...", Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, "你输入了什么不该输入的东西嘛。。歪，110嘛？", Toast.LENGTH_LONG).show();
 			}
 		}
 		else
 		{
-			Toast.makeText(ctx, "外置储存不可用！请检查SD卡或稍后再试", Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
 	}
 	public void editfileButton2(View view)
