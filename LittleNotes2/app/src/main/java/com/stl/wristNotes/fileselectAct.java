@@ -95,12 +95,12 @@ public class fileselectAct extends Activity
             else
             {
                 MainActivity.filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
-                filelist = new File(Environment.getExternalStorageDirectory().toString() + "/").list();
+                filelist = (new File(Environment.getExternalStorageDirectory().toString() + "/")).list();
             }
         }
 		catch (Exception e)
         {
-            filelist = new File(Environment.getExternalStorageDirectory().toString() + "/").list();
+            filelist = (new File(Environment.getExternalStorageDirectory().toString() + "/")).list();
             //Toast.makeText(fileselectCtx, e.toString(), Toast.LENGTH_SHORT).show();
         }
         Arrays.sort(filelist);
