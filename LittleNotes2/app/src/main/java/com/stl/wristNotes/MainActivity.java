@@ -121,11 +121,13 @@ public class MainActivity extends Activity
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
                 editor.commit();
+                mode = 0;
                 Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
             }
             else
             {
                 bigFile(ctx, sharedPreferences, editor, filepath, filename);
+                mode = 1;
             }
         }
 
