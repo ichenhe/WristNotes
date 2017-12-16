@@ -497,7 +497,7 @@ public class MainActivity extends Activity
             MainActivity.mainLeft.setVisibility(View.INVISIBLE);
             MainActivity.mainRight.setVisibility(View.INVISIBLE);
             MainActivity.mainHint.setVisibility(View.INVISIBLE);
-            Toast.makeText(ctx, "成功打开文件:" + name, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "成功打开文件:" + name + "喵", Toast.LENGTH_SHORT).show();
         } catch (IOException e)
         {
             Toast.makeText(ctx, "打开文件错误！", Toast.LENGTH_SHORT).show();
@@ -533,24 +533,28 @@ public class MainActivity extends Activity
 	
 	private void batteryLevel()
 	{
-		batteryLevelReceiver = new BroadcastReceiver() {
-			public void onReceive(Context context, Intent intent)
-			{
-				int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
-				int scale = intent.getIntExtra("scale", -1);//获得总电量
-				batteryLevel = -1;
-				if (rawlevel >= 0 && scale > 0)
-				{
-					batteryLevel = (rawlevel * 100) / scale;
-				}
-				if(mode == 1)
-				{
-					mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " +batteryLevel + "%");
-				}
-			}
-		};
-		batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-		registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+        if(batteryLevelReceiver == null)
+        {
+            batteryLevelReceiver = new BroadcastReceiver()
+            {
+                public void onReceive(Context context, Intent intent)
+                {
+                    int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
+                    int scale = intent.getIntExtra("scale", -1);//获得总电量
+                    batteryLevel = -1;
+                    if(rawlevel >= 0 && scale > 0)
+                    {
+                        batteryLevel = (rawlevel * 100) / scale;
+                    }
+                    if(mode == 1)
+                    {
+                        mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " + batteryLevel + "%");
+                    }
+                }
+            };
+            batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+        }
 	}
 
     //挠挠
@@ -574,7 +578,7 @@ public class MainActivity extends Activity
 	{
 		super.onDestroy();
 		//销毁广播 
-		if(mode == 1) unregisterReceiver(batteryLevelReceiver);
+		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
 		//ctx.unregisterReceiver(this);
 	}
 	

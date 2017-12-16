@@ -66,7 +66,7 @@ public class fileselectAct extends Activity
                             }
                             else
                             {
-                                Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭乖乖在这呆着吧", Toast.LENGTH_LONG).show();
+                                Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
                             }
 						}
 						else
@@ -79,7 +79,7 @@ public class fileselectAct extends Activity
 					}
 					catch (Exception e)
 					{
-						Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭乖乖在这呆着吧", Toast.LENGTH_LONG).show();
+						Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
 					}
 				}
 			});
@@ -96,11 +96,14 @@ public class fileselectAct extends Activity
             {
                 MainActivity.filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
                 filelist = Environment.getExternalStorageDirectory().list();
+                Toast.makeText(fileselectCtx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
             }
         }
 		catch (Exception e)
         {
+            MainActivity.filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
             filelist = Environment.getExternalStorageDirectory().list();
+            Toast.makeText(fileselectCtx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
             //Toast.makeText(fileselectCtx, e.toString(), Toast.LENGTH_SHORT).show();
         }
         Arrays.sort(filelist);
@@ -156,7 +159,7 @@ public class fileselectAct extends Activity
 						}
 						catch (Exception e)
 						{
-							Toast.makeText(fileselectCtx, "错误错误错误！-_-#", Toast.LENGTH_SHORT).show();
+							Toast.makeText(fileselectCtx, "错误错误错误惹！-_-#", Toast.LENGTH_SHORT).show();
 						}
 					}
 					return true;
