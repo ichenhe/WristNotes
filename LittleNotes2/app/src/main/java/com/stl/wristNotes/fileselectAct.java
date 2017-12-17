@@ -103,7 +103,14 @@ public class fileselectAct extends Activity
             filelist = Environment.getExternalStorageDirectory().list();
             //Toast.makeText(fileselectCtx, e.toString(), Toast.LENGTH_SHORT).show();
         }
-        Arrays.sort(filelist);
+		try
+		{
+       		Arrays.sort(filelist);
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(ctx, "你没有获取对应系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
+		}
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, filelist);
         fileselectView.setAdapter(adapter);
 
@@ -156,11 +163,12 @@ public class fileselectAct extends Activity
 						}
 						catch (Exception e)
 						{
-							Toast.makeText(fileselectCtx, "错误错误错误！-_-#", Toast.LENGTH_SHORT).show();
+							Toast.makeText(fileselectCtx, "错误错误错误了！-_-#", Toast.LENGTH_SHORT).show();
 						}
 					}
 					return true;
 				}
 			});
     }
+	
 }
