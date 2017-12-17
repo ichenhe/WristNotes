@@ -479,6 +479,7 @@ public class MainActivity extends Activity
             MainActivity.mainRight.setVisibility(View.VISIBLE);
             MainActivity.mainHint.setVisibility(View.VISIBLE);
 			mainHint.setText(getHintText(sp));
+       batteryLevel();
         } catch (Exception e)
         {
             Toast.makeText(ctx, "打开文件错误！" + e.toString(), Toast.LENGTH_LONG).show();
