@@ -121,11 +121,13 @@ public class MainActivity extends Activity
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
                 editor.commit();
+                mode = 0;
                 Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
             }
             else
             {
                 bigFile(ctx, sharedPreferences, editor, filepath, filename);
+                mode = 1;
             }
         }
 
@@ -163,7 +165,7 @@ public class MainActivity extends Activity
                 textView.setText(novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()));
                 Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
-				batteryLevel();
+				batterylevel();
             }
             catch (JSONException e)
             {
@@ -497,7 +499,7 @@ public class MainActivity extends Activity
             MainActivity.mainLeft.setVisibility(View.INVISIBLE);
             MainActivity.mainRight.setVisibility(View.INVISIBLE);
             MainActivity.mainHint.setVisibility(View.INVISIBLE);
-            Toast.makeText(ctx, "成功打开文件:" + name, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "成功打开文件:" + name + "喵", Toast.LENGTH_SHORT).show();
         } catch (IOException e)
         {
             Toast.makeText(ctx, "打开文件错误！", Toast.LENGTH_SHORT).show();
@@ -531,26 +533,30 @@ public class MainActivity extends Activity
         return sb.toString();
     }
 	
-	private void batteryLevel()
+	public void batterylevel()
 	{
-		batteryLevelReceiver = new BroadcastReceiver() {
-			public void onReceive(Context context, Intent intent)
-			{
-				int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
-				int scale = intent.getIntExtra("scale", -1);//获得总电量
-				batteryLevel = -1;
-				if (rawlevel >= 0 && scale > 0)
-				{
-					batteryLevel = (rawlevel * 100) / scale;
-				}
-				if(mode == 1)
-				{
-					mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " +batteryLevel + "%");
-				}
-			}
-		};
-		batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-		registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+        if(batteryLevelReceiver == null)
+        {
+            batteryLevelReceiver = new BroadcastReceiver()
+            {
+                public void onReceive(Context context, Intent intent)
+                {
+                    int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
+                    int scale = intent.getIntExtra("scale", -1);//获得总电量
+                    batteryLevel = -1;
+                    if(rawlevel >= 0 && scale > 0)
+                    {
+                        batteryLevel = (rawlevel * 100) / scale;
+                    }
+                    if(mode == 1)
+                    {
+                        mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " + batteryLevel + "%");
+                    }
+                }
+            };
+            batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+        }
 	}
 
     //挠挠
@@ -574,7 +580,7 @@ public class MainActivity extends Activity
 	{
 		super.onDestroy();
 		//销毁广播 
-		if(mode == 1) unregisterReceiver(batteryLevelReceiver);
+		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
 		//ctx.unregisterReceiver(this);
 	}
 	
