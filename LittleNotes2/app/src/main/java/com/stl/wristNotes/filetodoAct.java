@@ -57,7 +57,14 @@ public class filetodoAct extends Activity
 					else if (s.equals("用小说模式打开"))
 					{
 						MainActivity.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
-						new MainActivity().batterylevel();
+//						try{
+//							new MainActivity().batterylevel();
+//						}
+//						catch(Exception e)
+//						{
+//							Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
+//						}
+						//MainActivity.batterylevel();
 						fileselectAct.fileselectCtx.finish();
 						finish();
 					}

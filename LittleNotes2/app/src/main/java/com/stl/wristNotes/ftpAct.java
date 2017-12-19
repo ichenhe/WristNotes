@@ -69,7 +69,15 @@ public class ftpAct extends Activity
 							}
 							else
 							{
-								startFtpServer();
+								if(getHostIP().equals("192.168.167.239"))
+								{
+									Toast.makeText(ctx, "你可能没有连接网络！请在确认连接网络后重试（或者重启路由器试试？）", Toast.LENGTH_LONG).show();
+									togglebutton.setChecked(false);
+								}
+								else
+								{
+									startFtpServer();
+								}
 							}
 						}
 						else
@@ -111,7 +119,7 @@ public class ftpAct extends Activity
             serverFactory.getUserManager().save(user);
             mFtpServer = serverFactory.createServer();
             mFtpServer.start();
-			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动\n\n电脑端请在文件浏览器中输入\"ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + "\"\n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
+			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动\n\n电脑端请在文件浏览器中输入 ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + " \n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
         }
         catch (FtpException e)
         {

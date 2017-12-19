@@ -181,7 +181,7 @@ public class MainActivity extends Activity
         {
             if(!new File(filepath + filename).exists())
             {
-                textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档ww\n\n\n");
+                textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档哦\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
                 isalpha = 0;
                 if(!new File(filepath).exists())
@@ -402,7 +402,7 @@ public class MainActivity extends Activity
 	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)
     {
         new AlertDialog.Builder(ctx)
-                .setMessage("您打开的文件过大，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
+                .setMessage("您打开的文件过大，使用普通模式打开会导致应用卡死，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
                 .setPositiveButton("小说模式", new DialogInterface.OnClickListener()
                 {
                     @Override
@@ -416,7 +416,7 @@ public class MainActivity extends Activity
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        Toast.makeText(ctx, "正在打开..请稍稍稍稍稍后→_→", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "正在打开。。前方应用即将卡死，实在不行就卸了重装吧→_→", Toast.LENGTH_SHORT).show();
                         openFile(ctx, ed, path, name);
                     }
                 }).show();
