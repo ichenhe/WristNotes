@@ -338,6 +338,12 @@ public class MainActivity extends Activity
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
+			if(mode == 1)
+			{
+				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
+				MainActivity.mainRight.setVisibility(View.INVISIBLE);
+				MainActivity.mainHint.setVisibility(View.INVISIBLE);
+			}
         }
         else if(pass == 0)
         {
@@ -348,21 +354,27 @@ public class MainActivity extends Activity
 
     public void textLongClick()
     {
-        if(pass == 1)
+        if(pass == 1)//无密码或已解锁
         {
-            if(isalpha == 0)
+            if(isalpha == 0)//调出菜单
             {
                 cho = 0;
                 Intent menuint = new Intent(ctx, menuAct.class);
                 startActivity(menuint);
             }
-            else
+            else//显示文字
             {
                 textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
                 isalpha = 0;
+				if(mode == 1)
+				{
+					MainActivity.mainLeft.setVisibility(View.VISIBLE);
+					MainActivity.mainRight.setVisibility(View.VISIBLE);
+					MainActivity.mainHint.setVisibility(View.VISIBLE);
+				}
             }
         }
-        else
+        else//密码未解锁
         {
             Intent passwordint = new Intent(ctx, passwordAct.class);
             startActivity(passwordint);
@@ -371,6 +383,7 @@ public class MainActivity extends Activity
 
     public static String fileReader(String path) throws IOException
     {
+		//普通模式读取文件
         FileReader reader = new FileReader(path);
         BufferedReader bReader = new BufferedReader(reader);
         StringBuffer temp = new StringBuffer();
@@ -499,7 +512,7 @@ public class MainActivity extends Activity
             MainActivity.mainLeft.setVisibility(View.INVISIBLE);
             MainActivity.mainRight.setVisibility(View.INVISIBLE);
             MainActivity.mainHint.setVisibility(View.INVISIBLE);
-            Toast.makeText(ctx, "成功打开文件:" + name + "喵", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "成功打开文件:" + name + " 喵", Toast.LENGTH_SHORT).show();
         } catch (IOException e)
         {
             Toast.makeText(ctx, "打开文件错误！", Toast.LENGTH_SHORT).show();

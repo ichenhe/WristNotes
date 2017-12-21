@@ -18,6 +18,7 @@ public class menuAct extends Activity
 	ListAdapter adapter;
 	Intent menuintent;
 	Intent passint;
+	String[] menuList;
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -36,7 +37,7 @@ public class menuAct extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					if (MainActivity.cho == 2 || MainActivity.cho == 3 || MainActivity.cho == 4)
+					if (MainActivity.cho == 2 || MainActivity.cho == 3 || MainActivity.cho == 4 || MainActivity.cho == 6)
 					{
 						MainActivity.cho = 0;
 						menuintent = new Intent(ctx, menuAct.class);
@@ -62,41 +63,41 @@ public class menuAct extends Activity
 
 		if (MainActivity.cho == 0)
 		{
-			String[] menu_main = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "FTP文件传输", "帮助", "关于" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_main);
+			menuList = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于" };
 			menutitle.setText("设置");
 		}
 		else if (MainActivity.cho == 1)
 		{
-			String[] menu_light = new String[] { "1", "2", "3", "4", "5", "6" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_light);
+			menuList = new String[] { "1", "2", "3", "4", "5", "6" };
 			menutitle.setText("亮度调整");
 		}
 		else if (MainActivity.cho == 2)
 		{
-			String[] menu_display = new String[] { "调整亮度：" + (sharedPreferences.getInt("light", 6) - 1), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_display);
+			menuList = new String[] { "调整亮度：" + (sharedPreferences.getInt("light", 6) - 1), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
 			menutitle.setText("显示设置");
 		}
 		else if (MainActivity.cho == 3)
 		{
-			String[] menu_per = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护：" + mima(), "更改密码", "密码入口伪装" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_per);
+			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 4)
 		{
-			String[] menu_watch = new String[] { "左右空出像素数", "上下空出行数" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_watch);
+			menuList = new String[] { "左右空出像素数", "上下空出行数" };
 			menutitle.setText("手表优化");
 		}
 		else if (MainActivity.cho == 5)
 		{
-			String[] menu_bs = new String[] { "8", "10", "12", "14", "16" };
-			adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menu_bs);
+			menuList = new String[] { "8", "10", "12", "14", "16" };
 			menutitle.setText("字号调整");
 		}
+		else if(MainActivity.cho == 6)
+		{
+			menuList = new String[] { "FTP文件传输", "蓝牙传输" };
+			menutitle.setText("文件传输");
+		}
 
+		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -271,6 +272,13 @@ public class menuAct extends Activity
 					else if(s.equals("主题选择"))
 					{
 						Toast.makeText(ctx, "还未制作完成，请期待下一版！", Toast.LENGTH_LONG).show();
+					}
+					else if(s.equals("文件传输"))
+					{
+						MainActivity.cho = 6;
+						menuintent = new Intent(ctx, menuAct.class);
+						startActivity(menuintent);
+						finish();
 					}
 				}
 			});
