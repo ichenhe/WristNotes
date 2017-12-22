@@ -73,7 +73,7 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 2)
 		{
-			menuList = new String[] { "调整亮度：" + (sharedPreferences.getInt("light", 6) - 1), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
+			menuList = new String[] { "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
 			menutitle.setText("显示设置");
 		}
 		else if (MainActivity.cho == 3)
@@ -154,11 +154,11 @@ public class menuAct extends Activity
 					}
 					else if (s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("5") || s.equals("6"))
 					{
-						MainActivity.textView.setTextColor(Color.argb(255, (1 + Integer.parseInt(s)) * 12, (1 + Integer.parseInt(s)) * 12, (1 + Integer.parseInt(s)) * 12));
-						editor.putInt("light", 1 + Integer.parseInt(s));
+						MainActivity.textView.setTextColor(Color.argb(255, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40));
+						editor.putInt("light", Integer.parseInt(s));
 						editor.commit();
 						Toast.makeText(ctx, "已调整亮度", Toast.LENGTH_SHORT).show();
-						MainActivity.light = 1 + Integer.parseInt(s);
+						MainActivity.light = Integer.parseInt(s);
 						finish();
 					}
 					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16") || s.equals("18") || s.equals("20"))

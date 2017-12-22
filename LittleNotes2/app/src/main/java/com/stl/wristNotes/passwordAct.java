@@ -26,7 +26,7 @@ public class passwordAct extends Activity
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
 		passtext = sharedPreferences.getString("passtext", "输入密码");
-		
+
 		passview = (TextView) findViewById(R.id.passwordText);
 		passview.setText(passtext);
 		passedit = (EditText) findViewById(R.id.passwordEdit);
@@ -37,7 +37,7 @@ public class passwordAct extends Activity
 				{
 					if (!passedit.getText().toString().equals(""))
 					{
-						if (passview.getText().toString().equals("  设定新密码  ") /*&& sharedPreferences.getString("password", "").equals("")*/)
+						if (passview.getText().toString().equals("  设定新密码  "))
 						{
 							MainActivity.passwdsp = passedit.getText().toString();
 							editor.putString("passtext", "  再次输入  ");
@@ -63,7 +63,7 @@ public class passwordAct extends Activity
 								passedit.setText("");
 							}
 						}
-						else if(passview.getText().toString().equals("  输入原密码  "))
+						else if (passview.getText().toString().equals("  输入原密码  "))
 						{
 							if (passedit.getText().toString().equals(sharedPreferences.getString("password", "")))
 							{
@@ -80,7 +80,7 @@ public class passwordAct extends Activity
 								passedit.setText("");
 							}
 						}
-						else if(passview.getText().toString().equals(" 输入原密码 "))
+						else if (passview.getText().toString().equals(" 输入原密码 "))
 						{
 							if (passedit.getText().toString().equals(sharedPreferences.getString("password", "")))
 							{
@@ -102,7 +102,7 @@ public class passwordAct extends Activity
 							{
 								//Intent passint = new Intent(passwordAct.this,MainActivity.class);
 								MainActivity.pass = 1;
-								MainActivity.textView.setTextColor(Color.argb(255, MainActivity.light*8, MainActivity.light*8, MainActivity.light*8));
+								MainActivity.textView.setTextColor(Color.argb(255, MainActivity.light * 40, MainActivity.light * 40, MainActivity.light * 40));
 								finish();
 							}
 							else

@@ -77,7 +77,7 @@ public class MainActivity extends Activity
         editor = sharedPreferences.edit();
         filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/");
         filename = sharedPreferences.getString("filename", "1.txt");
-        light = sharedPreferences.getInt("light", 6);
+        light = sharedPreferences.getInt("light", 5);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
         p = sharedPreferences.getInt("p", 0);
@@ -209,14 +209,7 @@ public class MainActivity extends Activity
         }
         else
         {
-            if(!new File(filepath + filename).exists())
-            {
-                textView.setTextColor(Color.argb(255, 203, 203, 203));
-            }
-            else
-            {
-                textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-            }
+            textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
             isalpha = 0;
         }
 
@@ -364,7 +357,7 @@ public class MainActivity extends Activity
             }
             else//显示文字
             {
-                textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+                textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
                 isalpha = 0;
 				if(mode == 1)
 				{
@@ -394,7 +387,7 @@ public class MainActivity extends Activity
             temp.append(temp1 + "\n");
         }
         bReader.close();
-        textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
+        textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
         return temp.toString();
     }
 
