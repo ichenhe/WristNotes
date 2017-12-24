@@ -96,6 +96,11 @@ public class menuAct extends Activity
 			menuList = new String[] { "FTP文件传输", "蓝牙传输" };
 			menutitle.setText("文件传输");
 		}
+		else if(MainActivity.cho == 7)
+		{
+			menuList = new String[] { "跳转页数" };
+			menutitle.setText("阅读菜单");
+		}
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 		listView.setAdapter(adapter);
@@ -277,6 +282,17 @@ public class menuAct extends Activity
 					{
 						MainActivity.cho = 6;
 						menuintent = new Intent(ctx, menuAct.class);
+						startActivity(menuintent);
+						finish();
+					}
+					else if(s.equals("跳转页数"))
+					{
+						MainActivity.inputtitle = "跳转页数";
+						MainActivity.inputhite = "请输入页号";
+						MainActivity.inputkeys = "0123456789";
+						MainActivity.inputset = "";
+						MainActivity.inputact = 2;
+						menuintent = new Intent(ctx, inputAct.class);
 						startActivity(menuintent);
 						finish();
 					}

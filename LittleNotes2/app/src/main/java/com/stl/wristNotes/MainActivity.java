@@ -35,6 +35,7 @@ public class MainActivity extends Activity
     public static String inputset = "";
     public static String inputhite = "";
     public static int inputact;
+	public static String inputkeys = "";
     //外部-fileSelect
     public static String filepath;
     public static String filename;
@@ -206,6 +207,12 @@ public class MainActivity extends Activity
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
+			if(mode == 1)
+			{
+				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
+				MainActivity.mainRight.setVisibility(View.INVISIBLE);
+				MainActivity.mainHint.setVisibility(View.INVISIBLE);
+			}
         }
         else
         {
@@ -270,6 +277,7 @@ public class MainActivity extends Activity
                     novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
                     novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
                     textView.setText(novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+					mainScrollView.fullScroll(View.FOCUS_UP);
                     editor.putString("novelList", novellist.toString());
                     editor.commit();
 					mainHint.setText(getHintText(sharedPreferences));
@@ -294,7 +302,9 @@ public class MainActivity extends Activity
                     List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
                     novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
                     novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+					textView.setText("");
                     textView.setText(novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+					mainScrollView.fullScroll(View.FOCUS_UP);
                     editor.putString("novelList", novellist.toString());
                     editor.commit();
 					mainHint.setText(getHintText(sharedPreferences));
@@ -318,7 +328,9 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View p1)
             {
-
+				MainActivity.cho = 7;
+				Intent intent = new Intent(ctx, menuAct.class);
+				startActivity(intent);
             }
         });
 
@@ -408,7 +420,7 @@ public class MainActivity extends Activity
 	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)
     {
         new AlertDialog.Builder(ctx)
-                .setMessage("您打开的文件过大，使用普通模式打开会导致应用卡死，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
+                .setMessage("您打开的文件过大，使用普通模式打开可能会导致应用卡死，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
                 .setPositiveButton("小说模式", new DialogInterface.OnClickListener()
                 {
                     @Override
