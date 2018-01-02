@@ -9,6 +9,7 @@ import android.view.*;
 import java.io.*;
 
 import android.content.*;
+import com.stl.wristNotes.method.*;
 
 
 public class filetodoAct extends Activity
@@ -44,7 +45,7 @@ public class filetodoAct extends Activity
 					{
 						try
 						{
-							MainActivity.textView.setText(MainActivity.fileReader(MainActivity.filedopath + MainActivity.filedofile));
+							MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
 							Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",要看什么的话。。小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
 							fileselectAct.fileselectCtx.finish();
 							finish();
@@ -56,7 +57,7 @@ public class filetodoAct extends Activity
 					}
 					else if (s.equals("用小说模式打开"))
 					{
-						MainActivity.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
+						fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
 //						try{
 //							new MainActivity().batterylevel();
 //						}

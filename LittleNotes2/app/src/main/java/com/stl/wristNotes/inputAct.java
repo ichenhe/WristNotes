@@ -10,6 +10,7 @@ import android.widget.*;
 import java.io.*;
 import java.util.*;
 import org.json.*;
+import com.stl.wristNotes.method.*;
 
 
 public class inputAct extends Activity
@@ -80,7 +81,7 @@ public class inputAct extends Activity
 							List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 							novelpage.set(MainActivity.p - 1, (Integer.valueOf(inputedit.getText().toString()).intValue() - 1) + "");
 							novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-							MainActivity.textView.setText(MainActivity.novelReader(MainActivity.filepath + MainActivity.filename, Integer.valueOf(inputedit.getText().toString()).intValue() - 1));
+							MainActivity.textView.setText(fileOpen.novelReader(MainActivity.filepath + MainActivity.filename, Integer.valueOf(inputedit.getText().toString()).intValue() - 1));
 							MainActivity.mainScrollView.fullScroll(View.FOCUS_UP);
 							editor.putString("novelList", novellist.toString());
 							editor.commit();

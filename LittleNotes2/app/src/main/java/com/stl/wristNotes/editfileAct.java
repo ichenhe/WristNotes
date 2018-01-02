@@ -7,6 +7,7 @@ import android.widget.*;
 import java.io.*;
 import android.view.*;
 import android.view.inputmethod.*;
+import com.stl.wristNotes.method.*;
 
 
 public class editfileAct extends Activity
@@ -29,7 +30,7 @@ public class editfileAct extends Activity
 		editfileEdit.clearFocus();
 		try
 		{
-			editfileEdit.setText(MainActivity.fileReader(sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/") + sharedPreferences.getString("filename", "1.txt")));
+			editfileEdit.setText(fileOpen.fileReader(sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/") + sharedPreferences.getString("filename", "1.txt")));
 		}
 		catch (IOException e)
 		{

@@ -11,6 +11,7 @@ import android.view.*;
 import android.view.View.*;
 import android.widget.AdapterView.*;
 
+import com.stl.wristNotes.method.*;
 
 public class novelAct extends Activity
 {
@@ -29,21 +30,12 @@ public class novelAct extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.novel);
 
-		try
-		{
-			sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
-			editor = sharedPreferences.edit();
-			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
-			novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
-			novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-
-
-			final ListView listView = (ListView) findViewById(R.id.myNovel);
-			LayoutInflater infla = LayoutInflater.from(this);
-			View footView = infla.inflate(R.layout.mynoveltext, null);
-			novelbutton = (Button) footView.findViewById(R.id.mynoveltextButton);
-			novelbutton.setOnClickListener(new OnClickListener()
+		List<Map<String, Object>> listItems = new ArrayList<Map<String,Object>>();
+		final ListView listView = (ListView) findViewById(R.id.myNovel);
+		LayoutInflater infla = LayoutInflater.from(this);
+		View footView = infla.inflate(R.layout.mynoveltext, null);
+		novelbutton = (Button) footView.findViewById(R.id.mynoveltextButton);
+		novelbutton.setOnClickListener(new OnClickListener()
 			{
 				@Override
 				public void onClick(View p1)
@@ -55,7 +47,7 @@ public class novelAct extends Activity
 							@Override
 							public void onClick(DialogInterface dialog, int which)
 							{
-								if(MainActivity.mode == 0)
+								if (MainActivity.mode == 0)
 								{
 									editor.putString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}");
 									editor.commit();
@@ -71,8 +63,15 @@ public class novelAct extends Activity
 						.setNegativeButton("取消", null).show();
 				}
 			});
+		try
+		{
+			sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
+			editor = sharedPreferences.edit();
+			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+			novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
+			novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
+			novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 
-			List<Map<String, Object>> listItems=new ArrayList<Map<String,Object>>();
 			for (int i = 0; i < novelname.size(); i++)
 			{
 				Map<String, Object> listItem=new HashMap<String,Object>();
@@ -80,19 +79,6 @@ public class novelAct extends Activity
 				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页，共" + (int)Math.ceil(new File(novelpath.get(i)).length() / 500 + 1) + "页\n" + novelpath.get(i));
 				listItems.add(listItem);
 			}
-			SimpleAdapter simpleAdapter=new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
-			listView.addFooterView(footView, null, true);
-			listView.setAdapter(simpleAdapter);
-
-			listView.setOnItemClickListener(new OnItemClickListener()
-				{
-					@Override
-					public void onItemClick(AdapterView<?> l, View v, int position, long id)
-					{
-						//MainActivity.openNovel(ctx, sharedPreferences, editor, novelpath.get(position), novelname.get(position));
-						//finish();
-					}
-				});
 
 		}
         catch (JSONException e)
@@ -103,5 +89,32 @@ public class novelAct extends Activity
 		{
 			Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
 		}
+		
+		SimpleAdapter simpleAdapter=new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
+		listView.addFooterView(footView, null, true);
+		listView.setAdapter(simpleAdapter);
+
+		listView.setOnItemClickListener(new OnItemClickListener()
+		{
+			@Override
+			public void onItemClick(AdapterView<?> l, View v, int position, long id)
+			{
+				fileOpen.openNovel(ctx,
+								   sharedPreferences,
+								   editor,
+								   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length() + 1) ,
+								   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
+				finish();
+			}
+		});
+		listView.setOnItemLongClickListener(new OnItemLongClickListener()
+		{
+			@Override
+			public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
+			{
+				
+				return true;
+			}
+		});
 	}
 }

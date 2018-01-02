@@ -12,6 +12,7 @@ import java.util.*;
 
 import org.json.*;
 import org.apache.ftpserver.util.*;
+import com.stl.wristNotes.method.*;
 
 
 public class fileselectAct extends Activity
@@ -140,12 +141,12 @@ public class fileselectAct extends Activity
 //						startActivity(mainint);
 						if (new File(fileselecttitle.getText().toString() + s).length() < 716800)
 						{
-							MainActivity.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
+							fileOpen.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
 							finish();
 						}
 						else
 						{
-							MainActivity.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
+							fileOpen.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
 						}
 					}
 				}

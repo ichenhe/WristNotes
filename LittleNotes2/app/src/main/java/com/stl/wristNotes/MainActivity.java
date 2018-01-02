@@ -21,6 +21,9 @@ import java.util.List;
 import org.json.*;
 import java.text.*;
 import java.util.*;
+import info.monitorenter.cpdetector.io.*;
+import com.stl.wristNotes.method.*;
+//import com.mobvoi.android.gesture.*;
 
 public class MainActivity extends Activity
 {
@@ -57,6 +60,7 @@ public class MainActivity extends Activity
     public static Button mainRight;
     public static TextView mainHint;
     public static ScrollView mainScrollView;
+	public static LinearLayout mainLinearLayout;
     public static int cho = 0;
     String startHideText;
     public static int mode = 0;
@@ -67,6 +71,8 @@ public class MainActivity extends Activity
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
 	IntentFilter batteryLevelFilter;
+
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -95,10 +101,11 @@ public class MainActivity extends Activity
         mainRight = (Button) findViewById(R.id.mainButtonRight);
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
+		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
 
         Intent intent = getIntent();
         String action = intent.getAction();
-        if(intent.ACTION_VIEW.equals(action))
+        if (intent.ACTION_VIEW.equals(action))
         {
             filepath = intent.getDataString()/*.replaceAll("%(?![0-9a-fA-F]{2})", "%25")*/;
             try
@@ -117,31 +124,33 @@ public class MainActivity extends Activity
             }
             filename = filet1[filet1.length - 1];
 
-            if(new File(filepath + filename).length() < 716800)
+            if (new File(filepath + filename).length() < 716800)
             {
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
-                editor.commit();
                 mode = 0;
                 Toast.makeText(ctx, "成功打开文件:" + filename, Toast.LENGTH_SHORT).show();
             }
             else
             {
-                bigFile(ctx, sharedPreferences, editor, filepath, filename);
+                fileOpen.bigFile(ctx, sharedPreferences, editor, filepath, filename);
                 mode = 1;
             }
+			Toast.makeText(ctx, getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
+			editor.putInt("mode", mode);
+			editor.commit();
         }
 
         //createFloatView()
 
-		
+
         textView = (TextView) findViewById(R.id.mainTextView);
 
         PackageManager pm = ctx.getPackageManager();//context为当前Activity上下文
         try
         {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
-            if(sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
+            if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
             {
                 Intent startint = new Intent(ctx, updated.class);
                 startActivity(startint);
@@ -152,18 +161,18 @@ public class MainActivity extends Activity
 			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
-        if(mode == 0)
+        if (mode == 0)
         {
             mainLeft.setVisibility(View.INVISIBLE);
             mainRight.setVisibility(View.INVISIBLE);
             mainHint.setVisibility(View.INVISIBLE);
         }
-        else if(mode == 1)
+        else if (mode == 1)
         {
             try
             {
                 //Toast.makeText(ctx, filepath + filename + "   " + mode, Toast.LENGTH_SHORT).show();
-                textView.setText(novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()));
+                textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()));
                 Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
 				batterylevel();
@@ -180,12 +189,12 @@ public class MainActivity extends Activity
 
         try
         {
-            if(!new File(filepath + filename).exists())
+            if (!new File(filepath + filename).exists())
             {
                 textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档哦\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
                 isalpha = 0;
-                if(!new File(filepath).exists())
+                if (!new File(filepath).exists())
                 {
                     Intent startint = new Intent(ctx, startAct.class);
                     startActivity(startint);
@@ -195,7 +204,7 @@ public class MainActivity extends Activity
             }
             else
             {
-                if(mode == 0) textView.setText(fileReader(filepath + filename));
+                if (mode == 0) textView.setText(fileOpen.fileReader(filepath + filename));
             }
         }
         catch (Exception e)
@@ -203,11 +212,11 @@ public class MainActivity extends Activity
             Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_SHORT).show();
         }
 
-        if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
+        if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if(mode == 1)
+			if (mode == 1)
 			{
 				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
 				MainActivity.mainRight.setVisibility(View.INVISIBLE);
@@ -220,9 +229,9 @@ public class MainActivity extends Activity
             isalpha = 0;
         }
 
-        if(!sharedPreferences.getString("password", "").equals(""))
+        if (!sharedPreferences.getString("password", "").equals(""))
         {
-            if(sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
+            if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
             {
                 pass = 1;
                 editor.putString("passtext", "输入密码");
@@ -247,110 +256,122 @@ public class MainActivity extends Activity
 
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
-                textClick();
-            }
-        });
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					textClick();
+				}
+			});
 
         textView.setOnLongClickListener(new OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View p1)
-            {
-                textLongClick();
-                return true;
-            }
-        });
+			{
+				@Override
+				public boolean onLongClick(View p1)
+				{
+					textLongClick();
+					return true;
+				}
+			});
 
         mainLeft.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
-                try
-                {
-                    novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-                    List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-                    novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
-                    novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-                    textView.setText(novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
-					mainScrollView.fullScroll(View.FOCUS_UP);
-                    editor.putString("novelList", novellist.toString());
-                    editor.commit();
-					mainHint.setText(getHintText(sharedPreferences));
-					//batteryLevel();
-                }
-                catch (Exception e)
-                {
-                    if(e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
-                    else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					try
+					{
+						novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+						List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+						novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
+						novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+						textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+						mainScrollView.fullScroll(View.FOCUS_UP);
+						editor.putString("novelList", novellist.toString());
+						editor.commit();
+						mainHint.setText(getHintText(sharedPreferences));
+						//batteryLevel();
+					}
+					catch (Exception e)
+					{
+						if (e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
+						else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
+					}
+				}
+			});
 
         mainRight.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
-                try
-                {
-                    novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-                    List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-                    novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
-                    novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-					textView.setText("");
-                    textView.setText(novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
-					mainScrollView.fullScroll(View.FOCUS_UP);
-                    editor.putString("novelList", novellist.toString());
-                    editor.commit();
-					mainHint.setText(getHintText(sharedPreferences));
-					//batteryLevel();
-                }
-                catch (JSONException e)
-                {
-                    Toast.makeText(ctx, "json错误" + e.toString(), Toast.LENGTH_SHORT).show();
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(ctx, "错误" + e.toString(), Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					novelScroll(mainLinearLayout, mainScrollView);
+				}
+			});
 
         mainHint.setClickable(true);
         mainHint.setOnClickListener(new OnClickListener()
-        {
-            @Override
-            public void onClick(View p1)
-            {
-				MainActivity.cho = 7;
-				Intent intent = new Intent(ctx, menuAct.class);
-				startActivity(intent);
-            }
-        });
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					MainActivity.cho = 7;
+					Intent intent = new Intent(ctx, menuAct.class);
+					startActivity(intent);
+				}
+			});
 
 
     }
 
+
+	public void novelScroll(LinearLayout layout, ScrollView scroll)
+	{
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() == layout.getMeasuredHeight())
+		{
+			try
+			{
+				novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+				List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
+				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+				textView.setText("");
+				textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+				mainScrollView.fullScroll(View.FOCUS_UP);
+				editor.putString("novelList", novellist.toString());
+				editor.commit();
+				mainHint.setText(getHintText(sharedPreferences));
+				//batteryLevel();
+			}
+			catch (JSONException e)
+			{
+				Toast.makeText(ctx, "json错误" + e.toString(), Toast.LENGTH_SHORT).show();
+			}
+			catch (Exception e)
+			{
+				Toast.makeText(ctx, "错误" + e.toString(), Toast.LENGTH_SHORT).show();
+			}
+		}
+		else
+		{
+			scroll.smoothScrollTo(0, new Double(scroll.getScrollY() + ((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue());
+		}
+	}
+
     public void textClick()
     {
-        if(pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
+        if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if(mode == 1)
+			if (mode == 1)
 			{
 				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
 				MainActivity.mainRight.setVisibility(View.INVISIBLE);
 				MainActivity.mainHint.setVisibility(View.INVISIBLE);
 			}
         }
-        else if(pass == 0)
+        else if (pass == 0)
         {
             Intent passwordint = new Intent(ctx, passwordAct.class);
             startActivity(passwordint);
@@ -359,9 +380,9 @@ public class MainActivity extends Activity
 
     public void textLongClick()
     {
-        if(pass == 1)//无密码或已解锁
+        if (pass == 1)//无密码或已解锁
         {
-            if(isalpha == 0)//调出菜单
+            if (isalpha == 0)//调出菜单
             {
                 cho = 0;
                 Intent menuint = new Intent(ctx, menuAct.class);
@@ -371,7 +392,7 @@ public class MainActivity extends Activity
             {
                 textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
                 isalpha = 0;
-				if(mode == 1)
+				if (mode == 1)
 				{
 					MainActivity.mainLeft.setVisibility(View.VISIBLE);
 					MainActivity.mainRight.setVisibility(View.VISIBLE);
@@ -386,144 +407,6 @@ public class MainActivity extends Activity
         }
     }
 
-    public static String fileReader(String path) throws IOException
-    {
-		//普通模式读取文件
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
-        StringBuffer temp = new StringBuffer();
-        String temp1 = "";
-        while ((temp1 = bReader.readLine()) != null)
-        {
-            //Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
-            temp.append(temp1 + "\n");
-        }
-        bReader.close();
-        textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
-        return temp.toString();
-    }
-
-    public static String novelReader(String path, int page) throws IOException
-    {
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
-        StringBuffer temp = new StringBuffer();
-        bReader.skip(page * 500);
-        char[] ch = new char[500];
-        bReader.read(ch, 0, 500);
-        for (char b : ch) temp.append(b);
-        bReader.close();
-        //textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
-        return temp.toString();
-    }
-	
-	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)
-    {
-        new AlertDialog.Builder(ctx)
-                .setMessage("您打开的文件过大，使用普通模式打开可能会导致应用卡死，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
-                .setPositiveButton("小说模式", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        openNovel(ctx, sp, ed, path, name);
-                    }
-                })
-                .setNegativeButton("普通模式", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        Toast.makeText(ctx, "正在打开。。前方应用即将卡死，实在不行就卸了重装吧→_→", Toast.LENGTH_SHORT).show();
-                        openFile(ctx, ed, path, name);
-                    }
-                }).show();
-    }
-	
-	public static void openNovel(final Context ctx, SharedPreferences sp, SharedPreferences.Editor ed, String path, String name)
-    {
-        try
-        {
-            MainActivity.p = 0;
-            JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			List<String> novelname = new ArrayList<>();
-			if (!novellist.getString("name").equals("")) novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
-            List<String> novelpath = new ArrayList<>();
-            if (!novellist.getString("path").equals("")) novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
-			List<String> novelpage = new ArrayList<>();
-			if (!novellist.getString("page").equals("")) novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-
-            for (int i = 0; i < novelpath.size(); i++)
-            {
-				//Toast.makeText(fileselectCtx, "第" + i + "个，内容是" + novelpath.get(i) + "原地址是" + path + "%%" + name, Toast.LENGTH_LONG).show();
-                if (novelpath.get(i).equals(path + name))
-                {
-                    MainActivity.p = i + 1;
-                }
-            }
-
-			//Toast.makeText(fileselectCtx, MainActivity.p + "rrr" + novelpath.size(), Toast.LENGTH_LONG).show();
-            if (MainActivity.p == 0)//第一次打开
-            {
-				String nname = name.substring(0, name.length()-name.split("[.]")[name.split("[.]").length-1].length()-1);
-				novelname.add(nname);
-                novelpath.add(path + name);
-				novelpage.add("0");
-				
-                novellist.put("name", join(novelname.toArray(new String[novelname.size()]), "▒"));
-				novellist.put("path", join(novelpath.toArray(new String[novelpath.size()]), "▒"));
-				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-				
-				MainActivity.textView.setText(MainActivity.novelReader(path + name, 0));
-                ed.putString("novelList", novellist.toString());
-                MainActivity.p = novelname.size();
-
-                Toast.makeText(ctx, "已打开小说 " + nname, Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                MainActivity.textView.setText(MainActivity.novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue()));
-                Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
-            }
-            MainActivity.mode = 1;
-            ed.putInt("mode", 1);
-            ed.putInt("p", MainActivity.p);
-			ed.putString("filepath", path);
-			ed.putString("filename", name);
-            ed.commit();
-            MainActivity.filename = name;
-            MainActivity.filepath = path;
-            MainActivity.mainLeft.setVisibility(View.VISIBLE);
-            MainActivity.mainRight.setVisibility(View.VISIBLE);
-            MainActivity.mainHint.setVisibility(View.VISIBLE);
-			mainHint.setText(getHintText(sp));
-        } catch (Exception e)
-        {
-            Toast.makeText(ctx, "打开文件错误！" + e.toString(), Toast.LENGTH_LONG).show();
-        }
-
-    }
-	
-	public static void openFile(Context ctx, SharedPreferences.Editor editor, String path, String name)
-    {
-        try
-        {
-            MainActivity.textView.setText(MainActivity.fileReader(path + name));
-            editor.putString("filename", name);
-            editor.putString("filepath", path);
-            editor.putInt("mode", 0);
-            editor.commit();
-            MainActivity.mode = 0;
-            MainActivity.mainLeft.setVisibility(View.INVISIBLE);
-            MainActivity.mainRight.setVisibility(View.INVISIBLE);
-            MainActivity.mainHint.setVisibility(View.INVISIBLE);
-            Toast.makeText(ctx, "成功打开文件:" + name + " 喵", Toast.LENGTH_SHORT).show();
-        } catch (IOException e)
-        {
-            Toast.makeText(ctx, "打开文件错误！", Toast.LENGTH_SHORT).show();
-        }
-    }
-	
 	public static String getHintText(SharedPreferences sp)
 	{
 		try
@@ -539,6 +422,36 @@ public class MainActivity extends Activity
 		}
 	}
 
+	/**
+     * 获得编码
+     * @param filePath
+     * @return
+     */
+    public static String getFileEncode(String filePath) {
+        String charsetName = null;
+		File file = null;
+        try {
+            file = new File(filePath);
+            CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
+            detector.add(new ParsingDetector(false));
+            detector.add(JChardetFacade.getInstance());
+            detector.add(ASCIIDetector.getInstance());
+            detector.add(UnicodeDetector.getInstance());
+            java.nio.charset.Charset charset = null;
+            //charset = detector.detectCodepage(file, 51200);
+			charset = detector.detectCodepage(file.toURI().toURL());
+            if (charset != null) {
+                charsetName = charset.name();
+            } else {
+                charsetName = "UTF-8";
+            }
+        } catch (Exception e) {
+            //Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
+            return "";
+        }
+        return charsetName;
+    }
+	
     public static String join(String[] strs, String splitter)
     {
         StringBuffer sb = new StringBuffer();
@@ -550,10 +463,10 @@ public class MainActivity extends Activity
         }
         return sb.toString();
     }
-	
+
 	public void batterylevel()
 	{
-        if(batteryLevelReceiver == null)
+        if (batteryLevelReceiver == null)
         {
             batteryLevelReceiver = new BroadcastReceiver()
             {
@@ -562,11 +475,11 @@ public class MainActivity extends Activity
                     int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
                     int scale = intent.getIntExtra("scale", -1);//获得总电量
                     batteryLevel = -1;
-                    if(rawlevel >= 0 && scale > 0)
+                    if (rawlevel >= 0 && scale > 0)
                     {
                         batteryLevel = (rawlevel * 100) / scale;
                     }
-                    if(mode == 1)
+                    if (mode == 1)
                     {
                         mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " + batteryLevel + "%");
                     }
@@ -598,74 +511,74 @@ public class MainActivity extends Activity
 	{
 		super.onDestroy();
 		//销毁广播 
-		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
+		if (batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
 		//ctx.unregisterReceiver(this);
 	}
-	
-   /*private boolean isAdded = false; // 是否已增加悬浮窗
-    private static WindowManager wm;
-    private static WindowManager.LayoutParams params;
-    private Button btn_floatView;
 
-    
+	/*private boolean isAdded = false; // 是否已增加悬浮窗
+	 private static WindowManager wm;
+	 private static WindowManager.LayoutParams params;
+	 private Button btn_floatView;
+
+
      * 创建悬浮窗
-     
-    private void createFloatView()
-    {
-        btn_floatView = new Button(getApplicationContext());
-        //btn_floatView.setBackground();
 
-        wm = (WindowManager) getApplicationContext()
-                .getSystemService(Context.WINDOW_SERVICE);
-        params = new WindowManager.LayoutParams();
+	 private void createFloatView()
+	 {
+	 btn_floatView = new Button(getApplicationContext());
+	 //btn_floatView.setBackground();
 
-        // 设置window type
-        params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-        
-         * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE;
-		 * 那么优先级会降低一些, 即拉下通知栏不可见
-		 
+	 wm = (WindowManager) getApplicationContext()
+	 .getSystemService(Context.WINDOW_SERVICE);
+	 params = new WindowManager.LayoutParams();
 
-        params.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
+	 // 设置window type
+	 params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
 
-        // 设置Window flag
-        params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-                | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-        
-         * 下面的flags属性的效果形同“锁定”。
-		 * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
-		 wmParams.flags=LayoutParams.FLAG_NOT_TOUCH_MODAL
-		 | LayoutParams.FLAG_NOT_FOCUSABLE
-		 | LayoutParams.FLAG_NOT_TOUCHABLE;
-		 
+	 * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE;
+	 * 那么优先级会降低一些, 即拉下通知栏不可见
 
-        // 设置悬浮窗的长得宽
-        params.gravity = Gravity.RIGHT | Gravity.TOP;
-        params.width = 10;
-        params.height = wm.getDefaultDisplay().getHeight();
 
-        params.x = 0;
-        params.y = 0;
-        // 设置悬浮窗的Touch监听
-        btn_floatView.setOnTouchListener(new OnTouchListener()
-        {
+	 params.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                switch (event.getAction())
-                {
-                    case MotionEvent.ACTION_DOWN:
-                        Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
-                        break;
-                }
-                return true;
-            }
-        });
+	 // 设置Window flag
+	 params.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+	 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
-        wm.addView(btn_floatView, params);
-        wm.updateViewLayout(btn_floatView, params);
-        isAdded = true;
-    }*/
+	 * 下面的flags属性的效果形同“锁定”。
+	 * 悬浮窗不可触摸，不接受任何事件,同时不影响后面的事件响应。
+	 wmParams.flags=LayoutParams.FLAG_NOT_TOUCH_MODAL
+	 | LayoutParams.FLAG_NOT_FOCUSABLE
+	 | LayoutParams.FLAG_NOT_TOUCHABLE;
+
+
+	 // 设置悬浮窗的长得宽
+	 params.gravity = Gravity.RIGHT | Gravity.TOP;
+	 params.width = 10;
+	 params.height = wm.getDefaultDisplay().getHeight();
+
+	 params.x = 0;
+	 params.y = 0;
+	 // 设置悬浮窗的Touch监听
+	 btn_floatView.setOnTouchListener(new OnTouchListener()
+	 {
+
+	 public boolean onTouch(View v, MotionEvent event)
+	 {
+	 switch (event.getAction())
+	 {
+	 case MotionEvent.ACTION_DOWN:
+	 Toast.makeText(getApplicationContext(), "悬浮窗！", Toast.LENGTH_LONG).show();
+	 break;
+	 }
+	 return true;
+	 }
+	 });
+
+	 wm.addView(btn_floatView, params);
+	 wm.updateViewLayout(btn_floatView, params);
+	 isAdded = true;
+	 }*/
 
 }
 
