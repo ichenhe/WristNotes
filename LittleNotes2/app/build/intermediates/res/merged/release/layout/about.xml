@@ -6,75 +6,83 @@
 	android:orientation="vertical">
 
 	<LinearLayout
-		android:layout_height="match_parent"
 		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
 		android:orientation="vertical"
-		android:paddingBottom="10dp">
+		android:paddingBottom="15dp">
 
 		<TextView
-			android:layout_height="wrap_content"
-			android:text="关于"
+			style="@style/titleText"
 			android:layout_width="match_parent"
-			style="@style/titleText"/>
+			android:layout_height="wrap_content"
+			android:text="关于"/>
 
 		<TextView
-			android:layout_height="wrap_content"
-			android:text="腕上小纸条"
 			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:gravity="center"
+			android:paddingTop="10dp"
+			android:text="腕上小纸条"
 			android:textSize="18sp"
-			android:textStyle="bold"
-			android:paddingTop="10dp"/>
+			android:textStyle="bold"/>
 
 		<ImageView
-			android:layout_height="100dp"
 			android:layout_width="100dp"
-			android:src="@drawable/icon"
-			android:layout_gravity="center"/>
+			android:layout_height="100dp"
+			android:layout_gravity="center"
+			android:src="@drawable/icon"/>
 
 		<TextView
-			android:layout_height="wrap_content"
-			android:text="当前版本1.30(52)"
 			android:layout_width="wrap_content"
-			android:paddingBottom="15dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
 			android:gravity="center"
-			android:layout_gravity="center"/>
+			android:paddingBottom="15dp"
+			android:text="当前版本1.30(52)"/>
 
 		<Button
-			android:layout_height="wrap_content"
-			android:text="未来展望"
-			android:layout_width="match_parent"
 			style="@style/button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
-			android:onClick="about1"/>
+			android:onClick="about1"
+			android:text="未来展望"/>
 
 		<Button
-			android:layout_height="wrap_content"
-			android:text="更新日志"
-			android:layout_width="match_parent"
 			style="@style/button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
-			android:onClick="about4"/>
+			android:onClick="about4"
+			android:text="更新日志"/>
 
 		<Button
-			android:layout_height="wrap_content"
-			android:text="联系作者"
-			android:layout_width="match_parent"
 			style="@style/button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
-			android:onClick="about2"/>
+			android:onClick="about2"
+			android:text="联系作者"/>
 
 		<Button
-			android:layout_height="wrap_content"
-			android:text="支持作者"
-			android:layout_width="match_parent"
 			style="@style/button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
-			android:onClick="about3"/>
+			android:onClick="about3"
+			android:text="支持作者"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n我永远喜欢雪之下雪乃！"
+			android:textSize="8sp"/>
 
 	</LinearLayout>
 

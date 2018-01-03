@@ -102,7 +102,7 @@ public class novelAct extends Activity
 				fileOpen.openNovel(ctx,
 								   sharedPreferences,
 								   editor,
-								   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length() - 1) ,
+								   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()) ,
 								   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
 				finish();
 			}
