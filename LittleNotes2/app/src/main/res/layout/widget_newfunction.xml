@@ -22,7 +22,7 @@
 		android:textSize="10sp"
 		android:textColor="#E68918"
 		android:id="@+id/functionbutton"
-		android:background="#E0CA86"/>
+		android:textStyle="bold"/>
 
 </LinearLayout>
 
