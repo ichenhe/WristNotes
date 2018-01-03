@@ -298,8 +298,8 @@ public class menuAct extends Activity
 					}
 					else if(s.contains("智能翻页"))
 					{
-						if(sharedPreferences.getString("smartScroll", "开启") == "开启") editor.putString("smartScroll", "关闭");
-						if(sharedPreferences.getString("smartScroll", "开启") == "关闭") editor.putString("smartScroll", "开启");
+						if(sharedPreferences.getString("smartScroll", "开启").equals("开启") editor.putString("smartScroll", "关闭");
+						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭") editor.putString("smartScroll", "开启");
 						editor.commit();
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("smartScroll", "开启") + "智能翻页功能！", Toast.LENGTH_LONG).show();
 						finish();
