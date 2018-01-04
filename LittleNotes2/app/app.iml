@@ -98,9 +98,12 @@
     <orderEntry type="jdk" jdkName="Android API 24 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="slf4j-log4j12-1.5.2" level="project" />
+    <orderEntry type="library" exported="" name="cpdetector_1.0.10" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.5.2" level="project" />
     <orderEntry type="library" exported="" name="mina-core-2.0.4" level="project" />
+    <orderEntry type="library" exported="" name="chardet-1.0" level="project" />
     <orderEntry type="library" exported="" name="ftpserver-core-1.0.6" level="project" />
     <orderEntry type="library" exported="" name="log4j-1.2.14" level="project" />
+    <orderEntry type="library" exported="" name="antlr-2.7.4" level="project" />
   </component>
 </module>

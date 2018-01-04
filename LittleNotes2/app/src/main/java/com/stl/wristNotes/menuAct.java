@@ -81,7 +81,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			menutitle.setText("偏好设置");
 		}
-		else if (MainActivity.cho == 4)
+		else if (MainActivity.cho == 4)//无
 		{
 			menuList = new String[] { "左右空出像素数", "上下空出行数" };
 			menutitle.setText("手表优化");
@@ -103,6 +103,22 @@ public class menuAct extends Activity
 		}
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
+
+        LayoutInflater infla = LayoutInflater.from(this);
+        View headView = infla.inflate(R.layout.widget_newfunction, null);
+        listView.addHeaderView(headView, null, true);
+
+        ((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！！");
+		TextView button = (TextView) headView.findViewById(R.id.functionbutton);
+		button.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View p1)
+			{
+
+			}
+		});
+
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -131,9 +147,10 @@ public class menuAct extends Activity
 						}
 
 					}
-					else if (s.equals("显示设置") || s.equals("偏好设置") || s.equals("手表优化"))
+					else if (s.equals("显示设置") || s.equals("偏好设置"))
 					{
-						MainActivity.cho = position - 1;
+						if(s.equals("显示设置")) MainActivity.cho = 2;
+						if(s.equals("偏好设置")) MainActivity.cho = 3;
 						menuintent = new Intent(ctx, menuAct.class);
 						startActivity(menuintent);
 						finish();
@@ -298,8 +315,8 @@ public class menuAct extends Activity
 					}
 					else if(s.contains("智能翻页"))
 					{
-						if(sharedPreferences.getString("smartScroll", "开启").equals("开启") editor.putString("smartScroll", "关闭");
-						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭") editor.putString("smartScroll", "开启");
+						if(sharedPreferences.getString("smartScroll", "开启").equals("开启")) editor.putString("smartScroll", "关闭");
+						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭")) editor.putString("smartScroll", "开启");
 						editor.commit();
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("smartScroll", "开启") + "智能翻页功能！", Toast.LENGTH_LONG).show();
 						finish();

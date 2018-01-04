@@ -9,11 +9,13 @@
 	android:gravity="center">
 
 	<TextView
-		android:layout_height="wrap_content"
+		android:id="@+id/functiontext"
 		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp"
 		android:textColor="#E68918"
-		android:textSize="9sp"
-		android:id="@+id/functiontext"/>
+		android:textSize="9sp"/>
 
 	<TextView
 		android:layout_height="wrap_content"

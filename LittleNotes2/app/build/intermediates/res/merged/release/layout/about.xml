@@ -82,7 +82,7 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:text="Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n我永远喜欢雪之下雪乃！"
-			android:textSize="8sp"/>
+			android:textSize="9sp"/>
 
 	</LinearLayout>
 
