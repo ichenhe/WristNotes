@@ -99,12 +99,26 @@ public class novelAct extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> l, View v, int position, long id)
 			{
-				fileOpen.openNovel(ctx,
-								   sharedPreferences,
-								   editor,
-								   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()) ,
-								   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
-				finish();
+				if(new File(novelpath.get(position)).exists())
+				{
+					fileOpen.openNovel(ctx, sharedPreferences, editor,
+									   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()) ,
+									   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
+					finish();
+				}
+				else
+				{
+					new AlertDialog.Builder(ctx)
+						.setMessage("该小说原文件已被删除！是否删除该小说记录？")
+						.setPositiveButton("删除", new DialogInterface.OnClickListener()
+						{
+							@Override
+							public void onClick(DialogInterface dialog, int which)
+							{
+							}
+						})
+						.setNegativeButton("取消", null).show();
+				}
 			}
 		});
 		listView.setOnItemLongClickListener(new OnItemLongClickListener()
