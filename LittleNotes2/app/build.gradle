@@ -13,8 +13,8 @@ android {
         applicationId "com.stl.wristNotes"
         minSdkVersion 21
         targetSdkVersion 21
-        versionCode 52
-        versionName "1.30"
+        versionCode 71
+        versionName "1.40"
     }
     buildTypes {
         release {

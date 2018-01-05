@@ -42,8 +42,8 @@ public final class R {
         public static final int ftpTextView1=0x7f070008;
         public static final int ftpTextView2=0x7f07000d;
         public static final int ftpToggleButton1=0x7f07000c;
-        public static final int functionbutton=0x7f070027;
-        public static final int functiontext=0x7f070026;
+        public static final int functionbutton=0x7f070026;
+        public static final int functiontext=0x7f070027;
         public static final int helpTextView1=0x7f07000f;
         public static final int helpTextView2=0x7f07000e;
         public static final int inputButton=0x7f070012;

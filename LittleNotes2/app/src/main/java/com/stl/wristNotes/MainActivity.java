@@ -72,6 +72,8 @@ public class MainActivity extends Activity
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
 	IntentFilter batteryLevelFilter;
+	
+	int scrollLength;
 
 	
 	@Override
@@ -91,6 +93,7 @@ public class MainActivity extends Activity
         p = sharedPreferences.getInt("p", 0);
         smartScroll = sharedPreferences.getString("smartScroll", "开启");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
+		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
         try
         {
             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
@@ -126,7 +129,7 @@ public class MainActivity extends Activity
             }
             filename = filet1[filet1.length - 1];
 
-            if (new File(filepath + filename).length() < 716800)
+            if (new File(filepath + filename).length() < 512000)
             {
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
@@ -327,7 +330,7 @@ public class MainActivity extends Activity
 
 	public void novelScroll(LinearLayout layout, ScrollView scroll)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 5 >= layout.getMeasuredHeight() || smartScroll.equals("关闭"))
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 10 >= layout.getMeasuredHeight() || smartScroll.equals("关闭"))
 		{
 			try
 			{
@@ -354,7 +357,7 @@ public class MainActivity extends Activity
 		}
 		else
 		{
-			scroll.smoothScrollTo(0, new Double(scroll.getScrollY() + ((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue());
+			scroll.smoothScrollTo(0, scroll.getScrollY() + scrollLength);
 		}
 	}
 
@@ -414,7 +417,7 @@ public class MainActivity extends Activity
 			JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
 			ArrayList<String> novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
 			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-			return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "/" + (int)Math.ceil(new File(novelpath.get(p - 1)).length() / 500 + 1) + "  " + batteryLevel + "%";
+			return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
 		}
 		catch (JSONException e)
 		{

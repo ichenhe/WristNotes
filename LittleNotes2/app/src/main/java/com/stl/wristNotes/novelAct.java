@@ -76,7 +76,7 @@ public class novelAct extends Activity
 			{
 				Map<String, Object> listItem=new HashMap<String,Object>();
 				listItem.put("header", novelname.get(i));
-				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页，共" + (int)Math.ceil(new File(novelpath.get(i)).length() / 500 + 1) + "页");
+				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
 				listItems.add(listItem);
 			}
 

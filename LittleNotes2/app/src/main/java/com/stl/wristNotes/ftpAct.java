@@ -69,14 +69,21 @@ public class ftpAct extends Activity
 							}
 							else
 							{
-								if(getHostIP().equals("192.168.167.239"))
+								try
 								{
-									Toast.makeText(ctx, "你可能没有连接网络！请在确认连接网络后重试（或者重启路由器试试？）", Toast.LENGTH_LONG).show();
-									togglebutton.setChecked(false);
+									if (getHostIP().equals("192.168.167.239"))
+									{
+										Toast.makeText(ctx, "你可能没有连接网络！请在确认连接网络后重试（或者重启路由器试试？）", Toast.LENGTH_LONG).show();
+										togglebutton.setChecked(false);
+									}
+									else
+									{
+										startFtpServer();
+									}
 								}
-								else
+								catch (SocketException e)
 								{
-									startFtpServer();
+									Toast.makeText(ctx, "获取ip地址错误喵。。试试重启Wi-Fi？", Toast.LENGTH_LONG).show();
 								}
 							}
 						}
@@ -119,9 +126,9 @@ public class ftpAct extends Activity
             serverFactory.getUserManager().save(user);
             mFtpServer = serverFactory.createServer();
             mFtpServer.start();
-			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动\n\n电脑端请在文件浏览器中输入 ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + " \n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
+			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动\n\n电脑端请在文件浏览器中输入 ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + " \n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "\\（注意斜杠）端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
         }
-        catch (FtpException e)
+        catch (Exception e)
         {
 			Toast.makeText(ctx, "你可能未连接Wi-Fi，请检查Wi-Fi！", Toast.LENGTH_LONG).show();
 			togglebutton.setChecked(false);
@@ -145,38 +152,31 @@ public class ftpAct extends Activity
 		closeFtp();
     }
 
-    public static String getHostIP()
+    public static String getHostIP() throws SocketException
     {
         String hostIp = null;
-        try
-        {
-            Enumeration nis = NetworkInterface.getNetworkInterfaces();
-            InetAddress ia = null;
-            while (nis.hasMoreElements())
-            {
-                NetworkInterface ni = (NetworkInterface) nis.nextElement();
-                Enumeration<InetAddress> ias = ni.getInetAddresses();
-                while (ias.hasMoreElements())
-                {
-                    ia = ias.nextElement();
-                    if (ia instanceof Inet6Address)
-                    {
-                        continue;
-                        // skip ipv6
-                    }
-                    String ip = ia.getHostAddress();
-                    if (!"127.0.0.1".equals(ip))
-                    {
-                        hostIp = ia.getHostAddress();
-                        break;
-                    }
-                }
-            }
-        }
-        catch (SocketException e)
-        {
-            e.printStackTrace();
-        }
+		Enumeration nis = NetworkInterface.getNetworkInterfaces();
+		InetAddress ia = null;
+		while (nis.hasMoreElements())
+		{
+			NetworkInterface ni = (NetworkInterface) nis.nextElement();
+			Enumeration<InetAddress> ias = ni.getInetAddresses();
+			while (ias.hasMoreElements())
+			{
+				ia = ias.nextElement();
+				if (ia instanceof Inet6Address)
+				{
+					continue;
+					// skip ipv6
+				}
+				String ip = ia.getHostAddress();
+				if (!"127.0.0.1".equals(ip))
+				{
+					hostIp = ia.getHostAddress();
+					break;
+				}
+			}
+		}
         return hostIp;
     }
 }

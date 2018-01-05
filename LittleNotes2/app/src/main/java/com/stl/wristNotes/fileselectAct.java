@@ -139,7 +139,7 @@ public class fileselectAct extends Activity
 					{
 //						Intent mainint = new Intent(ctx, MainActivity.class);
 //						startActivity(mainint);
-						if (new File(fileselecttitle.getText().toString() + s).length() < 716800)
+						if (new File(fileselecttitle.getText().toString() + s).length() < 512000)
 						{
 							fileOpen.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
 							finish();
