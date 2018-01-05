@@ -65,6 +65,7 @@ public class MainActivity extends Activity
     String startHideText;
     public static int mode = 0;
     //0 普通 1 小说
+    public static String smartScroll = "开启";
     public static int p = 0;
     //当前小说在列表中的位置
     JSONObject novellist;
@@ -88,6 +89,7 @@ public class MainActivity extends Activity
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
         p = sharedPreferences.getInt("p", 0);
+        smartScroll = sharedPreferences.getString("smartScroll", "开启");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
         try
         {
@@ -253,7 +255,6 @@ public class MainActivity extends Activity
         }
 
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
-
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
 			{
@@ -263,7 +264,6 @@ public class MainActivity extends Activity
 					textClick();
 				}
 			});
-
         textView.setOnLongClickListener(new OnLongClickListener()
 			{
 				@Override
@@ -327,7 +327,7 @@ public class MainActivity extends Activity
 
 	public void novelScroll(LinearLayout layout, ScrollView scroll)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() == layout.getMeasuredHeight())
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 5 >= layout.getMeasuredHeight() || smartScroll.equals("关闭"))
 		{
 			try
 			{

@@ -76,7 +76,7 @@ public class novelAct extends Activity
 			{
 				Map<String, Object> listItem=new HashMap<String,Object>();
 				listItem.put("header", novelname.get(i));
-				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页，共" + (int)Math.ceil(new File(novelpath.get(i)).length() / 500 + 1) + "页\n" + novelpath.get(i));
+				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页，共" + (int)Math.ceil(new File(novelpath.get(i)).length() / 500 + 1) + "页");
 				listItems.add(listItem);
 			}
 
@@ -126,7 +126,9 @@ public class novelAct extends Activity
 			@Override
 			public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
 			{
-				
+                MainActivity.cho = 8;
+                Intent intent = new Intent(ctx, menuAct.class);
+                startActivity(intent);
 				return true;
 			}
 		});

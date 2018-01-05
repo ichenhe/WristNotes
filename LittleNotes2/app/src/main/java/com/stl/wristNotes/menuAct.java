@@ -28,7 +28,7 @@ public class menuAct extends Activity
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
         menutitle = (TextView) findViewById(R.id.menuText);
-        ListView listView = (ListView) findViewById(R.id.menuList);
+        final ListView listView = (ListView) findViewById(R.id.menuList);
 		//LinearLayout footViewLayout = (LinearLayout) LayoutInflater.from(ctx).inflate(R.layout.menu, null);
 		//listView.addHeaderView(footViewLayout);
 
@@ -101,21 +101,28 @@ public class menuAct extends Activity
 			menuList = new String[] { "跳转页数", "智能翻页：" + sharedPreferences.getString("smartScroll", "开启") };
 			menutitle.setText("阅读菜单");
 		}
+		else if(MainActivity.cho == 8)
+        {
+			menuList = new String[] { "删除该条小说记录", "小说文件属性" };
+			menutitle.setText("小说记录");
+        }
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 
         LayoutInflater infla = LayoutInflater.from(this);
-        View headView = infla.inflate(R.layout.widget_newfunction, null);
+        final View headView = infla.inflate(R.layout.widget_newfunction, null);
         listView.addHeaderView(headView, null, true);
 
         ((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！！");
-		TextView button = (TextView) headView.findViewById(R.id.functionbutton);
+		LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
+        button.setClickable(true);
 		button.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View p1)
 			{
-
+				Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
+				listView.removeHeaderView(headView);
 			}
 		});
 
@@ -315,8 +322,8 @@ public class menuAct extends Activity
 					}
 					else if(s.contains("智能翻页"))
 					{
-						if(sharedPreferences.getString("smartScroll", "开启").equals("开启")) editor.putString("smartScroll", "关闭");
-						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭")) editor.putString("smartScroll", "开启");
+						if(sharedPreferences.getString("smartScroll", "开启").equals("开启")) editor.putString("smartScroll", "关闭"); MainActivity.smartScroll = "关闭";
+						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭")) editor.putString("smartScroll", "开启"); MainActivity.smartScroll = "开启";
 						editor.commit();
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("smartScroll", "开启") + "智能翻页功能！", Toast.LENGTH_LONG).show();
 						finish();
