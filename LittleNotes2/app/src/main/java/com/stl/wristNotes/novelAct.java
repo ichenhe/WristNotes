@@ -22,6 +22,9 @@ public class novelAct extends Activity
 	ArrayList<String> novelpath;
 	ArrayList<String> novelpage;
 	Button novelbutton;
+	Map<String, Object> listItem;
+	List<Map<String, Object>> listItems;
+	SimpleAdapter simpleAdapter;
 
 	Context ctx = this;
 	@Override
@@ -30,7 +33,7 @@ public class novelAct extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.novel);
 
-		List<Map<String, Object>> listItems = new ArrayList<Map<String,Object>>();
+		listItems = new ArrayList<Map<String,Object>>();
 		final ListView listView = (ListView) findViewById(R.id.myNovel);
 		LayoutInflater infla = LayoutInflater.from(this);
 		View footView = infla.inflate(R.layout.mynoveltext, null);
@@ -74,7 +77,7 @@ public class novelAct extends Activity
 
 			for (int i = 0; i < novelname.size(); i++)
 			{
-				Map<String, Object> listItem=new HashMap<String,Object>();
+				listItem=new HashMap<String,Object>();
 				listItem.put("header", novelname.get(i));
 				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
 				listItems.add(listItem);
@@ -87,10 +90,10 @@ public class novelAct extends Activity
 		}
 		catch (Exception e)
 		{
-			Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_LONG).show();
 		}
 		
-		SimpleAdapter simpleAdapter=new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
+		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
 		listView.addFooterView(footView, null, true);
 		listView.setAdapter(simpleAdapter);
 
@@ -104,7 +107,8 @@ public class novelAct extends Activity
 					fileOpen.openNovel(ctx, sharedPreferences, editor,
 									   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()) ,
 									   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
-					finish();
+					menuAct.ctx.finish();
+                    finish();
 				}
 				else
 				{
@@ -132,5 +136,44 @@ public class novelAct extends Activity
 				return true;
 			}
 		});
+	}
+
+	public void deleteNovel(int j)
+	{
+		try
+		{
+			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+			novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
+			novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
+			novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+			novelname.remove(j);
+			novelpath.remove(j);
+			novelpage.remove(j);
+
+			novellist.put("name", MainActivity.join(novelname.toArray(new String[novelname.size()]), "▒"));
+			novellist.put("path", MainActivity.join(novelpath.toArray(new String[novelpath.size()]), "▒"));
+			novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+			editor.putString("novelList", novellist.toString());
+			editor.commit();
+
+			for (int i = 0; i < novelname.size(); i++)
+			{
+				listItem = new HashMap<String,Object>();
+				listItems = new ArrayList<Map<String,Object>>();
+				listItem.put("header", novelname.get(i));
+				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
+				listItems.add(listItem);
+			}
+			simpleAdapter.notifyDataSetChanged();
+			Toast.makeText(ctx, "已删除该记录！", Toast.LENGTH_LONG).show();
+		}
+		catch (JSONException e)
+		{
+			Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装(=_=)", Toast.LENGTH_LONG).show();
+		}
+		catch (Exception e)
+		{
+			Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_LONG).show();
+		}
 	}
 }

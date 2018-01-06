@@ -13,7 +13,7 @@ public class menuAct extends Activity
 {
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
-    Context ctx = this;
+    public static Activity ctx;
 	TextView menutitle;
 	ListAdapter adapter;
 	Intent menuintent;
@@ -25,6 +25,7 @@ public class menuAct extends Activity
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 
+		ctx = this;
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
         menutitle = (TextView) findViewById(R.id.menuText);
@@ -322,10 +323,19 @@ public class menuAct extends Activity
 					}
 					else if(s.contains("智能翻页"))
 					{
-						if(sharedPreferences.getString("smartScroll", "开启").equals("开启")) editor.putString("smartScroll", "关闭"); MainActivity.smartScroll = "关闭";
-						if(sharedPreferences.getString("smartScroll", "开启").equals("关闭")) editor.putString("smartScroll", "开启"); MainActivity.smartScroll = "开启";
+						if(sharedPreferences.getString("smartScroll", "开启").equals("开启"))
+                        {
+                            editor.putString("smartScroll", "关闭");
+                            MainActivity.smartScroll = "关闭";
+                            Toast.makeText(ctx, "已关闭智能翻页功能！", Toast.LENGTH_LONG).show();
+                        }
+						else if(sharedPreferences.getString("smartScroll", "开启").equals("关闭"))
+                        {
+                            editor.putString("smartScroll", "开启");
+                            MainActivity.smartScroll = "开启";
+                            Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
+                        }
 						editor.commit();
-						Toast.makeText(ctx, "已" + sharedPreferences.getString("smartScroll", "开启") + "智能翻页功能！", Toast.LENGTH_LONG).show();
 						finish();
 					}
 				}
