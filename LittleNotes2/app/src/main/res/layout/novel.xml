@@ -16,10 +16,10 @@
 		android:layout_width="match_parent"
 		android:id="@+id/myNovel"
 		style="@style/listview"
-		android:layout_marginRight="20dp"
-		android:layout_marginLeft="20dp"
 		android:dividerHeight="1dp"/>
-	<include layout = "@layout/mynoveltext"/>
+
+	<include
+		layout="@layout/mynoveltext"/>
 
 </LinearLayout>
 

@@ -25,7 +25,9 @@ public class novelAct extends Activity
 	Map<String, Object> listItem;
 	List<Map<String, Object>> listItems;
 	SimpleAdapter simpleAdapter;
+	ListView listView;
 
+	int choose = -1;
 	Context ctx = this;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -34,7 +36,7 @@ public class novelAct extends Activity
 		setContentView(R.layout.novel);
 
 		listItems = new ArrayList<Map<String,Object>>();
-		final ListView listView = (ListView) findViewById(R.id.myNovel);
+		listView = (ListView) findViewById(R.id.myNovel);
 		LayoutInflater infla = LayoutInflater.from(this);
 		View footView = infla.inflate(R.layout.mynoveltext, null);
 		novelbutton = (Button) footView.findViewById(R.id.mynoveltextButton);
@@ -100,7 +102,7 @@ public class novelAct extends Activity
 		listView.setOnItemClickListener(new OnItemClickListener()
 		{
 			@Override
-			public void onItemClick(AdapterView<?> l, View v, int position, long id)
+			public void onItemClick(AdapterView<?> l, View v, final int position, long id)
 			{
 				if(new File(novelpath.get(position)).exists())
 				{
@@ -119,6 +121,7 @@ public class novelAct extends Activity
 							@Override
 							public void onClick(DialogInterface dialog, int which)
 							{
+								deleteNovel(position);
 							}
 						})
 						.setNegativeButton("取消", null).show();
@@ -132,7 +135,10 @@ public class novelAct extends Activity
 			{
                 MainActivity.cho = 8;
                 Intent intent = new Intent(ctx, menuAct.class);
-                startActivity(intent);
+				//intent.putExtra("position", position);
+				startActivityForResult(intent, 0);
+				choose = position;
+                //startActivity(intent);
 				return true;
 			}
 		});
@@ -164,7 +170,10 @@ public class novelAct extends Activity
 				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
 				listItems.add(listItem);
 			}
-			simpleAdapter.notifyDataSetChanged();
+			//simpleAdapter.notifyDataSetChanged();
+			//simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
+			//listView.setAdapter(simpleAdapter);
+			finish();
 			Toast.makeText(ctx, "已删除该记录！", Toast.LENGTH_LONG).show();
 		}
 		catch (JSONException e)
@@ -174,6 +183,24 @@ public class novelAct extends Activity
 		catch (Exception e)
 		{
 			Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		super.onActivityResult(requestCode, resultCode, data);
+		if(data.getIntExtra("info", -1) == 1 && choose != -1)
+		{
+			if(choose == MainActivity.p - 1)
+			{
+				Toast.makeText(ctx, "这个文件正在被打开呢！", Toast.LENGTH_SHORT).show();
+			}
+			else
+			{
+				deleteNovel(choose);
+				choose = -1;
+			}
 		}
 	}
 }

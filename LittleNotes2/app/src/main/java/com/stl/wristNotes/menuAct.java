@@ -89,7 +89,7 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 5)
 		{
-			menuList = new String[] { "8", "10", "12", "14", "16" };
+			menuList = new String[] { "8", "10", "12", "14" };
 			menutitle.setText("字号调整");
 		}
 		else if(MainActivity.cho == 6)
@@ -104,29 +104,32 @@ public class menuAct extends Activity
 		}
 		else if(MainActivity.cho == 8)
         {
-			menuList = new String[] { "删除该条小说记录", "小说文件属性" };
+			menuList = new String[] { "删除该条小说记录", "文件属性" };
 			menutitle.setText("小说记录");
         }
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 
-        LayoutInflater infla = LayoutInflater.from(this);
-        final View headView = infla.inflate(R.layout.widget_newfunction, null);
-        listView.addHeaderView(headView, null, true);
-
-        ((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！！");
-		LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
-        button.setClickable(true);
-		button.setOnClickListener(new View.OnClickListener()
+		if(MainActivity.cho != 7 && MainActivity.cho != 8)
 		{
-			@Override
-			public void onClick(View p1)
-			{
-				Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
-				listView.removeHeaderView(headView);
-			}
-		});
+			LayoutInflater infla = LayoutInflater.from(this);
+			final View headView = infla.inflate(R.layout.widget_newfunction, null);
+			listView.addHeaderView(headView, null, true);
 
+			((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
+			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
+    	    button.setClickable(true);
+			button.setOnClickListener(new View.OnClickListener()
+			{
+				@Override
+				public void onClick(View p1)
+				{
+					Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
+					listView.removeHeaderView(headView);
+				}
+			});
+		}
+		
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -191,7 +194,7 @@ public class menuAct extends Activity
 						MainActivity.light = Integer.parseInt(s);
 						finish();
 					}
-					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16") || s.equals("18") || s.equals("20"))
+					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14"))
 					{
 						MainActivity.textView.setTextSize(Integer.parseInt(s));
 						editor.putInt("bs", Integer.parseInt(s));
@@ -336,6 +339,21 @@ public class menuAct extends Activity
                             Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
                         }
 						editor.commit();
+						finish();
+					}
+					else if(s.equals("删除该条小说记录"))
+					{
+						Intent i = new Intent();
+						i.putExtra("info", 1);
+						//Toast.makeText(ctx, "#我是醒目的Toast!#" + i.getIntExtra("position", -1), Toast.LENGTH_LONG).show();
+						setResult(0, i);
+						finish();
+					}
+					else if(s.equals("文件属性"))
+					{
+						Intent i = new Intent();
+						i.putExtra("info", 2);
+						setResult(0, i);
 						finish();
 					}
 				}
