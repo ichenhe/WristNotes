@@ -19,6 +19,7 @@ public class menuAct extends Activity
 	Intent menuintent;
 	Intent passint;
 	String[] menuList;
+	Intent i;
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -104,6 +105,9 @@ public class menuAct extends Activity
 		}
 		else if(MainActivity.cho == 8)
         {
+			i = new Intent();
+			i.putExtra("info", -1);
+			setResult(0, i);
 			menuList = new String[] { "删除该条小说记录", "文件属性" };
 			menutitle.setText("小说记录");
         }
@@ -116,7 +120,7 @@ public class menuAct extends Activity
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
 			listView.addHeaderView(headView, null, true);
 
-			((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
+			((TextView)findViewById(R.id.functiontext)).setText("点击上方标题栏可以回到上一层喵~");
 			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
     	    button.setClickable(true);
 			button.setOnClickListener(new View.OnClickListener()
@@ -343,7 +347,7 @@ public class menuAct extends Activity
 					}
 					else if(s.equals("删除该条小说记录"))
 					{
-						Intent i = new Intent();
+						//Intent i = new Intent();
 						i.putExtra("info", 1);
 						//Toast.makeText(ctx, "#我是醒目的Toast!#" + i.getIntExtra("position", -1), Toast.LENGTH_LONG).show();
 						setResult(0, i);
@@ -351,7 +355,7 @@ public class menuAct extends Activity
 					}
 					else if(s.equals("文件属性"))
 					{
-						Intent i = new Intent();
+						//Intent i = new Intent();
 						i.putExtra("info", 2);
 						setResult(0, i);
 						finish();

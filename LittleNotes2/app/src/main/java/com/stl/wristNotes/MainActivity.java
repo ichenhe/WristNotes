@@ -257,6 +257,33 @@ public class MainActivity extends Activity
             pass = 1;
         }
 
+		try
+		{
+		if(1 == 1)
+		{
+			LayoutInflater infla = LayoutInflater.from(this);
+			final View view = infla.inflate(R.layout.widget_newfunction, null);
+
+			((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
+			LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
+    	    button.setClickable(true);
+			button.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick(View p1)
+					{
+						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
+						mainLinearLayout.removeView(view);
+					}
+				});
+			mainLinearLayout.addView(view, 1);
+		}
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(ctx, "#我是醒目的Toast!#" + e.toString(), Toast.LENGTH_LONG).show();
+		}
+		
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()

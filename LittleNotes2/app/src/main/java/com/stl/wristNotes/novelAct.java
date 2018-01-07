@@ -37,8 +37,8 @@ public class novelAct extends Activity
 
 		listItems = new ArrayList<Map<String,Object>>();
 		listView = (ListView) findViewById(R.id.myNovel);
-		LayoutInflater infla = LayoutInflater.from(this);
-		View footView = infla.inflate(R.layout.mynoveltext, null);
+		LayoutInflater infla2 = LayoutInflater.from(this);
+		View footView = infla2.inflate(R.layout.mynoveltext, null);
 		novelbutton = (Button) footView.findViewById(R.id.mynoveltextButton);
 		novelbutton.setOnClickListener(new OnClickListener()
 			{
@@ -96,6 +96,25 @@ public class novelAct extends Activity
 		}
 		
 		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
+		if(1 == 1)//功能提醒
+		{
+			LayoutInflater infla = LayoutInflater.from(this);
+			final View headView = infla.inflate(R.layout.widget_newfunction, null);
+			listView.addHeaderView(headView, null, true);
+
+			((TextView)findViewById(R.id.functiontext)).setText("长按小说查看更多选项喵~");
+			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
+    	    button.setClickable(true);
+			button.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick(View p1)
+					{
+						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
+						listView.removeHeaderView(headView);
+					}
+				});
+		}
 		listView.addFooterView(footView, null, true);
 		listView.setAdapter(simpleAdapter);
 
@@ -198,8 +217,18 @@ public class novelAct extends Activity
 			}
 			else
 			{
-				deleteNovel(choose);
-				choose = -1;
+				new AlertDialog.Builder(ctx)
+					.setMessage("要清除该条小说历史记录吗（原文件不会被删除）")
+					.setPositiveButton("确定", new DialogInterface.OnClickListener()
+					{
+						@Override
+						public void onClick(DialogInterface dialog, int which)
+						{
+							deleteNovel(choose);
+							choose = -1;
+						}
+					})
+					.setNegativeButton("取消", null).show();
 			}
 		}
 	}

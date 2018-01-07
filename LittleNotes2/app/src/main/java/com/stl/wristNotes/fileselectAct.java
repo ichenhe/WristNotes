@@ -27,6 +27,7 @@ public class fileselectAct extends Activity
     String[] filelist;
     String[] filelist2;
     String s;
+	ListView fileselectView;
 
 
     @Override
@@ -40,7 +41,7 @@ public class fileselectAct extends Activity
         editor = sharedPreferences.edit();
         if (MainActivity.filewillpath.equals("")) MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
         fileselecttitle = (TextView) findViewById(R.id.fileselectText);
-        ListView fileselectView = (ListView) findViewById(R.id.fileselectList);
+        fileselectView = (ListView) findViewById(R.id.fileselectList);
         fileselecttitle.setText(MainActivity.filewillpath);
         fileselecttitle.setClickable(true);
         fileselecttitle.setOnClickListener(new View.OnClickListener()
@@ -119,6 +120,25 @@ public class fileselectAct extends Activity
 			Toast.makeText(ctx, "你没有获取系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
 		}
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, filelist);
+		if(1 == 1)//功能提醒
+		{
+			LayoutInflater infla = LayoutInflater.from(this);
+			final View headView = infla.inflate(R.layout.widget_newfunction, null);
+			fileselectView.addHeaderView(headView, null, true);
+
+			((TextView)findViewById(R.id.functiontext)).setText("长按文件查看更多文件选项喵~");
+			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
+    	    button.setClickable(true);
+			button.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick(View p1)
+					{
+						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
+						fileselectView.removeHeaderView(headView);
+					}
+				});
+		}
         fileselectView.setAdapter(adapter);
 
         fileselectView.setOnItemClickListener(new OnItemClickListener()
