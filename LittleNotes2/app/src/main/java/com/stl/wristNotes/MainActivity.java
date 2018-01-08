@@ -264,7 +264,7 @@ public class MainActivity extends Activity
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View view = infla.inflate(R.layout.widget_newfunction, null);
 
-			((TextView)findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
+			((TextView)view.findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
 			LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
     	    button.setClickable(true);
 			button.setOnClickListener(new View.OnClickListener()
