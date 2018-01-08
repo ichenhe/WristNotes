@@ -4,13 +4,23 @@ import java.text.*;
 
 public class fileAttributes
 {
-	public static String getFileAttributes()
+	public String fileName;
+	public String filePath;
+	
+	public fileAttributes(String name, String path)
+	{
+		fileName = name;
+		filePath = path;
+	}
+	
+	public String getFileAttributes()
 	{
 		StringBuffer attributes= new StringBuffer();
+		attributes.append("");
 		return attributes.toString();
 	}
 	
-	public static String getNetFileSizeDescription(long size)
+	public String getNetFileSizeDescription(long size)
 	{
 		StringBuffer bytes = new StringBuffer();
 		DecimalFormat format = new DecimalFormat("###.0");

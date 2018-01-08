@@ -259,7 +259,7 @@ public class MainActivity extends Activity
 
 		try
 		{
-		if(1 == 1)
+		if(1 == 1 && mode == 1)
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View view = infla.inflate(R.layout.widget_newfunction, null);

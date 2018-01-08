@@ -114,6 +114,7 @@ public class novelAct extends Activity
 					{
 						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
 						listView.removeHeaderView(headView);
+						isHeadview = 0;
 					}
 				});
 		}
