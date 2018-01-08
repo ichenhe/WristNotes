@@ -28,6 +28,7 @@ public class novelAct extends Activity
 	ListView listView;
 
 	int choose = -1;
+    int isHeadview = 0;
 	Context ctx = this;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -101,6 +102,7 @@ public class novelAct extends Activity
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
 			listView.addHeaderView(headView, null, true);
+            isHeadview = 1;
 
 			((TextView)findViewById(R.id.functiontext)).setText("长按小说查看更多选项喵~");
 			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
@@ -125,10 +127,19 @@ public class novelAct extends Activity
 			{
 				if(new File(novelpath.get(position)).exists())
 				{
-					fileOpen.openNovel(ctx, sharedPreferences, editor,
-									   novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()) ,
-									   novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
-					menuAct.ctx.finish();
+                    if(isHeadview == 1)
+                    {
+                        fileOpen.openNovel(ctx, sharedPreferences, editor,
+                                novelpath.get(position - 1).substring(0, novelpath.get(position - 1).length() - novelpath.get(position - 1).split("/")[novelpath.get(position - 1).split("/").length - 1].length()),
+                                novelpath.get(position - 1).split("/")[novelpath.get(position - 1).split("/").length - 1]);
+                    }
+                    else
+                    {
+                        fileOpen.openNovel(ctx, sharedPreferences, editor,
+                                novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()),
+                                novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
+                    }
+                    menuAct.ctx.finish();
                     finish();
 				}
 				else
