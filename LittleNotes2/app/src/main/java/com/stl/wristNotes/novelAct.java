@@ -168,7 +168,13 @@ public class novelAct extends Activity
                 Intent intent = new Intent(ctx, menuAct.class);
 				//intent.putExtra("position", position);
 				startActivityForResult(intent, 0);
-				choose = position;
+				if(isHeadview == 1)
+				{
+					choose = position + 1;
+				}
+				else{
+					choose = position;
+				}
                 //startActivity(intent);
 				return true;
 			}
