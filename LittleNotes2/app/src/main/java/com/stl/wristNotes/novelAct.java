@@ -243,5 +243,12 @@ public class novelAct extends Activity
 					.setNegativeButton("取消", null).show();
 			}
 		}
+		else if(data.getIntExtra("info", -1) == 2 && choose != -1)
+		{
+			MainActivity.helpor = 4;
+			Intent intent = new Intent(ctx, helpAct.class);
+			intent.putExtra("string", new fileAttributes(novelname.get(choose), novelpath.get(choose)).getFileAttributes());
+			startActivity(intent);
+		}
 	}
 }

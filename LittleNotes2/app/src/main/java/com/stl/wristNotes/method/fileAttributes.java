@@ -1,6 +1,7 @@
 package com.stl.wristNotes.method;
 
 import java.text.*;
+import java.io.*;
 
 public class fileAttributes
 {
@@ -16,11 +17,15 @@ public class fileAttributes
 	public String getFileAttributes()
 	{
 		StringBuffer attributes= new StringBuffer();
-		attributes.append("");
+		attributes.append("<b><big>" + fileName + "属性</big></b>");
+		attributes.append("<br/> <br/>");
+		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(new File(filePath).length()) + "<br/>(" + new File(filePath).length() + "字节)");
+		attributes.append("<br/> <br/>");
+		attributes.append("路径：<br/>" + filePath);
 		return attributes.toString();
 	}
 	
-	public String getNetFileSizeDescription(long size)
+	public static String getNetFileSizeDescription(long size)
 	{
 		StringBuffer bytes = new StringBuffer();
 		DecimalFormat format = new DecimalFormat("###.0");
