@@ -69,6 +69,7 @@ public class fileOpen
             if (MainActivity.p == 0)//第一次打开
             {
 				String nname = name.substring(0, name.length() - name.split("[.]")[name.split("[.]").length - 1].length() - 1);
+				if(nname.equals("")) nname = " ";
 				novelname.add(nname);
                 novelpath.add(path + name);
 				novelpage.add("0");

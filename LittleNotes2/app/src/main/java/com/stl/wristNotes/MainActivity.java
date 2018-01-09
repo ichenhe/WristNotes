@@ -259,12 +259,12 @@ public class MainActivity extends Activity
 
 		try
 		{
-		if(1 == 1 && mode == 1)
+		if(sharedPreferences.getString("function", "0000").split("")[1].equals("0") && mode == 1)
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View view = infla.inflate(R.layout.widget_newfunction, null);
 
-			((TextView)view.findViewById(R.id.functiontext)).setText("测试测试测试测试测试测试被测试！！！");
+			((TextView)view.findViewById(R.id.functiontext)).setText("点击上方标题栏可以查看更多文件选项喵~");
 			LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
     	    button.setClickable(true);
 			button.setOnClickListener(new View.OnClickListener()
@@ -272,8 +272,11 @@ public class MainActivity extends Activity
 					@Override
 					public void onClick(View p1)
 					{
-						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
 						mainLinearLayout.removeView(view);
+						String[] function = sharedPreferences.getString("function", "0000").split("");
+						function[1] = "1";
+						editor.putString("function", MainActivity.join(function, ""));
+						editor.commit();
 					}
 				});
 			mainLinearLayout.addView(view, 1);

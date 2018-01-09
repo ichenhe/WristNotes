@@ -80,7 +80,7 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 3)
 		{
-			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "密码保护：" + mima(), "更改密码", "密码入口伪装" };
+			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 4)//无
@@ -114,7 +114,7 @@ public class menuAct extends Activity
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 
-		if(MainActivity.cho != 7 && MainActivity.cho != 8)
+		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 1 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
@@ -128,8 +128,11 @@ public class menuAct extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
 					listView.removeHeaderView(headView);
+					String[] function = sharedPreferences.getString("function", "0000").split("");
+					function[3] = "1";
+					editor.putString("function", MainActivity.join(function, ""));
+					editor.commit();
 				}
 			});
 		}
@@ -359,6 +362,12 @@ public class menuAct extends Activity
 						i.putExtra("info", 2);
 						setResult(0, i);
 						finish();
+					}
+					else if(s.equals("重置新功能提示"))
+					{
+						editor.putString("function", "0000");
+						editor.commit();
+						Toast.makeText(ctx, "已重置！重启应用就能正常查看喵~", Toast.LENGTH_SHORT).show();
 					}
 				}
 			});

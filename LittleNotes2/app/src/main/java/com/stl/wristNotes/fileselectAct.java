@@ -120,7 +120,7 @@ public class fileselectAct extends Activity
 			Toast.makeText(ctx, "你没有获取系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
 		}
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, filelist);
-		if(1 == 1)//功能提醒
+		if(sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
@@ -134,8 +134,11 @@ public class fileselectAct extends Activity
 					@Override
 					public void onClick(View p1)
 					{
-						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
 						fileselectView.removeHeaderView(headView);
+						String[] function = sharedPreferences.getString("function", "0000").split("");
+						function[2] = "1";
+						editor.putString("function", MainActivity.join(function, ""));
+						editor.commit();
 					}
 				});
 		}

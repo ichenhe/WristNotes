@@ -97,7 +97,7 @@ public class novelAct extends Activity
 		}
 		
 		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
-		if(1 == 1)//功能提醒
+		if(sharedPreferences.getString("function", "0000").split("")[4].equals("0"))//功能提醒
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
@@ -112,9 +112,12 @@ public class novelAct extends Activity
 					@Override
 					public void onClick(View p1)
 					{
-						Toast.makeText(ctx, "啊。。被点了", Toast.LENGTH_SHORT).show();
 						listView.removeHeaderView(headView);
 						isHeadview = 0;
+						String[] function = sharedPreferences.getString("function", "0000").split("");
+						function[4] = "1";
+						editor.putString("function", MainActivity.join(function, ""));
+						editor.commit();
 					}
 				});
 		}
