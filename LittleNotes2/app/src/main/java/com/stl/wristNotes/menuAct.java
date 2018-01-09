@@ -114,7 +114,7 @@ public class menuAct extends Activity
 
 		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
 
-		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 1 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
+		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
