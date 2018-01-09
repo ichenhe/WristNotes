@@ -369,6 +369,12 @@ public class menuAct extends Activity
 						editor.commit();
 						Toast.makeText(ctx, "已重置！重启应用就能正常查看喵~", Toast.LENGTH_SHORT).show();
 					}
+					else if(s.equals("蓝牙传输"))
+					{
+						MainActivity.helpor = 5;
+						menuintent = new Intent(ctx, helpAct.class);
+						startActivity(menuintent);
+					}
 				}
 			});
     }

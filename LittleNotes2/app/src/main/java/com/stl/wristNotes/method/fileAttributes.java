@@ -21,7 +21,7 @@ public class fileAttributes
 		attributes.append("<br/> <br/>");
 		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(new File(filePath).length()) + "<br/>(" + new File(filePath).length() + "字节)");
 		attributes.append("<br/> <br/>");
-		attributes.append("路径：<br/>" + filePath);
+		attributes.append("<b>路径：</b><br/>" + filePath);
 		return attributes.toString();
 	}
 	
