@@ -84,6 +84,13 @@ public class filetodoAct extends Activity
 							})
 							.setNegativeButton("取消", null).show();
 					}
+					else if(s.equals("属性"))
+					{
+						MainActivity.helpor = 4;
+						Intent intent = new Intent(ctx, helpAct.class);
+						intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath).getFileAttributes());
+						startActivity(intent);
+					}
 					else
 					{
 						Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();

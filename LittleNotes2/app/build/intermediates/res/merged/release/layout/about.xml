@@ -10,7 +10,7 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="vertical"
-		android:paddingBottom="15dp">
+		android:paddingBottom="20dp">
 
 		<TextView
 			style="@style/titleText"
@@ -39,7 +39,7 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:paddingBottom="15dp"
-			android:text="当前版本1.30(52)"/>
+			android:text="当前版本1.40(71)"/>
 
 		<Button
 			style="@style/button"
@@ -81,8 +81,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:gravity="center"
-			android:text="Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n我永远喜欢雪之下雪乃！"
-			android:textSize="9sp"/>
+			android:text="Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n我永远喜欢雪之下雪乃！\n另外祝杨永信及同类学校负责人\n早！日！爆！炸！"
+			android:textSize="10sp"/>
 
 	</LinearLayout>
 
