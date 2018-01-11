@@ -88,7 +88,7 @@ public class filetodoAct extends Activity
 					{
 						MainActivity.helpor = 4;
 						Intent intent = new Intent(ctx, helpAct.class);
-						intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath).getFileAttributes());
+						intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
 						startActivity(intent);
 					}
 					else

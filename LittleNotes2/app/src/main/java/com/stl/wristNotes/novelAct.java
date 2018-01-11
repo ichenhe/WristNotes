@@ -129,7 +129,7 @@ public class novelAct extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> l, View v, final int position, long id)
 			{
-				if(new File(novelpath.get(position)).exists())
+				if(new File(novelpath.get(position - isHeadview)).exists())
 				{
                     if(isHeadview == 1)
                     {
@@ -173,7 +173,7 @@ public class novelAct extends Activity
 				startActivityForResult(intent, 0);
 				if(isHeadview == 1)
 				{
-					choose = position + 1;
+					choose = position - 1;
 				}
 				else{
 					choose = position;
@@ -245,6 +245,12 @@ public class novelAct extends Activity
 						@Override
 						public void onClick(DialogInterface dialog, int which)
 						{
+							if(MainActivity.p - 1 > choose)
+							{
+								MainActivity.p--;
+								editor.putInt("p", MainActivity.p);
+								editor.commit();
+							}
 							deleteNovel(choose);
 							choose = -1;
 						}

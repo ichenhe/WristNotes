@@ -25,7 +25,7 @@
 			android:paddingRight="25dp"
 			android:paddingLeft="25dp"
 			android:paddingBottom="40dp"
-			android:paddingTop="5dp"/>
+			android:paddingTop="10dp"/>
 
 	</LinearLayout>
 
