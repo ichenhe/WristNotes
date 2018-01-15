@@ -83,6 +83,7 @@ public class MainActivity extends Activity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
 
+		//以下是各种储存信息的读取
         sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/");
@@ -102,12 +103,16 @@ public class MainActivity extends Activity
         {
             Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装喵", Toast.LENGTH_LONG).show();
         }
+		
+		//主界面的控件
         mainLeft = (Button) findViewById(R.id.mainButtonLeft);
         mainRight = (Button) findViewById(R.id.mainButtonRight);
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
-		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
+		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
 
+		//从外部打开，调用这里，获取文件路径及文件大小判断等
+		//暂时在这里测试获取文件编码
         Intent intent = getIntent();
         String action = intent.getAction();
         if (intent.ACTION_VIEW.equals(action))
@@ -151,6 +156,7 @@ public class MainActivity extends Activity
 
         textView = (TextView) findViewById(R.id.mainTextView);
 
+		//检查应用是否为更新版本或新安装
         PackageManager pm = ctx.getPackageManager();//context为当前Activity上下文
         try
         {
@@ -166,7 +172,7 @@ public class MainActivity extends Activity
 			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
-        if (mode == 0)
+        if (mode == 0)    //不为小说模式隐藏按钮和提示信息
         {
             mainLeft.setVisibility(View.INVISIBLE);
             mainRight.setVisibility(View.INVISIBLE);
@@ -194,7 +200,7 @@ public class MainActivity extends Activity
 
         try
         {
-            if (!new File(filepath + filename).exists())
+            if (!new File(filepath + filename).exists())    //文件不存在时
             {
                 textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档哦\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
@@ -217,7 +223,7 @@ public class MainActivity extends Activity
             Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_SHORT).show();
         }
 
-        if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
+        if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))    //开启应用隐藏文字
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
@@ -234,7 +240,7 @@ public class MainActivity extends Activity
             isalpha = 0;
         }
 
-        if (!sharedPreferences.getString("password", "").equals(""))
+        if (!sharedPreferences.getString("password", "").equals(""))    //有密码时
         {
             if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
             {
@@ -462,9 +468,9 @@ public class MainActivity extends Activity
      */
     public static String getFileEncode(String filePath) {
         String charsetName = null;
-		File file = null;
+		byte[] filebyte;
         try {
-            file = new File(filePath);
+            filebyte = new fileOpen().getBytes(filePath);
             CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
             detector.add(new ParsingDetector(false));
             detector.add(JChardetFacade.getInstance());
@@ -472,7 +478,7 @@ public class MainActivity extends Activity
             detector.add(UnicodeDetector.getInstance());
             java.nio.charset.Charset charset = null;
             //charset = detector.detectCodepage(file, 51200);
-			charset = detector.detectCodepage(file.toURI().toURL());
+			charset = detector.detectCodepage(new ByteArrayInputStream(filebyte), filebyte.length);
             if (charset != null) {
                 charsetName = charset.name();
             } else {
@@ -480,7 +486,7 @@ public class MainActivity extends Activity
             }
         } catch (Exception e) {
             //Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
-            return "";
+            return e.toString();
         }
         return charsetName;
     }
