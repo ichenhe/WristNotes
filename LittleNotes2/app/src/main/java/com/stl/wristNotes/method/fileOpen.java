@@ -135,9 +135,9 @@ public class fileOpen
         try {  
             File file = new File(filePath);  
             FileInputStream fis = new FileInputStream(file);  
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
-            byte[] b = new byte[1000];  
-            bos.write(b, 0, 1000);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream(102400);  
+            byte[] b = new byte[102400];  
+            bos.write(b, 0, 102400);
             fis.close();  
             bos.close();  
             buffer = bos.toByteArray();  
