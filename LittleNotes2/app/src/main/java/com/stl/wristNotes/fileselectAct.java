@@ -55,7 +55,7 @@ public class fileselectAct extends Activity
 						{
 							String[] filelist3 = MainActivity.filewillpath.split("/");
 							String filelist4 = "";
-                            if(filelist3 != null)
+                            if (filelist3 != null)
                             {
                                 for (int i = 0; i < filelist3.length - 1; i++)
                                 {
@@ -112,7 +112,7 @@ public class fileselectAct extends Activity
 		{
        		Arrays.sort(filelist);
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			MainActivity.filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
 			filelist = Environment.getExternalStorageDirectory().list();
@@ -120,7 +120,7 @@ public class fileselectAct extends Activity
 			Toast.makeText(ctx, "你没有获取系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
 		}
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, filelist);
-		if(sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
+		if (sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
@@ -200,36 +200,67 @@ public class fileselectAct extends Activity
 				}
 			});
     }
-	
+
 }
 
-public class Adapter extends BaseAdapter{
+class Adapter extends BaseAdapter
+{
 
 	private List<String> mData;//定义数据。
-	private LayoutInflater mInflater = R.id.menulistText;//定义Inflater,加载我们自定义的布局。
+	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 
 	/*
-    定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
-    */
-	public Adapter(LayoutInflater inflater,List<String> data){
+	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
+	 */
+	public Adapter(List<String> data, Context ctx)
+	{
 		mData = data;
+		mInflater = LayoutInflater.from(ctx);
 	}
 
 	@Override
-	public View getView(int position, View convertview, ViewGroup viewGroup) {
+	public int getCount()
+	{
+		return mData.size();
+	}
+	
+	@Override
+	public Object getItem(int position)
+	{
+		return position;
+	}
+	
+	@Override
+	public long getItemId(int position)
+	{
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertview, ViewGroup viewGroup)
+	{
 		//获得ListView中的view
-		View layoutview = mInflater.inflate(R.layout.item_simpleadapter,null);
-
-		for(int i = 0; i < mdata.length; i++)
-		{
-
-		}
+		View layoutview = mInflater.inflate(R.layout.menulist, null);
+		
 		//获得自定义布局中每一个控件的对象。
-		ImageView imagePhoto = (ImageView) viewStudent.findViewById(R.id.image_photo);
-		TextView name = (TextView) viewStudent.findViewById(R.id.textview_name);
+		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+		
 		//将数据一一添加到自定义的布局中。
-		imagePhoto.setImageResource(student.getImag());
-		hobby.setText(student.getHobby());
-		return viewStudent ;
+		name.setText(mData.get(position));
+		
+		
+		//获取文件拓展名
+		String exten = mData.get(position).split(".")[mData.get(position).split(".").length - 1];
+		if(exten.equals("jpg")||exten.equals("png")||exten.equals("jpge")||exten.equals("gif"))
+		{
+			image.setImageResource(R.drawable.imgfile);
+		}
+		else
+		{
+			image.setImageResource(R.drawable.unknowfile);
+		}
+		
+		return layoutview;
 	}
 }
