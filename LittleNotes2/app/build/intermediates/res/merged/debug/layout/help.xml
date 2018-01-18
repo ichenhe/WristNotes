@@ -21,9 +21,11 @@
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:text="@string/helptext"
-			android:padding="18dp"
-			android:layout_marginBottom="20dp"
-			android:id="@+id/helpTextView1"/>
+			android:id="@+id/helpTextView1"
+			android:paddingRight="25dp"
+			android:paddingLeft="25dp"
+			android:paddingBottom="40dp"
+			android:paddingTop="10dp"/>
 
 	</LinearLayout>
 
