@@ -4,13 +4,13 @@
 	android:layout_width="match_parent"
 	android:layout_height="58dp"
 	android:orientation="horizontal"
-	android:paddingLeft="32dp"
-	android:paddingRight="32dp">
+	android:paddingLeft="34dp"
+	android:paddingRight="34dp">
 
 	<ImageView
 		android:id="@+id/menulistimg"
-		android:layout_width="64dp"
-		android:layout_height="match_parent"
+		android:layout_width="58dp"
+		android:layout_height="58dp"
 		android:padding="4dp"
 		android:src="@drawable/about"/>
 
@@ -19,7 +19,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="left|center"
-		android:paddingLeft="4dp"
 		android:text="111"
 		android:textSize="16sp"/>
 

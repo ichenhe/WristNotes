@@ -126,7 +126,7 @@ public class ftpAct extends Activity
             serverFactory.getUserManager().save(user);
             mFtpServer = serverFactory.createServer();
             mFtpServer.start();
-			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动 注:使用中文文件名可能会出现错误\n\n电脑端请在文件浏览器中输入 ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + " \n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "\\（注意斜杠）端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
+			ftpText2.setText("FTP已开启！\n用户名为" + ftpedit1.getText().toString() + "，密码为空，模式为被动 注:使用中文文件名可能会出现错误\n\n电脑端请在文件浏览器中输入 ftp://" + getHostIP() + ":" + ftpedit3.getText().toString() + " \n\n手机请用es文件浏览器的ftp功能或同款软件创建ip为" + getHostIP() + "//（注意斜杠）端口为" + ftpedit3.getText().toString() + "的ftp\n注：手机连接经常连接不上，请尽量用电脑");
         }
         catch (Exception e)
         {

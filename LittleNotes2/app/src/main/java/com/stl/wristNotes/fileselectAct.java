@@ -26,7 +26,6 @@ public class fileselectAct extends Activity
     TextView fileselecttitle;
     String[] filelist;
     String[] filelist2;
-    String s;
 	ListView fileselectView;
 
 
@@ -121,7 +120,7 @@ public class fileselectAct extends Activity
 		}
 		try
 		{
-			zAdapter adapter = new zAdapter(filelist, getLayoutInflater());
+			zAdapter adapter = new zAdapter(filelist, getLayoutInflater(), MainActivity.filewillpath);
 			if(sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
 			{
 				LayoutInflater infla = LayoutInflater.from(this);
@@ -157,7 +156,7 @@ public class fileselectAct extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
-					/*s = (String) l.getItemAtPosition(position);
+					String s = filelist[position];
 					if (new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						MainActivity.filewillpath = MainActivity.filewillpath + s + "/";
@@ -178,8 +177,7 @@ public class fileselectAct extends Activity
 						{
 							fileOpen.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
 						}
-					}*/
-                    Toast.makeText(fileselectCtx, "啊啊", Toast.LENGTH_SHORT).show();
+					}
 				}
 			});
 
@@ -188,7 +186,7 @@ public class fileselectAct extends Activity
 				@Override
 				public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
 				{
-					/*String s = (String) l.getItemAtPosition(position);
+					String s = filelist[position];
 					if (!new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						try
@@ -203,8 +201,7 @@ public class fileselectAct extends Activity
 						{
 							Toast.makeText(fileselectCtx, "错误错误错误了！-_-#", Toast.LENGTH_SHORT).show();
 						}
-					}*/
-                    Toast.makeText(fileselectCtx, "啊啊", Toast.LENGTH_SHORT).show();
+					}
 					return true;
 				}
 			});
@@ -217,14 +214,16 @@ class zAdapter extends BaseAdapter
 
 	private String[] mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
+	private String path;
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
 	 */
-	public zAdapter(String[] data, LayoutInflater inflater)
+	public zAdapter(String[] data, LayoutInflater inflater, String path)
 	{
 		mData = data;
 		mInflater = inflater;
+		this.path = path;
 	}
 
 	@Override
@@ -252,23 +251,66 @@ class zAdapter extends BaseAdapter
 		View layoutview = mInflater.inflate(R.layout.menulist, null);
 		
 		//获得自定义布局中每一个控件的对象。
-		//ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
 		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
 		
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
 
+		try{
 		//获取文件拓展名
-		/*String exten = mData[position].split(".")[mData[position].split(".").length - 1];
-		if(exten.equals("jpg")||exten.equals("png")||exten.equals("jpge")||exten.equals("gif"))
+		if(new File(path + mData[position]).isDirectory())
 		{
-			image.setImageResource(R.drawable.imgfile);
+			image.setImageResource(R.drawable.folder);
 		}
 		else
 		{
-			image.setImageResource(R.drawable.unknowfile);
-		}*/
-		
+			if(mData[position].contains("[.]"))
+			{
+				String exten = mData[position].split("[.]")[mData[position].split("[.]").length - 1];
+				//String exten = "jpg";
+				if(exten.equals("jpg")||exten.equals("png")||exten.equals("jpge")||exten.equals("gif")||exten.equals("bmp")||exten.equals("tif")||exten.equals("pic"))
+				{
+					image.setImageResource(R.drawable.imgfile);
+				}
+				else if(exten.equals("apk"))
+				{
+					image.setImageResource(R.drawable.apkfile);
+				}
+				else if(exten.equals("wav")||exten.equals("aif")||exten.equals("au")||exten.equals("mp3")||exten.equals("wma")||exten.equals("amr")||exten.equals("flac")||exten.equals("aac"))
+				{
+					image.setImageResource(R.drawable.audio);
+				}
+				else if(exten.equals("doc")||exten.equals("xls")||exten.equals("xlsx")||exten.equals("ppt")||exten.equals("docx")||exten.equals("pptx")||exten.equals("pdf"))
+				{
+					image.setImageResource(R.drawable.doc);
+				}
+				else if(exten.equals("txt"))
+				{
+					if(new File(path + mData[position]).length() < 102400)
+					{
+						image.setImageResource(R.drawable.txtfile);
+					}
+					else
+					{
+						image.setImageResource(R.drawable.novelfile);
+					}
+				}
+				else
+				{
+					image.setImageResource(R.drawable.unknowfile);
+				}
+			}
+			else
+			{
+				image.setImageResource(R.drawable.unknowfile);
+			}
+		}
+		}
+		catch(Exception e)
+		{
+			
+		}
 		return layoutview;
 	}
 }
