@@ -10,10 +10,9 @@
 	<Button
 		android:id="@+id/mainButtonLeft"
 		android:layout_width="28dp"
-		android:layout_height="60dp"
+		android:layout_height="100dp"
 		android:layout_gravity="center"
-		android:layout_margin="2dp"
-		android:background="@drawable/passbutton"
+		android:background="?android:attr/selectableItemBackgroundBorderless"
 		android:text="◀"
 		android:textSize="10sp"
 		android:textStyle="bold"/>
@@ -56,10 +55,9 @@
 	<Button
 		android:id="@+id/mainButtonRight"
 		android:layout_width="28dp"
-		android:layout_height="60dp"
+		android:layout_height="100dp"
 		android:layout_gravity="center"
-		android:layout_margin="2dp"
-		android:background="@drawable/passbutton"
+		android:background="?android:attr/selectableItemBackgroundBorderless"
 		android:text="▶"
 		android:textSize="10sp"
 		android:textStyle="bold"/>

@@ -119,17 +119,19 @@ public class fileselectAct extends Activity
 			Arrays.sort(filelist);
 			Toast.makeText(ctx, "你没有获取系统文件夹文件的权限╮(ˉ▽ˉ)╭", Toast.LENGTH_LONG).show();
 		}
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, filelist);
-		if (sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
+		try
 		{
-			LayoutInflater infla = LayoutInflater.from(this);
-			final View headView = infla.inflate(R.layout.widget_newfunction, null);
-			fileselectView.addHeaderView(headView, null, true);
+			zAdapter adapter = new zAdapter(filelist, getLayoutInflater());
+			if(sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
+			{
+				LayoutInflater infla = LayoutInflater.from(this);
+				final View headView = infla.inflate(R.layout.widget_newfunction, null);
+				fileselectView.addHeaderView(headView, null, true);
 
-			((TextView)findViewById(R.id.functiontext)).setText("长按文件查看更多文件选项喵~");
-			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
-    	    button.setClickable(true);
-			button.setOnClickListener(new View.OnClickListener()
+				((TextView) findViewById(R.id.functiontext)).setText("长按文件查看更多文件选项喵~");
+				LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
+				button.setClickable(true);
+				button.setOnClickListener(new View.OnClickListener()
 				{
 					@Override
 					public void onClick(View p1)
@@ -141,8 +143,13 @@ public class fileselectAct extends Activity
 						editor.commit();
 					}
 				});
+			}
+			fileselectView.setAdapter(adapter);
 		}
-        fileselectView.setAdapter(adapter);
+		catch(Exception e)
+		{
+			Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
+		}
 
         fileselectView.setOnItemClickListener(new OnItemClickListener()
 			{
@@ -150,7 +157,7 @@ public class fileselectAct extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
-					s = (String) l.getItemAtPosition(position);
+					/*s = (String) l.getItemAtPosition(position);
 					if (new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						MainActivity.filewillpath = MainActivity.filewillpath + s + "/";
@@ -171,7 +178,8 @@ public class fileselectAct extends Activity
 						{
 							fileOpen.bigFile(fileselectCtx, sharedPreferences, editor, fileselecttitle.getText().toString(), s);
 						}
-					}
+					}*/
+                    Toast.makeText(fileselectCtx, "啊啊", Toast.LENGTH_SHORT).show();
 				}
 			});
 
@@ -180,7 +188,7 @@ public class fileselectAct extends Activity
 				@Override
 				public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
 				{
-					String s = (String) l.getItemAtPosition(position);
+					/*String s = (String) l.getItemAtPosition(position);
 					if (!new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						try
@@ -195,7 +203,8 @@ public class fileselectAct extends Activity
 						{
 							Toast.makeText(fileselectCtx, "错误错误错误了！-_-#", Toast.LENGTH_SHORT).show();
 						}
-					}
+					}*/
+                    Toast.makeText(fileselectCtx, "啊啊", Toast.LENGTH_SHORT).show();
 					return true;
 				}
 			});
@@ -203,25 +212,25 @@ public class fileselectAct extends Activity
 
 }
 
-class Adapter extends BaseAdapter
+class zAdapter extends BaseAdapter
 {
 
-	private List<String> mData;//定义数据。
+	private String[] mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
 	 */
-	public Adapter(List<String> data, Context ctx)
+	public zAdapter(String[] data, LayoutInflater inflater)
 	{
 		mData = data;
-		mInflater = LayoutInflater.from(ctx);
+		mInflater = inflater;
 	}
 
 	@Override
 	public int getCount()
 	{
-		return mData.size();
+		return mData.length;
 	}
 	
 	@Override
@@ -243,15 +252,14 @@ class Adapter extends BaseAdapter
 		View layoutview = mInflater.inflate(R.layout.menulist, null);
 		
 		//获得自定义布局中每一个控件的对象。
-		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		//ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
 		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
 		
 		//将数据一一添加到自定义的布局中。
-		name.setText(mData.get(position));
-		
-		
+		name.setText(mData[position]);
+
 		//获取文件拓展名
-		String exten = mData.get(position).split(".")[mData.get(position).split(".").length - 1];
+		/*String exten = mData[position].split(".")[mData[position].split(".").length - 1];
 		if(exten.equals("jpg")||exten.equals("png")||exten.equals("jpge")||exten.equals("gif"))
 		{
 			image.setImageResource(R.drawable.imgfile);
@@ -259,7 +267,7 @@ class Adapter extends BaseAdapter
 		else
 		{
 			image.setImageResource(R.drawable.unknowfile);
-		}
+		}*/
 		
 		return layoutview;
 	}

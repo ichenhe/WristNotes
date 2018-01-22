@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:orientation="vertical">
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal"
+	android:paddingLeft="28dp"
+	android:paddingRight="28dp">
+
+	<ImageView
+		android:id="@+id/menulistimg"
+		android:layout_width="64dp"
+		android:layout_height="64dp"
+		android:padding="4dp"
+		android:src="@drawable/about"/>
 
 	<TextView
-		android:layout_height="wrap_content"
-		android:text="文本"
-		android:layout_width="match_parent"
 		android:id="@+id/menulistText"
-		android:gravity="center"
-		android:textSize="18sp"
-		android:padding="8dp"/>
+		android:layout_width="match_parent"
+		android:layout_height="64dp"
+		android:gravity="left|center"
+		android:paddingLeft="4dp"
+		android:text="111"
+		android:textSize="18sp"/>
 
 </LinearLayout>
 
