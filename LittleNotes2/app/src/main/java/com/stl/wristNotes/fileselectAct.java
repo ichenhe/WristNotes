@@ -265,9 +265,10 @@ class zAdapter extends BaseAdapter
 		}
 		else
 		{
-			if(mData[position].contains("[.]"))
+			if(mData[position].contains("."))
 			{
 				String exten = mData[position].split("[.]")[mData[position].split("[.]").length - 1];
+				//name.setText(name.getText().toString() + "&" + exten);
 				//String exten = "jpg";
 				if(exten.equals("jpg")||exten.equals("png")||exten.equals("jpge")||exten.equals("gif")||exten.equals("bmp")||exten.equals("tif")||exten.equals("pic"))
 				{
