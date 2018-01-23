@@ -40,7 +40,7 @@ public class filetodoAct extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
-					String s = (String) l.getItemAtPosition(position);
+					String s = todo[position];
 					if (s.equals("用隐私模式打开"))
 					{
 						try
@@ -98,4 +98,55 @@ public class filetodoAct extends Activity
 				}
 			});
     }
+}
+
+class fAdapter extends BaseAdapter
+{
+
+	private String[] mData;//定义数据。
+	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
+
+	/*
+	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
+	 */
+	public fAdapter(String[] data, LayoutInflater inflater)
+	{
+		mData = data;
+		mInflater = inflater;
+	}
+
+	@Override
+	public int getCount()
+	{
+		return mData.length;
+	}
+
+	@Override
+	public Object getItem(int position)
+	{
+		return position;
+	}
+
+	@Override
+	public long getItemId(int position)
+	{
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertview, ViewGroup viewGroup)
+	{
+		//获得ListView中的view
+		View layoutview = mInflater.inflate(R.layout.menulist, null);
+
+		//获得自定义布局中每一个控件的对象。
+		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+
+		//将数据一一添加到自定义的布局中。
+		name.setText(mData[position]);
+		image.setVisibility(View.INVISIBLE);
+		
+		return layoutview;
+	}
 }
