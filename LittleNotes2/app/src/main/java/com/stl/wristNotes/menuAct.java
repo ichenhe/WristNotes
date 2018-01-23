@@ -116,7 +116,7 @@ public class menuAct extends Activity
 			menutitle.setText("小说记录");
         }
 
-		adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, menuList);
+		adapter = new mAdapter(menuList, menuimg, ctx);
 
 		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
@@ -147,7 +147,7 @@ public class menuAct extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
-					String s =(String) l.getItemAtPosition(position);
+					String s = menuList[position];
 					if (s.equals("打开文档"))
 					{
 						MainActivity.filewillpath = "";
@@ -404,17 +404,15 @@ class mAdapter extends BaseAdapter
 	private String[] mData;//定义数据。
 	private int[] mImg;
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
-	private String path;
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
 	 */
-	public mAdapter(String[] data, int[] img, LayoutInflater inflater, String path)
+	public mAdapter(String[] data, int[] img, LayoutInflater inflater)
 	{
 		mData = data;
 		mImg = img;
 		mInflater = inflater;
-		this.path = path;
 	}
 
 	@Override
