@@ -17,7 +17,7 @@
 	<TextView
 		android:id="@+id/menulistText"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="54dp"
 		android:gravity="left|center"
 		android:textSize="16sp"/>
 

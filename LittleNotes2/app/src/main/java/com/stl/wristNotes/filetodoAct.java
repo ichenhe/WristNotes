@@ -17,6 +17,7 @@ public class filetodoAct extends Activity
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Context ctx = this;
+	String[] todo;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -29,7 +30,7 @@ public class filetodoAct extends Activity
         TextView title = (TextView) findViewById(R.id.filedoText);
         ListView listView = (ListView) findViewById(R.id.filedoList);
 
-        String[] todo = new String[]{"用隐私模式打开", "用小说模式打开", "打开为...", "重命名", "分享", "删除", "属性"};
+        todo = new String[]{"用隐私模式打开", "用小说模式打开", "打开为...", "重命名", "分享", "删除", "属性"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.menulist, R.id.menulistText, todo);
         title.setText(MainActivity.filedofile);
         listView.setAdapter(adapter);
@@ -145,7 +146,7 @@ class fAdapter extends BaseAdapter
 
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
-		image.setVisibility(View.INVISIBLE);
+		image.setVisibility(View.GONE);
 		
 		return layoutview;
 	}

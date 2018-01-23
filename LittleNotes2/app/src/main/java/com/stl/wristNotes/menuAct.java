@@ -67,7 +67,7 @@ public class menuAct extends Activity
 		if (MainActivity.cho == 0)
 		{
 			menuList = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于" };
-			menuimg = new int[] { R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.about, R.drawable.ftp, R.drawable.helps, R.drawable.about};
+			menuimg = new int[] { R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
 			menutitle.setText("设置");
 		}
 		else if (MainActivity.cho == 1)
@@ -79,13 +79,13 @@ public class menuAct extends Activity
 		else if (MainActivity.cho == 2)
 		{
 			menuList = new String[] { "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
-			menuimg = new int[] { 0, 0, R.drawable.about};
+			menuimg = new int[] { 0, 0, R.drawable.theme};
 			menutitle.setText("显示设置");
 		}
 		else if (MainActivity.cho == 3)
 		{
 			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
-			menuimg = new int[] { 0, 0, 0, R.drawable.about, 0, 0 };
+			menuimg = new int[] { 0, 0, 0, R.drawable.password, 0, 0 };
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 5)
@@ -112,11 +112,11 @@ public class menuAct extends Activity
 			i.putExtra("info", -1);
 			setResult(0, i);
 			menuList = new String[] { "删除该条小说记录", "文件属性" };
-			menuimg = new int[] { R.drawable.about, R.drawable.about };
+			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
 			menutitle.setText("小说记录");
         }
 
-		adapter = new mAdapter(menuList, menuimg, ctx);
+		adapter = new mAdapter(menuList, menuimg, getLayoutInflater());
 
 		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
@@ -447,7 +447,7 @@ class mAdapter extends BaseAdapter
 		name.setText(mData[position]);
 		if(mImg[position] == 0)
 		{
-			image.setVisibility(View.INVISIBLE);
+			image.setVisibility(View.GONE);
 		}
 		else
 		{
