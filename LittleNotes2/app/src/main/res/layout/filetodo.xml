@@ -16,9 +16,7 @@
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
 		android:id="@+id/filedoList"
-		style="@style/listview"
-		android:paddingLeft="10dp"
-		android:paddingRight="10dp"/>
+		style="@style/listview"/>
 
 </LinearLayout>
 
