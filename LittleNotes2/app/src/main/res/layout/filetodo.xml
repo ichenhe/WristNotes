@@ -16,7 +16,9 @@
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
 		android:id="@+id/filedoList"
-		style="@style/listview"/>
+		style="@style/listview"
+		android:clipToPadding="false"
+		android:paddingBottom="26dp"/>
 
 </LinearLayout>
 

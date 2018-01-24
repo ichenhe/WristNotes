@@ -18,7 +18,8 @@
 		android:layout_width="match_parent"
 		android:layout_height="54dp"
 		android:gravity="left|center"
-		android:textSize="16sp"/>
+		android:textSize="16sp"
+		android:paddingLeft="4dp"/>
 
 </LinearLayout>
 
