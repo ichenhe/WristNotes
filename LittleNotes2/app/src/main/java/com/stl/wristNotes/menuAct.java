@@ -20,6 +20,7 @@ public class menuAct extends Activity
 	Intent passint;
 	String[] menuList;
 	int[] menuimg;
+	int[] menubut;
 	Intent i;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -68,29 +69,33 @@ public class menuAct extends Activity
 		{
 			menuList = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于" };
 			menuimg = new int[] { R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
+			menubut = new int[] { -1 ,-1, -1, -1, -1, -1, -1, -1 };
 			menutitle.setText("设置");
 		}
 		else if (MainActivity.cho == 1)
 		{
 			menuList = new String[] { "1", "2", "3", "4", "5", "6" };
 			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
+			menubut = new int[] { -1, -1, -1, -1, -1, -1};
 			menutitle.setText("亮度调整");
 		}
 		else if (MainActivity.cho == 2)
 		{
 			menuList = new String[] { "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
 			menuimg = new int[] { 0, 0, R.drawable.theme};
+			menubut = new int[] { 2, 2, -1 };
 			menutitle.setText("显示设置");
 		}
 		else if (MainActivity.cho == 3)
 		{
 			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			menuimg = new int[] { 0, 0, 0, R.drawable.password, 0, 0 };
+			menubut = new int[] { getState("touchHideText", "关闭", "开启", "关闭"), getState("startHideText", "关闭", "开启", "关闭"), -1, -1, -1};
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 5)
 		{
-			menuList = new String[] { "8", "10", "12", "14" };
+			menuList = new String[] { "8", "10", "12", "14" ,"16" };
 			menuimg = new int[] { 0, 0, 0, 0 };
 			menutitle.setText("字号调整");
 		}
@@ -394,6 +399,17 @@ public class menuAct extends Activity
 			return "开启";
 		}
 	}
+	private int getState(String sp, String de, String open, String close)
+	{
+		if(sharedPreferences.getString(sp, de).equals(open))
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 	
 
 }
@@ -442,6 +458,8 @@ class mAdapter extends BaseAdapter
 		//获得自定义布局中每一个控件的对象。
 		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
 		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+		ImageView imggo = (ImageView) layoutview.findViewById(R.id.menulistgo);
+		View imgswi = layoutview.findViewById(R.id.menulistswi);
 
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
