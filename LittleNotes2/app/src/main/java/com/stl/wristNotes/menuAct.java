@@ -89,7 +89,7 @@ public class menuAct extends Activity
 		else if (MainActivity.cho == 3)
 		{
 			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
-			menuimg = new int[] { 0, 0, 0, R.drawable.password, 0, 0 };
+			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
 			menubut = new int[] { getState("touchHideText", "关闭", "开启", "关闭"), getState("startHideText", "关闭", "开启", "关闭"), -1, -1, -1};
 			menutitle.setText("偏好设置");
 		}
