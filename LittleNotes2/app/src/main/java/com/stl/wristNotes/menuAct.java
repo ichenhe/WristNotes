@@ -97,18 +97,21 @@ public class menuAct extends Activity
 		{
 			menuList = new String[] { "8", "10", "12", "14" ,"16" };
 			menuimg = new int[] { 0, 0, 0, 0 };
+			menubut = new int[] { -1, -1, -1, -1, -1 };
 			menutitle.setText("字号调整");
 		}
 		else if(MainActivity.cho == 6)
 		{
 			menuList = new String[] { "FTP文件传输", "蓝牙传输" };
 			menuimg = new int[] { R.drawable.filecs, R.drawable.bluetooth };
+			menubut = new int[] { -1, -1 };
 			menutitle.setText("文件传输");
 		}
 		else if(MainActivity.cho == 7)
 		{
 			menuList = new String[] { "跳转页数", "智能翻页：" + sharedPreferences.getString("smartScroll", "开启") };
 			menuimg = new int[] { 0, 0 };
+			menubut = new int[] { -1 , getState("smartScroll", "开启", "开启", "关闭") };
 			menutitle.setText("阅读菜单");
 		}
 		else if(MainActivity.cho == 8)
@@ -118,6 +121,7 @@ public class menuAct extends Activity
 			setResult(0, i);
 			menuList = new String[] { "删除该条小说记录", "文件属性" };
 			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
+			menubut = new int[] { -1, -1 };
 			menutitle.setText("小说记录");
         }
 
