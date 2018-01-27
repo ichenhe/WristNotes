@@ -291,7 +291,6 @@ public class menuAct extends Activity
 							Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
 						}
 						editor.commit();
-						finish();
 					}
 					else if (s.indexOf("启动应用隐藏文字") != -1)
 					{
@@ -305,7 +304,6 @@ public class menuAct extends Activity
 						}
 						editor.commit();
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
-						finish();
 					}
 					else if (s.equals("FTP文件传输"))
 					{
@@ -361,7 +359,6 @@ public class menuAct extends Activity
                             Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
                         }
 						editor.commit();
-						finish();
 					}
 					else if(s.equals("删除该条小说记录"))
 					{
