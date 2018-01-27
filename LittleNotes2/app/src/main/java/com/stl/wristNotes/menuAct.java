@@ -123,7 +123,7 @@ public class menuAct extends Activity
 			setResult(0, i);
 			menuList = new String[] { "删除该小说记录", "文件属性" };
 			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
-			menubut = new int[] { -1, 2 };
+			menubut = new int[] { -1, -1 };
 			menutitle.setText("小说记录");
         }
 
