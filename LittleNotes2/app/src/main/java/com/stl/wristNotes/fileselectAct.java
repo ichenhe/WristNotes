@@ -215,6 +215,12 @@ class zAdapter extends BaseAdapter
 	private String[] mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 	private String path;
+    private ImageView image;
+    private TextView name;
+    private ImageView imggo;
+    private ToggleButton imgswi;
+    private TextView tip;
+    private View layoutview;
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
@@ -248,11 +254,11 @@ class zAdapter extends BaseAdapter
 	public View getView(int position, View convertview, ViewGroup viewGroup)
 	{
 		//获得ListView中的view
-		View layoutview = mInflater.inflate(R.layout.menulist, null);
+		layoutview = mInflater.inflate(R.layout.menulist, null);
 		
 		//获得自定义布局中每一个控件的对象。
-		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
-		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+		image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		name = (TextView) layoutview.findViewById(R.id.menulistText);
 		
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);

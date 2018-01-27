@@ -21,6 +21,7 @@ public class menuAct extends Activity
 	String[] menuList;
 	int[] menuimg;
 	int[] menubut;
+    String[][] menutip;
 	Intent i;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -70,6 +71,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于" };
 			menuimg = new int[] { R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
 			menubut = new int[] { -1 ,-1, -1, -1, -1, -1, -1, -1 };
+            menutip = new String[][] { [""], [""], [""], [""], [""], [""], [""], [""] }
 			menutitle.setText("设置");
 		}
 		else if (MainActivity.cho == 1)
