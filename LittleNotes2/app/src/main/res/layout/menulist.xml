@@ -44,8 +44,7 @@
 		android:layout_toLeftOf="@id/menulistRelativeLayout"
 		android:layout_toRightOf="@id/menulistimg"
 		android:orientation="vertical"
-		android:paddingLeft="4dp"
-		android:paddingRight="4dp">
+		android:padding="2dp">
 
 		<TextView
 			android:id="@+id/menulistText"
