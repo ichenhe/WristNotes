@@ -90,7 +90,7 @@ public class menuAct extends Activity
 		{
 			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
 			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
-			menubut = new int[] { getState("touchHideText", "关闭", "开启", "关闭"), getState("startHideText", "关闭", "开启", "关闭"), -1, -1, -1};
+			menubut = new int[] { getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("password", "", ""), -1, -1};
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 5)
@@ -111,7 +111,7 @@ public class menuAct extends Activity
 		{
 			menuList = new String[] { "跳转页数", "智能翻页：" + sharedPreferences.getString("smartScroll", "开启") };
 			menuimg = new int[] { 0, 0 };
-			menubut = new int[] { -1 , getState("smartScroll", "开启", "开启", "关闭") };
+			menubut = new int[] { -1 , getState("smartScroll", "开启", "关闭") };
 			menutitle.setText("阅读菜单");
 		}
 		else if(MainActivity.cho == 8)
@@ -119,13 +119,13 @@ public class menuAct extends Activity
 			i = new Intent();
 			i.putExtra("info", -1);
 			setResult(0, i);
-			menuList = new String[] { "删除该条小说记录", "文件属性" };
+			menuList = new String[] { "删除该小说记录", "文件属性" };
 			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
 			menubut = new int[] { -1, -1 };
 			menutitle.setText("小说记录");
         }
 
-		adapter = new mAdapter(menuList, menuimg, getLayoutInflater());
+		adapter = new mAdapter(menuList, menuimg, menubut, getLayoutInflater());
 
 		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
@@ -403,15 +403,15 @@ public class menuAct extends Activity
 			return "开启";
 		}
 	}
-	private int getState(String sp, String de, String open, String close)
+	private int getState(String sp, String de, String close)
 	{
-		if(sharedPreferences.getString(sp, de).equals(open))
+		if(sharedPreferences.getString(sp, de).equals(close))
 		{
-			return 1;
+			return 0;
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 	}
 	
@@ -423,16 +423,23 @@ class mAdapter extends BaseAdapter
 
 	private String[] mData;//定义数据。
 	private int[] mImg;
+	private int[] mBut;
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
-
-	/*
-	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
-	 */
-	public mAdapter(String[] data, int[] img, LayoutInflater inflater)
+	
+	private ImageView image;
+	private TextView name;
+	private ImageView imggo;
+	private ToggleButton imgswi;
+	private TextView tip;
+	private View layoutview;
+	
+	public mAdapter(String[] data, int[] img, int[] but, LayoutInflater inflater)
 	{
 		mData = data;
 		mImg = img;
 		mInflater = inflater;
+		mBut = but;
+		
 	}
 
 	@Override
@@ -457,24 +464,40 @@ class mAdapter extends BaseAdapter
 	public View getView(int position, View convertview, ViewGroup viewGroup)
 	{
 		//获得ListView中的view
-		View layoutview = mInflater.inflate(R.layout.menulist, null);
-
+		layoutview = mInflater.inflate(R.layout.menulist, null);
 		//获得自定义布局中每一个控件的对象。
-		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
-		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
-		ImageView imggo = (ImageView) layoutview.findViewById(R.id.menulistgo);
-		View imgswi = layoutview.findViewById(R.id.menulistswi);
-
+		image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		name = (TextView) layoutview.findViewById(R.id.menulistText);
+		imggo = (ImageView) layoutview.findViewById(R.id.menulistgo);
+		imgswi = (ToggleButton) layoutview.findViewById(R.id.menulistswi);
+		tip = (TextView) layoutview.findViewById(R.id.menulisttip);
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
-		if(mImg[position] == 0)
+		
+		if(mImg[position] == 0) image.setVisibility(View.GONE);
+		else image.setImageResource(mImg[position]);
+		
+		if(mBut[position] == -1)
 		{
-			image.setVisibility(View.GONE);
+			imggo.setVisibility(View.GONE);
+			imgswi.setVisibility(View.GONE);
 		}
-		else
+		else if(mBut[position] == 2)
 		{
-			image.setImageResource(mImg[position]);
+			imgswi.setVisibility(View.GONE);
 		}
+		else if(mBut[position] == 0)
+		{
+			imggo.setVisibility(View.GONE);
+			imgswi.setChecked(false);
+		}
+		else if(mBut[position] == 1)
+		{
+			imggo.setVisibility(View.GONE);
+			imgswi.setChecked(true);
+		}
+		
+		tip.setVisibility(View.GONE);
 		
 		return layoutview;
 	}

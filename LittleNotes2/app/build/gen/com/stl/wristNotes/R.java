@@ -72,8 +72,8 @@ public final class R {
         public static final int ftpTextView1=0x7f070008;
         public static final int ftpTextView2=0x7f07000d;
         public static final int ftpToggleButton1=0x7f07000c;
-        public static final int functionbutton=0x7f07002a;
-        public static final int functiontext=0x7f07002b;
+        public static final int functionbutton=0x7f07002b;
+        public static final int functiontext=0x7f07002c;
         public static final int helpTextView1=0x7f07000f;
         public static final int helpTextView2=0x7f07000e;
         public static final int inputButton=0x7f070012;
@@ -92,16 +92,17 @@ public final class R {
         public static final int menulistgo=0x7f07001d;
         public static final int menulistimg=0x7f07001b;
         public static final int menulistswi=0x7f07001e;
-        public static final int myNovel=0x7f070023;
-        public static final int mynovelitemTextView1=0x7f070020;
-        public static final int mynovelitemTextView2=0x7f070021;
-        public static final int mynoveltextButton=0x7f070022;
-        public static final int passwordButton=0x7f070026;
-        public static final int passwordEdit=0x7f070025;
-        public static final int passwordText=0x7f070024;
-        public static final int startEdit=0x7f070027;
-        public static final int startbutt=0x7f070028;
-        public static final int updateText=0x7f070029;
+        public static final int menulisttip=0x7f070020;
+        public static final int myNovel=0x7f070024;
+        public static final int mynovelitemTextView1=0x7f070021;
+        public static final int mynovelitemTextView2=0x7f070022;
+        public static final int mynoveltextButton=0x7f070023;
+        public static final int passwordButton=0x7f070027;
+        public static final int passwordEdit=0x7f070026;
+        public static final int passwordText=0x7f070025;
+        public static final int startEdit=0x7f070028;
+        public static final int startbutt=0x7f070029;
+        public static final int updateText=0x7f07002a;
     }
     public static final class layout {
         public static final int about=0x7f030000;
