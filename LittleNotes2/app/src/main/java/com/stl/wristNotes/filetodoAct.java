@@ -30,7 +30,7 @@ public class filetodoAct extends Activity
         TextView title = (TextView) findViewById(R.id.filedoText);
         ListView listView = (ListView) findViewById(R.id.filedoList);
 
-        todo = new String[]{"用隐私模式打开", "用小说模式打开", "打开为...", "重命名", "分享", "删除", "属性"};
+        todo = new String[]{"用隐私模式打开", "用小说模式打开", "打开为...(*)", "重命名(*)", "分享(*)", "删除", "属性"};
         fAdapter adapter = new fAdapter(todo, getLayoutInflater());
         title.setText(MainActivity.filedofile);
         listView.setAdapter(adapter);
