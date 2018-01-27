@@ -88,9 +88,9 @@ public class menuAct extends Activity
 		}
 		else if (MainActivity.cho == 3)
 		{
-			menuList = new String[] { "触摸隐藏文字：" + sharedPreferences.getString("touchHideText", "关闭"), "启动应用隐藏文字：" + sharedPreferences.getString("startHideText", "关闭"), "重置新功能提示", "密码保护：" + mima(), "更改密码", "密码入口伪装" };
+			menuList = new String[] { "触摸隐藏文字", "启动应用隐藏文字", "重置新功能提示", "密码保护", "更改密码", "密码入口伪装" };
 			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
-			menubut = new int[] { getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("password", "", ""), -1, -1};
+			menubut = new int[] { getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("password", "", ""), 2, 2};
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 5)
@@ -109,9 +109,9 @@ public class menuAct extends Activity
 		}
 		else if(MainActivity.cho == 7)
 		{
-			menuList = new String[] { "跳转页数", "智能翻页：" + sharedPreferences.getString("smartScroll", "开启") };
+			menuList = new String[] { "跳转页数", "智能翻页" };
 			menuimg = new int[] { 0, 0 };
-			menubut = new int[] { -1 , getState("smartScroll", "开启", "关闭") };
+			menubut = new int[] { 2 , getState("smartScroll", "开启", "关闭") };
 			menutitle.setText("阅读菜单");
 		}
 		else if(MainActivity.cho == 8)
@@ -121,7 +121,7 @@ public class menuAct extends Activity
 			setResult(0, i);
 			menuList = new String[] { "删除该小说记录", "文件属性" };
 			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
-			menubut = new int[] { -1, -1 };
+			menubut = new int[] { -1, 2 };
 			menutitle.setText("小说记录");
         }
 
