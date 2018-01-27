@@ -98,7 +98,7 @@ public class menuAct extends Activity
 		else if (MainActivity.cho == 5)
 		{
 			menuList = new String[] { "8", "10", "12", "14" ,"16" };
-			menuimg = new int[] { 0, 0, 0, 0 };
+			menuimg = new int[] { 0, 0, 0, 0, 0 };
 			menubut = new int[] { -1, -1, -1, -1, -1 };
 			menutitle.setText("字号调整");
 		}
