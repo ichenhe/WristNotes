@@ -470,7 +470,7 @@ public class MainActivity extends Activity
         String charsetName = null;
 		byte[] filebyte;
         try {
-            filebyte = new fileOpen().getBytes(filePath);
+            filebyte = new bytefile().getBytes(filePath, 10240);
             CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
             detector.add(new ParsingDetector(false));
             detector.add(JChardetFacade.getInstance());

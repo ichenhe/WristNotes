@@ -130,25 +130,6 @@ public class fileOpen
         }
     }
 	
-	public byte[] getBytes(String filePath){  
-        byte[] buffer = null;  
-        try {  
-            File file = new File(filePath);  
-            FileInputStream fis = new FileInputStream(file);  
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(102400);  
-            byte[] b = new byte[102400];  
-            bos.write(b, 0, 102400);
-            fis.close();  
-            bos.close();  
-            buffer = bos.toByteArray();  
-        } catch (FileNotFoundException e) {  
-            e.printStackTrace();  
-        } catch (IOException e) {  
-            e.printStackTrace();  
-        }  
-        return buffer;  
-    }
-	
 	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)
     {
         new AlertDialog.Builder(ctx)

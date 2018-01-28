@@ -71,7 +71,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于" };
 			menuimg = new int[] { R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
 			menubut = new int[] { -1 ,-1, -1, -1, -1, -1, -1, -1 };
-            menutip = new String[][] { [""], [""], [""], [""], [""], [""], [""], [""] }
+            menutip = new String[][] { {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""} };
 			menutitle.setText("设置");
 		}
 		else if (MainActivity.cho == 1)
@@ -284,11 +284,13 @@ public class menuAct extends Activity
 						{
 							editor.putString("touchHideText", "关闭");
 							Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(false);
 						}
 						else
 						{
 							editor.putString("touchHideText", "开启");
 							Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(true);
 						}
 						editor.commit();
 					}
@@ -297,10 +299,12 @@ public class menuAct extends Activity
 						if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))
 						{
 							editor.putString("startHideText", "关闭");
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(false);
 						}
 						else
 						{
 							editor.putString("startHideText", "开启");
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(true);
 						}
 						editor.commit();
 						Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
@@ -485,15 +489,18 @@ class mAdapter extends BaseAdapter
 		{
 			imgswi.setVisibility(View.GONE);
 		}
-		else if(mBut[position] == 0)
+		else
 		{
+			if (mBut[position] == 0)
+			{
+				imgswi.setChecked(false);
+			}
+			else if (mBut[position] == 1)
+			{
+				imgswi.setChecked(true);
+			}
 			imggo.setVisibility(View.GONE);
-			imgswi.setChecked(false);
-		}
-		else if(mBut[position] == 1)
-		{
-			imggo.setVisibility(View.GONE);
-			imgswi.setChecked(true);
+			imgswi.setTag(0);
 		}
 		
 		tip.setVisibility(View.GONE);
