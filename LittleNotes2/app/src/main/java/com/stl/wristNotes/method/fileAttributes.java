@@ -16,10 +16,13 @@ public class fileAttributes
 	
 	public String getFileAttributes()
 	{
+		File file = new File(filePath);
 		StringBuffer attributes= new StringBuffer();
 		attributes.append("<b><big>" + fileName + "属性</big></b>");
 		attributes.append("<br/> <br/>");
-		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(new File(filePath).length()) + "<br/>(" + new File(filePath).length() + "字节)");
+		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(file.length()) + "<br/>(" + file.length() + "字节)");
+		attributes.append("<br/> <br/>");
+		attributes.append("<b>最后修改时间：</b><br/>" + file.lastModified());
 		attributes.append("<br/> <br/>");
 		attributes.append("<b>路径：</b><br/>" + filePath);
 		return attributes.toString();
