@@ -3,7 +3,7 @@ package com.stl.wristNotes.method;
 import java.io.*;
 import android.util.*;
 
-public class bytefile
+public class file
 {
 	public byte[] getBytes(String filePath, int size){  
         byte[] buffer = null;  
@@ -38,6 +38,22 @@ public class bytefile
 		{
 			return false;
 		}
+	}
+	
+	public boolean writeFile(String filepath, byte[] data)
+	{
+		File file = new File(filepath);
+		try
+		{
+			FileOutputStream fos = new FileOutputStream(filepath);
+			fos.write(data);
+			fos.close();
+		}
+		catch (IOException e)
+		{
+			return false;
+		}
+		return true;
 	}
 	
 }
