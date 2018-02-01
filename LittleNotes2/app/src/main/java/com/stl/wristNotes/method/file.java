@@ -5,7 +5,7 @@ import android.util.*;
 
 public class file
 {
-	public byte[] getBytes(String filePath, int size){  
+	public static byte[] getBytes(String filePath, int size){  
         byte[] buffer = null;
         try {  
             File file = new File(filePath);
@@ -24,7 +24,7 @@ public class file
         return buffer;
     }
 	
-	public boolean createFile(File file)
+	public static boolean createFile(File file)
 	{
 		try
 		{
@@ -40,7 +40,7 @@ public class file
 		}
 	}
 	
-	public boolean writeFile(String filepath, byte[] data)
+	public static boolean writeFile(String filepath, byte[] data)
 	{
 		File file = new File(filepath);
 		try

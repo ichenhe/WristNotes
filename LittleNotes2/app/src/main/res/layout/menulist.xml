@@ -43,10 +43,12 @@
 
 	<LinearLayout
 		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
 		android:layout_toLeftOf="@id/menulistRelativeLayout"
 		android:layout_toRightOf="@id/menulistimg"
 		android:orientation="vertical"
 		android:padding="2dp"
+		android:adjustViewBounds="true"
 		android:minHeight="54dp">
 
 		<TextView

@@ -470,7 +470,10 @@ public class MainActivity extends Activity
         String charsetName = null;
 		byte[] filebyte;
         try {
-            filebyte = new file().getBytes(filePath, 10240);
+            filebyte = file.getBytes(filePath, 512);
+			File tempFile = new File(Environment.getExternalStorageDirectory() + "/wsxzttemp.txt");
+			file.createFile(tempFile);
+			file.writeFile(tempFile.getPath(), filebyte);
             CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
             detector.add(new ParsingDetector(false));
             detector.add(JChardetFacade.getInstance());
