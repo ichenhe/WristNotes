@@ -1,22 +1,23 @@
 package com.stl.wristNotes.method;
 
+import android.app.*;
 import android.content.*;
 import android.graphics.*;
+import android.os.*;
 import android.view.*;
 import android.widget.*;
 import com.stl.wristNotes.*;
+import info.monitorenter.cpdetector.io.*;
 import java.io.*;
 import java.util.*;
 import org.json.*;
-import android.app.*;
 
 public class fileOpen
 {
 	public static String fileReader(String path) throws IOException
     {
 		//普通模式读取文件
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), getFileEncode(path)));
         StringBuffer temp = new StringBuffer();
         String temp1 = "";
         while ((temp1 = bReader.readLine()) != null)
@@ -128,6 +129,35 @@ public class fileOpen
         {
             Toast.makeText(ctx, "打开文件错误！", Toast.LENGTH_SHORT).show();
         }
+    }
+	
+	/**
+     * 获得编码
+     * @param filePath
+     * @return
+     */
+    public static String getFileEncode(String filePath) {
+        String charsetName = null;
+		byte[] filebyte;
+        try {
+            filebyte = file.getBytes(filePath, 1024);
+            CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
+            detector.add(new ParsingDetector(false));
+            detector.add(JChardetFacade.getInstance());
+            detector.add(ASCIIDetector.getInstance());
+            detector.add(UnicodeDetector.getInstance());
+            java.nio.charset.Charset charset = null;
+            //charset = detector.detectCodepage(file, 51200);
+			charset = detector.detectCodepage(new ByteArrayInputStream(filebyte), filebyte.length);
+            if (charset != null) {
+                charsetName = charset.name();
+            } else {
+                charsetName = "UTF-8";
+            }
+        } catch (Exception e) {
+            return e.toString();
+        }
+        return charsetName;
     }
 	
 	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)

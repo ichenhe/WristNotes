@@ -79,6 +79,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "1", "2", "3", "4", "5", "6" };
 			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
 			menubut = new int[] { -1, -1, -1, -1, -1, -1};
+			menutip = new String[][] { {""}, {""}, {""}, {""}, {""}, {""} };
 			menutitle.setText("亮度调整");
 		}
 		else if (MainActivity.cho == 2)
@@ -86,6 +87,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择" };
 			menuimg = new int[] { 0, 0, R.drawable.theme};
 			menubut = new int[] { 2, 2, -1 };
+			menutip = new String[][] { {"更改文字亮度"}, {"更改文字大小"}, {""} };
 			menutitle.setText("显示设置");
 		}
 		else if (MainActivity.cho == 3)
@@ -93,6 +95,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "触摸隐藏文字", "启动应用隐藏文字", "重置新功能提示", "密码保护", "更改密码", "密码入口伪装" };
 			menuimg = new int[] { 0, 0, 0, 0, 0, 0 };
 			menubut = new int[] { getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("password", "", ""), 2, 2};
+			menutip = new String[][] { {"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {"重新显示新功能提示"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
 			menutitle.setText("偏好设置");
 		}
 		else if (MainActivity.cho == 5)
@@ -100,6 +103,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "8", "10", "12", "14" ,"16" };
 			menuimg = new int[] { 0, 0, 0, 0, 0 };
 			menubut = new int[] { -1, -1, -1, -1, -1 };
+			menutip = new String[][] { {""}, {""}, {""}, {""}, {""} };
 			menutitle.setText("字号调整");
 		}
 		else if(MainActivity.cho == 6)
@@ -107,6 +111,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "FTP文件传输", "蓝牙传输" };
 			menuimg = new int[] { R.drawable.filecs, R.drawable.bluetooth };
 			menubut = new int[] { -1, -1 };
+			menutip = new String[][] { {"在手表上建立一个FTP服务器传输文件"}, {"使用蓝牙传输文件"} };
 			menutitle.setText("文件传输");
 		}
 		else if(MainActivity.cho == 7)
@@ -114,6 +119,7 @@ public class menuAct extends Activity
 			menuList = new String[] { "跳转页数", "智能翻页" };
 			menuimg = new int[] { 0, 0 };
 			menubut = new int[] { 2 , getState("smartScroll", "开启", "关闭") };
+			menutip = new String[][] { {"跳转到任意一页"}, {"已关闭", "已开启\n翻页键先滚动到页面底部再翻页"} };
 			menutitle.setText("阅读菜单");
 		}
 		else if(MainActivity.cho == 8)
@@ -124,10 +130,11 @@ public class menuAct extends Activity
 			menuList = new String[] { "删除该小说记录", "文件属性" };
 			menuimg = new int[] { R.drawable.rubb, R.drawable.about };
 			menubut = new int[] { -1, -1 };
+			menutip = new String[][] { {""}, {""} };
 			menutitle.setText("小说记录");
         }
 
-		adapter = new mAdapter(menuList, menuimg, menubut, getLayoutInflater());
+		adapter = new mAdapter(menuList, menuimg, menubut, getLayoutInflater(), menutip);
 
 		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
@@ -216,7 +223,7 @@ public class menuAct extends Activity
 						MainActivity.light = Integer.parseInt(s);
 						finish();
 					}
-					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14"))
+					else if (s.equals("8") || s.equals("10") || s.equals("12") || s.equals("14") || s.equals("16"))
 					{
 						MainActivity.textView.setTextSize(Integer.parseInt(s));
 						editor.putInt("bs", Integer.parseInt(s));
@@ -283,14 +290,16 @@ public class menuAct extends Activity
 						if (sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
 						{
 							editor.putString("touchHideText", "关闭");
-							Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
+							//Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
 							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(false);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
 						}
 						else
 						{
 							editor.putString("touchHideText", "开启");
-							Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
+							//Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
 							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(true);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
 						}
 						editor.commit();
 					}
@@ -300,14 +309,16 @@ public class menuAct extends Activity
 						{
 							editor.putString("startHideText", "关闭");
 							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(false);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
 						}
 						else
 						{
 							editor.putString("startHideText", "开启");
 							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(true);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
 						}
 						editor.commit();
-						Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
+						//Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
 					}
 					else if (s.equals("FTP文件传输"))
 					{
@@ -354,17 +365,21 @@ public class menuAct extends Activity
                         {
                             editor.putString("smartScroll", "关闭");
                             MainActivity.smartScroll = "关闭";
-                            Toast.makeText(ctx, "已关闭智能翻页功能！", Toast.LENGTH_LONG).show();
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(false);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                            //Toast.makeText(ctx, "已关闭智能翻页功能！", Toast.LENGTH_LONG).show();
                         }
 						else if(sharedPreferences.getString("smartScroll", "开启").equals("关闭"))
                         {
                             editor.putString("smartScroll", "开启");
                             MainActivity.smartScroll = "开启";
-                            Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
+							((ToggleButton)((ViewGroup)v).findViewById(R.id.menulistswi)).setChecked(true);
+							((TextView)((ViewGroup)v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                            //Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
                         }
 						editor.commit();
 					}
-					else if(s.equals("删除该条小说记录"))
+					else if(s.equals("删除该小说记录"))
 					{
 						//Intent i = new Intent();
 						i.putExtra("info", 1);
@@ -427,6 +442,7 @@ class mAdapter extends BaseAdapter
 	private String[] mData;//定义数据。
 	private int[] mImg;
 	private int[] mBut;
+	private String[][] mTip;
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 	
 	private ImageView image;
@@ -436,12 +452,13 @@ class mAdapter extends BaseAdapter
 	private TextView tip;
 	private View layoutview;
 	
-	public mAdapter(String[] data, int[] img, int[] but, LayoutInflater inflater)
+	public mAdapter(String[] data, int[] img, int[] but, LayoutInflater inflater, String[][] tip)
 	{
 		mData = data;
 		mImg = img;
 		mInflater = inflater;
 		mBut = but;
+		mTip = tip;
 		
 	}
 
@@ -503,7 +520,20 @@ class mAdapter extends BaseAdapter
 			imgswi.setTag(0);
 		}
 		
-		tip.setVisibility(View.GONE);
+		if(mTip[position][0].equals(""))
+		{
+			tip.setVisibility(View.GONE);
+		}
+		else if(mBut[position] == 0 || mBut[position] == 1)
+		{
+			tip.setText(mTip[position][mBut[position]]);
+		}
+		else
+		{
+			tip.setText(mTip[position][0]);
+		}
+		
+		
 		
 		return layoutview;
 	}

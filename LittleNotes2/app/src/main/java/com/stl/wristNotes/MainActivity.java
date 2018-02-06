@@ -21,7 +21,6 @@ import java.util.List;
 import org.json.*;
 import java.text.*;
 import java.util.*;
-import info.monitorenter.cpdetector.io.*;
 import com.stl.wristNotes.method.*;
 //import com.mobvoi.android.gesture.*;
 
@@ -146,7 +145,7 @@ public class MainActivity extends Activity
                 fileOpen.bigFile(ctx, sharedPreferences, editor, filepath, filename);
                 mode = 1;
             }
-			Toast.makeText(ctx, getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
 			editor.putInt("mode", mode);
 			editor.commit();
         }
@@ -460,39 +459,6 @@ public class MainActivity extends Activity
 			return "";
 		}
 	}
-
-	/**
-     * 获得编码
-     * @param filePath
-     * @return
-     */
-    public static String getFileEncode(String filePath) {
-        String charsetName = null;
-		byte[] filebyte;
-        try {
-            filebyte = file.getBytes(filePath, 512);
-			File tempFile = new File(Environment.getExternalStorageDirectory() + "/wsxzttemp.txt");
-			file.createFile(tempFile);
-			file.writeFile(tempFile.getPath(), filebyte);
-            CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
-            detector.add(new ParsingDetector(false));
-            detector.add(JChardetFacade.getInstance());
-            detector.add(ASCIIDetector.getInstance());
-            detector.add(UnicodeDetector.getInstance());
-            java.nio.charset.Charset charset = null;
-            //charset = detector.detectCodepage(file, 51200);
-			charset = detector.detectCodepage(new ByteArrayInputStream(filebyte), filebyte.length);
-            if (charset != null) {
-                charsetName = charset.name();
-            } else {
-                charsetName = "UTF-8";
-            }
-        } catch (Exception e) {
-            //Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
-            return e.toString();
-        }
-        return charsetName;
-    }
 	
     public static String join(String[] strs, String splitter)
     {

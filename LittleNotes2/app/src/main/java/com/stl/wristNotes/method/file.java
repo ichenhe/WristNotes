@@ -6,22 +6,23 @@ import android.util.*;
 public class file
 {
 	public static byte[] getBytes(String filePath, int size){  
-        byte[] buffer = null;
+        byte[] b = null;
         try {  
             File file = new File(filePath);
             FileInputStream fis = new FileInputStream(file);
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(size);
-            byte[] b = new byte[size];
-            bos.write(b, 0, size);
+            //ByteArrayOutputStream bos = new ByteArrayOutputStream(fis);
+            b = new byte[size];
+            //bos.write(b, 0, size);
+			fis.read(b, 0, size);
             fis.close();
-            bos.close();
-            buffer = bos.toByteArray();
+            //bos.close();
+            //buffer = bos.toByteArray();
         } catch (FileNotFoundException e) {  
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return buffer;
+        return b;
     }
 	
 	public static boolean createFile(File file)
