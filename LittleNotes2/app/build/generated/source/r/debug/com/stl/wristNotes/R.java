@@ -124,6 +124,7 @@ public final class R {
         public static final int start=0x7f030010;
         public static final int updated=0x7f030011;
         public static final int widget_newfunction=0x7f030012;
+        public static final int widget_title=0x7f030013;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

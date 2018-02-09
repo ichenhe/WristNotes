@@ -57,6 +57,7 @@ public class fileOpen
 			List<String> novelpage = new ArrayList<>();
 			if (!novellist.getString("page").equals("")) novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 
+            String code = getFileEncode(path + name);
             for (int i = 0; i < novelpath.size(); i++)
             {
 				//Toast.makeText(fileselectCtx, "第" + i + "个，内容是" + novelpath.get(i) + "原地址是" + path + "%%" + name, Toast.LENGTH_LONG).show();
@@ -91,10 +92,12 @@ public class fileOpen
                 Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
             MainActivity.mode = 1;
+            MainActivity.code = code;
             ed.putInt("mode", 1);
             ed.putInt("p", MainActivity.p);
 			ed.putString("filepath", path);
 			ed.putString("filename", name);
+            ed.putString("code", code);
             ed.commit();
             MainActivity.filename = name;
             MainActivity.filepath = path;

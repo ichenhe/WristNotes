@@ -51,15 +51,18 @@ public class MainActivity extends Activity
     public static int helpor = 1;
 
     Context ctx = this;
+
     public static int pass = 0;
     int isalpha = 0;
     public static int light;
+
     public static TextView textView;
     public static Button mainLeft;
     public static Button mainRight;
     public static TextView mainHint;
     public static ScrollView mainScrollView;
 	public static LinearLayout mainLinearLayout;
+
     public static int cho = 0;
     String startHideText;
     public static int mode = 0;
@@ -67,6 +70,9 @@ public class MainActivity extends Activity
     public static String smartScroll = "开启";
     public static int p = 0;
     //当前小说在列表中的位置
+    public static String code;
+    //当前小说的编码
+
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
@@ -85,12 +91,14 @@ public class MainActivity extends Activity
 		//以下是各种储存信息的读取
         sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
         filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/");
         filename = sharedPreferences.getString("filename", "1.txt");
         light = sharedPreferences.getInt("light", 5);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
         p = sharedPreferences.getInt("p", 0);
+        code = sharedPreferences.getString("code", "UTF-8");
         smartScroll = sharedPreferences.getString("smartScroll", "开启");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
 		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
