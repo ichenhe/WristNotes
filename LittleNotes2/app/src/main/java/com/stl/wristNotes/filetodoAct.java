@@ -18,6 +18,7 @@ public class filetodoAct extends Activity
     SharedPreferences.Editor editor;
     Context ctx = this;
 	String[] todo;
+	int[] img;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -30,8 +31,9 @@ public class filetodoAct extends Activity
         TextView title = (TextView) findViewById(R.id.filedoText);
         ListView listView = (ListView) findViewById(R.id.filedoList);
 
-        todo = new String[]{"用隐私模式打开", "用小说模式打开", "打开为...", "重命名", "分享", "删除", "属性"};
-        fAdapter adapter = new fAdapter(todo, getLayoutInflater());
+        todo = new String[]{ "用隐私模式打开", "用小说模式打开", "打开为...(*)", "重命名(*)", "分享(*)", "删除", "属性" };
+		img = new int[]{ R.drawable.txtfile, R.drawable.novelfile, 0, 0, 0, 0, 0 };
+        fAdapter adapter = new fAdapter(todo, img, getLayoutInflater());
         title.setText(MainActivity.filedofile);
         listView.setAdapter(adapter);
 
@@ -106,14 +108,22 @@ class fAdapter extends BaseAdapter
 
 	private String[] mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
+    private ImageView image;
+    private TextView name;
+    private ImageView imggo;
+    private ToggleButton imgswi;
+    private TextView tip;
+    private View layoutview;
+	private int[] mImg;
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
 	 */
-	public fAdapter(String[] data, LayoutInflater inflater)
+	public fAdapter(String[] data, int[] img, LayoutInflater inflater)
 	{
 		mData = data;
 		mInflater = inflater;
+		mImg = img;
 	}
 
 	@Override
@@ -138,16 +148,23 @@ class fAdapter extends BaseAdapter
 	public View getView(int position, View convertview, ViewGroup viewGroup)
 	{
 		//获得ListView中的view
-		View layoutview = mInflater.inflate(R.layout.menulist, null);
+		layoutview = mInflater.inflate(R.layout.menulist, null);
 
 		//获得自定义布局中每一个控件的对象。
-		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
-		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+		image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		name = (TextView) layoutview.findViewById(R.id.menulistText);
+		imggo = (ImageView) layoutview.findViewById(R.id.menulistgo);
+		imgswi = (ToggleButton) layoutview.findViewById(R.id.menulistswi);
+		tip = (TextView) layoutview.findViewById(R.id.menulisttip);
 
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
-		image.setVisibility(View.GONE);
+		if(mImg[position] == 0) image.setVisibility(View.GONE);
+		else image.setImageResource(mImg[position]);
 		
+		imggo.setVisibility(View.GONE);
+		imgswi.setVisibility(View.GONE);
+		tip.setVisibility(View.GONE);
 		return layoutview;
 	}
 }

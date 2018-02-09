@@ -171,6 +171,8 @@ public class fileselectAct extends Activity
 						if (new File(fileselecttitle.getText().toString() + s).length() < 512000)
 						{
 							fileOpen.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
+							MainActivity.filepath = fileselecttitle.getText().toString();
+							MainActivity.filename = s;
 							finish();
 						}
 						else
@@ -215,6 +217,12 @@ class zAdapter extends BaseAdapter
 	private String[] mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 	private String path;
+    private ImageView image;
+    private TextView name;
+    private ImageView imggo;
+    private ToggleButton imgswi;
+    private TextView tip;
+    private View layoutview;
 
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
@@ -248,16 +256,21 @@ class zAdapter extends BaseAdapter
 	public View getView(int position, View convertview, ViewGroup viewGroup)
 	{
 		//获得ListView中的view
-		View layoutview = mInflater.inflate(R.layout.menulist, null);
+		layoutview = mInflater.inflate(R.layout.menulist, null);
 		
 		//获得自定义布局中每一个控件的对象。
-		ImageView image = (ImageView) layoutview.findViewById(R.id.menulistimg);
-		TextView name = (TextView) layoutview.findViewById(R.id.menulistText);
+		image = (ImageView) layoutview.findViewById(R.id.menulistimg);
+		name = (TextView) layoutview.findViewById(R.id.menulistText);
+		imggo = (ImageView) layoutview.findViewById(R.id.menulistgo);
+		imgswi = (ToggleButton) layoutview.findViewById(R.id.menulistswi);
+		tip = (TextView) layoutview.findViewById(R.id.menulisttip);
+		
+		imggo.setVisibility(View.GONE);
+		imgswi.setVisibility(View.GONE);
 		
 		//将数据一一添加到自定义的布局中。
 		name.setText(mData[position]);
 
-		try{
 		//获取文件拓展名
 		if(new File(path + mData[position]).isDirectory())
 		{
@@ -286,6 +299,11 @@ class zAdapter extends BaseAdapter
 				{
 					image.setImageResource(R.drawable.doc);
 				}
+				else if(exten.equals("java")||exten.equals("py")||exten.equals("xml")||exten.equals("html")||
+						exten.equals("js")||exten.equals("css")||exten.equals("bat")||exten.equals("com")||exten.equals("class"))
+				{
+					image.setImageResource(R.drawable.profile);
+				}
 				else if(exten.equals("txt"))
 				{
 					if(new File(path + mData[position]).length() < 102400)
@@ -307,11 +325,22 @@ class zAdapter extends BaseAdapter
 				image.setImageResource(R.drawable.unknowfile);
 			}
 		}
-		}
-		catch(Exception e)
+		if(MainActivity.filepath.equals(path) && MainActivity.filename.equals(mData[position]))
 		{
-			
+			if(MainActivity.mode == 0)
+			{
+				tip.setText("已作为文本打开");
+			}
+			else
+			{
+				tip.setText("已作为小说打开");
+			}
 		}
+		else
+		{
+			tip.setVisibility(View.GONE);
+		}
+		
 		return layoutview;
 	}
 }

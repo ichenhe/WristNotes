@@ -21,7 +21,6 @@ import java.util.List;
 import org.json.*;
 import java.text.*;
 import java.util.*;
-import info.monitorenter.cpdetector.io.*;
 import com.stl.wristNotes.method.*;
 //import com.mobvoi.android.gesture.*;
 
@@ -52,15 +51,18 @@ public class MainActivity extends Activity
     public static int helpor = 1;
 
     Context ctx = this;
+
     public static int pass = 0;
     int isalpha = 0;
     public static int light;
+
     public static TextView textView;
     public static Button mainLeft;
     public static Button mainRight;
     public static TextView mainHint;
     public static ScrollView mainScrollView;
 	public static LinearLayout mainLinearLayout;
+
     public static int cho = 0;
     String startHideText;
     public static int mode = 0;
@@ -68,6 +70,9 @@ public class MainActivity extends Activity
     public static String smartScroll = "开启";
     public static int p = 0;
     //当前小说在列表中的位置
+    public static String code;
+    //当前小说的编码
+
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
@@ -86,12 +91,14 @@ public class MainActivity extends Activity
 		//以下是各种储存信息的读取
         sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
         filepath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/");
         filename = sharedPreferences.getString("filename", "1.txt");
         light = sharedPreferences.getInt("light", 5);
         startHideText = sharedPreferences.getString("startHideText", "关闭");
         mode = sharedPreferences.getInt("mode", 0);
         p = sharedPreferences.getInt("p", 0);
+        code = sharedPreferences.getString("code", "UTF-8");
         smartScroll = sharedPreferences.getString("smartScroll", "开启");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
 		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
@@ -146,7 +153,7 @@ public class MainActivity extends Activity
                 fileOpen.bigFile(ctx, sharedPreferences, editor, filepath, filename);
                 mode = 1;
             }
-			Toast.makeText(ctx, getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
 			editor.putInt("mode", mode);
 			editor.commit();
         }
@@ -460,36 +467,6 @@ public class MainActivity extends Activity
 			return "";
 		}
 	}
-
-	/**
-     * 获得编码
-     * @param filePath
-     * @return
-     */
-    public static String getFileEncode(String filePath) {
-        String charsetName = null;
-		byte[] filebyte;
-        try {
-            filebyte = new fileOpen().getBytes(filePath);
-            CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
-            detector.add(new ParsingDetector(false));
-            detector.add(JChardetFacade.getInstance());
-            detector.add(ASCIIDetector.getInstance());
-            detector.add(UnicodeDetector.getInstance());
-            java.nio.charset.Charset charset = null;
-            //charset = detector.detectCodepage(file, 51200);
-			charset = detector.detectCodepage(new ByteArrayInputStream(filebyte), filebyte.length);
-            if (charset != null) {
-                charsetName = charset.name();
-            } else {
-                charsetName = "UTF-8";
-            }
-        } catch (Exception e) {
-            //Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
-            return e.toString();
-        }
-        return charsetName;
-    }
 	
     public static String join(String[] strs, String splitter)
     {

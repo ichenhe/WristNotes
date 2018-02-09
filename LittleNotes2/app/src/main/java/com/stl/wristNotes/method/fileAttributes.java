@@ -7,19 +7,31 @@ public class fileAttributes
 {
 	public String fileName;
 	public String filePath;
+	public String exten;
 	
 	public fileAttributes(String name, String path)
 	{
 		fileName = name;
 		filePath = path;
+		exten = getExten(path);
 	}
 	
 	public String getFileAttributes()
 	{
+		File file = new File(filePath);
 		StringBuffer attributes= new StringBuffer();
 		attributes.append("<b><big>" + fileName + "属性</big></b>");
 		attributes.append("<br/> <br/>");
-		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(new File(filePath).length()) + "<br/>(" + new File(filePath).length() + "字节)");
+		if(exten.equals("txt"))
+		{
+			attributes.append("<b>文件类型：</b><br/>文本（小说）");
+			attributes.append("<br/> <br/>");
+			attributes.append("<b>文本编码格式：</b><br/>" + fileOpen.getFileEncode(filePath));
+			attributes.append("<br/> <br/>");
+		}
+		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(file.length()) + "<br/>(" + file.length() + "字节)");
+		attributes.append("<br/> <br/>");
+		attributes.append("<b>最后修改时间：</b><br/>" + file.lastModified());
 		attributes.append("<br/> <br/>");
 		attributes.append("<b>路径：</b><br/>" + filePath);
 		return attributes.toString();
@@ -56,5 +68,23 @@ public class fileAttributes
 			}
 		}
 		return bytes.toString();
+	}
+	
+	public String getExten(String path)
+	{
+		if(path.contains("/"))
+		{
+			String[] pathPart = path.split("/");
+			if(pathPart[pathPart.length-1].contains("."))
+			{
+				return pathPart[pathPart.length-1].split("[.]")[pathPart[pathPart.length-1].split("[.]").length-1];
+			}
+			return "";
+		}
+		else if(path.contains("."))
+		{
+			return path.split("[.]")[path.split("[.]").length-1];
+		}
+		return "";
 	}
 }
