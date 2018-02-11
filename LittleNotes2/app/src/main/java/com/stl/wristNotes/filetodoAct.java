@@ -1,6 +1,7 @@
 package com.stl.wristNotes;
 
 import android.app.*;
+import android.media.MediaMetadataRetriever;
 import android.os.*;
 import android.widget.*;
 import android.widget.AdapterView.*;
@@ -37,7 +38,7 @@ public class filetodoAct extends Activity
 		title = (TextView) headView2.findViewById(R.id.title);
 		listView.addHeaderView(headView2, null, true);
 
-        todo = new String[]{ "用隐私模式打开", "用小说模式打开", "打开为...(*)", "重命名(*)", "分享(*)", "删除", "属性" };
+        todo = new String[]{ "用隐私模式打开", "用小说模式打开", "打开为...(*)", "重命名(*)", "分享", "删除", "属性" };
 		img = new int[]{ R.drawable.txtfile, R.drawable.novelfile, 0, 0, 0, 0, 0 };
         fAdapter adapter = new fAdapter(todo, img, getLayoutInflater());
         title.setText(MainActivity.filedofile);
@@ -110,6 +111,10 @@ public class filetodoAct extends Activity
 							intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
 							startActivity(intent);
 						}
+						else if(s.equals("分享"))
+                        {
+                            shareFile(ctx, new File(MainActivity.filedopath + MainActivity.filedofile));
+                        }
 						else
 						{
 							Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
@@ -117,6 +122,39 @@ public class filetodoAct extends Activity
 					}
 				}
 			});
+    }
+
+    // 調用系統方法分享文件
+    public static void shareFile(Context context, File file) {
+        if (null != file && file.exists()) {
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.putExtra(Intent.EXTRA_STREAM, file.toURI());
+            share.setType(getMimeType(file.getAbsolutePath()));//此处可发送多种文件
+            share.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            context.startActivity(Intent.createChooser(share, "分享文件"));
+        } else {
+            Toast.makeText(context, "分享文件不存在", Toast.LENGTH_SHORT);
+        }
+    }
+
+    // 根据文件后缀名获得对应的MIME类型。
+    private static String getMimeType(String filePath) {
+        MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+        String mime = "*/*";
+        if (filePath != null) {
+            try {
+                mmr.setDataSource(filePath);
+                mime = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_MIMETYPE);
+            } catch (IllegalStateException e) {
+                return mime;
+            } catch (IllegalArgumentException e) {
+                return mime;
+            } catch (RuntimeException e) {
+                return mime;
+            }
+        }
+        return mime;
     }
 }
 

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Feb 11 12:36:44 CST 2018
+#Sun Feb 11 13:59:18 CST 2018
 76.base=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\resources-release.ap_
 5.base=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\resources-release.ap_
 42.base=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\resources-release.ap_

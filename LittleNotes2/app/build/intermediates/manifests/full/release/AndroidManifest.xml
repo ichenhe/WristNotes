@@ -59,8 +59,6 @@
         </activity>
         <activity android:name="com.stl.wristNotes.inputAct" >
         </activity>
-        <activity android:name="com.stl.wristNotes.seekbarAct" >
-        </activity>
         <activity android:name="com.stl.wristNotes.editfileAct" >
         </activity>
         <activity android:name="com.stl.wristNotes.filetodoAct" >

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:2:1-105:12
+ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:2:1-101:12
 	package
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml
@@ -54,7 +54,7 @@ ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidM
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:19:16-58
 application
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:21:5-104:19
+ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:21:5-100:19
 	android:label
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:24:9-41
 	android:allowBackup
@@ -123,42 +123,38 @@ activity#com.stl.wristNotes.inputAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:65:3-67:14
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:66:4-46
-activity#com.stl.wristNotes.seekbarAct
+activity#com.stl.wristNotes.editfileAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:69:3-71:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:70:4-48
-activity#com.stl.wristNotes.editfileAct
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:70:4-49
+activity#com.stl.wristNotes.filetodoAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:73:3-75:14
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:74:4-49
-activity#com.stl.wristNotes.filetodoAct
+activity#com.stl.wristNotes.aboutAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:77:3-79:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:78:4-49
-activity#com.stl.wristNotes.aboutAct
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:78:4-46
+activity#com.stl.wristNotes.settileAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:81:3-83:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:82:4-46
-activity#com.stl.wristNotes.settileAct
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:82:4-48
+activity#com.stl.wristNotes.donationAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:85:3-87:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:86:4-48
-activity#com.stl.wristNotes.donationAct
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:86:4-49
+activity#com.stl.wristNotes.updated
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:89:3-91:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:90:4-49
-activity#com.stl.wristNotes.updated
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:90:4-45
+activity#com.stl.wristNotes.ftpAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:93:3-95:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:94:4-45
-activity#com.stl.wristNotes.ftpAct
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:94:4-44
+activity#com.stl.wristNotes.novelAct
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:97:3-99:14
 	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:98:4-44
-activity#com.stl.wristNotes.novelAct
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:101:3-103:14
-	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:102:4-46
+		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:98:4-46
 uses-sdk
 INJECTED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 	android:targetSdkVersion
