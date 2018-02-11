@@ -49,10 +49,6 @@ uses-permission#android.permission.CHANGE_WIFI_STATE
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:17:5-75
 	android:name
 		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:17:22-73
-uses-feature#android.hardware.type.watch
-ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:19:2-60
-	android:name
-		ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:19:16-58
 application
 ADDED from F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\AndroidManifest.xml:21:5-104:19
 	android:label

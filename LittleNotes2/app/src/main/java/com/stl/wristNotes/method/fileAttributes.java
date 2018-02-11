@@ -41,7 +41,7 @@ public class fileAttributes
 		}
 		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(file.length()) + "<br/>(" + file.length() + "字节)");
 		attributes.append("<br/> <br/>");
-		attributes.append("<b>最后修改时间：</b><br/>" + time.YEAR + "年" + (time.MONTH + 1) + "月" + time.DAY_OF_MONTH + "日" + time.HOUR_OF_DAY + "时" + time.MINUTE + "分");
+		attributes.append("<b>最后修改时间：</b><br/>" + time.get(Calendar.YEAR) + "年" + (time.get(Calendar.MONTH) + 1) + "月" + time.get(Calendar.DAY_OF_MONTH) + "日" + time.get(Calendar.HOUR_OF_DAY) + "时" + time.get(Calendar.MINUTE) + "分");
 		attributes.append("<br/> <br/>");
 		attributes.append("<b>路径：</b><br/>" + filePath);
 		return attributes.toString();

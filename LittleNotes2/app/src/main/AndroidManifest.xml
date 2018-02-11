@@ -67,10 +67,6 @@
 		</activity>
 
 		<activity
-			android:name="com.stl.wristNotes.seekbarAct">
-		</activity>
-
-		<activity
 			android:name="com.stl.wristNotes.editfileAct">
 		</activity>
 
