@@ -190,7 +190,7 @@ public class MainActivity extends Activity
             try
             {
                 //Toast.makeText(ctx, filepath + filename + "   " + mode, Toast.LENGTH_SHORT).show();
-                textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()));
+                textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue(), code));
                 Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
 				batterylevel();
@@ -331,7 +331,7 @@ public class MainActivity extends Activity
 						List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 						novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
 						novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-						textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+						textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
 						mainScrollView.fullScroll(View.FOCUS_UP);
 						editor.putString("novelList", novellist.toString());
 						editor.commit();
@@ -382,7 +382,7 @@ public class MainActivity extends Activity
 				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 				textView.setText("");
-				textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue()));
+				textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
 				mainScrollView.fullScroll(View.FOCUS_UP);
 				editor.putString("novelList", novellist.toString());
 				editor.commit();

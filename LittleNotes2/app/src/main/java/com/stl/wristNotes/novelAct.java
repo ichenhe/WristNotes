@@ -28,7 +28,7 @@ public class novelAct extends Activity
 	ListView listView;
 
 	int choose = -1;
-    int isHeadview = 0;
+    int isHeadview = 1;
 	Context ctx = this;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -38,8 +38,8 @@ public class novelAct extends Activity
 
 		listItems = new ArrayList<Map<String,Object>>();
 		listView = (ListView) findViewById(R.id.myNovel);
-		LayoutInflater infla2 = LayoutInflater.from(this);
-		View footView = infla2.inflate(R.layout.mynoveltext, null);
+		LayoutInflater infla = LayoutInflater.from(this);
+		View footView = infla.inflate(R.layout.mynoveltext, null);
 		novelbutton = (Button) footView.findViewById(R.id.mynoveltextButton);
 		novelbutton.setOnClickListener(new OnClickListener()
 			{
@@ -69,6 +69,11 @@ public class novelAct extends Activity
 						.setNegativeButton("取消", null).show();
 				}
 			});
+		
+		View headView2 = infla.inflate(R.layout.widget_title, null);
+		((TextView) headView2.findViewById(R.id.title)).setText("我的小说");
+		listView.addHeaderView(headView2, null, true);
+		
 		try
 		{
 			sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
@@ -99,10 +104,9 @@ public class novelAct extends Activity
 		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
 		if(sharedPreferences.getString("function", "0000").split("")[4].equals("0"))//功能提醒
 		{
-			LayoutInflater infla = LayoutInflater.from(this);
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
 			listView.addHeaderView(headView, null, true);
-            isHeadview = 1;
+            isHeadview = 2;
 
 			((TextView)findViewById(R.id.functiontext)).setText("长按小说查看更多选项喵~");
 			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
@@ -113,7 +117,7 @@ public class novelAct extends Activity
 					public void onClick(View p1)
 					{
 						listView.removeHeaderView(headView);
-						isHeadview = 0;
+						isHeadview = 1;
 						String[] function = sharedPreferences.getString("function", "0000").split("");
 						function[4] = "1";
 						editor.putString("function", MainActivity.join(function, ""));
@@ -129,36 +133,30 @@ public class novelAct extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> l, View v, final int position, long id)
 			{
-				if(new File(novelpath.get(position - isHeadview)).exists())
+				if(position != 0)
 				{
-                    if(isHeadview == 1)
-                    {
-                        fileOpen.openNovel(ctx, sharedPreferences, editor,
-                                novelpath.get(position - 1).substring(0, novelpath.get(position - 1).length() - novelpath.get(position - 1).split("/")[novelpath.get(position - 1).split("/").length - 1].length()),
-                                novelpath.get(position - 1).split("/")[novelpath.get(position - 1).split("/").length - 1]);
-                    }
-                    else
-                    {
-                        fileOpen.openNovel(ctx, sharedPreferences, editor,
-                                novelpath.get(position).substring(0, novelpath.get(position).length() - novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1].length()),
-                                novelpath.get(position).split("/")[novelpath.get(position).split("/").length - 1]);
-                    }
-                    menuAct.ctx.finish();
-                    finish();
-				}
-				else
-				{
-					new AlertDialog.Builder(ctx)
-						.setMessage("该小说原文件已被删除！是否删除该小说记录？")
-						.setPositiveButton("删除", new DialogInterface.OnClickListener()
-						{
-							@Override
-							public void onClick(DialogInterface dialog, int which)
+					if(new File(novelpath.get(position - isHeadview)).exists())
+					{
+						fileOpen.openNovel(ctx, sharedPreferences, editor,
+										   novelpath.get(position - isHeadview).substring(0, novelpath.get(position - isHeadview).length() - novelpath.get(position - isHeadview).split("/")[novelpath.get(position - isHeadview).split("/").length - 1].length()),
+										   novelpath.get(position - isHeadview).split("/")[novelpath.get(position - isHeadview).split("/").length - 1]);
+						menuAct.ctx.finish();
+						finish();
+					}
+					else
+					{
+						new AlertDialog.Builder(ctx)
+							.setMessage("该小说原文件已被删除！是否删除该小说记录？")
+							.setPositiveButton("删除", new DialogInterface.OnClickListener()
 							{
-								deleteNovel(position);
-							}
-						})
-						.setNegativeButton("取消", null).show();
+								@Override
+								public void onClick(DialogInterface dialog, int which)
+								{
+									deleteNovel(position - isHeadview);
+								}
+							})
+							.setNegativeButton("取消", null).show();
+					}
 				}
 			}
 		});
@@ -167,18 +165,15 @@ public class novelAct extends Activity
 			@Override
 			public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
 			{
-                MainActivity.cho = 8;
-                Intent intent = new Intent(ctx, menuAct.class);
-				//intent.putExtra("position", position);
-				startActivityForResult(intent, 0);
-				if(isHeadview == 1)
+				if(position != 0)
 				{
-					choose = position - 1;
+					MainActivity.cho = 8;
+					Intent intent = new Intent(ctx, menuAct.class);
+					//intent.putExtra("position", position);
+					startActivityForResult(intent, 0);
+					choose = position - isHeadview;
+					//startActivity(intent);
 				}
-				else{
-					choose = position;
-				}
-                //startActivity(intent);
 				return true;
 			}
 		});

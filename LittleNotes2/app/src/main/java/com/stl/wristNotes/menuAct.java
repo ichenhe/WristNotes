@@ -15,13 +15,18 @@ public class menuAct extends Activity
 	SharedPreferences.Editor editor;
     public static Activity ctx;
 	TextView menutitle;
+	ListView listView;
+	
 	ListAdapter adapter;
 	Intent menuintent;
 	Intent passint;
+	
 	String[] menuList;
 	int[] menuimg;
 	int[] menubut;
     String[][] menutip;
+	
+	int tip = 1;
 	Intent i;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -32,11 +37,17 @@ public class menuAct extends Activity
 		ctx = this;
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
-        menutitle = (TextView) findViewById(R.id.menuText);
-        final ListView listView = (ListView) findViewById(R.id.menuList);
+        //menutitle = (TextView) findViewById(R.id.menuText);
+        listView = (ListView) findViewById(R.id.menuList);
 		//LinearLayout footViewLayout = (LinearLayout) LayoutInflater.from(ctx).inflate(R.layout.menu, null);
 		//listView.addHeaderView(footViewLayout);
 
+		LayoutInflater infla = LayoutInflater.from(this);
+		
+		View headView2 = infla.inflate(R.layout.widget_title, null);
+		menutitle = (TextView) headView2.findViewById(R.id.title);
+		listView.addHeaderView(headView2, null, true);
+		
 		menutitle.setClickable(true);
 		menutitle.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -138,7 +149,7 @@ public class menuAct extends Activity
 
 		if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "0000").split("")[3].equals("0"))
 		{
-			LayoutInflater infla = LayoutInflater.from(this);
+			tip = 2;
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
 			listView.addHeaderView(headView, null, true);
 
@@ -155,6 +166,7 @@ public class menuAct extends Activity
 					function[3] = "1";
 					editor.putString("function", MainActivity.join(function, ""));
 					editor.commit();
+					tip = 1;
 				}
 			});
 		}
@@ -165,6 +177,7 @@ public class menuAct extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
+					position -= tip;
 					String s = menuList[position];
 					if (s.equals("打开文档"))
 					{

@@ -30,10 +30,9 @@ public class fileOpen
         return temp.toString();
     }
 
-    public static String novelReader(String path, int page) throws IOException
+    public static String novelReader(String path, int page, String code) throws IOException
     {
-        FileReader reader = new FileReader(path);
-        BufferedReader bReader = new BufferedReader(reader);
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), code));
         StringBuffer temp = new StringBuffer();
         bReader.skip(page * 500);
         char[] ch = new char[500];
@@ -80,7 +79,7 @@ public class fileOpen
 				novellist.put("path", MainActivity.join(novelpath.toArray(new String[novelpath.size()]), "▒"));
 				novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 
-				MainActivity.textView.setText(novelReader(path + name, 0));
+				MainActivity.textView.setText(novelReader(path + name, 0, code));
                 ed.putString("novelList", novellist.toString());
                 MainActivity.p = novelname.size();
 
@@ -88,7 +87,7 @@ public class fileOpen
             }
             else
             {
-                MainActivity.textView.setText(novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue()));
+                MainActivity.textView.setText(novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue(), code));
                 Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
             MainActivity.mode = 1;
@@ -143,7 +142,7 @@ public class fileOpen
         String charsetName = null;
 		byte[] filebyte;
         try {
-            filebyte = file.getBytes(filePath, 1024);
+            filebyte = file.getBytes(filePath, 2048);
             CodepageDetectorProxy detector = CodepageDetectorProxy.getInstance();
             detector.add(new ParsingDetector(false));
             detector.add(JChardetFacade.getInstance());
