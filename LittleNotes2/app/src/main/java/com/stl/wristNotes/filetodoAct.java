@@ -8,6 +8,9 @@ import android.widget.AdapterView.*;
 import android.view.*;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import android.content.*;
 import com.stl.wristNotes.method.*;
@@ -18,8 +21,11 @@ public class filetodoAct extends Activity
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Context ctx = this;
+	Intent intent = getIntent();
 	String[] todo;
 	int[] img;
+	String[] hint;
+	int po;
 
 	TextView title;
 
@@ -38,8 +44,28 @@ public class filetodoAct extends Activity
 		title = (TextView) headView2.findViewById(R.id.title);
 		listView.addHeaderView(headView2, null, true);
 
-        todo = new String[]{ "用隐私模式打开", "用小说模式打开", "打开为...(*)", "重命名(*)", "分享", "删除", "属性" };
-		img = new int[]{ R.drawable.txtfile, R.drawable.novelfile, 0, 0, 0, 0, 0 };
+		po = intent.getIntExtra("po", 0);
+        if(po == 0)//文件属性
+		{
+			todo = new String[]{"用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...(*)", "重命名(*)", "分享...", "删除", "属性"};
+			img = new int[]{R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0};
+			hint = new String[]{"", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "", "分享文件至其他应用", "", ""};
+		}
+		else if(po == 1)//文件夹属性
+		{
+			todo = new String[]{"新建...", "收藏该文件夹", "删除", "属性"};
+			img = new int[]{0, R.drawable.starfor, 0, 0, 0, 0, 0};
+			hint = new String[]{"在选中目录下新建", "收藏至快速访问", "", ""};
+		}
+		else if(po == 2)//？
+		{
+			ArrayList<String> todo = new ArrayList();
+            todo.add("上一次打开目录");
+            todo.add("SD卡根目录");
+            if(sharedPreferences.getString("star", "").contains("▒"))
+            for(int i = 2; i < )
+            sharedPreferences.getInt("star", 5);
+		}
         fAdapter adapter = new fAdapter(todo, img, getLayoutInflater());
         title.setText(MainActivity.filedofile);
         listView.setAdapter(adapter);
@@ -53,23 +79,25 @@ public class filetodoAct extends Activity
 					if(position != 0)
 					{
 						String s = todo[position - 1];
-						if(s.equals("用隐私模式打开"))
+                    if(po == 0)
 						{
-							try
+							if(s.equals("用隐私模式打开"))
 							{
-								MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
-								Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",要看什么的话。。小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
-								fileselectAct.fileselectCtx.finish();
-								finish();
+								try
+								{
+									MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
+									Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",要看什么的话。。小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
+									fileselectAct.fileselectCtx.finish();
+									finish();
+								}
+								catch (IOException e)
+								{
+									Toast.makeText(ctx, "打开文件错！！误！！", Toast.LENGTH_SHORT).show();
+								}
 							}
-							catch(IOException e)
+							else if(s.equals("用小说模式打开"))
 							{
-								Toast.makeText(ctx, "打开文件错！！误！！", Toast.LENGTH_SHORT).show();
-							}
-						}
-						else if(s.equals("用小说模式打开"))
-						{
-							fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
+								fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
 //						try{
 //							new MainActivity().batterylevel();
 //						}
@@ -77,47 +105,52 @@ public class filetodoAct extends Activity
 //						{
 //							Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
 //						}
-							//MainActivity.batterylevel();
-							fileselectAct.fileselectCtx.finish();
-							finish();
-						}
-						else if(s.equals("删除"))
-						{
-							new AlertDialog.Builder(ctx)
-								.setMessage("确认删除" + MainActivity.filedofile + "吗？")
-								.setPositiveButton("确定", new DialogInterface.OnClickListener()
-								{
-									@Override
-									public void onClick(DialogInterface dialog, int which)
-									{
-										if(new File(MainActivity.filedopath + MainActivity.filedofile).delete())
+								//MainActivity.batterylevel();
+								fileselectAct.fileselectCtx.finish();
+								finish();
+							}
+							else if(s.equals("删除"))
+							{
+								new AlertDialog.Builder(ctx)
+										.setMessage("确认删除" + MainActivity.filedofile + "吗？")
+										.setPositiveButton("确定", new DialogInterface.OnClickListener()
 										{
-											Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
-											finish();
-											menuAct.ctx.finish();
-										}
-										else
-										{
-											Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
-										}
-									}
-								})
-								.setNegativeButton("取消", null).show();
+											@Override
+											public void onClick(DialogInterface dialog, int which)
+											{
+												if(new File(MainActivity.filedopath + MainActivity.filedofile).delete())
+												{
+													Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
+													finish();
+													menuAct.ctx.finish();
+												}
+												else
+												{
+													Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
+												}
+											}
+										})
+										.setNegativeButton("取消", null).show();
+							}
+							else if(s.equals("属性"))
+							{
+								MainActivity.helpor = 4;
+								Intent intent = new Intent(ctx, helpAct.class);
+								intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
+								startActivity(intent);
+							}
+							else if(s.equals("分享..."))
+							{
+								shareFile(ctx, new File(MainActivity.filedopath + MainActivity.filedofile));
+							}
+							else
+							{
+								Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
+							}
 						}
-						else if(s.equals("属性"))
+						else if(po == 1)
 						{
-							MainActivity.helpor = 4;
-							Intent intent = new Intent(ctx, helpAct.class);
-							intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
-							startActivity(intent);
-						}
-						else if(s.equals("分享"))
-                        {
-                            shareFile(ctx, new File(MainActivity.filedopath + MainActivity.filedofile));
-                        }
-						else
-						{
-							Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
+							if(s.equals(""))
 						}
 					}
 				}
@@ -216,7 +249,7 @@ class fAdapter extends BaseAdapter
 		name.setText(mData[position]);
 		if(mImg[position] == 0) image.setVisibility(View.GONE);
 		else image.setImageResource(mImg[position]);
-		
+
 		imggo.setVisibility(View.GONE);
 		imgswi.setVisibility(View.GONE);
 		tip.setVisibility(View.GONE);

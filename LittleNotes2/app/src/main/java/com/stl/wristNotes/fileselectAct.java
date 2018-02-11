@@ -205,6 +205,7 @@ public class fileselectAct extends Activity
 							MainActivity.filedofile = s;
 							MainActivity.filedopath = MainActivity.filewillpath;
 							Intent helpint = new Intent(fileselectCtx, filetodoAct.class);
+                            helpint.putExtra("po", 0);
 							startActivity(helpint);
 
 						}
@@ -213,6 +214,14 @@ public class fileselectAct extends Activity
 							Toast.makeText(fileselectCtx, "错误错误错误了！-_-#", Toast.LENGTH_SHORT).show();
 						}
 					}
+					else
+                    {
+                        MainActivity.filedofile = s;
+                        MainActivity.filedopath = MainActivity.filewillpath;
+                        Intent helpint = new Intent(fileselectCtx, filetodoAct.class);
+                        helpint.putExtra("po", 1);
+                        startActivity(helpint);
+                    }
 					return true;
 				}
 			});
