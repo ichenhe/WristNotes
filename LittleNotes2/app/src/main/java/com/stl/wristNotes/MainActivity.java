@@ -272,7 +272,7 @@ public class MainActivity extends Activity
 
 		try
 		{
-		if(sharedPreferences.getString("function", "0000").split("")[1].equals("0") && mode == 1)
+		if(sharedPreferences.getString("function", "00000").split("")[1].equals("0") && mode == 1)
 		{
 			LayoutInflater infla = LayoutInflater.from(this);
 			final View view = infla.inflate(R.layout.widget_newfunction, null);

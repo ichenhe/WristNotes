@@ -128,13 +128,13 @@ public class fileselectAct extends Activity
 		try
 		{
 			zAdapter adapter = new zAdapter(filelist, getLayoutInflater(), MainActivity.filewillpath);
-			if(sharedPreferences.getString("function", "0000").split("")[2].equals("0"))//功能提醒
+			if(sharedPreferences.getString("function", "00000").split("")[5].equals("0"))//功能提醒
 			{
 				final View headView = infla.inflate(R.layout.widget_newfunction, null);
 				fileselectView.addHeaderView(headView, null, true);
 
 				tip = 2;
-				((TextView) findViewById(R.id.functiontext)).setText("长按文件查看更多文件选项喵~");
+				((TextView) findViewById(R.id.functiontext)).setText("长按文件和文件夹查看更多选项喵~");
 				LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
 				button.setClickable(true);
 				button.setOnClickListener(new View.OnClickListener()

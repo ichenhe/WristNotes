@@ -102,7 +102,7 @@ public class novelAct extends Activity
 		}
 		
 		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
-		if(sharedPreferences.getString("function", "0000").split("")[4].equals("0"))//功能提醒
+		if(sharedPreferences.getString("function", "00000").split("")[4].equals("0"))//功能提醒
 		{
 			final View headView = infla.inflate(R.layout.widget_newfunction, null);
 			listView.addHeaderView(headView, null, true);
