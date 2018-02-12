@@ -59,12 +59,21 @@ public class filetodoAct extends Activity
 		}
 		else if(po == 2)//？
 		{
-			ArrayList<String> todo = new ArrayList();
-            todo.add("上一次打开目录");
-            todo.add("SD卡根目录");
-            if(sharedPreferences.getString("star", "").contains("▒"))
-            for(int i = 2; i < )
-            sharedPreferences.getInt("star", 5);
+			ArrayList<String> ttodo = new ArrayList<String>();
+			ArrayList<Integer> timg = new ArrayList<Integer>();
+			ArrayList<String> thint = new ArrayList<String>();
+            ttodo.add("上一次打开目录");
+            ttodo.add("储存空间根目录");
+			timg.add(R.drawable.sdfiles);
+			timg.add(R.drawable.files);
+			thint.add("最后一次打开文件的路径");
+			thint.add("");
+			String[] starpath = new String[]{};
+            if(sharedPreferences.getString("star", "").contains("▒")) starpath = sharedPreferences.getString("star", "").split("▒");
+            for(int i = 0; i < starpath.length; i++)
+			{
+				ttodo.add(starpath[i]);
+			}
 		}
         fAdapter adapter = new fAdapter(todo, img, getLayoutInflater());
         title.setText(MainActivity.filedofile);
@@ -151,6 +160,9 @@ public class filetodoAct extends Activity
 						else if(po == 1)
 						{
 							if(s.equals(""))
+							{
+								
+							}
 						}
 					}
 				}
