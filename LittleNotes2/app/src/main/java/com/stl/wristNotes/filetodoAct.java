@@ -119,6 +119,13 @@ public class filetodoAct extends Activity
 				hint[2] = "长按文件或文件夹可以添加至这里喵~";
 			}
         }
+        else if(po == 5)//新建
+        {
+            todo = new String[]{"新建文件","新建文件夹"};
+            img = new int[]{R.drawable.createfile, R.drawable.createfor};
+            hint = new String[]{"", ""};
+            title.setText("新建...");
+        }
         fAdapter adapter = new fAdapter(todo, img, hint, getLayoutInflater());
         listView.setAdapter(adapter);
 
@@ -199,7 +206,6 @@ public class filetodoAct extends Activity
 							}
 							catch(Exception e)
 							{
-
 								Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
 							}
                         }
@@ -211,7 +217,10 @@ public class filetodoAct extends Activity
 						}
 						else if(s.equals("新建..."))
 						{
-							
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 5);
+                            startActivity(intent);
 						}
                         else
                         {
@@ -265,6 +274,13 @@ public class filetodoAct extends Activity
 							setResult(0, i);
 							finish();
 						}
+						else if(s.equals("新建..."))
+                        {
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 5);
+                            startActivity(intent);
+                        }
                         else
                         {
                             Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
@@ -315,10 +331,33 @@ public class filetodoAct extends Activity
 							}
 							else
 							{
-								
+                                Toast.makeText(ctx, "未找到文件或文件夹，检查是否被删除...", Toast.LENGTH_SHORT).show();
 							}
 						}
 					}
+					else if(po == 5)
+                    {
+                        if(s.equals("新建文件"))
+                        {
+                            MainActivity.inputtitle = "输入文件名";
+                            MainActivity.inputset = "文件.txt";
+                            MainActivity.inputhite = "带扩展名";
+                            MainActivity.inputkeys = "";
+                            Intent intent = new Intent(ctx, inputAct.class);
+                            intent.putExtra("po", 1);
+                            startActivityForResult(intent, 0);
+                        }
+                        else if(s.equals("新建文件夹"))
+                        {
+                            MainActivity.inputtitle = "输入文件夹名";
+                            MainActivity.inputset = "文件夹";
+                            MainActivity.inputhite = "";
+                            MainActivity.inputkeys = "";
+                            Intent intent = new Intent(ctx, inputAct.class);
+                            intent.putExtra("po", 2);
+                            startActivityForResult(intent, 0);
+                        }
+                    }
                 }
             }
         });
@@ -360,7 +399,7 @@ public class filetodoAct extends Activity
 								}
 								else
 								{
-									
+                                    Toast.makeText(ctx, "未找到文件或文件夹，检查是否被删除...", Toast.LENGTH_SHORT).show();
 								}
 							}
 						}
@@ -430,12 +469,45 @@ public class filetodoAct extends Activity
 		super.onActivityResult(requestCode, resultCode, data);
 		try
 		{
-			if(data.getIntExtra("info", -1) == 1)
-			{
-				deleteStar(MainActivity.filedopo);
-				Toast.makeText(ctx, "删除成功！", Toast.LENGTH_SHORT).show();
-				finish();
-			}
+            if(resultCode == 0)//删除
+            {
+                if(data.getIntExtra("info", -1) == 1)
+                {
+                    deleteStar(MainActivity.filedopo);
+                    Toast.makeText(ctx, "删除成功！", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+            else if(resultCode == 1)//input 新建文件
+            {
+                int success;
+                if(new File(MainActivity.filedopath + MainActivity.filedofile).isDirectory())
+                {
+                    success = file.create(1, new File(MainActivity.filedopath + MainActivity.filedofile + "/" + data.getStringExtra("info")));
+                }
+                else
+                {
+                    success = file.create(1, new File(MainActivity.filedopath + data.getStringExtra("info")));
+                }
+
+                if(success == 1)
+                {
+                    Toast.makeText(ctx, "创建文件成功！", Toast.LENGTH_SHORT).show();
+                }
+                else if(success == 0)
+                {
+                    Toast.makeText(ctx, "创建文件失败..", Toast.LENGTH_SHORT).show();
+                }
+                else if(success == 2)
+                {
+                    Toast.makeText(ctx, "该文件已存在...", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else if(resultCode == 2)//input 文件夹
+            {
+
+            }
+
 		}
 		catch(Exception e)
 		{

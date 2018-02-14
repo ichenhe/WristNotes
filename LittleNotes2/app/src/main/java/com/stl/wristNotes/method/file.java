@@ -24,20 +24,32 @@ public class file
         }
         return b;
     }
-	
-	public static boolean createFile(File file)
+
+	/**
+	 * 创建文件或文件夹
+	 * @param mode 0为文件，1为文件夹
+	 * @param file 要创建的文件目录的file
+	 * @return int 返回1为成功，0为失败，2为已存在
+	 */
+	public static int create(int mode, File file)
 	{
 		try
 		{
 			if(!file.exists())
 			{
-				file.createNewFile();
+				Boolean success;
+
+				if(mode == 1) success = file.createNewFile();
+				else success = file.mkdir();
+
+				if(success) return 1;
+				else return 0;
 			}
-			return true;
+			return 2;
 		}
 		catch(IOException e)
 		{
-			return false;
+			return 0;
 		}
 	}
 	
