@@ -69,7 +69,15 @@ public class fileOpen
 			//Toast.makeText(fileselectCtx, MainActivity.p + "rrr" + novelpath.size(), Toast.LENGTH_LONG).show();
             if (MainActivity.p == 0)//第一次打开
             {
-				String nname = name.substring(0, name.length() - name.split("[.]")[name.split("[.]").length - 1].length() - 1);
+				String nname;
+				if(name.contains("."))
+				{
+					nname = name.substring(0, name.length() - name.split("[.]")[name.split("[.]").length - 1].length() - 1);
+				}
+				else
+				{
+					nname = name;
+				}
 				if(nname.equals("")) nname = " ";
 				novelname.add(nname);
                 novelpath.add(path + name);
@@ -165,7 +173,7 @@ public class fileOpen
 	public static void bigFile(final Context ctx, final SharedPreferences sp, final SharedPreferences.Editor ed, final String path, final String name)
     {
         new AlertDialog.Builder(ctx)
-			.setMessage("您打开的文件过大，使用普通模式打开可能会导致应用卡死，是否使用小说模式打开？\n（您也可以长按文件用小说模式打开）")
+			.setMessage("您打开的文件过大，可能是小说，请使用小说模式打开！使用普通模式可能会卡顿或卡死\n（您也可以长按文件用小说模式打开）")
 			.setPositiveButton("小说模式", new DialogInterface.OnClickListener()
 			{
 				@Override

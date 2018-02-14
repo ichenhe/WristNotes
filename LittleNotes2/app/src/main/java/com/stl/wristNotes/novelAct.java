@@ -118,7 +118,7 @@ public class novelAct extends Activity
 					{
 						listView.removeHeaderView(headView);
 						isHeadview = 1;
-						String[] function = sharedPreferences.getString("function", "0000").split("");
+						String[] function = sharedPreferences.getString("function", "00000").split("");
 						function[4] = "1";
 						editor.putString("function", MainActivity.join(function, ""));
 						editor.commit();

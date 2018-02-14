@@ -165,7 +165,7 @@ public class menuAct extends Activity
                 public void onClick(View p1)
                 {
                     listView.removeHeaderView(headView);
-                    String[] function = sharedPreferences.getString("function", "0000").split("");
+                    String[] function = sharedPreferences.getString("function", "00000").split("");
                     function[3] = "1";
                     editor.putString("function", MainActivity.join(function, ""));
                     editor.commit();
@@ -234,7 +234,11 @@ public class menuAct extends Activity
                 }
                 else if(s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("5") || s.equals("6"))
                 {
+					int light = Integer.parseInt(s) * 45;
                     MainActivity.textView.setTextColor(Color.argb(255, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40));
+					MainActivity.mainLeft.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+					MainActivity.mainRight.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+					MainActivity.mainHint.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
                     editor.putInt("light", Integer.parseInt(s));
                     editor.commit();
                     Toast.makeText(ctx, "已调整亮度", Toast.LENGTH_SHORT).show();
@@ -414,7 +418,7 @@ public class menuAct extends Activity
                 }
                 else if(s.equals("重置新功能提示"))
                 {
-                    editor.putString("function", "0000");
+                    editor.putString("function", "00000");
                     editor.commit();
                     Toast.makeText(ctx, "已重置！重启应用就能正常查看喵~", Toast.LENGTH_SHORT).show();
                 }

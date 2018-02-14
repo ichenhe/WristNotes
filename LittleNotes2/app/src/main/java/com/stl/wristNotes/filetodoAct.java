@@ -27,11 +27,13 @@ public class filetodoAct extends Activity
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Context ctx = this;
-    Intent intent = getIntent();
+    Intent intent;
+	Intent i;
     String[] todo;
     int[] img;
     String[] hint;
     int po;
+	String[] starpath;
 
     TextView title;
 
@@ -49,59 +51,86 @@ public class filetodoAct extends Activity
         View headView2 = infla.inflate(R.layout.widget_title, null);
         title = (TextView) headView2.findViewById(R.id.title);
         listView.addHeaderView(headView2, null, true);
+		title.setText(MainActivity.filedofile);
 
-        po = intent.getIntExtra("po", 0);
-        if(po == 0)//文件属性
+		intent = getIntent();
+		po = intent.getIntExtra("po", 0);
+		
+		if(po == 3 || po == 4)
+		{
+			i = new Intent();
+			i.putExtra("info", -1);
+			setResult(0, i);
+		}
+        if(po == 0 || po == 3)//文件属性
         {
             todo = new String[]{"用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...(*)", "重命名(*)", "分享...", "删除", "属性"};
-            img = new int[]{R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0};
+            img = new int[]{R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0, 0};
             hint = new String[]{"", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "", "分享文件至其他应用", "", ""};
+			if(po == 3)
+			{
+				todo[2] = "取消收藏";
+				img[2] = R.drawable.nostar;
+				hint[2] = "从快速访问移除该文件";
+			}
         }
-        else if(po == 1)//文件夹属性
+        else if(po == 1 || po == 4)//文件夹属性
         {
-            todo = new String[]{"新建...", "收藏该文件夹", "删除整个文件夹", "属性"};
-            img = new int[]{0, R.drawable.starfor, 0, 0, 0, 0, 0};
-            hint = new String[]{"在选中目录下新建", "收藏至快速访问", "", ""};
+            todo = new String[]{"收藏该文件夹", "新建...", "删除整个文件夹", "属性(*)"};
+            img = new int[]{R.drawable.star, 0, 0, 0};
+            hint = new String[]{"收藏至快速访问", "在选中目录下新建", "", ""};
+			if(po == 4)
+			{
+				todo[0] = "取消收藏";
+				img[0] = R.drawable.nostar;
+				hint[0] = "从快速访问移除该文件夹";
+			}
         }
         else if(po == 2)//？
         {
-            String[] starpath = new String[]{};
-            if(sharedPreferences.getString("star", "").contains("▒"))
-                starpath = sharedPreferences.getString("star", "").split("▒");
+            starpath = new String[]{"▒▒▒▒▒"};
+            if(!sharedPreferences.getString("star", "").equals("")) starpath = sharedPreferences.getString("star", "").split("▒");
 
             todo = new String[2 + starpath.length];
             img = new int[2 + starpath.length];
             hint = new String[2 + starpath.length];
-            todo[0] = "上一次打开目录";
-            todo[1] = "储存空间根目录";
+            todo[0] = "上次打开目录";
+            todo[1] = "储存卡根目录";
             img[0] = R.drawable.sdfiles;
             img[1] = R.drawable.files;
             hint[0] = "最后一次打开文件的路径";
             hint[1] = "";
+			title.setText("快速访问");
 
-
-            for (int i = 0; i < starpath.length; i++)
-            {
-                todo[2 + i] = starpath[i].split("/")[starpath[i].split("/").length - 1];
-                if(new File(starpath[i]).isDirectory()) img[2 + i] = R.drawable.starfor;
-                else img[2 + i] = R.drawable.star;
-                hint[2 + i] = starpath[i];
-            }
+			if(!starpath[0].equals("▒▒▒▒▒"))
+			{
+				for(int i = 0; i < starpath.length; i++)
+				{
+					todo[2 + i] = starpath[i].split("/")[starpath[i].split("/").length - 1];
+					if(new File(starpath[i]).isDirectory()) img[2 + i] = R.drawable.starfor;
+					else img[2 + i] = R.drawable.star;
+					hint[2 + i] = starpath[i].subSequence(0, starpath[i].length() - starpath[i].split("/")[starpath[i].split("/").length - 1].length()).toString();
+				}
+			}
+			else
+			{
+				todo[2] = "暂无收藏";
+				img[2] = 0;
+				hint[2] = "长按文件或文件夹可以添加至这里喵~";
+			}
         }
         fAdapter adapter = new fAdapter(todo, img, hint, getLayoutInflater());
-        title.setText(MainActivity.filedofile);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new OnItemClickListener()
         {
-
             @Override
             public void onItemClick(AdapterView<?> l, View v, int position, long id)
             {
                 if(position != 0)
                 {
                     String s = todo[position - 1];
-                    if(po == 0)
+                    if(po == 0 || po == 3)
                     {
                         if(s.equals("用隐私模式打开"))
                         {
@@ -120,14 +149,6 @@ public class filetodoAct extends Activity
                         else if(s.equals("用小说模式打开"))
                         {
                             fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
-//						try{
-//							new MainActivity().batterylevel();
-//						}
-//						catch(Exception e)
-//						{
-//							Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
-//						}
-                            //MainActivity.batterylevel();
                             fileselectAct.fileselectCtx.finish();
                             finish();
                         }
@@ -167,51 +188,195 @@ public class filetodoAct extends Activity
                         }
                         else if(s.equals("收藏该文件"))
                         {
-                            List<String> starlist = new ArrayList<>();
-                            if (!sharedPreferences.getString("star", "").equals("")) starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
-                            starlist.add(MainActivity.filedopath + MainActivity.filedofile);
-                            editor.putString("star", MainActivity.join(((String[])starlist.toArray()), "▒"));
-                            editor.commit();
-                            Toast.makeText(ctx, "已收藏该文件！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
+							try
+							{
+								List<String> starlist = new ArrayList<>();
+								if(!sharedPreferences.getString("star", "").equals("")) starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+								starlist.add(MainActivity.filedopath + MainActivity.filedofile);
+								editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
+								editor.commit();
+								Toast.makeText(ctx, "已收藏该文件！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
+							}
+							catch(Exception e)
+							{
+
+								Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
+							}
                         }
+						else if(s.equals("取消收藏"))
+						{
+							i.putExtra("info", 1);
+							setResult(0, i);
+							finish();
+						}
+						else if(s.equals("新建..."))
+						{
+							
+						}
                         else
                         {
                             Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
                         }
                     }
-                    else if(po == 1)
+                    else if(po == 1 || po == 4)
                     {
                         if(s.equals("收藏该文件夹"))
                         {
-                            List<String> starlist = new ArrayList<>();
-                            if (!sharedPreferences.getString("star", "").equals("")) starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
-                            starlist.add(MainActivity.filedopath + MainActivity.filedofile);
-                            editor.putString("star", MainActivity.join(((String[])starlist.toArray()), "▒"));
-                            editor.commit();
-                            Toast.makeText(ctx, "已收藏该文件夹！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
+							try
+							{
+								List<String> starlist = new ArrayList<>();
+								if(!sharedPreferences.getString("star", "").equals("")) starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+								starlist.add(MainActivity.filedopath + MainActivity.filedofile);
+								editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
+								editor.commit();
+								Toast.makeText(ctx, "已收藏该文件夹！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
+							}
+							catch(Exception e)
+							{
+								Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
+							}
                         }
                         else if(s.equals("删除整个文件夹"))
                         {
-                            if(file.deleteDir(new File(MainActivity.filedopath + MainActivity.filedofile)))
-                            {
-                                Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
-                                finish();
-                                fileselectAct.fileselectCtx.finish();
-                            }
-                            else
-                            {
-                                Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
-                            }
+							new AlertDialog.Builder(ctx)
+								.setMessage("确认删除该文件夹以及子文件吗吗？")
+								.setPositiveButton("确定", new DialogInterface.OnClickListener()
+								{
+									@Override
+									public void onClick(DialogInterface dialog, int which)
+									{
+										if(file.deleteDir(new File(MainActivity.filedopath + MainActivity.filedofile)))
+										{
+											Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
+											finish();
+											fileselectAct.fileselectCtx.finish();
+										}
+										else
+										{
+											Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
+										}
+									}
+								})
+								.setNegativeButton("取消", null).show();
                         }
+						else if(s.equals("取消收藏"))
+						{
+							i.putExtra("info", 1);
+							setResult(0, i);
+							finish();
+						}
                         else
                         {
                             Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
                         }
                     }
+					else if(po == 2)
+					{
+						if(position - 1 == 0)
+						{
+							MainActivity.filewillpath = "";
+							Intent intent = new Intent(ctx, fileselectAct.class);
+							startActivity(intent);
+							finish();
+						}
+						else if(position - 1 == 1)
+						{
+							MainActivity.filewillpath = Environment.getExternalStorageDirectory() + "/";
+							Intent intent = new Intent(ctx, fileselectAct.class);
+							startActivity(intent);
+							finish();
+						}
+						else if(!starpath[0].equals("▒▒▒▒▒"))
+						{
+							File file = new File(starpath[position - 1 - 2]);
+							if(file.exists())
+							{
+								if(file.isDirectory())
+								{
+									MainActivity.filewillpath = starpath[position - 1 - 2] + "/";
+									Intent intent = new Intent(ctx, fileselectAct.class);
+									startActivity(intent);
+									finish();
+								}
+								else
+								{
+									if(file.length() < 1024*90)//90kb
+									{
+										fileOpen.openFile(ctx, editor, hint[position - 1], todo[position - 1]);
+										MainActivity.filepath = hint[position - 1];
+										MainActivity.filename = todo[position - 1];
+										finish();
+									}
+									else
+									{
+										fileOpen.bigFile(ctx, sharedPreferences, editor, hint[position - 1], todo[position - 1]);
+									}
+								}
+							}
+							else
+							{
+								
+							}
+						}
+					}
                 }
             }
         });
+		
+		listView.setOnItemLongClickListener(new OnItemLongClickListener()
+			{
+				@Override
+				public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
+				{
+					if(position != 0)
+					{
+						String s = todo[position - 1];
+						if(po == 2)
+						{
+							if(position > 2)//排除掉前两个和标题
+							{
+								if(new File(hint[position - 1] + todo[position - 1]).exists())
+								{
+									if(!new File(hint[position - 1] + todo[position - 1]).isDirectory())
+									{
+										MainActivity.filedopath = hint[position - 1];
+										MainActivity.filedofile = todo[position - 1];
+										Intent intent = new Intent(ctx, filetodoAct.class);
+										intent.setClass(ctx, filetodoAct.class);
+										intent.putExtra("po", 3);
+										MainActivity.filedopo = position - 3;
+										startActivityForResult(intent, 0);
+									}
+									else
+									{
+										MainActivity.filedopath = hint[position - 1];
+										MainActivity.filedofile = todo[position - 1];
+										Intent intent = new Intent(ctx, filetodoAct.class);
+										intent.setClass(ctx, filetodoAct.class);
+										intent.putExtra("po", 4);
+										MainActivity.filedopo = position - 3;
+										startActivityForResult(intent, 0);
+									}
+								}
+								else
+								{
+									
+								}
+							}
+						}
+					}
+					return true;
+				}
+			});
     }
+
+	private void deleteStar(int po) throws Exception
+	{
+		ArrayList<String> tstarpath = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+		tstarpath.remove(po);
+		editor.putString("star", MainActivity.join(tstarpath.toArray(new String[tstarpath.size()]), "▒"));
+		editor.commit();
+	}
 
     // 調用系統方法分享文件
     public static void shareFile(Context context, File file)
@@ -258,6 +423,25 @@ public class filetodoAct extends Activity
         }
         return mime;
     }
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		super.onActivityResult(requestCode, resultCode, data);
+		try
+		{
+			if(data.getIntExtra("info", -1) == 1)
+			{
+				deleteStar(MainActivity.filedopo);
+				Toast.makeText(ctx, "删除成功！", Toast.LENGTH_SHORT).show();
+				finish();
+			}
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(ctx, "回调" + e.toString(), Toast.LENGTH_SHORT).show();
+		}
+	}
 }
 
 class fAdapter extends BaseAdapter

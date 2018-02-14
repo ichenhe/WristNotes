@@ -47,6 +47,7 @@ public class MainActivity extends Activity
     //外部-filetodo
     public static String filedofile = "";
     public static String filedopath = "";
+	public static int filedopo = -1;
     //外部-help
     public static int helpor = 1;
 
@@ -117,6 +118,10 @@ public class MainActivity extends Activity
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
 		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
+		
+		mainLeft.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+		mainRight.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+		mainHint.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
 
 		//从外部打开，调用这里，获取文件路径及文件大小判断等
 		//暂时在这里测试获取文件编码
@@ -141,7 +146,7 @@ public class MainActivity extends Activity
             }
             filename = filet1[filet1.length - 1];
 
-            if (new File(filepath + filename).length() < 512000)
+            if (new File(filepath + filename).length() < 92160)
             {
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
@@ -168,6 +173,11 @@ public class MainActivity extends Activity
         try
         {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
+			if(sharedPreferences.getInt("isUpdated", 0) < 82)
+			{
+				editor.putString("function", "00000");
+				editor.commit();
+			}
             if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
             {
                 Intent startint = new Intent(ctx, updated.class);
@@ -286,7 +296,7 @@ public class MainActivity extends Activity
 					public void onClick(View p1)
 					{
 						mainLinearLayout.removeView(view);
-						String[] function = sharedPreferences.getString("function", "0000").split("");
+						String[] function = sharedPreferences.getString("function", "00000").split("");
 						function[1] = "1";
 						editor.putString("function", MainActivity.join(function, ""));
 						editor.commit();
@@ -470,14 +480,21 @@ public class MainActivity extends Activity
 	
     public static String join(String[] strs, String splitter)
     {
-        StringBuffer sb = new StringBuffer();
-        sb.append(strs[0]);
-        for (int i = 1; i < strs.length; i++)
-        {
-            //Toast.makeText(fileselectCtx, strs[i], Toast.LENGTH_SHORT);
-            sb.append(splitter + strs[i]);
-        }
-        return sb.toString();
+		if(strs.length != 0)
+		{
+			StringBuffer sb = new StringBuffer();
+			sb.append(strs[0]);
+			for(int i = 1; i < strs.length; i++)
+			{
+				//Toast.makeText(fileselectCtx, strs[i], Toast.LENGTH_SHORT);
+				sb.append(splitter + strs[i]);
+			}
+			return sb.toString();
+		}
+		else
+		{
+			return "";
+		}
     }
 
 	public void batterylevel()

@@ -143,8 +143,8 @@ public class fileselectAct extends Activity
 						public void onClick(View p1)
 						{
 							fileselectView.removeHeaderView(headView);
-							String[] function = sharedPreferences.getString("function", "0000").split("");
-							function[2] = "1";
+							String[] function = sharedPreferences.getString("function", "00000").split("");
+							function[5] = "1";
 							editor.putString("function", MainActivity.join(function, ""));
 							editor.commit();
 							tip = 1;
@@ -174,9 +174,9 @@ public class fileselectAct extends Activity
 					}
 					else
 					{
-//					Intent mainint = new Intent(ctx, MainActivity.class);
-//					startActivity(mainint);
-						if(new File(fileselecttitle.getText().toString() + s).length() < 512000)
+//						Intent mainint = new Intent(ctx, MainActivity.class);
+//						startActivity(mainint);
+						if(new File(fileselecttitle.getText().toString() + s).length() < 1024*90)//90kb
 						{
 							fileOpen.openFile(fileselectCtx, editor, fileselecttitle.getText().toString(), s);
 							MainActivity.filepath = fileselecttitle.getText().toString();
@@ -324,7 +324,7 @@ class zAdapter extends BaseAdapter
 				}
 				else if(exten.equals("txt"))
 				{
-					if(new File(path + mData[position]).length() < 102400)
+					if(new File(path + mData[position]).length() < 1024 * 90)
 					{
 						image.setImageResource(R.drawable.txtfile);
 					}
