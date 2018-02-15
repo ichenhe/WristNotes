@@ -478,34 +478,30 @@ public class filetodoAct extends Activity
                     finish();
                 }
             }
-            else if(resultCode == 1)//input 新建文件
+            else if(resultCode == 1 || resultCode == 2)//input 新建文件
             {
                 int success;
                 if(new File(MainActivity.filedopath + MainActivity.filedofile).isDirectory())
                 {
-                    success = file.create(1, new File(MainActivity.filedopath + MainActivity.filedofile + "/" + data.getStringExtra("info")));
+                    success = file.create(resultCode, new File(MainActivity.filedopath + MainActivity.filedofile + "/" + data.getStringExtra("info")));
                 }
                 else
                 {
-                    success = file.create(1, new File(MainActivity.filedopath + data.getStringExtra("info")));
+                    success = file.create(resultCode, new File(MainActivity.filedopath + data.getStringExtra("info")));
                 }
 
                 if(success == 1)
                 {
-                    Toast.makeText(ctx, "创建文件成功！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "创建成功！", Toast.LENGTH_SHORT).show();
                 }
                 else if(success == 0)
                 {
-                    Toast.makeText(ctx, "创建文件失败..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "创建失败..", Toast.LENGTH_SHORT).show();
                 }
                 else if(success == 2)
                 {
-                    Toast.makeText(ctx, "该文件已存在...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "已存在...", Toast.LENGTH_SHORT).show();
                 }
-            }
-            else if(resultCode == 2)//input 文件夹
-            {
-
             }
 
 		}
