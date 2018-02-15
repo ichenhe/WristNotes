@@ -39,7 +39,6 @@ public class inputAct extends Activity
         editor = sharedPreferences.edit();
 
         po = getIntent().getIntExtra("po", -1);
-        Toast.makeText(ctx, po + "", Toast.LENGTH_SHORT).show();
         inputtitle = (TextView) findViewById(R.id.inputText);
         inputtitle.setText(MainActivity.inputtitle);
         inputedit = (EditText) findViewById(R.id.inputEdit);

@@ -152,7 +152,14 @@ public class novelAct extends Activity
 								@Override
 								public void onClick(DialogInterface dialog, int which)
 								{
+									if(MainActivity.p - 1 > choose)
+									{
+										MainActivity.p--;
+										editor.putInt("p", MainActivity.p);
+										editor.commit();
+									}
 									deleteNovel(position - isHeadview);
+									choose = -1;
 								}
 							})
 							.setNegativeButton("取消", null).show();
@@ -197,18 +204,10 @@ public class novelAct extends Activity
 			editor.putString("novelList", novellist.toString());
 			editor.commit();
 
-			for (int i = 0; i < novelname.size(); i++)
-			{
-				listItem = new HashMap<String,Object>();
-				listItems = new ArrayList<Map<String,Object>>();
-				listItem.put("header", novelname.get(i));
-				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
-				listItems.add(listItem);
-			}
-			//simpleAdapter.notifyDataSetChanged();
+			listItems.remove(j);
+			simpleAdapter.notifyDataSetChanged();
 			//simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
 			//listView.setAdapter(simpleAdapter);
-			finish();
 			Toast.makeText(ctx, "已删除该记录！", Toast.LENGTH_LONG).show();
 		}
 		catch (JSONException e)

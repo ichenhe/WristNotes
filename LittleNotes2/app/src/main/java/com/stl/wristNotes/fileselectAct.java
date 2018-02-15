@@ -24,9 +24,11 @@ public class fileselectAct extends Activity
     Intent intent;
     File fileselectwillfile;
     TextView fileselecttitle;
-    String[] filelist;
-    String[] filelist2;
+    public static String[] filelist;
+	String[] filelist2;
+	public static ArrayList<String> filelistToAdapter;
 	ListView fileselectView;
+	public static zAdapter adapter;
 
 	int tip = 1;
 
@@ -127,7 +129,8 @@ public class fileselectAct extends Activity
 		}
 		try
 		{
-			zAdapter adapter = new zAdapter(filelist, getLayoutInflater(), MainActivity.filewillpath);
+			filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
+			adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath);
 			if(sharedPreferences.getString("function", "00000").split("")[5].equals("0"))//功能提醒
 			{
 				final View headView = infla.inflate(R.layout.widget_newfunction, null);
@@ -164,7 +167,7 @@ public class fileselectAct extends Activity
 				public void onItemClick(AdapterView<?> l, View v, int position, long id)
 				{
 					position -= tip;
-					String s = filelist[position];
+					String s = filelistToAdapter.get(position);
 					if(new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						MainActivity.filewillpath = MainActivity.filewillpath + s + "/";
@@ -197,7 +200,7 @@ public class fileselectAct extends Activity
 				public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
 				{
 					position -= tip;
-					String s = filelist[position];
+					String s = filelistToAdapter.get(position);
 					if(!new File(MainActivity.filewillpath + s + "/").isDirectory())
 					{
 						try
@@ -231,7 +234,7 @@ public class fileselectAct extends Activity
 class zAdapter extends BaseAdapter
 {
 
-	private String[] mData;//定义数据。
+	private ArrayList<String> mData;//定义数据。
 	private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
 	private String path;
     private ImageView image;
@@ -244,7 +247,7 @@ class zAdapter extends BaseAdapter
 	/*
 	 定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
 	 */
-	public zAdapter(String[] data, LayoutInflater inflater, String path)
+	public zAdapter(ArrayList<String> data, LayoutInflater inflater, String path)
 	{
 		mData = data;
 		mInflater = inflater;
@@ -254,7 +257,7 @@ class zAdapter extends BaseAdapter
 	@Override
 	public int getCount()
 	{
-		return mData.length;
+		return mData.size();
 	}
 
 	@Override
@@ -286,18 +289,18 @@ class zAdapter extends BaseAdapter
 		imgswi.setVisibility(View.GONE);
 
 		//将数据一一添加到自定义的布局中。
-		name.setText(mData[position]);
+		name.setText(mData.get(position));
 
 		//获取文件拓展名
-		if(new File(path + mData[position]).isDirectory())
+		if(new File(path + mData.get(position)).isDirectory())
 		{
 			image.setImageResource(R.drawable.folder);
 		}
 		else
 		{
-			if(mData[position].contains("."))
+			if(mData.get(position).contains("."))
 			{
-				String exten = mData[position].split("[.]")[mData[position].split("[.]").length - 1];
+				String exten = mData.get(position).split("[.]")[mData.get(position).split("[.]").length - 1];
 				//name.setText(name.getText().toString() + "&" + exten);
 				//String exten = "jpg";
 				if(exten.equals("jpg") || exten.equals("png") || exten.equals("jpge") || exten.equals("gif") || exten.equals("bmp") || exten.equals("tif") || exten.equals("pic"))
@@ -323,7 +326,7 @@ class zAdapter extends BaseAdapter
 				}
 				else if(exten.equals("txt"))
 				{
-					if(new File(path + mData[position]).length() < 1024 * 90)
+					if(new File(path + mData.get(position)).length() < 1024 * 90)
 					{
 						image.setImageResource(R.drawable.txtfile);
 					}
@@ -342,7 +345,7 @@ class zAdapter extends BaseAdapter
 				image.setImageResource(R.drawable.unknowfile);
 			}
 		}
-		if(MainActivity.filepath.equals(path) && MainActivity.filename.equals(mData[position]))
+		if(MainActivity.filepath.equals(path) && MainActivity.filename.equals(mData.get(position)))
 		{
 			if(MainActivity.mode == 0)
 			{

@@ -312,16 +312,18 @@ public class menuAct extends Activity
                     if(sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
                     {
                         editor.putString("touchHideText", "关闭");
-                        //Toast.makeText(ctx, "已关闭触摸隐藏文字！", Toast.LENGTH_SHORT).show();
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(false);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[0] = 0;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else
                     {
                         editor.putString("touchHideText", "开启");
-                        //Toast.makeText(ctx, "已开启触摸隐藏文字！\n隐藏后长按文字可重新显示！", Toast.LENGTH_SHORT).show();
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(true);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        ((ToggleButton)  v.findViewById(R.id.menulistswi)).setChecked(true);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[0] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     editor.commit();
                 }
@@ -330,17 +332,20 @@ public class menuAct extends Activity
                     if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
                     {
                         editor.putString("startHideText", "关闭");
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(false);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[1] = 0;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else
                     {
                         editor.putString("startHideText", "开启");
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(true);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(true);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[1] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     editor.commit();
-                    //Toast.makeText(ctx, "已" + sharedPreferences.getString("startHideText", "关闭") + "启动应用隐藏文字！", Toast.LENGTH_SHORT).show();
                 }
                 else if(s.equals("FTP文件传输"))
                 {
@@ -387,31 +392,30 @@ public class menuAct extends Activity
                     {
                         editor.putString("smartScroll", "关闭");
                         MainActivity.smartScroll = "关闭";
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(false);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][0]);
-                        //Toast.makeText(ctx, "已关闭智能翻页功能！", Toast.LENGTH_LONG).show();
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[1] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else if(sharedPreferences.getString("smartScroll", "开启").equals("关闭"))
                     {
                         editor.putString("smartScroll", "开启");
                         MainActivity.smartScroll = "开启";
-                        ((ToggleButton) ((ViewGroup) v).findViewById(R.id.menulistswi)).setChecked(true);
-                        ((TextView) ((ViewGroup) v).findViewById(R.id.menulisttip)).setText(menutip[position][1]);
-                        //Toast.makeText(ctx, "已开启智能翻页功能！", Toast.LENGTH_LONG).show();
+                        ((ToggleButton)  v.findViewById(R.id.menulistswi)).setChecked(true);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[1] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     editor.commit();
                 }
                 else if(s.equals("删除该小说记录"))
                 {
-                    //Intent i = new Intent();
                     i.putExtra("info", 1);
-                    //Toast.makeText(ctx, "#我是醒目的Toast!#" + i.getIntExtra("position", -1), Toast.LENGTH_LONG).show();
                     setResult(0, i);
                     finish();
                 }
                 else if(s.equals("文件属性"))
                 {
-                    //Intent i = new Intent();
                     i.putExtra("info", 2);
                     setResult(0, i);
                     finish();
@@ -517,9 +521,11 @@ class mAdapter extends BaseAdapter
         //将数据一一添加到自定义的布局中。
         name.setText(mData[position]);
 
+        //左侧图标
         if(mImg[position] == 0) image.setVisibility(View.GONE);
         else image.setImageResource(mImg[position]);
 
+        //开关和go按钮
         if(mBut[position] == -1)
         {
             imggo.setVisibility(View.GONE);
@@ -543,6 +549,7 @@ class mAdapter extends BaseAdapter
             imgswi.setTag(0);
         }
 
+        //小字
         if(mTip[position][0].equals(""))
         {
             tip.setVisibility(View.GONE);
