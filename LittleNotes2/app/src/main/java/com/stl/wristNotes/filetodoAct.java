@@ -371,44 +371,42 @@ public class filetodoAct extends Activity
             @Override
             public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
             {
-                if(position != 0)
-                {
-                    String s = todo.get(position - 1);
-                    if(po == 2 && !starpath[0].equals("▒▒▒▒▒"))
-                    {
-                        if(position > 2)//排除掉前两个和标题
-                        {
-                            if(new File(hint.get(position - 1) + todo.get(position - 1)).exists())
-                            {
-                                if(!new File(hint.get(position - 1) + todo.get(position - 1)).isDirectory())
-                                {
-                                    MainActivity.filedopath = hint.get(position - 1);
-                                    MainActivity.filedofile = todo.get(position - 1);
-                                    Intent intent = new Intent(ctx, filetodoAct.class);
-                                    intent.setClass(ctx, filetodoAct.class);
-                                    intent.putExtra("po", 3);
-                                    MainActivity.filedopo = position - 3;
-                                    startActivityForResult(intent, 0);
-                                }
-                                else
-                                {
-                                    MainActivity.filedopath = hint.get(position - 1);
-                                    MainActivity.filedofile = todo.get(position - 1);
-                                    Intent intent = new Intent(ctx, filetodoAct.class);
-                                    intent.setClass(ctx, filetodoAct.class);
-                                    intent.putExtra("po", 4);
-                                    MainActivity.filedopo = position - 3;
-                                    startActivityForResult(intent, 0);
-                                }
-                            }
-                            else
-                            {
-                                delete(position - 3);
-                            }
-                        }
-                    }
-                }
-                return true;
+				//String s = todo.get(position - 1);
+				if(po == 2 && !starpath[0].equals("▒▒▒▒▒") && position > 2)//排除掉前两个和标题
+				{
+					if(new File(hint.get(position - 1) + todo.get(position - 1)).exists())
+					{
+						if(!new File(hint.get(position - 1) + todo.get(position - 1)).isDirectory())
+						{
+							MainActivity.filedopath = hint.get(position - 1);
+							MainActivity.filedofile = todo.get(position - 1);
+							Intent intent = new Intent(ctx, filetodoAct.class);
+							intent.setClass(ctx, filetodoAct.class);
+							intent.putExtra("po", 3);
+							MainActivity.filedopo = position - 3;
+							startActivityForResult(intent, 0);
+						}
+						else
+						{
+							MainActivity.filedopath = hint.get(position - 1);
+							MainActivity.filedofile = todo.get(position - 1);
+							Intent intent = new Intent(ctx, filetodoAct.class);
+							intent.setClass(ctx, filetodoAct.class);
+							intent.putExtra("po", 4);
+							MainActivity.filedopo = position - 3;
+							startActivityForResult(intent, 0);
+						}
+					}
+					else
+					{
+						delete(position - 3);
+					}
+					return true;
+				}
+				else
+				{
+					return false;
+				}
             }
         });
     }
