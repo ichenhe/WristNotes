@@ -36,7 +36,7 @@ public class fileAttributes
 		}
 		else
 		{
-			attributes.append("<b>文件类型：</b><br/>未知的" + exten.toUpperCase() + "文件");
+			attributes.append("<b>文件类型：</b><br/>" + exten.toUpperCase() + "文件");
 			attributes.append("<br/> <br/>");
 		}
 		attributes.append("<b>大小：</b><br/>" + getNetFileSizeDescription(file.length()) + "<br/>(" + file.length() + "字节)");

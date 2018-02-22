@@ -20,6 +20,7 @@ import com.stl.wristNotes.method.*;
 import org.apache.log4j.chainsaw.Main;
 
 import static android.R.id.hint;
+import android.net.*;
 
 
 public class filetodoAct extends Activity
@@ -35,6 +36,8 @@ public class filetodoAct extends Activity
     int po;
     String[] starpath;
     fAdapter adapter;
+	
+	String[] openWithMime;
 
     TextView title;
 
@@ -65,7 +68,7 @@ public class filetodoAct extends Activity
         }
         if(po == 0 || po == 3)//文件属性
         {
-            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...(*)", "重命名(*)", "分享...", "删除", "属性"));
+            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...", "重命名(*)", "分享...", "删除", "属性"));
             img = new ArrayList<Integer>(Arrays.asList(R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0, 0));
             hint = new ArrayList<String>(Arrays.asList("", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "", "分享文件至其他应用", "", ""));
             if(po == 3)
@@ -77,7 +80,7 @@ public class filetodoAct extends Activity
         }
         else if(po == 1 || po == 4)//文件夹属性
         {
-            todo = new ArrayList<String>(Arrays.asList("收藏该文件夹", "新建...", "删除整个文件夹", "属性(*)"));
+            todo = new ArrayList<String>(Arrays.asList(new String[]{"收藏该文件夹", "新建...", "删除整个文件夹", "属性(*)"}));
             img = new ArrayList<Integer>(Arrays.asList(R.drawable.star, 0, 0, 0));
             hint = new ArrayList<String>(Arrays.asList("收藏至快速访问", "在选中目录下新建", "", ""));
             if(po == 4)
@@ -87,11 +90,12 @@ public class filetodoAct extends Activity
                 hint.set(0, "从快速访问移除该文件夹");
             }
         }
-        else if(po == 2)//？
+        else if(po == 2)//快速访问
         {
             starpath = new String[]{"▒▒▒▒▒"};
             if(!sharedPreferences.getString("star", "").equals(""))
                 starpath = sharedPreferences.getString("star", "").split("▒");
+				//如果收藏无内容，则数组保持原样，即只有一个▒▒▒▒▒元素
 
             todo = new ArrayList<String>();
             img = new ArrayList<Integer>();
@@ -128,6 +132,14 @@ public class filetodoAct extends Activity
             hint = new ArrayList<String>(Arrays.asList("", ""));
             title.setText("新建...");
         }
+		else if(po == 6)//打开为
+		{
+			todo = new ArrayList<String>(Arrays.asList("文本", "图片", "压缩包", "音频", "视频", "其它"));
+			img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0));
+			hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", ""));
+			openWithMime = new String[]{"text/plain", "image/*", "application/zip", "audio/*", "video/*", "*/*"};
+			title.setText("打开为...");
+		}
         adapter = new fAdapter(todo, img, hint, getLayoutInflater());
         listView.setAdapter(adapter);
 
@@ -201,7 +213,7 @@ public class filetodoAct extends Activity
                             {
                                 List<String> starlist = new ArrayList<>();
                                 if(!sharedPreferences.getString("star", "").equals(""))
-                                    starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+                                    starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
                                 starlist.add(MainActivity.filedopath + MainActivity.filedofile);
                                 editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
                                 editor.commit();
@@ -225,6 +237,12 @@ public class filetodoAct extends Activity
                             intent.putExtra("po", 5);
                             startActivity(intent);
                         }
+						else if(s.equals("打开为..."))
+						{
+							Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.putExtra("po", 6);
+                            startActivity(intent);
+						}
                         else
                         {
                             Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
@@ -236,9 +254,9 @@ public class filetodoAct extends Activity
                         {
                             try
                             {
-                                List<String> starlist = new ArrayList<>();
+                                List<String> starlist = new ArrayList<String>();
                                 if(!sharedPreferences.getString("star", "").equals(""))
-                                    starlist = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+                                    starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
                                 starlist.add(MainActivity.filedopath + MainActivity.filedofile);
                                 editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
                                 editor.commit();
@@ -362,6 +380,14 @@ public class filetodoAct extends Activity
                             startActivityForResult(intent, 0);
                         }
                     }
+					else if(po == 6)
+					{
+						Intent intent = new Intent();
+						intent.setAction(android.content.Intent.ACTION_VIEW);
+						intent.setDataAndType(Uri.fromFile(new File(MainActivity.filedopath + MainActivity.filedofile)), openWithMime[position - 1]);
+						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						startActivity(intent);
+					}
                 }
             }
         });
@@ -428,7 +454,7 @@ public class filetodoAct extends Activity
 
     private void deleteStar(int po)
     {
-        ArrayList<String> tstarpath = new ArrayList(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+        ArrayList<String> tstarpath = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
         tstarpath.remove(po);
         editor.putString("star", MainActivity.join(tstarpath.toArray(new String[tstarpath.size()]), "▒"));
         editor.commit();

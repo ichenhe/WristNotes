@@ -79,9 +79,9 @@ public class novelAct extends Activity
 			sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 			editor = sharedPreferences.edit();
 			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
-			novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
-			novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+			novelname = new ArrayList<String>(Arrays.asList(novellist.getString("name").split("▒")));
+			novelpath = new ArrayList<String>(Arrays.asList(novellist.getString("path").split("▒")));
+			novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
 
 			for (int i = 0; i < novelname.size(); i++)
 			{
@@ -180,8 +180,9 @@ public class novelAct extends Activity
 					startActivityForResult(intent, 0);
 					choose = position - isHeadview;
 					//startActivity(intent);
+                    return true;
 				}
-				return true;
+				return false;
 			}
 		});
 	}
@@ -191,9 +192,9 @@ public class novelAct extends Activity
 		try
 		{
 			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			novelname = new ArrayList(Arrays.asList(novellist.getString("name").split("▒")));
-			novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
-			novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+			novelname = new ArrayList<String>(Arrays.asList(novellist.getString("name").split("▒")));
+			novelpath = new ArrayList<String>(Arrays.asList(novellist.getString("path").split("▒")));
+			novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
 			novelname.remove(j);
 			novelpath.remove(j);
 			novelpage.remove(j);

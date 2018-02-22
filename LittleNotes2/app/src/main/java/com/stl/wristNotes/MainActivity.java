@@ -119,9 +119,11 @@ public class MainActivity extends Activity
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
 		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
 		
-		mainLeft.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
-		mainRight.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
-		mainHint.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+        int l = light * 45;
+        if(l > 255) l = 255;
+		mainLeft.setTextColor(Color.argb(255, l, l, l));
+		mainRight.setTextColor(Color.argb(255, l, l, l));
+		mainHint.setTextColor(Color.argb(255, l, l, l));
 
 		//从外部打开，调用这里，获取文件路径及文件大小判断等
 		//暂时在这里测试获取文件编码

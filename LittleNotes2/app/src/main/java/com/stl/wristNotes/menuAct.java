@@ -235,10 +235,11 @@ public class menuAct extends Activity
                 else if(s.equals("1") || s.equals("2") || s.equals("3") || s.equals("4") || s.equals("5") || s.equals("6"))
                 {
 					int light = Integer.parseInt(s) * 45;
-                    MainActivity.textView.setTextColor(Color.argb(255, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40, Integer.parseInt(s) * 40));
-					MainActivity.mainLeft.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
-					MainActivity.mainRight.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
-					MainActivity.mainHint.setTextColor(Color.argb(255, light * 45, light * 45, light * 45));
+                    if(light > 255) light = 255;
+                    MainActivity.textView.setTextColor(Color.argb(Integer.parseInt(s) * 40, 255, 255, 255));
+					MainActivity.mainLeft.setTextColor(Color.argb(light, 255, 255, 255));
+					MainActivity.mainRight.setTextColor(Color.argb(light, 255, 255, 255));
+					MainActivity.mainHint.setTextColor(Color.argb(light, 255, 255, 255));
                     editor.putInt("light", Integer.parseInt(s));
                     editor.commit();
                     Toast.makeText(ctx, "已调整亮度", Toast.LENGTH_SHORT).show();
@@ -394,7 +395,7 @@ public class menuAct extends Activity
                         MainActivity.smartScroll = "关闭";
                         ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
                         ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
-                        menubut[1] = 1;
+                        menubut[1] = 0;
                         ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else if(sharedPreferences.getString("smartScroll", "开启").equals("关闭"))
@@ -562,6 +563,17 @@ class mAdapter extends BaseAdapter
         {
             tip.setText(mTip[position][0]);
         }
+		
+		if(MainActivity.cho == 1)//亮度调整
+		{
+			int l = Integer.valueOf(mData[position]).intValue() * 40;
+			name.setTextColor(Color.argb(255, l, l, l));
+			//name.setBackgroundColor(Color.argb(255, 0, 0, 0));
+		}
+		else if(MainActivity.cho == 5)
+		{
+			name.setTextSize(Integer.valueOf(mData[position]).intValue());
+		}
 
 
         return layoutview;
