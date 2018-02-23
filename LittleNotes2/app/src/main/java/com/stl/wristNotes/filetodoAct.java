@@ -68,9 +68,9 @@ public class filetodoAct extends Activity
         }
         if(po == 0 || po == 3)//文件属性
         {
-            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...", "重命名(*)", "分享...", "删除", "属性"));
-            img = new ArrayList<Integer>(Arrays.asList(R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0, 0));
-            hint = new ArrayList<String>(Arrays.asList("", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "", "分享文件至其他应用", "", ""));
+            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...", "分享...", "删除", "属性"));
+            img = new ArrayList<Integer>(Arrays.asList(R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "分享文件至其他应用", "", ""));
             if(po == 3)
             {
                 todo.set(2, "取消收藏");
@@ -80,9 +80,9 @@ public class filetodoAct extends Activity
         }
         else if(po == 1 || po == 4)//文件夹属性
         {
-            todo = new ArrayList<String>(Arrays.asList(new String[]{"收藏该文件夹", "新建...", "删除整个文件夹", "属性(*)"}));
-            img = new ArrayList<Integer>(Arrays.asList(R.drawable.star, 0, 0, 0));
-            hint = new ArrayList<String>(Arrays.asList("收藏至快速访问", "在选中目录下新建", "", ""));
+            todo = new ArrayList<String>(Arrays.asList(new String[]{"收藏该文件夹", "新建...", "删除整个文件夹"}));
+            img = new ArrayList<Integer>(Arrays.asList(R.drawable.star, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("收藏至快速访问", "在选中目录下新建", ""));
             if(po == 4)
             {
                 todo.set(0, "取消收藏");

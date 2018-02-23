@@ -121,8 +121,8 @@ public class MainActivity extends Activity
 		
         int l = light * 45;
         if(l > 255) l = 255;
-		mainLeft.setTextColor(Color.argb(255, l, l, l));
-		mainRight.setTextColor(Color.argb(255, l, l, l));
+		mainLeft.setTextColor(Color.argb(l, 255, 255, 255));
+	a	mainRight.setTextColor(Color.argb(255, l, l, l));
 		mainHint.setTextColor(Color.argb(255, l, l, l));
 
 		//从外部打开，调用这里，获取文件路径及文件大小判断等
