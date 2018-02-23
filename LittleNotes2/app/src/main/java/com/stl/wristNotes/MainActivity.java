@@ -122,8 +122,8 @@ public class MainActivity extends Activity
         int l = light * 45;
         if(l > 255) l = 255;
 		mainLeft.setTextColor(Color.argb(l, 255, 255, 255));
-	a	mainRight.setTextColor(Color.argb(255, l, l, l));
-		mainHint.setTextColor(Color.argb(255, l, l, l));
+		mainRight.setTextColor(Color.argb(l, 255, 255, 255));
+		mainHint.setTextColor(Color.argb(l, 255, 255, 255));
 
 		//从外部打开，调用这里，获取文件路径及文件大小判断等
 		//暂时在这里测试获取文件编码
@@ -255,7 +255,7 @@ public class MainActivity extends Activity
         }
         else
         {
-            textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
+            textView.setTextColor(Color.argb(light * 40, 255, 255, 255));
             isalpha = 0;
         }
 
@@ -448,7 +448,7 @@ public class MainActivity extends Activity
             }
             else//显示文字
             {
-                textView.setTextColor(Color.argb(255, light * 40, light * 40, light * 40));
+                textView.setTextColor(Color.argb(light * 40, 255, 255, 255));
                 isalpha = 0;
 				if (mode == 1)
 				{
