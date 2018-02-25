@@ -248,9 +248,9 @@ public class MainActivity extends Activity
             isalpha = 1;
 			if (mode == 1)
 			{
-				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
-				MainActivity.mainRight.setVisibility(View.INVISIBLE);
-				MainActivity.mainHint.setVisibility(View.INVISIBLE);
+				mainLeft.setVisibility(View.INVISIBLE);
+			    mainRight.setVisibility(View.INVISIBLE);
+				mainHint.setVisibility(View.INVISIBLE);
 			}
         }
         else
@@ -273,6 +273,9 @@ public class MainActivity extends Activity
             {
                 pass = 0;
                 textView.setTextColor(Color.argb(255, 0, 0, 0));
+                mainLeft.setVisibility(View.INVISIBLE);
+                mainRight.setVisibility(View.INVISIBLE);
+                mainHint.setVisibility(View.INVISIBLE);
                 Intent passwordint = new Intent(ctx, passwordAct.class);
                 startActivity(passwordint);
             }
@@ -284,32 +287,32 @@ public class MainActivity extends Activity
 
 		try
 		{
-		if(sharedPreferences.getString("function", "00000").split("")[1].equals("0") && mode == 1)
-		{
-			LayoutInflater infla = LayoutInflater.from(this);
-			final View view = infla.inflate(R.layout.widget_newfunction, null);
+            if(sharedPreferences.getString("function", "00000").split("")[1].equals("0") && mode == 1)
+            {
+                LayoutInflater infla = LayoutInflater.from(this);
+                final View view = infla.inflate(R.layout.widget_newfunction, null);
 
-			((TextView)view.findViewById(R.id.functiontext)).setText("点击上方标题栏可以查看更多文件选项喵~");
-			LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
-    	    button.setClickable(true);
-			button.setOnClickListener(new View.OnClickListener()
-				{
-					@Override
-					public void onClick(View p1)
-					{
-						mainLinearLayout.removeView(view);
-						String[] function = sharedPreferences.getString("function", "00000").split("");
-						function[1] = "1";
-						editor.putString("function", MainActivity.join(function, ""));
-						editor.commit();
-					}
-				});
-			mainLinearLayout.addView(view, 1);
-		}
+                ((TextView)view.findViewById(R.id.functiontext)).setText("点击上方标题栏可以查看更多文件选项喵~");
+                LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
+                button.setClickable(true);
+                button.setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View p1)
+                        {
+                            mainLinearLayout.removeView(view);
+                            String[] function = sharedPreferences.getString("function", "00000").split("");
+                            function[1] = "1";
+                            editor.putString("function", MainActivity.join(function, ""));
+                            editor.commit();
+                        }
+                    });
+                mainLinearLayout.addView(view, 1);
+            }
 		}
 		catch(Exception e)
 		{
-			Toast.makeText(ctx, "#我是醒目的Toast!#" + e.toString(), Toast.LENGTH_LONG).show();
+			Toast.makeText(ctx, "提示信息显示错误..", Toast.LENGTH_LONG).show();
 		}
 		
         textView.setTextSize(sharedPreferences.getInt("bs", 14));

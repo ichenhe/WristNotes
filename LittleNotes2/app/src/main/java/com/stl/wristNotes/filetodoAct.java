@@ -21,6 +21,7 @@ import org.apache.log4j.chainsaw.Main;
 
 import static android.R.id.hint;
 import android.net.*;
+import org.json.*;
 
 
 public class filetodoAct extends Activity
@@ -33,11 +34,12 @@ public class filetodoAct extends Activity
     ArrayList<String> todo;
     ArrayList<Integer> img;
     ArrayList<String> hint;
-    int po;
+    public static int po;
     String[] starpath;
     fAdapter adapter;
 	
 	String[] openWithMime;
+    JSONObject helperr;
 
     TextView title;
 
@@ -140,7 +142,22 @@ public class filetodoAct extends Activity
 			openWithMime = new String[]{"text/plain", "image/*", "application/zip", "audio/*", "video/*", "*/*"};
 			title.setText("打开为...");
 		}
-        adapter = new fAdapter(todo, img, hint, getLayoutInflater());
+        else if(po == 7)
+        {
+            try
+            {
+                helperr = new JSONObject(helper.helper);
+                todo = new ArrayList<String>(Arrays.asList(helper.helpq));
+                img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0));
+                hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", "", "", ""));
+                title.setText("帮助");
+            }
+            catch(Exception e)
+            {
+                Toast.makeText(ctx, "帮助信息获取失败..请重试" + e.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        adapter = new fAdapter(todo, img, hint, po, getLayoutInflater());
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new OnItemClickListener()
@@ -158,6 +175,12 @@ public class filetodoAct extends Activity
                             try
                             {
                                 MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
+                                editor.putInt("mode", 0);
+                                editor.commit();
+                                MainActivity.mode = 0;
+                                MainActivity.mainLeft.setVisibility(View.INVISIBLE);
+                                MainActivity.mainRight.setVisibility(View.INVISIBLE);
+                                MainActivity.mainHint.setVisibility(View.INVISIBLE);
                                 Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",要看什么的话。。小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
                                 fileselectAct.fileselectCtx.finish();
                                 finish();
@@ -388,6 +411,20 @@ public class filetodoAct extends Activity
 						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						startActivity(intent);
 					}
+                    else if(po == 7)
+                    {
+                        Intent intent = new Intent(ctx, helpAct.class);
+                        try
+                        {
+                            MainActivity.helpor = 6;
+                            intent.putExtra("string", (String)helperr.get(todo.get(position - 1)));
+                            startActivity(intent);
+                        }
+                        catch(JSONException e)
+                        {
+                            Toast.makeText(ctx, "帮助信息获取失败..请重试", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             }
         });
@@ -574,16 +611,18 @@ class fAdapter extends BaseAdapter
     private View layoutview;
     private ArrayList<Integer> mImg;
     private ArrayList<String> mHint;
+    private int mpo;
 
     /*
      定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。
      */
-    public fAdapter(ArrayList<String> data, ArrayList<Integer> img, ArrayList<String> hint, LayoutInflater inflater)
+    public fAdapter(ArrayList<String> data, ArrayList<Integer> img, ArrayList<String> hint, int po, LayoutInflater inflater)
     {
         mData = data;
         mInflater = inflater;
         mImg = img;
         mHint = hint;
+        mpo = po;
     }
 
     @Override
@@ -627,6 +666,11 @@ class fAdapter extends BaseAdapter
 
         imggo.setVisibility(View.GONE);
         imgswi.setVisibility(View.GONE);
+        
+        if(mpo == 7)
+        {
+            name.setTextSize(14);
+        }
         return layoutview;
     }
 }

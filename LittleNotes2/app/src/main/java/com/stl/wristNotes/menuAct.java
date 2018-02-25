@@ -9,6 +9,7 @@ import android.widget.*;
 import android.widget.AdapterView.*;
 
 import java.io.*;
+import org.json.*;
 
 public class menuAct extends Activity
 {
@@ -215,7 +216,8 @@ public class menuAct extends Activity
                 }
                 else if(s.equals("帮助"))
                 {
-                    Intent helpint = new Intent(ctx, helpAct.class);
+                    Intent helpint = new Intent(ctx, filetodoAct.class);
+                    helpint.putExtra("po", 7);
                     startActivity(helpint);
                 }
                 else if(s.equals("关于"))
