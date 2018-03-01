@@ -25,7 +25,7 @@
 			android:paddingRight="20dp"
 			android:paddingTop="10dp"
 			android:paddingBottom="5dp"
-			android:text="要保持Wi-Fi的流畅哦=^_^=\n（传文件也能用蓝牙哦）"/>
+			android:text="两个设备要在同一个Wi-Fi下哦=^_^="/>
 
 		<LinearLayout
 			android:layout_height="wrap_content"
