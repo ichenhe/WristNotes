@@ -34,7 +34,7 @@ public class filetodoAct extends Activity
     ArrayList<String> todo;
     ArrayList<Integer> img;
     ArrayList<String> hint;
-    public static int po;
+    public int po;
     String[] starpath;
     fAdapter adapter;
 	
