@@ -47,15 +47,6 @@
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
-			android:onClick="about1"
-			android:text="未来展望"/>
-
-		<Button
-			style="@style/button"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="10dp"
-			android:layout_marginRight="10dp"
 			android:onClick="about4"
 			android:text="更新日志"/>
 
