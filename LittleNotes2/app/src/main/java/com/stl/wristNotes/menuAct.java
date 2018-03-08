@@ -569,12 +569,18 @@ class mAdapter extends BaseAdapter
 		if(MainActivity.cho == 1)//亮度调整
 		{
 			int l = Integer.valueOf(mData[position]).intValue() * 40;
-			name.setTextColor(Color.argb(255, l, l, l));
+			//name.setTextColor(Color.argb(255, l, l, l));
 			//name.setBackgroundColor(Color.argb(255, 0, 0, 0));
+            TextView text = (TextView) layoutview.findViewById(R.id.menulistText);
+            text.setVisibility(View.VISIBLE);
+            text.setTextColor(Color.argb(l, 255, 255, 255));
 		}
 		else if(MainActivity.cho == 5)
 		{
-			name.setTextSize(Integer.valueOf(mData[position]).intValue());
+			//name.setTextSize(Integer.valueOf(mData[position]).intValue());
+            TextView text = (TextView) layoutview.findViewById(R.id.menulistText);
+            text.setVisibility(View.VISIBLE);
+            text.setTextSize(Integer.valueOf(mData[position]).intValue() + 14);
 		}
 
 

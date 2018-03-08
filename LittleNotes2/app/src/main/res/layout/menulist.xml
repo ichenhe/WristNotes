@@ -15,11 +15,14 @@
 		android:layout_centerVertical="true"/>
 
 	<TextView
-		android:layout_height="52dp"
+		android:id="@+id/menulisttext"
 		android:layout_width="52dp"
+		android:layout_height="52dp"
 		android:gravity="center"
-		android:visibility="gone"
-		android:id="@+id/menulisttext"/>
+		android:text="A"
+		android:textSize="26sp"
+		android:textStyle="bold"
+		android:visibility="invisible"/>
 
 	<RelativeLayout
 		android:id="@+id/menulistRelativeLayout"
