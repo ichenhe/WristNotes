@@ -571,14 +571,14 @@ class mAdapter extends BaseAdapter
 			int l = Integer.valueOf(mData[position]).intValue() * 40;
 			//name.setTextColor(Color.argb(255, l, l, l));
 			//name.setBackgroundColor(Color.argb(255, 0, 0, 0));
-            TextView text = (TextView) layoutview.findViewById(R.id.menulistText);
+            TextView text = (TextView) layoutview.findViewById(R.id.menulisttext);
             text.setVisibility(View.VISIBLE);
             text.setTextColor(Color.argb(l, 255, 255, 255));
 		}
 		else if(MainActivity.cho == 5)
 		{
 			//name.setTextSize(Integer.valueOf(mData[position]).intValue());
-            TextView text = (TextView) layoutview.findViewById(R.id.menulistText);
+            TextView text = (TextView) layoutview.findViewById(R.id.menulisttext);
             text.setVisibility(View.VISIBLE);
             text.setTextSize(Integer.valueOf(mData[position]).intValue() + 14);
 		}
