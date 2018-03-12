@@ -10,6 +10,8 @@ import android.widget.AdapterView.*;
 
 import java.io.*;
 import org.json.*;
+import android.graphics.drawable.*;
+import android.graphics.drawable.shapes.*;
 
 public class menuAct extends Activity
 {
@@ -131,9 +133,9 @@ public class menuAct extends Activity
         }
         else if(MainActivity.cho == 7)
         {
-            menuList = new String[]{"跳转页数", "智能翻页"};
-            menuimg = new int[]{0, 0};
-            menubut = new int[]{2, getState("smartScroll", "开启", "关闭")};
+            menuList = new String[]{"跳转页数", "智能翻页", "自动翻页", "自动翻页速度"};
+            menuimg = new int[]{0, 0, 0, 0};
+            menubut = new int[]{2, getState("smartScroll", "开启", "关闭"), MainActivity.autoScoll};
             menutip = new String[][]{{"跳转到任意一页"}, {"已关闭", "已开启\n翻页键先滚动到页面底部再翻页"}};
             menutitle.setText("阅读菜单");
         }
@@ -574,6 +576,8 @@ class mAdapter extends BaseAdapter
             TextView text = (TextView) layoutview.findViewById(R.id.menulisttext);
             text.setVisibility(View.VISIBLE);
             text.setTextColor(Color.argb(l, 255, 255, 255));
+            
+            image.setImageResource(R.drawable.shape_black);
 		}
 		else if(MainActivity.cho == 5)
 		{

@@ -35,7 +35,7 @@ public class filetodoAct extends Activity
     ArrayList<Integer> img;
     ArrayList<String> hint;
     public int po;
-    String[] starpath;
+    ArrayList<String> starpath;
     fAdapter adapter;
 	
 	String[] openWithMime;
@@ -62,7 +62,7 @@ public class filetodoAct extends Activity
         intent = getIntent();
         po = intent.getIntExtra("po", 0);
 
-        if(po == 3 || po == 4)
+        if(po == 3 || po == 4 )
         {
             i = new Intent();
             i.putExtra("info", -1);
@@ -94,9 +94,9 @@ public class filetodoAct extends Activity
         }
         else if(po == 2)//快速访问
         {
-            starpath = new String[]{"▒▒▒▒▒"};
+            starpath = new ArrayList<String>(Arrays.asList(new String[]{"▒▒▒▒▒"}));
             if(!sharedPreferences.getString("star", "").equals(""))
-                starpath = sharedPreferences.getString("star", "").split("▒");
+                starpath = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
 				//如果收藏无内容，则数组保持原样，即只有一个▒▒▒▒▒元素
 
             todo = new ArrayList<String>();
@@ -110,14 +110,14 @@ public class filetodoAct extends Activity
             hint.add("");
             title.setText("快速访问");
 
-            if(!starpath[0].equals("▒▒▒▒▒"))
+            if(!starpath.get(0).equals("▒▒▒▒▒"))
             {
-                for (int i = 0; i < starpath.length; i++)
+                for (int i = 0; i < starpath.size(); i++)
                 {
-                    todo.add(starpath[i].split("/")[starpath[i].split("/").length - 1]);
-                    if(new File(starpath[i]).isDirectory()) img.add(R.drawable.starfor);
+                    todo.add(starpath.get(i).split("/")[starpath.get(i).split("/").length - 1]);
+                    if(new File(starpath.get(i)).isDirectory()) img.add(R.drawable.starfor);
                     else img.add(R.drawable.star);
-                    hint.add(starpath[i].subSequence(0, starpath[i].length() - starpath[i].split("/")[starpath[i].split("/").length - 1].length()).toString());
+                    hint.add(starpath.get(i).subSequence(0, starpath.get(i).length() - starpath.get(i).split("/")[starpath.get(i).split("/").length - 1].length()).toString());
                 }
             }
             else
@@ -347,14 +347,14 @@ public class filetodoAct extends Activity
                             startActivity(intent);
                             finish();
                         }
-                        else if(!starpath[0].equals("▒▒▒▒▒"))
+                        else if(!starpath.get(0).equals("▒▒▒▒▒"))
                         {
-                            File file = new File(starpath[position - 1 - 2]);
+                            File file = new File(starpath.get(position - 1 - 2));
                             if(file.exists())
                             {
                                 if(file.isDirectory())
                                 {
-                                    MainActivity.filewillpath = starpath[position - 1 - 2] + "/";
+                                    MainActivity.filewillpath = starpath.get(position - 1 - 2) + "/";
                                     Intent intent = new Intent(ctx, fileselectAct.class);
                                     startActivity(intent);
                                     finish();
@@ -435,7 +435,7 @@ public class filetodoAct extends Activity
             public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
             {
 				//String s = todo.get(position - 1);
-				if(po == 2 && !starpath[0].equals("▒▒▒▒▒") && position > 2)//排除掉前两个和标题
+				if(po == 2 && !starpath.get(0).equals("▒▒▒▒▒") && position > 2)//排除掉前两个和标题
 				{
 					if(new File(hint.get(position - 1) + todo.get(position - 1)).exists())
 					{
@@ -491,13 +491,14 @@ public class filetodoAct extends Activity
 
     private void deleteStar(int po)
     {
-        ArrayList<String> tstarpath = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
-        tstarpath.remove(po);
-        editor.putString("star", MainActivity.join(tstarpath.toArray(new String[tstarpath.size()]), "▒"));
+        //ArrayList<String> tstarpath = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+        starpath.remove(po);
+        editor.putString("star", MainActivity.join(starpath.toArray(new String[starpath.size()]), "▒"));
         editor.commit();
         todo.remove(po + 2);
         img.remove(po + 2);
         hint.remove(po + 2);
+        
         adapter.notifyDataSetChanged();
     }
 
@@ -563,32 +564,35 @@ public class filetodoAct extends Activity
             }
             else if(resultCode == 1 || resultCode == 2)//input 新建文件
             {
-                int success;
-                if(new File(MainActivity.filedopath + MainActivity.filedofile).isDirectory())
+                if(!data.getStringExtra("info").equals(""))
                 {
-                    success = file.create(resultCode, new File(MainActivity.filedopath + MainActivity.filedofile + "/" + data.getStringExtra("info")));
-                }
-                else
-                {
-                    success = file.create(resultCode, new File(MainActivity.filedopath + data.getStringExtra("info")));
-                }
+                    int success;
+                    if(new File(MainActivity.filedopath + MainActivity.filedofile).isDirectory())
+                    {
+                        success = file.create(resultCode, new File(MainActivity.filedopath + MainActivity.filedofile + "/" + data.getStringExtra("info")));
+                    }
+                    else
+                    {
+                        success = file.create(resultCode, new File(MainActivity.filedopath + data.getStringExtra("info")));
+                    }
 
-                if(success == 1)
-                {
-                    Toast.makeText(ctx, "创建成功！", Toast.LENGTH_SHORT).show();
-                }
-                else if(success == 0)
-                {
-                    Toast.makeText(ctx, "创建失败..", Toast.LENGTH_SHORT).show();
-                }
-                else if(success == 2)
-                {
-                    Toast.makeText(ctx, "已存在...", Toast.LENGTH_SHORT).show();
-                }
+                    if(success == 1)
+                    {
+                        Toast.makeText(ctx, "创建成功！", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(success == 0)
+                    {
+                        Toast.makeText(ctx, "创建失败..", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(success == 2)
+                    {
+                        Toast.makeText(ctx, "已存在...", Toast.LENGTH_SHORT).show();
+                    }
 
-                fileselectAct.filelistToAdapter.add(data.getStringExtra("info"));
-                fileselectAct.adapter.notifyDataSetChanged();
-                finish();
+                    fileselectAct.filelistToAdapter.add(data.getStringExtra("info"));
+                    fileselectAct.adapter.notifyDataSetChanged();
+                    finish();
+                }
             }
         }
         catch (Exception e)

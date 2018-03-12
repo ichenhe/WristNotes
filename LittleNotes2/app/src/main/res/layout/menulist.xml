@@ -8,21 +8,29 @@
 	android:paddingRight="25dp"
 	android:descendantFocusability="blocksDescendants">
 
-	<ImageView
-		android:id="@+id/menulistimg"
-		android:layout_width="52dp"
-		android:layout_height="52dp"
-		android:layout_centerVertical="true"/>
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/menulistRelativeLayout1"
+		android:layout_centerVertical="true">
 
-	<TextView
-		android:id="@+id/menulisttext"
-		android:layout_width="52dp"
-		android:layout_height="52dp"
-		android:gravity="center"
-		android:text="A"
-		android:textSize="26sp"
-		android:textStyle="bold"
-		android:visibility="invisible"/>
+		<ImageView
+			android:id="@+id/menulistimg"
+			android:layout_width="52dp"
+			android:layout_height="52dp"/>
+
+		<TextView
+			android:id="@+id/menulisttext"
+			android:layout_width="52dp"
+			android:layout_height="52dp"
+			android:gravity="center"
+			android:text="A"
+			android:textSize="26sp"
+			android:textStyle="bold"
+			android:visibility="gone"
+			android:background="@drawable/shape_black"/>
+
+	</RelativeLayout>
 
 	<RelativeLayout
 		android:id="@+id/menulistRelativeLayout"
@@ -53,7 +61,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_toLeftOf="@id/menulistRelativeLayout"
-		android:layout_toRightOf="@id/menulistimg"
+		android:layout_toRightOf="@id/menulistRelativeLayout1"
 		android:orientation="vertical"
 		android:adjustViewBounds="true"
 		android:minHeight="54dp"

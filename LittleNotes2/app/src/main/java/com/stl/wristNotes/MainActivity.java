@@ -73,6 +73,8 @@ public class MainActivity extends Activity
     //当前小说在列表中的位置
     public static String code;
     //当前小说的编码
+    public static int autoScoll = 0;
+    //自动翻页
 
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;

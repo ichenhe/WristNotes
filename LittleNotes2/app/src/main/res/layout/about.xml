@@ -10,7 +10,7 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="vertical"
-		android:paddingBottom="19dp">
+		android:paddingBottom="18dp">
 
 		<TextView
 			style="@style/titleText"

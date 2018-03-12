@@ -27,6 +27,7 @@ public class inputAct extends Activity
     Button inputbutton;
 
     int po;
+    Intent i;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -39,6 +40,11 @@ public class inputAct extends Activity
         editor = sharedPreferences.edit();
 
         po = getIntent().getIntExtra("po", -1);
+        
+        i = new Intent();
+        i.putExtra("info", "");
+        setResult(po, i);
+        
         inputtitle = (TextView) findViewById(R.id.inputText);
         inputtitle.setText(MainActivity.inputtitle);
         inputedit = (EditText) findViewById(R.id.inputEdit);
@@ -88,7 +94,7 @@ public class inputAct extends Activity
                     try
                     {
                         JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-                        List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+                        List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
                         novelpage.set(MainActivity.p - 1, (Integer.valueOf(inputedit.getText().toString()).intValue() - 1) + "");
                         novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
                         MainActivity.textView.setText(fileOpen.novelReader(MainActivity.filepath + MainActivity.filename, Integer.valueOf(inputedit.getText().toString()).intValue() - 1, MainActivity.code));
@@ -109,10 +115,16 @@ public class inputAct extends Activity
                 }
                 else
                 {
-                    Intent i = new Intent();
-                    i.putExtra("info", inputedit.getText().toString());
-                    setResult(po, i);
-                    finish();
+                    if(!inputedit.getText().toString().equals(""))
+                    {
+                        i.putExtra("info", inputedit.getText().toString());
+                        setResult(po, i);
+                        finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(ctx, "请输入" + MainActivity.inputset + "名称！", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
