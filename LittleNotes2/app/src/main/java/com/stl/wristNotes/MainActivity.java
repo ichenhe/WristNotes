@@ -75,6 +75,7 @@ public class MainActivity extends Activity
     //当前小说的编码
     public static int autoScoll = 0;
     //自动翻页
+    public static int autoScollSec = 0;
 
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;
