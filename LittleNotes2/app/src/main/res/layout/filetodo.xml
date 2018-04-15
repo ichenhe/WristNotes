@@ -11,7 +11,7 @@
 		android:id="@+id/filedoList"
 		style="@style/listview"
 		android:clipToPadding="false"
-		android:paddingBottom="24dp"/>
+		android:paddingBottom="22dp"/>
 
 </LinearLayout>
 

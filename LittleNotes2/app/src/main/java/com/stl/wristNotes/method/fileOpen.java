@@ -133,6 +133,7 @@ public class fileOpen
             MainActivity.mainLeft.setVisibility(View.INVISIBLE);
             MainActivity.mainRight.setVisibility(View.INVISIBLE);
             MainActivity.mainHint.setVisibility(View.INVISIBLE);
+            MainActivity.autoReadChange(2);
             Toast.makeText(ctx, "成功打开文件:" + name + " 喵", Toast.LENGTH_SHORT).show();
         }
 		catch (IOException e)

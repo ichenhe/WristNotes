@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:orientation="horizontal"
-	android:paddingLeft="27dp"
+	android:paddingLeft="29dp"
 	android:paddingRight="25dp"
 	android:descendantFocusability="blocksDescendants">
 

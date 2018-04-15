@@ -157,6 +157,13 @@ public class filetodoAct extends Activity
                 Toast.makeText(ctx, "帮助信息获取失败..请重试" + e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
+        else if(po == 8)
+        {
+            todo = new ArrayList<String>(Arrays.asList("3秒", "4秒", "5秒", "6秒", "7秒"));
+            img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("", "", "", "", ""));
+            title.setText("自动翻页速度");
+        }
         adapter = new fAdapter(todo, img, hint, po, getLayoutInflater());
         listView.setAdapter(adapter);
 
@@ -181,7 +188,7 @@ public class filetodoAct extends Activity
                                 MainActivity.mainLeft.setVisibility(View.INVISIBLE);
                                 MainActivity.mainRight.setVisibility(View.INVISIBLE);
                                 MainActivity.mainHint.setVisibility(View.INVISIBLE);
-                                Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",要看什么的话。。小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
                                 fileselectAct.fileselectCtx.finish();
                                 finish();
                             }
@@ -424,6 +431,17 @@ public class filetodoAct extends Activity
                         {
                             Toast.makeText(ctx, "帮助信息获取失败..请重试", Toast.LENGTH_SHORT).show();
                         }
+                    }
+                    else if(po == 8)
+                    {
+                        MainActivity.autoScollSec = 2 + position;
+                        MainActivity.autoScollNowSec = MainActivity.autoScollSec;
+                        if(!(MainActivity.autoScoll == 0))MainActivity.mainRight.setText(String.valueOf(MainActivity.autoScollSec));
+                        editor.putInt("autoScollSec", MainActivity.autoScollSec);
+                        editor.commit();
+                        menuAct.menutip[3] = new String[]{MainActivity.autoScollSec + "秒"};
+                        ((BaseAdapter)menuAct.adapter).notifyDataSetChanged();
+                        finish();
                     }
                 }
             }

@@ -22,6 +22,7 @@ import org.json.*;
 import java.text.*;
 import java.util.*;
 import com.stl.wristNotes.method.*;
+import org.apache.http.*;
 //import com.mobvoi.android.gesture.*;
 
 public class MainActivity extends Activity
@@ -76,6 +77,9 @@ public class MainActivity extends Activity
     public static int autoScoll = 0;
     //自动翻页
     public static int autoScollSec = 0;
+    static int autoScollNowSec = 0;
+    static Handler autoReadHandler = new Handler();
+    static Runnable autoReadRunnable;
 
     JSONObject novellist;
 	BroadcastReceiver batteryLevelReceiver;
@@ -83,7 +87,8 @@ public class MainActivity extends Activity
 	IntentFilter batteryLevelFilter;
 	
 	int scrollLength;
-
+    
+    
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState)
@@ -104,6 +109,9 @@ public class MainActivity extends Activity
         p = sharedPreferences.getInt("p", 0);
         code = sharedPreferences.getString("code", "UTF-8");
         smartScroll = sharedPreferences.getString("smartScroll", "开启");
+        autoScollSec = sharedPreferences.getInt("autoScollSec", 4);
+        autoScoll = sharedPreferences.getInt("autoScoll", 0);
+        autoScollNowSec = autoScollSec;
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
 		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
         try
@@ -208,7 +216,6 @@ public class MainActivity extends Activity
                 textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue(), code));
                 Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
-				batterylevel();
             }
             catch (JSONException e)
             {
@@ -219,6 +226,7 @@ public class MainActivity extends Activity
                 Toast.makeText(ctx, "未知错误！", Toast.LENGTH_SHORT).show();
             }
         }
+        batterylevel();
 
         try
         {
@@ -317,7 +325,33 @@ public class MainActivity extends Activity
 		{
 			Toast.makeText(ctx, "提示信息显示错误..", Toast.LENGTH_LONG).show();
 		}
-		
+        
+		autoReadRunnable = new Runnable(){
+            @Override
+            public void run()
+            {
+                if(autoScollNowSec - 1 == 0)
+                {
+                    novelScroll(mainLinearLayout, mainScrollView, true);
+                    autoScollNowSec = autoScollSec;
+                    mainRight.setText(String.valueOf(autoScollNowSec));
+                }
+                else
+                {
+                    autoScollNowSec--;
+                    mainRight.setText(String.valueOf(autoScollNowSec));
+                }
+                //要做的事情，这里再次调用此Runnable对象，以实现每一秒实现一次的定时器操作
+                autoReadHandler.postDelayed(this, 1000);
+            }  
+        };
+        
+        if(autoScoll == 1)
+        {
+            autoReadChange(3);
+            if(isalpha == 0) autoReadChange(1);
+        }
+        
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
@@ -343,24 +377,35 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					try
-					{
-						novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-						List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-						novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
-						novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-						textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
-						mainScrollView.fullScroll(View.FOCUS_UP);
-						editor.putString("novelList", novellist.toString());
-						editor.commit();
-						mainHint.setText(getHintText(sharedPreferences));
-						//batteryLevel();
-					}
-					catch (Exception e)
-					{
-						if (e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
-						else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
-					}
+                    if(autoScoll == 0)
+                    {
+                        try
+                        {
+                            novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+                            List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
+                            novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
+                            novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+                            textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
+                            mainScrollView.fullScroll(View.FOCUS_UP);
+                            editor.putString("novelList", novellist.toString());
+                            editor.commit();
+                            mainHint.setText(getHintText(sharedPreferences));
+                            //batteryLevel();
+                        }
+                        catch(Exception e)
+                        {
+                            if(e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
+                            else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else if(autoScoll == 1)
+                    {
+                        autoReadChange(3);
+                    }
+                    else if(autoScoll == 3)
+                    {
+                        autoReadChange(1);
+                    }
 				}
 			});
 
@@ -369,7 +414,10 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					novelScroll(mainLinearLayout, mainScrollView);
+                    if(autoScoll == 0)
+                    {
+				    	novelScroll(mainLinearLayout, mainScrollView, false);
+                    }
 				}
 			});
 
@@ -384,19 +432,57 @@ public class MainActivity extends Activity
 					startActivity(intent);
 				}
 			});
-
-
     }
 
+    //Activity重新启动
+    @Override
+    protected void onResume()
+    {
+        if(autoScoll == 3 && isalpha == 0) autoReadChange(1);
+        super.onResume();
+    }
 
-	public void novelScroll(LinearLayout layout, ScrollView scroll)
+    //Activity暂停
+    @Override
+    protected void onPause()
+    {
+        if(autoScoll == 1) autoReadChange(3);
+        super.onPause();
+    }
+
+    public static void autoReadChange(int status)
+    {
+        if(status == 1)
+        {
+            autoScoll = 1;
+            mainLeft.setText("■");
+            autoReadHandler.postDelayed(autoReadRunnable, 1000);
+        }
+        else if(status == 2)
+        {
+            autoScoll = 0;
+            mainLeft.setText("◀");
+            mainRight.setText("▶");
+            autoReadHandler.removeCallbacks(autoReadRunnable);
+        }
+        else if(status == 3)
+        {
+            autoScoll = 3;
+            //autoScollNowSec = autoScollSec;
+            mainLeft.setText("▶");
+            mainRight.setText(String.valueOf(autoScollNowSec));
+            autoReadHandler.removeCallbacks(autoReadRunnable);
+        }
+    }
+    
+	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 10 >= layout.getMeasuredHeight() || smartScroll.equals("关闭"))
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 10 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
 		{
 			try
 			{
 				novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-				List<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+				List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
 				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 				textView.setText("");
@@ -434,6 +520,7 @@ public class MainActivity extends Activity
 				MainActivity.mainRight.setVisibility(View.INVISIBLE);
 				MainActivity.mainHint.setVisibility(View.INVISIBLE);
 			}
+            if(autoScoll == 1) autoReadChange(3);
         }
         else if (pass == 0)
         {
@@ -462,6 +549,7 @@ public class MainActivity extends Activity
 					MainActivity.mainRight.setVisibility(View.VISIBLE);
 					MainActivity.mainHint.setVisibility(View.VISIBLE);
 				}
+                if(autoScoll == 3) autoReadChange(1);
             }
         }
         else//密码未解锁

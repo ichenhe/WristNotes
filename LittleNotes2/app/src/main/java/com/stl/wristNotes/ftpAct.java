@@ -69,7 +69,7 @@ public class ftpAct extends Activity
 							}
 							else
 							{
-								try
+								/*try
 								{
 									if (getHostIP().equals("192.168.167.239"))
 									{
@@ -77,14 +77,14 @@ public class ftpAct extends Activity
 										togglebutton.setChecked(false);
 									}
 									else
-									{
+									{*/
 										startFtpServer();
-									}
+									/*}
 								}
 								catch (SocketException e)
 								{
 									Toast.makeText(ctx, "获取ip地址错误喵。。试试重启Wi-Fi？", Toast.LENGTH_LONG).show();
-								}
+								}*/
 							}
 						}
 						else

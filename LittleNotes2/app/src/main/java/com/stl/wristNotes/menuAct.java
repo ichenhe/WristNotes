@@ -21,14 +21,14 @@ public class menuAct extends Activity
     TextView menutitle;
     ListView listView;
 
-    ListAdapter adapter;
+    public static ListAdapter adapter;
     Intent menuintent;
     Intent passint;
 
     String[] menuList;
     int[] menuimg;
     int[] menubut;
-    String[][] menutip;
+    public static String[][] menutip;
 
     int tip = 1;
     Intent i;
@@ -135,9 +135,10 @@ public class menuAct extends Activity
         {
             menuList = new String[]{"跳转页数", "智能翻页", "自动翻页", "自动翻页速度"};
             menuimg = new int[]{0, 0, 0, 0};
-            menubut = new int[]{2, getState("smartScroll", "开启", "关闭"), MainActivity.autoScoll, 2};
+            menubut = new int[]{2, getState("smartScroll", "开启", "关闭"), 0, 2};
             menutip = new String[][]{{"跳转到任意一页"}, {"已关闭", "已开启\n翻页键先滚动到页面底部再翻页"}, {"已关闭", "已开启\n系统会自动翻页"}, {MainActivity.autoScollSec + "秒"}};
             menutitle.setText("阅读菜单");
+            if(MainActivity.autoScoll != 0) menubut[2] = 1;
         }
         else if(MainActivity.cho == 8)
         {
@@ -435,6 +436,35 @@ public class menuAct extends Activity
                 {
                     MainActivity.helpor = 5;
                     menuintent = new Intent(ctx, helpAct.class);
+                    startActivity(menuintent);
+                }
+                else if(s.equals("自动翻页"))
+                {
+                    if(MainActivity.autoScoll == 1 || MainActivity.autoScoll == 3)
+                    {
+                        MainActivity.autoReadChange(2);
+                        editor.putInt("autoScoll", 0);
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[2] = 0;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    else
+                    {
+                        MainActivity.autoScollNowSec = MainActivity.autoScollSec;
+                        MainActivity.autoReadChange(3);
+                        editor.putInt("autoScoll", 1);
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(true);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[2] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    editor.commit();
+                }
+                else if(s.equals("自动翻页速度"))
+                {
+                    menuintent = new Intent(ctx, filetodoAct.class);
+                    menuintent.putExtra("po", 8);
                     startActivity(menuintent);
                 }
             }
