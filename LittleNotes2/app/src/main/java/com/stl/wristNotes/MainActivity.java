@@ -207,6 +207,7 @@ public class MainActivity extends Activity
             mainLeft.setVisibility(View.INVISIBLE);
             mainRight.setVisibility(View.INVISIBLE);
             mainHint.setVisibility(View.INVISIBLE);
+            autoReadChange(2);
         }
         else if (mode == 1)
         {

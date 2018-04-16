@@ -43,13 +43,14 @@ public class editfileAct extends Activity
 			File f = new File(sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory() + "/0学习文档/"), sharedPreferences.getString("filename", "1.txt"));
 			if (!f.exists())
 			{
-				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（这么长感觉好有B格啊罒▽罒）", Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
 			}
 		}
 		else
 		{
 			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
+        ((ScrollView)findViewById(R.id.editfileScrollView1)).smoothScrollTo(0, MainActivity.mainScrollView.getScrollY());
 	}
 	
 	public void editfileButton1(View view)
@@ -70,12 +71,12 @@ public class editfileAct extends Activity
 				}
 				else
 				{
-					Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（。。知道不行还点我，再点戳你哦）", Toast.LENGTH_LONG).show();
+					Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
 				}
 			}
 			catch (FileNotFoundException e)
 			{
-				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除（。。知道不行还点我，再点戳你哦）", Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, "未打开文件或文件不存在！请先打开一个文件或检查文件是否被删除", Toast.LENGTH_LONG).show();
 			}
 			catch (IOException e)
 			{
