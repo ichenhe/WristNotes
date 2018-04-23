@@ -148,8 +148,8 @@ public class filetodoAct extends Activity
             {
                 helperr = new JSONObject(helper.helper);
                 todo = new ArrayList<String>(Arrays.asList(helper.helpq));
-                img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0));
-                hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", "", "", ""));
+                img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
+                hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", "", "", "", ""));
                 title.setText("帮助");
             }
             catch(Exception e)

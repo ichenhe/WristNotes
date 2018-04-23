@@ -30,8 +30,8 @@ public class MainActivity extends Activity
     //filename:最后打开文件名:...0学习文档
     //filepath:最后打开文件路径:1.txt
     //light:亮度:3
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    static SharedPreferences sharedPreferences;
+    static SharedPreferences.Editor editor;
 
     //外部-input
     public static String inputtitle = "";
@@ -462,6 +462,8 @@ public class MainActivity extends Activity
         else if(status == 2)
         {
             autoScoll = 0;
+            editor.putInt("autoScoll", 0);
+            editor.commit();
             mainLeft.setText("◀");
             mainRight.setText("▶");
             autoReadHandler.removeCallbacks(autoReadRunnable);
@@ -478,7 +480,7 @@ public class MainActivity extends Activity
     
 	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 10 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
 		{
 			try
 			{

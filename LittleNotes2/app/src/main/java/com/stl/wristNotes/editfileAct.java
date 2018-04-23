@@ -50,9 +50,8 @@ public class editfileAct extends Activity
 		{
 			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
-        ((ScrollView)findViewById(R.id.editfileScrollView1)).smoothScrollTo(0, MainActivity.mainScrollView.getScrollY());
-	}
-	
+    }
+    
 	public void editfileButton1(View view)
 	{
 		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
@@ -88,6 +87,7 @@ public class editfileAct extends Activity
 			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
 	}
+    
 	public void editfileButton2(View view)
 	{
 		int po = editfileEdit.getSelectionStart();
@@ -96,4 +96,16 @@ public class editfileAct extends Activity
 		((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editfileAct.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 	}
 
+    //跳
+    public void editfileButton3(View view)
+    {
+        ((ScrollView)findViewById(R.id.editfileScrollView1)).smoothScrollTo(0, MainActivity.mainScrollView.getScrollY());
+        editfileButton4(findViewById(R.id.editfileTextView1));
+    }
+    
+    //关
+    public void editfileButton4(View view)
+    {
+        findViewById(R.id.editfileRelativeLayout).setVisibility(view.GONE);
+    }
 }
