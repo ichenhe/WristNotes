@@ -480,7 +480,7 @@ public class MainActivity extends Activity
     
 	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
+		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
 		{
 			try
 			{

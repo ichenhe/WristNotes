@@ -31,7 +31,7 @@ public class helpAct extends Activity
 		else if(MainActivity.helpor == 5)
 		{
 			helptitel.setText("蓝牙教程");
-			helptext.setText(Html.fromHtml("<b>教程作者：Aries小痕，欢迎关注他的B站账号~</b><br/><br/><b>一、准备工作</b><br/>1. 首先确认手机和手表已正常配对，手机设置的蓝牙设置里已显示你的手表。<br/>2. 打开tic助手，确认已和手表连接。<br/><br/><b>二、开始蓝牙传输</b><br/>1. 打开文件浏览器，找到准备好的txt文件，长按并在菜单中选择共享（分享）选项。<br/>2. 分享中选择蓝牙选项<br/>3. 选择你的手表<br/>4. 开始传输，同时手表会产生提示，在手表中点击接收<br/>5. 等待文件传输成功后，用小纸条打开即可。文件位置在/Bluetooth文件夹"));
+			helptext.setText(Html.fromHtml("<b>教程作者：Aries小痕，欢迎关注他的B站账号~<br/><br/>注：只有TicWatch可以使用蓝牙传输文件，Android Wear设备请使用FTP等</b><br/><br/><b>一、准备工作</b><br/>1. 首先确认手机和手表已正常配对，手机设置的蓝牙设置里已显示你的手表。<br/>2. 打开tic助手，确认已和手表连接。<br/><br/><b>二、开始蓝牙传输</b><br/>1. 打开文件浏览器，找到准备好的txt文件，长按并在菜单中选择共享（分享）选项。<br/>2. 分享中选择蓝牙选项<br/>3. 选择你的手表<br/>4. 开始传输，同时手表会产生提示，在手表中点击接收<br/>5. 等待文件传输成功后，用小纸条打开即可。文件位置在/Bluetooth文件夹"));
 			MainActivity.helpor = 1;
 		}
         else if(MainActivity.helpor == 6)

@@ -59,6 +59,7 @@ public class menuAct extends Activity
             @Override
             public void onClick(View p1)
             {
+                //Toast.makeText(ctx, p1.getHeight() + "", Toast.LENGTH_SHORT).show();
                 if(MainActivity.cho == 2 || MainActivity.cho == 3 || MainActivity.cho == 4 || MainActivity.cho == 6)
                 {
                     MainActivity.cho = 0;
@@ -156,26 +157,31 @@ public class menuAct extends Activity
 
         if(MainActivity.cho != 7 && MainActivity.cho != 8 && MainActivity.cho != 0 && sharedPreferences.getString("function", "00000").split("")[3].equals("0"))
         {
-            tip = 2;
-            final View headView = infla.inflate(R.layout.widget_newfunction, null);
-            listView.addHeaderView(headView, null, true);
-
-            ((TextView) findViewById(R.id.functiontext)).setText("点击上方标题栏可以回到上一层喵~");
-            LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
-            button.setClickable(true);
-            button.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View p1)
+            final View menuClickBg = findViewById(R.id.menuClickBg);
+            final View menuClickBu = findViewById(R.id.menuClickBu);
+            
+            ((Button)menuClickBg.findViewById(R.id.clickBg1)).getLayoutParams().height = 0;
+            ((Button)menuClickBg.findViewById(R.id.clickBg2)).getLayoutParams().height = 79;//title高度
+            
+            ((TextView)menuClickBu.findViewById(R.id.clickBu2)).setText("点击上方标题栏\n可以回到上一层喵~");
+            
+            menuClickBg.setVisibility(View.VISIBLE);
+            menuClickBu.setVisibility(View.VISIBLE);
+            
+            menuClickBu.findViewById(R.id.clickBu3).setOnClickListener(new View.OnClickListener()
                 {
-                    listView.removeHeaderView(headView);
-                    String[] function = sharedPreferences.getString("function", "00000").split("");
-                    function[3] = "1";
-                    editor.putString("function", MainActivity.join(function, ""));
-                    editor.commit();
-                    tip = 1;
-                }
-            });
+                    @Override
+                    public void onClick(View p1)
+                    {
+                        String[] function = sharedPreferences.getString("function", "00000").split("");
+                        function[3] = "1";
+                        editor.putString("function", MainActivity.join(function, ""));
+                        editor.commit();
+                        
+                        menuClickBg.setVisibility(View.GONE);
+                        menuClickBu.setVisibility(View.GONE);
+                    }
+                });
         }
 
         listView.setAdapter(adapter);
@@ -471,6 +477,7 @@ public class menuAct extends Activity
         });
     }
 
+    
     private String mima()
     {
         if(sharedPreferences.getString("password", "").equals(""))

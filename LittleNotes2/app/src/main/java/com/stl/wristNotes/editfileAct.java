@@ -16,6 +16,8 @@ public class editfileAct extends Activity
 	EditText editfileEdit = null;
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
+    
+    ScrollView editScroll;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -27,6 +29,7 @@ public class editfileAct extends Activity
 		sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 		editor = sharedPreferences.edit();
 
+        editScroll = (ScrollView)findViewById(R.id.editfileScrollView1);
 		editfileEdit = (EditText) findViewById(R.id.editfileEdit);
 		editfileEdit.clearFocus();
 		try
@@ -50,6 +53,10 @@ public class editfileAct extends Activity
 		{
 			Toast.makeText(ctx, "外置储存不可用！。。顺便说一句是我搞坏的呦╮(ˉ▽ˉ)╭嘻嘻嘻", Toast.LENGTH_LONG).show();
 		}
+        
+        //editScroll.fullScroll(View.FOCUS_UP);
+        //editScroll.smoothScrollTo(0, 0);
+        //if(MainActivity.mainScrollView.getScrollY() < 50) editfileButton4(findViewById(R.id.editfileTextView1));
     }
     
 	public void editfileButton1(View view)
@@ -99,7 +106,13 @@ public class editfileAct extends Activity
     //跳
     public void editfileButton3(View view)
     {
-        ((ScrollView)findViewById(R.id.editfileScrollView1)).smoothScrollTo(0, MainActivity.mainScrollView.getScrollY());
+        double wH = ((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 2;
+        double mh = MainActivity.mainScrollView.getScrollY();
+        double mH = MainActivity.mainScrollView.getMeasuredHeight();
+        double eH = editScroll.getMeasuredHeight();
+        double tH = findViewById(R.id.editfileTextView2).getHeight();
+        editScroll.smoothScrollTo(0, (int)Math.round((mh + wH - 50) * (eH - tH - 35 + 1.5) / (mH - 100) - wH + tH - 20));
+        //Toast.makeText(ctx, editScroll.getScrollY() + "", Toast.LENGTH_SHORT).show();
         editfileButton4(findViewById(R.id.editfileTextView1));
     }
     

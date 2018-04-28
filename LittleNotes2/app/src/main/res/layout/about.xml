@@ -39,7 +39,7 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:paddingBottom="15dp"
-			android:text="当前版本1.50(82)"/>
+			android:text="当前版本1.60(101)"/>
 
 		<Button
 			style="@style/button"

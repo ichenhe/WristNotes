@@ -18,7 +18,8 @@
 				android:layout_height="wrap_content"
 				android:text="编辑文档"
 				android:layout_width="match_parent"
-				style="@style/titleText"/>
+				style="@style/titleText"
+				android:id="@+id/editfileTextView2"/>
 
 			<EditText
 				android:layout_height="match_parent"
@@ -75,8 +76,8 @@
 		android:layout_width="wrap_content"
 		android:orientation="horizontal"
 		android:layout_above="@id/editfileLinearLayout1"
-		android:background="#242424"
-		android:paddingLeft="30dp"
+		android:background="#090909"
+		android:paddingLeft="35dp"
 		android:paddingRight="15dp"
 		android:id="@+id/editfileRelativeLayout">
 
@@ -87,7 +88,6 @@
 			android:layout_alignParentRight="true"
 			android:id="@+id/editfileTextView1"
 			android:gravity="center"
-			android:textStyle="bold"
 			android:onClick="editfileButton4"/>
 
 		<TextView
@@ -99,7 +99,7 @@
 			android:textSize="12sp"
 			android:onClick="editfileButton3"
 			android:layout_alignParentLeft="true"
-			android:paddingRight="10dp"
+			android:paddingRight="15dp"
 			android:paddingLeft="10dp"/>
 
 	</RelativeLayout>
