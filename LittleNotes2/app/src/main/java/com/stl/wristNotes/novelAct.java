@@ -104,26 +104,41 @@ public class novelAct extends Activity
 		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
 		if(sharedPreferences.getString("function", "00000").split("")[4].equals("0"))//功能提醒
 		{
-			final View headView = infla.inflate(R.layout.widget_newfunction, null);
-			listView.addHeaderView(headView, null, true);
-            isHeadview = 2;
+            final View menuClickBg = findViewById(R.id.novelClickBg);
+            final View menuClickBu = findViewById(R.id.novelClickBu);
 
-			((TextView)findViewById(R.id.functiontext)).setText("长按小说查看更多选项喵~");
-			LinearLayout button = (LinearLayout) headView.findViewById(R.id.functionbutton);
-    	    button.setClickable(true);
-			button.setOnClickListener(new View.OnClickListener()
-				{
-					@Override
-					public void onClick(View p1)
-					{
-						listView.removeHeaderView(headView);
-						isHeadview = 1;
-						String[] function = sharedPreferences.getString("function", "00000").split("");
-						function[4] = "1";
-						editor.putString("function", MainActivity.join(function, ""));
-						editor.commit();
-					}
-				});
+            ((Button)menuClickBg.findViewById(R.id.clickBg1)).getLayoutParams().height = 79;
+            ((Button)menuClickBg.findViewById(R.id.clickBg2)).getLayoutParams().height = 100;
+            ((LinearLayout)menuClickBu.findViewById(R.id.clickBu1)).setPadding(0, 79, 0, 0);
+
+            ((TextView)menuClickBu.findViewById(R.id.clickBu2)).setText("长按小说查看更多选项喵~");
+
+            menuClickBg.setVisibility(View.VISIBLE);
+            menuClickBu.setVisibility(View.VISIBLE);
+
+            menuClickBu.findViewById(R.id.clickBu3).setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View p1)
+                    {
+                        String[] function = sharedPreferences.getString("function", "00000").split("");
+                        function[4] = "1";
+                        editor.putString("function", MainActivity.join(function, ""));
+                        editor.commit();
+
+                        menuClickBg.setVisibility(View.GONE);
+                        menuClickBu.setVisibility(View.GONE);
+                    }
+                });
+                
+            menuClickBu.findViewById(R.id.clickBu4).setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View p1)
+                    {
+                        startActivity(new Intent(ctx, settileAct.class));
+                    }
+                });
 		}
 		listView.addFooterView(footView, null, true);
 		listView.setAdapter(simpleAdapter);

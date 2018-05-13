@@ -70,9 +70,9 @@ public class filetodoAct extends Activity
         }
         if(po == 0 || po == 3)//文件属性
         {
-            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "打开为...", "分享...", "删除", "属性"));
-            img = new ArrayList<Integer>(Arrays.asList(R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0));
-            hint = new ArrayList<String>(Arrays.asList("", "", "收藏至快速访问", "在当前目录下新建", "查找其他应用打开", "分享文件至其他应用", "", ""));
+            todo = new ArrayList<String>(Arrays.asList("用隐私模式打开", "用小说模式打开", "收藏该文件", "新建...", "复制", "剪贴", "打开为...", "分享...", "删除", "属性"));
+            img = new ArrayList<Integer>(Arrays.asList(R.drawable.txtfile, R.drawable.novelfile, R.drawable.star, 0, 0, 0, 0, 0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("", "", "收藏至快速访问", "在当前目录下新建", "", "", "查找其他应用打开", "分享文件至其他应用", "", ""));
             if(po == 3)
             {
                 todo.set(2, "取消收藏");
@@ -82,9 +82,9 @@ public class filetodoAct extends Activity
         }
         else if(po == 1 || po == 4)//文件夹属性
         {
-            todo = new ArrayList<String>(Arrays.asList(new String[]{"收藏该文件夹", "新建...", "删除整个文件夹"}));
-            img = new ArrayList<Integer>(Arrays.asList(R.drawable.star, 0, 0));
-            hint = new ArrayList<String>(Arrays.asList("收藏至快速访问", "在选中目录下新建", ""));
+            todo = new ArrayList<String>(Arrays.asList("收藏该文件夹", "新建...", "复制", "剪贴", "删除整个文件夹"));
+            img = new ArrayList<Integer>(Arrays.asList(R.drawable.star, 0, 0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("收藏至快速访问", "在选中目录下新建", "", "", ""));
             if(po == 4)
             {
                 todo.set(0, "取消收藏");
@@ -163,6 +163,13 @@ public class filetodoAct extends Activity
             img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0));
             hint = new ArrayList<String>(Arrays.asList("", "", "", "", ""));
             title.setText("自动翻页速度");
+        }
+        else if(po == 9)
+        {
+            todo = new ArrayList<String>(Arrays.asList("复制", "剪切", "删除"));
+            img = new ArrayList<Integer>(Arrays.asList(0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("", "", ""));
+            title.setText("多选操作");
         }
         adapter = new fAdapter(todo, img, hint, po, getLayoutInflater());
         listView.setAdapter(adapter);
@@ -273,6 +280,20 @@ public class filetodoAct extends Activity
                             intent.putExtra("po", 6);
                             startActivity(intent);
 						}
+                        else if(s.equals("复制"))
+                        {
+                            fileselectAct.fileCopyClip = new String[]{MainActivity.filedopath + MainActivity.filedofile};
+                            fileselectAct.fileCopyClipMode = 1;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
+                        else if(s.equals("剪贴"))
+                        {
+                            fileselectAct.fileCopyClip = new String[]{MainActivity.filedopath + MainActivity.filedofile};
+                            fileselectAct.fileCopyClipMode = 2;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
                         else
                         {
                             Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
@@ -442,6 +463,21 @@ public class filetodoAct extends Activity
                         menuAct.menutip[3] = new String[]{MainActivity.autoScollSec + "秒"};
                         ((BaseAdapter)menuAct.adapter).notifyDataSetChanged();
                         finish();
+                    }
+                    else if(po == 9)
+                    {
+                        if(position == 0)//复制
+                        {
+                            
+                        }
+                        else if(position == 1)//粘贴
+                        {
+                            
+                        }
+                        else if(position == 2)//删除
+                        {
+                            
+                        }
                     }
                 }
             }

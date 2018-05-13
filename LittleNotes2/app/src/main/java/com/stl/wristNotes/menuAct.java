@@ -86,10 +86,10 @@ public class menuAct extends Activity
 
         if(MainActivity.cho == 0)
         {
-            menuList = new String[]{"打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于"};
-            menuimg = new int[]{R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
-            menubut = new int[]{-1, -1, -1, -1, -1, -1, -1, -1};
-            menutip = new String[][]{{""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}};
+            menuList = new String[]{"打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "会员购", "帮助", "关于"};
+            menuimg = new int[]{R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.favicon, R.drawable.helps, R.drawable.about};
+            menubut = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1};
+            menutip = new String[][]{{""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}};
             menutitle.setText("设置");
         }
         else if(MainActivity.cho == 1)
@@ -110,10 +110,10 @@ public class menuAct extends Activity
         }
         else if(MainActivity.cho == 3)
         {
-            menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "重置新功能提示", "密码保护", "更改密码", "密码入口伪装"};
-            menuimg = new int[]{0, 0, 0, 0, 0, 0};
-            menubut = new int[]{getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("password", "", ""), 2, 2};
-            menutip = new String[][]{{"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {"重新显示新功能提示"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
+            menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
+            menuimg = new int[]{0, 0, 0, 0, 0, 0, 0};
+            menubut = new int[]{getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("displayTime", "关闭", "关闭"), getState("password", "", ""), 2, 2};
+            menutip = new String[][]{{"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {"重新显示新功能提示"}, {"已关闭", "已开启\n点击隐藏文字后屏幕会显示当前时间"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
             menutitle.setText("偏好设置");
         }
         else if(MainActivity.cho == 5)
@@ -182,6 +182,16 @@ public class menuAct extends Activity
                         menuClickBu.setVisibility(View.GONE);
                     }
                 });
+                
+
+            menuClickBu.findViewById(R.id.clickBu4).setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View p1)
+                    {
+                        startActivity(new Intent(ctx, settileAct.class));
+                    }
+                });
         }
 
         listView.setAdapter(adapter);
@@ -222,6 +232,12 @@ public class menuAct extends Activity
                     menuintent = new Intent(ctx, menuAct.class);
                     startActivity(menuintent);
                     finish();
+                }
+                else if(s.equals("会员购"))
+                {
+                    MainActivity.helpor = 7;
+                    Intent intent = new Intent(ctx, helpAct.class);
+                    startActivity(intent);
                 }
                 else if(s.equals("帮助"))
                 {
@@ -344,17 +360,37 @@ public class menuAct extends Activity
                     if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))
                     {
                         editor.putString("startHideText", "关闭");
-                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
-                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        //((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        //((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
                         menubut[1] = 0;
                         ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else
                     {
                         editor.putString("startHideText", "开启");
+                        //((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(true);
+                        //((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[1] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    editor.commit();
+                }
+                else if(s.equals("隐藏文字显示时间"))
+                {
+                    if(sharedPreferences.getString("displayTime", "关闭").equals("开启"))
+                    {
+                        editor.putString("displayTime", "关闭");
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[3] = 0;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    else
+                    {
+                        editor.putString("displayTime", "开启");
                         ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(true);
                         ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
-                        menubut[1] = 1;
+                        menubut[3] = 1;
                         ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     editor.commit();
@@ -623,6 +659,10 @@ class mAdapter extends BaseAdapter
             text.setVisibility(View.VISIBLE);
             text.setTextSize(Math.round((Integer.valueOf(mData[position]).intValue() - 8) * 1.5 + 22));
 		}
+        else if(MainActivity.cho == 0)
+        {
+            layoutview.findViewById(R.id.menulistred).setVisibility(View.VISIBLE);
+        }
 
 
         return layoutview;

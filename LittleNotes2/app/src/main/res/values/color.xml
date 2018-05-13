@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
 	<color name="gray">#333333</color><!--白色 -->
+    <color name="mbackground">#303030</color>
+    <color name="mbackgroundgray">#606060</color>
 </resources>

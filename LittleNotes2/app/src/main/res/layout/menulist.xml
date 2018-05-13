@@ -9,8 +9,8 @@
 	android:descendantFocusability="blocksDescendants">
 
 	<RelativeLayout
-		android:layout_height="52dp"
-		android:layout_width="52dp"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
 		android:id="@+id/menulistRelativeLayout1"
 		android:layout_centerVertical="true">
 
@@ -31,11 +31,13 @@
 			android:background="@drawable/shape_black"/>
 
 		<Button
-			android:layout_height="10dp"
-			android:layout_width="10dp"
-			android:layout_alignParentRight="true"
-			android:layout_alignParentTop="true"
-			android:background="@drawable/shapr_redpoint"/>
+			android:layout_height="8dp"
+			android:layout_width="8dp"
+			android:background="@drawable/shapr_redpoint"
+			android:layout_marginTop="5dp"
+			android:visibility="gone"
+			android:id="@+id/menulistred"
+			android:layout_marginLeft="39dp"/>
 
 	</RelativeLayout>
 
@@ -44,7 +46,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="54dp"
 		android:layout_alignParentRight="true"
-		android:gravity="center">
+		android:gravity="right|center">
 
 		<ImageView
 			android:id="@+id/menulistgo"
@@ -62,6 +64,15 @@
 			android:clickable="false"
 			android:layout_centerInParent="true"/>
 
+		<CheckBox
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			android:layout_centerVertical="true"
+			android:visibility="gone"
+			android:id="@+id/menulistcb"
+			android:focusable="false"
+			android:clickable="false"/>
+
 	</RelativeLayout>
 
 	<LinearLayout
@@ -74,7 +85,8 @@
 		android:minHeight="54dp"
 		android:paddingBottom="4dp"
 		android:paddingTop="4dp"
-		android:paddingLeft="2dp">
+		android:paddingLeft="2dp"
+		android:layout_centerVertical="true">
 
 		<TextView
 			android:id="@+id/menulistText"

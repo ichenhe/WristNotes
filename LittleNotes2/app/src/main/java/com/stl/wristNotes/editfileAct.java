@@ -56,7 +56,7 @@ public class editfileAct extends Activity
         
         //editScroll.fullScroll(View.FOCUS_UP);
         //editScroll.smoothScrollTo(0, 0);
-        //if(MainActivity.mainScrollView.getScrollY() < 50) editfileButton4(findViewById(R.id.editfileTextView1));
+        if(MainActivity.mainScrollView.getScrollY() < 50) editfileButton4(findViewById(R.id.editfileTextView1));
     }
     
 	public void editfileButton1(View view)

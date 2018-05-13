@@ -85,11 +85,11 @@ public class MainActivity extends Activity
 	BroadcastReceiver batteryLevelReceiver;
 	public static int batteryLevel;//电量
 	IntentFilter batteryLevelFilter;
-	
+
 	int scrollLength;
-    
-    
-	
+
+
+
 	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -118,18 +118,18 @@ public class MainActivity extends Activity
         {
             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
         }
-        catch (JSONException e)
+        catch(JSONException e)
         {
             Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装喵", Toast.LENGTH_LONG).show();
         }
-		
+
 		//主界面的控件
         mainLeft = (Button) findViewById(R.id.mainButtonLeft);
         mainRight = (Button) findViewById(R.id.mainButtonRight);
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
 		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
-		
+
         int l = light * 45;
         if(l > 255) l = 255;
 		mainLeft.setTextColor(Color.argb(l, 255, 255, 255));
@@ -137,29 +137,28 @@ public class MainActivity extends Activity
 		mainHint.setTextColor(Color.argb(l, 255, 255, 255));
 
 		//从外部打开，调用这里，获取文件路径及文件大小判断等
-		//暂时在这里测试获取文件编码
         Intent intent = getIntent();
         String action = intent.getAction();
-        if (intent.ACTION_VIEW.equals(action))
+        if(intent.ACTION_VIEW.equals(action))
         {
             filepath = intent.getDataString()/*.replaceAll("%(?![0-9a-fA-F]{2})", "%25")*/;
             try
             {
                 filepath = URLDecoder.decode(filepath, "UTF-8");
             }
-            catch (UnsupportedEncodingException e)
+            catch(UnsupportedEncodingException e)
             {
                 Toast.makeText(ctx, "路径解码错误。。我也不知道怎么办", Toast.LENGTH_LONG).show();
             }
             String[] filet1 = filepath.split("/");
             filepath = "/";
-            for (int i = 3; i < filet1.length - 1; i++)
+            for(int i = 3; i < filet1.length - 1; i++)
             {
                 filepath += filet1[i] + "/";
             }
             filename = filet1[filet1.length - 1];
 
-            if (new File(filepath + filename).length() < 92160)
+            if(new File(filepath + filename).length() < 92160)
             {
                 editor.putString("filename", filename);
                 editor.putString("filepath", filepath);
@@ -171,7 +170,7 @@ public class MainActivity extends Activity
                 fileOpen.bigFile(ctx, sharedPreferences, editor, filepath, filename);
                 mode = 1;
             }
-			Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
+			//Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
 			editor.putInt("mode", mode);
 			editor.commit();
         }
@@ -191,25 +190,25 @@ public class MainActivity extends Activity
 				editor.putString("function", "00000");
 				editor.commit();
 			}
-            if (sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
+            if(sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
             {
                 Intent startint = new Intent(ctx, updated.class);
                 startActivity(startint);
             }
         }
-        catch (PackageManager.NameNotFoundException e)
+        catch(PackageManager.NameNotFoundException e)
         {
 			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
-        if (mode == 0)    //不为小说模式隐藏按钮和提示信息
+        if(mode == 0)    //不为小说模式隐藏按钮和提示信息
         {
             mainLeft.setVisibility(View.INVISIBLE);
             mainRight.setVisibility(View.INVISIBLE);
             mainHint.setVisibility(View.INVISIBLE);
             autoReadChange(2);
         }
-        else if (mode == 1)
+        else if(mode == 1)
         {
             try
             {
@@ -218,11 +217,11 @@ public class MainActivity extends Activity
                 Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
             }
-            catch (JSONException e)
+            catch(JSONException e)
             {
                 Toast.makeText(ctx, "json未知错误！", Toast.LENGTH_SHORT).show();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Toast.makeText(ctx, "未知错误！", Toast.LENGTH_SHORT).show();
             }
@@ -231,12 +230,12 @@ public class MainActivity extends Activity
 
         try
         {
-            if (!new File(filepath + filename).exists())    //文件不存在时
+            if(!new File(filepath + filename).exists())    //文件不存在时
             {
                 textView.setText("\n\n你当前没有打开任何文档\n长按这里进入菜单，点击文档选择可以打开文档哦\n\n\n");
                 textView.setTextColor(Color.argb(255, 203, 203, 203));
                 isalpha = 0;
-                if (!new File(filepath).exists())
+                if(!new File(filepath).exists())
                 {
                     Intent startint = new Intent(ctx, startAct.class);
                     startActivity(startint);
@@ -246,19 +245,36 @@ public class MainActivity extends Activity
             }
             else
             {
-                if (mode == 0) textView.setText(fileOpen.fileReader(filepath + filename));
+                if(mode == 0)
+                {
+                    textView.setText("正在打开文件...\n请稍后喵...");
+                    new Thread(new Runnable() {
+                            @Override
+                            public void run()
+                            {
+                                try
+                                {
+                                    textView.setText(fileOpen.fileReader(filepath + filename));
+                                }
+                                catch(Exception e)
+                                {
+                                    textView.setText("打开文件错误。。请重试试试");
+                                }
+                            }
+                        }).start();
+                }
             }
         }
-        catch (Exception e)
+        catch(Exception e)
         {
             Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_SHORT).show();
         }
 
-        if (sharedPreferences.getString("startHideText", "关闭").equals("开启"))    //开启应用隐藏文字
+        if(sharedPreferences.getString("startHideText", "关闭").equals("开启"))    //开启应用隐藏文字
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if (mode == 1)
+			if(mode == 1)
 			{
 				mainLeft.setVisibility(View.INVISIBLE);
 			    mainRight.setVisibility(View.INVISIBLE);
@@ -271,9 +287,9 @@ public class MainActivity extends Activity
             isalpha = 0;
         }
 
-        if (!sharedPreferences.getString("password", "").equals(""))    //有密码时
+        if(!sharedPreferences.getString("password", "").equals(""))    //有密码时
         {
-            if (sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
+            if(sharedPreferences.getString("passtext", "").equals("  再次输入  ") || sharedPreferences.getString("passtext", "").equals("  设定新密码  ") || sharedPreferences.getString("passtext", "").equals("  输入原密码  ") || sharedPreferences.getString("passtext", "").equals(" 输入原密码 "))
             {
                 pass = 1;
                 editor.putString("passtext", "输入密码");
@@ -301,32 +317,48 @@ public class MainActivity extends Activity
 		{
             if(sharedPreferences.getString("function", "00000").split("")[1].equals("0") && mode == 1)
             {
-                LayoutInflater infla = LayoutInflater.from(this);
-                final View view = infla.inflate(R.layout.widget_newfunction, null);
+                final View menuClickBg = findViewById(R.id.mainClickBg);
+                final View menuClickBu = findViewById(R.id.mainClickBu);
 
-                ((TextView)view.findViewById(R.id.functiontext)).setText("点击上方标题栏可以查看更多文件选项喵~");
-                LinearLayout button = (LinearLayout) view.findViewById(R.id.functionbutton);
-                button.setClickable(true);
-                button.setOnClickListener(new View.OnClickListener()
+                ((Button)menuClickBg.findViewById(R.id.clickBg1)).getLayoutParams().height = 0;
+                ((Button)menuClickBg.findViewById(R.id.clickBg2)).getLayoutParams().height = 79;//title高度
+
+                ((TextView)menuClickBu.findViewById(R.id.clickBu2)).setText("点击上方标题栏\n可以查看更多阅读选项喵~");
+
+                menuClickBg.setVisibility(View.VISIBLE);
+                menuClickBu.setVisibility(View.VISIBLE);
+
+                menuClickBu.findViewById(R.id.clickBu3).setOnClickListener(new View.OnClickListener()
                     {
                         @Override
                         public void onClick(View p1)
                         {
-                            mainLinearLayout.removeView(view);
                             String[] function = sharedPreferences.getString("function", "00000").split("");
                             function[1] = "1";
                             editor.putString("function", MainActivity.join(function, ""));
                             editor.commit();
+
+                            menuClickBg.setVisibility(View.GONE);
+                            menuClickBu.setVisibility(View.GONE);
                         }
                     });
-                mainLinearLayout.addView(view, 1);
+
+
+                menuClickBu.findViewById(R.id.clickBu4).setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View p1)
+                        {
+                            startActivity(new Intent(ctx, settileAct.class));
+                        }
+                    });
             }
 		}
 		catch(Exception e)
 		{
 			Toast.makeText(ctx, "提示信息显示错误..", Toast.LENGTH_LONG).show();
 		}
-        
+
 		autoReadRunnable = new Runnable(){
             @Override
             public void run()
@@ -346,13 +378,13 @@ public class MainActivity extends Activity
                 autoReadHandler.postDelayed(this, 1000);
             }  
         };
-        
+
         if(autoScoll == 1)
         {
             autoReadChange(3);
             if(isalpha == 0) autoReadChange(1);
         }
-        
+
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
@@ -477,10 +509,10 @@ public class MainActivity extends Activity
             autoReadHandler.removeCallbacks(autoReadRunnable);
         }
     }
-    
+
 	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
 	{
-		if (((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
+		if(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
 		{
 			try
 			{
@@ -488,7 +520,7 @@ public class MainActivity extends Activity
 				List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
 				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-				textView.setText("");
+				//textView.setText("");
 				textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
 				mainScrollView.fullScroll(View.FOCUS_UP);
 				editor.putString("novelList", novellist.toString());
@@ -496,11 +528,11 @@ public class MainActivity extends Activity
 				mainHint.setText(getHintText(sharedPreferences));
 				//batteryLevel();
 			}
-			catch (JSONException e)
+			catch(JSONException e)
 			{
 				Toast.makeText(ctx, "json错误" + e.toString(), Toast.LENGTH_SHORT).show();
 			}
-			catch (Exception e)
+			catch(Exception e)
 			{
 				Toast.makeText(ctx, "错误" + e.toString(), Toast.LENGTH_SHORT).show();
 			}
@@ -513,19 +545,24 @@ public class MainActivity extends Activity
 
     public void textClick()
     {
-        if (pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
+        if(pass == 1 && sharedPreferences.getString("touchHideText", "关闭").equals("开启"))
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if (mode == 1)
+			if(mode == 1)
 			{
 				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
 				MainActivity.mainRight.setVisibility(View.INVISIBLE);
 				MainActivity.mainHint.setVisibility(View.INVISIBLE);
 			}
             if(autoScoll == 1) autoReadChange(3);
+            if(sharedPreferences.getString("displayTime", "关闭").equals("开启"))
+            {
+                ((TextView)findViewById(R.id.mainTime)).setText(new SimpleDateFormat("HH:mm").format(new Date()));
+                findViewById(R.id.mainTime).setVisibility(View.VISIBLE);
+            }
         }
-        else if (pass == 0)
+        else if(pass == 0)
         {
             Intent passwordint = new Intent(ctx, passwordAct.class);
             startActivity(passwordint);
@@ -534,9 +571,9 @@ public class MainActivity extends Activity
 
     public void textLongClick()
     {
-        if (pass == 1)//无密码或已解锁
+        if(pass == 1)//无密码或已解锁
         {
-            if (isalpha == 0)//调出菜单
+            if(isalpha == 0)//调出菜单
             {
                 cho = 0;
                 Intent menuint = new Intent(ctx, menuAct.class);
@@ -546,13 +583,17 @@ public class MainActivity extends Activity
             {
                 textView.setTextColor(Color.argb(light * 40, 255, 255, 255));
                 isalpha = 0;
-				if (mode == 1)
+				if(mode == 1)
 				{
 					MainActivity.mainLeft.setVisibility(View.VISIBLE);
 					MainActivity.mainRight.setVisibility(View.VISIBLE);
 					MainActivity.mainHint.setVisibility(View.VISIBLE);
 				}
                 if(autoScoll == 3) autoReadChange(1);
+                if(sharedPreferences.getString("displayTime", "关闭").equals("开启"))
+                {
+                    findViewById(R.id.mainTime).setVisibility(View.GONE);
+                }
             }
         }
         else//密码未解锁
@@ -571,12 +612,12 @@ public class MainActivity extends Activity
 			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
 			return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
 		}
-		catch (JSONException e)
+		catch(JSONException e)
 		{
 			return "";
 		}
 	}
-	
+
     public static String join(String[] strs, String splitter)
     {
 		if(strs.length != 0)
@@ -598,7 +639,7 @@ public class MainActivity extends Activity
 
 	public void batterylevel()
 	{
-        if (batteryLevelReceiver == null)
+        if(batteryLevelReceiver == null)
         {
             batteryLevelReceiver = new BroadcastReceiver()
             {
@@ -607,11 +648,11 @@ public class MainActivity extends Activity
                     int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
                     int scale = intent.getIntExtra("scale", -1);//获得总电量
                     batteryLevel = -1;
-                    if (rawlevel >= 0 && scale > 0)
+                    if(rawlevel >= 0 && scale > 0)
                     {
                         batteryLevel = (rawlevel * 100) / scale;
                     }
-                    if (mode == 1)
+                    if(mode == 1)
                     {
                         mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " + batteryLevel + "%");
                     }
@@ -643,7 +684,7 @@ public class MainActivity extends Activity
 	{
 		super.onDestroy();
 		//销毁广播 
-		if (batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
+		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
 		//ctx.unregisterReceiver(this);
 	}
 
