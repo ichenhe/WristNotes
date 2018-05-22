@@ -190,6 +190,7 @@ public final class R {
         public static final int widget_title=0x7f030017;
     }
     public static final class string {
+        public static final int about_about=0x7f050002;
         public static final int app_name=0x7f050000;
         public static final int helptext=0x7f050001;
     }

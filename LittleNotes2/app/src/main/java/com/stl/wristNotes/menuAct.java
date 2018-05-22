@@ -102,10 +102,10 @@ public class menuAct extends Activity
         }
         else if(MainActivity.cho == 2)
         {
-            menuList = new String[]{"调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14), "主题选择"};
-            menuimg = new int[]{0, 0, R.drawable.theme};
-            menubut = new int[]{2, 2, -1};
-            menutip = new String[][]{{"更改文字亮度"}, {"更改文字大小"}, {""}};
+            menuList = new String[]{"袖口模式", "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14)};
+            menuimg = new int[]{0, 0, 0, R.drawable.theme};
+            menubut = new int[]{getState("cuffMode", "关闭", "关闭"), 2, 2, -1};
+            menutip = new String[][]{{"已关闭", "已开启\n只在右半边显示"}, {"更改文字亮度"}, {"更改文字大小"}, {""}};
             menutitle.setText("显示设置");
         }
         else if(MainActivity.cho == 3)
@@ -508,6 +508,29 @@ public class menuAct extends Activity
                     menuintent = new Intent(ctx, filetodoAct.class);
                     menuintent.putExtra("po", 8);
                     startActivity(menuintent);
+                }
+                else if(s.equals("袖口模式"))
+                {
+                    if(sharedPreferences.getString("cuffMode", "开启").equals("开启"))
+                    {
+                        editor.putString("cuffMode", "关闭");
+                        MainActivity.cuffMode = "关闭";
+                        ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
+                        menubut[0] = 0;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    else if(sharedPreferences.getString("cuffMode", "开启").equals("关闭"))
+                    {
+                        editor.putString("cuffMode", "开启");
+                        MainActivity.smartScroll = "开启";
+                        ((ToggleButton)  v.findViewById(R.id.menulistswi)).setChecked(true);
+                        ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
+                        menubut[0] = 1;
+                        ((BaseAdapter)adapter).notifyDataSetChanged();
+                    }
+                    editor.commit();
+                    MainActivity.cuffModeChange(ctx);
                 }
             }
         });

@@ -43,7 +43,8 @@ public class fileselectAct extends Activity
     public static boolean sortReverse = false;
     public static boolean[] selectItem;
 
-    public static String[] fileCopyClip;
+    public static ArrayList<String> fileCopyClip;
+    public static ArrayList<String> fileCopyClipName;
     public static int fileCopyClipMode;
     //0无1复制2剪贴
 
@@ -63,6 +64,9 @@ public class fileselectAct extends Activity
 		View headView2 = infla.inflate(R.layout.widget_title, null);
 		fileselecttitle = (TextView) headView2.findViewById(R.id.title);
 		fileselectView.addHeaderView(headView2, null, true);
+        
+        sortRule = sharedPreferences.getInt("sortRule", 0);
+        sortReverse = sharedPreferences.getBoolean("sortReverse", false);
 
         if(MainActivity.filewillpath.equals("")) MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
         fileselecttitle.setText(MainActivity.filewillpath);
@@ -216,7 +220,7 @@ public class fileselectAct extends Activity
         filedo1.setClickable(true);
         filedo2.setClickable(true);
         filedo3.setClickable(true);
-        
+
         statusChange(ctx);
         headView.findViewById(R.id.filedo).setOnClickListener(null);
         filedo1.setOnClickListener(new View.OnClickListener()
@@ -236,6 +240,7 @@ public class fileselectAct extends Activity
                         else//选择1
                         {
                             doSelect = 1;
+                            fileselectView.scrollTo(0, 0);
                             filedo1.setBackground(ctx.getDrawable(R.drawable.bg_filedo_scl));
                             filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                             filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
@@ -251,6 +256,37 @@ public class fileselectAct extends Activity
                     }
                     else
                     {
+                        try
+                        {
+                            for(int i = 0; i < fileCopyClip.size(); i++)
+                            {
+                                if(!new File(fileCopyClip.get(i)).isDirectory())
+                                {
+                                    file.copyFile(new File(fileCopyClip.get(i)), new File(MainActivity.filewillpath + fileCopyClipName.get(i)));
+                                }
+                                else
+                                {
+                                    file.copyFolder(fileCopyClip.get(i), MainActivity.filewillpath + fileCopyClipName.get(i));
+                                }
+                                filelistToAdapter.add(0, fileCopyClipName.get(i));
+                            }
+                            for(int i = 0; i < fileCopyClip.size(); i++)
+                            {
+                                if(fileCopyClipMode == 2) file.deleteDir(new File(fileCopyClip.get(i)));
+                            }
+                            adapter.notifyDataSetChanged(); 
+                            Toast.makeText(ctx, "粘贴完成了喵~", Toast.LENGTH_SHORT).show();
+                        }
+                        catch(Exception e)
+                        {
+                            Toast.makeText(ctx, "粘贴失败，请检查原文件是否存在，或稍后重试喵", Toast.LENGTH_SHORT).show();
+                        }
+                        finally
+                        {
+                            fileCopyClip = new ArrayList<String>();
+                            fileCopyClipName = new ArrayList<String>();
+                            fileCopyClipMode = 0;
+                        }
                         statusChange(ctx);
                     }
                 }
@@ -272,6 +308,7 @@ public class fileselectAct extends Activity
                         else
                         {
                             doSelect = 2;
+                            fileselectView.scrollTo(0, 0);
                             filedo1.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                             filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_scl));
                             filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
@@ -288,6 +325,8 @@ public class fileselectAct extends Activity
                     }
                     else
                     {
+                        fileCopyClip = new ArrayList<String>();
+                        fileCopyClipName = new ArrayList<String>();
                         fileCopyClipMode = 0;
                         statusChange(ctx);
                     }
@@ -307,6 +346,7 @@ public class fileselectAct extends Activity
                     else//选中3
                     {
                         doSelect = 3;
+                        fileselectView.scrollTo(0, 0);
                         filedo1.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                         filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                         filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_scl));
@@ -367,16 +407,25 @@ public class fileselectAct extends Activity
                             filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
                             adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, selectItem);
                             fileselectView.setAdapter(adapter);
+                            
+                            editor.putInt("sortRule", sortRule);
+                            editor.commit();
                         }
                         else if(position == 4)//倒序
                         {
                             sortReverse = !sortReverse;
-                            filedoAdapter2.notifyDataSetChanged();
+                            doSelect = 0;
+                            filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
+                            filejt2.setVisibility(View.INVISIBLE);
+                            filedolist.setVisibility(View.GONE);
 
                             Arrays.sort(filelist, comparator);
                             filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
                             adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, selectItem);
                             fileselectView.setAdapter(adapter);
+                            
+                            editor.putBoolean("sortReverse", sortReverse);
+                            editor.commit();
                         }
                     }
                 }
@@ -492,17 +541,17 @@ public class fileselectAct extends Activity
             filedo1.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
             filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
             filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
-            
+
             ((ImageView) headView.findViewById(R.id.filedoimg1)).setImageResource(R.drawable.file_stage_new);
             ((ImageView) headView.findViewById(R.id.filedoimg2)).setImageResource(R.drawable.file_stage_sort);
             ((ImageView) headView.findViewById(R.id.filedoimg3)).setImageResource(R.drawable.file_stage_more);
             ((TextView) headView.findViewById(R.id.filedotext1)).setVisibility(View.GONE);
             ((TextView) headView.findViewById(R.id.filedotext2)).setVisibility(View.GONE);
             filedo3.setVisibility(View.VISIBLE);
-            
+
         }
     }
-    
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -558,8 +607,8 @@ public class fileselectAct extends Activity
             }
             else if(sortRule == 1)//类型
             {
-                String exten1 = "在";
-                String exten2 = "在";
+                String exten1 = "";
+                String exten2 = "";
                 if(o1.contains(".")) exten1 = o1.split("[.]")[o1.split("[.]").length - 1];
                 if(o2.contains(".")) exten1 = o2.split("[.]")[o2.split("[.]").length - 1];
 

@@ -23,6 +23,7 @@ import java.text.*;
 import java.util.*;
 import com.stl.wristNotes.method.*;
 import org.apache.http.*;
+import android.widget.Toolbar.*;
 //import com.mobvoi.android.gesture.*;
 
 public class MainActivity extends Activity
@@ -78,6 +79,8 @@ public class MainActivity extends Activity
     //自动翻页
     public static int autoScollSec = 0;
     static int autoScollNowSec = 0;
+    public static String cuffMode = "关闭";
+    
     static Handler autoReadHandler = new Handler();
     static Runnable autoReadRunnable;
 
@@ -112,6 +115,7 @@ public class MainActivity extends Activity
         autoScollSec = sharedPreferences.getInt("autoScollSec", 4);
         autoScoll = sharedPreferences.getInt("autoScoll", 0);
         autoScollNowSec = autoScollSec;
+        cuffMode = sharedPreferences.getString("cuffMode", "关闭");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
 		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
         try
@@ -201,6 +205,8 @@ public class MainActivity extends Activity
 			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
+        //cuffModeChange(ctx);//袖口模式
+        
         if(mode == 0)    //不为小说模式隐藏按钮和提示信息
         {
             mainLeft.setVisibility(View.INVISIBLE);
@@ -248,10 +254,11 @@ public class MainActivity extends Activity
                 if(mode == 0)
                 {
                     textView.setText("正在打开文件...\n请稍后喵...");
-                    new Thread(new Runnable() {
+                    runOnUiThread(new Runnable()
+                        {
                             @Override
                             public void run()
-                            {
+                            { 
                                 try
                                 {
                                     textView.setText(fileOpen.fileReader(filepath + filename));
@@ -261,7 +268,7 @@ public class MainActivity extends Activity
                                     textView.setText("打开文件错误。。请重试试试");
                                 }
                             }
-                        }).start();
+                        });
                 }
             }
         }
@@ -483,6 +490,18 @@ public class MainActivity extends Activity
         super.onPause();
     }
 
+    public static void cuffModeChange(Context ctx)
+    {
+        if(cuffMode.equals("开启"))
+        {
+            mainLinearLayout.setPadding(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 2, 0, 0, 0);
+        }
+        else
+        {
+            mainLinearLayout.setPadding(0, 0, 0, 0);
+        }
+    }
+    
     public static void autoReadChange(int status)
     {
         if(status == 1)
