@@ -80,7 +80,7 @@ public class MainActivity extends Activity
     public static int autoScollSec = 0;
     static int autoScollNowSec = 0;
     public static String cuffMode = "关闭";
-    
+
     static Handler autoReadHandler = new Handler();
     static Runnable autoReadRunnable;
 
@@ -205,8 +205,8 @@ public class MainActivity extends Activity
 			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
-        //cuffModeChange(ctx);//袖口模式
-        
+        cuffModeChange(ctx);//袖口模式
+
         if(mode == 0)    //不为小说模式隐藏按钮和提示信息
         {
             mainLeft.setVisibility(View.INVISIBLE);
@@ -494,14 +494,14 @@ public class MainActivity extends Activity
     {
         if(cuffMode.equals("开启"))
         {
-            mainLinearLayout.setPadding(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 2, 0, 0, 0);
+            mainLinearLayout.setPadding(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 4, 0, 0, 0);
         }
         else
         {
             mainLinearLayout.setPadding(0, 0, 0, 0);
         }
     }
-    
+
     public static void autoReadChange(int status)
     {
         if(status == 1)
@@ -627,9 +627,12 @@ public class MainActivity extends Activity
 		try
 		{
 			JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			ArrayList<String> novelpath = new ArrayList(Arrays.asList(novellist.getString("path").split("▒")));
 			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
-			return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
+            if(cuffMode.equals("开启"))
+            {
+			    return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
+            }
+            return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
 		}
 		catch(JSONException e)
 		{
@@ -664,16 +667,16 @@ public class MainActivity extends Activity
             {
                 public void onReceive(Context context, Intent intent)
                 {
-                    int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
-                    int scale = intent.getIntExtra("scale", -1);//获得总电量
-                    batteryLevel = -1;
-                    if(rawlevel >= 0 && scale > 0)
-                    {
-                        batteryLevel = (rawlevel * 100) / scale;
-                    }
                     if(mode == 1)
                     {
-                        mainHint.setText(mainHint.getText().toString().split("  ")[0] + "  " + batteryLevel + "%");
+                        int rawlevel = intent.getIntExtra("level", -1);//获得当前电量
+                        int scale = intent.getIntExtra("scale", -1);//获得总电量
+                        batteryLevel = -1;
+                        if(rawlevel >= 0 && scale > 0)
+                        {
+                            batteryLevel = (rawlevel * 100) / scale;
+                        }
+                        mainHint.setText(getHintText(sharedPreferences));
                     }
                 }
             };

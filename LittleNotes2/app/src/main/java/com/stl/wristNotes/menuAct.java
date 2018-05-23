@@ -523,7 +523,7 @@ public class menuAct extends Activity
                     else if(sharedPreferences.getString("cuffMode", "开启").equals("关闭"))
                     {
                         editor.putString("cuffMode", "开启");
-                        MainActivity.smartScroll = "开启";
+                        MainActivity.cuffMode = "开启";
                         ((ToggleButton)  v.findViewById(R.id.menulistswi)).setChecked(true);
                         ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
                         menubut[0] = 1;

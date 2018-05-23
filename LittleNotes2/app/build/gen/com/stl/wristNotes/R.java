@@ -191,7 +191,13 @@ public final class R {
     }
     public static final class string {
         public static final int about_about=0x7f050002;
+        public static final int about_contactAuthor=0x7f050005;
+        public static final int about_copyright=0x7f050007;
+        public static final int about_currentVersion=0x7f050003;
+        public static final int about_donatingAuthor=0x7f050006;
+        public static final int about_updateLog=0x7f050004;
         public static final int app_name=0x7f050000;
+        public static final int donation_donatingAuthor=0x7f050008;
         public static final int helptext=0x7f050001;
     }
     public static final class style {
