@@ -11,14 +11,7 @@
                     "endOffset": 89
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 1,
-                        "startOffset": 56,
-                        "endColumn": 35,
-                        "endOffset": 90
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml"
                 }
             },
             {
@@ -26,17 +19,17 @@
                     "startLine": 3,
                     "startColumn": 4,
                     "startOffset": 94,
-                    "endColumn": 50,
-                    "endOffset": 140
+                    "endColumn": 45,
+                    "endOffset": 135
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
-                        "startLine": 4,
-                        "startColumn": 1,
-                        "startOffset": 100,
-                        "endColumn": 47,
-                        "endOffset": 146
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 45,
+                        "endOffset": 145
                     }
                 }
             },
@@ -44,17 +37,17 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 145,
-                    "endColumn": 51,
-                    "endOffset": 192
+                    "startOffset": 140,
+                    "endColumn": 49,
+                    "endOffset": 185
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
-                        "startLine": 5,
-                        "startColumn": 1,
-                        "startOffset": 149,
-                        "endColumn": 48,
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 151,
+                        "endColumn": 49,
                         "endOffset": 196
                     }
                 }
@@ -63,57 +56,36 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 197,
-                    "endColumn": 51,
-                    "endOffset": 244
+                    "startOffset": 190,
+                    "endColumn": 50,
+                    "endOffset": 236
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 1,
-                        "startOffset": 201,
-                        "endColumn": 48,
-                        "endOffset": 248
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 249,
-                    "endColumn": 52,
-                    "endOffset": 297
+                    "startOffset": 241,
+                    "endColumn": 51,
+                    "endOffset": 288
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 1,
-                        "startOffset": 251,
-                        "endColumn": 49,
-                        "endOffset": 299
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 302,
-                    "endColumn": 42,
+                    "startOffset": 293,
+                    "endColumn": 51,
                     "endOffset": 340
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 59,
-                        "endColumn": 42,
-                        "endOffset": 97
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -121,102 +93,106 @@
                     "startLine": 8,
                     "startColumn": 4,
                     "startOffset": 345,
-                    "endColumn": 609,
-                    "endOffset": 950
+                    "endColumn": 52,
+                    "endOffset": 393
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 1,
-                        "startOffset": 305,
-                        "endColumn": 606,
-                        "endOffset": 910
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 955,
-                    "endLine": 10,
-                    "endColumn": 9,
-                    "endOffset": 1035
+                    "startOffset": 398,
+                    "endColumn": 42,
+                    "endOffset": 436
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 2,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 57,
-                        "endLine": 3,
-                        "endColumn": 9,
-                        "endOffset": 138
+                        "startOffset": 922,
+                        "endColumn": 42,
+                        "endOffset": 960
                     }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 441,
+                    "endColumn": 42,
+                    "endOffset": 479
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1040,
-                    "endLine": 19,
-                    "endColumn": 9,
-                    "endOffset": 1443
+                    "startOffset": 484,
+                    "endColumn": 609,
+                    "endOffset": 1089
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 1,
-                        "startOffset": 599,
-                        "endLine": 24,
-                        "endColumn": 9,
-                        "endOffset": 1011
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1448,
-                    "endLine": 27,
+                    "startOffset": 1094,
+                    "endLine": 13,
                     "endColumn": 9,
-                    "endOffset": 1819
+                    "endOffset": 1174
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
-                    "position": {
-                        "startLine": 26,
-                        "startColumn": 1,
-                        "startOffset": 1017,
-                        "endLine": 33,
-                        "endColumn": 9,
-                        "endOffset": 1395
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1824,
-                    "endLine": 37,
+                    "startOffset": 1179,
+                    "endLine": 22,
                     "endColumn": 9,
-                    "endOffset": 2264
+                    "endOffset": 1516
                 },
                 "from": {
-                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 1,
-                        "startOffset": 143,
-                        "endLine": 14,
-                        "endColumn": 9,
-                        "endOffset": 594
-                    }
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1521,
+                    "endLine": 30,
+                    "endColumn": 9,
+                    "endOffset": 1773
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1778,
+                    "endLine": 40,
+                    "endColumn": 9,
+                    "endOffset": 2218
+                },
+                "from": {
+                    "file": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml"
                 }
             }
         ]

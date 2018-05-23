@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\layout\\preference_list_content.xml"
     },
     {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_file.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_file.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_list_item_close_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\layout\\menu_list_item_close_ticwear.xml"
     },
@@ -178,6 +182,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\preference_widget_enter.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\layout\\preference_widget_enter.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_clickbutton.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\number_picker_ticwear.xml",
@@ -352,6 +360,10 @@
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
     },
     {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_filedo.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\item_filedo.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fileselect.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
     },
@@ -370,6 +382,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_item_view_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\layout\\menu_item_view_ticwear.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_clickbg.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbg.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\start.xml",

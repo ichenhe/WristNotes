@@ -15,14 +15,14 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="5dp"
-			android:text="支持作者"/>
+			android:text="@string/donation_donatingAuthor"/>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:padding="10dp"
-			android:text="如果你认为这个应用很好用或帮到了你，高三写代码不易，就捐助一两元钱给一个苦逼的高三狗吧"
+			android:text="维护项目不易，望慷慨解囊"
 			android:textSize="16sp"/>
 
 		<ImageView
