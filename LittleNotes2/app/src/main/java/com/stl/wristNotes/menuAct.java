@@ -2,16 +2,12 @@ package com.stl.wristNotes;
 
 import android.app.*;
 import android.content.*;
+import android.content.pm.*;
 import android.graphics.*;
 import android.os.*;
 import android.view.*;
 import android.widget.*;
 import android.widget.AdapterView.*;
-
-import java.io.*;
-import org.json.*;
-import android.graphics.drawable.*;
-import android.graphics.drawable.shapes.*;
 
 public class menuAct extends Activity
 {
@@ -86,10 +82,10 @@ public class menuAct extends Activity
 
         if(MainActivity.cho == 0)
         {
-            menuList = new String[]{"打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "会员购", "帮助", "关于"};
-            menuimg = new int[]{R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.favicon, R.drawable.helps, R.drawable.about};
-            menubut = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1};
-            menutip = new String[][]{{""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}};
+            menuList = new String[]{"打开文档", "编辑文档", "我的小说", "显示设置", "偏好设置", "文件传输", "帮助", "关于"};
+            menuimg = new int[]{R.drawable.files, R.drawable.edit, R.drawable.novelfile, R.drawable.xs, R.drawable.preference, R.drawable.ftp, R.drawable.helps, R.drawable.about};
+            menubut = new int[]{-1, -1, -1, -1, -1, -1, -1, -1};
+            menutip = new String[][]{{""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}};
             menutitle.setText("设置");
         }
         else if(MainActivity.cho == 1)
@@ -105,15 +101,15 @@ public class menuAct extends Activity
             menuList = new String[]{"袖口模式", "调整亮度：" + sharedPreferences.getInt("light", 5), "字号选择：" + sharedPreferences.getInt("bs", 14)};
             menuimg = new int[]{0, 0, 0, R.drawable.theme};
             menubut = new int[]{getState("cuffMode", "关闭", "关闭"), 2, 2, -1};
-            menutip = new String[][]{{"已关闭", "已开启\n只在右半边显示"}, {"更改文字亮度"}, {"更改文字大小"}, {""}};
+            menutip = new String[][]{{"已关闭", "已开启\n文字只在右半边显示"}, {"更改文字亮度"}, {"更改文字大小"}, {""}};
             menutitle.setText("显示设置");
         }
         else if(MainActivity.cho == 3)
         {
-            menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
-            menuimg = new int[]{0, 0, 0, 0, 0, 0, 0};
-            menubut = new int[]{getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, getState("displayTime", "关闭", "关闭"), getState("password", "", ""), 2, 2};
-            menutip = new String[][]{{"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {"重新显示新功能提示"}, {"已关闭", "已开启\n点击隐藏文字后屏幕会显示当前时间"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
+            menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "横屏显示", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
+            menuimg = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+            menubut = new int[]{getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, -1, getState("displayTime", "关闭", "关闭"), getState("password", "", ""), 2, 2};
+            menutip = new String[][]{{"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {""}, {"重新显示新功能提示"}, {"已关闭", "已开启\n点击隐藏文字后屏幕会显示当前时间"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
             menutitle.setText("偏好设置");
         }
         else if(MainActivity.cho == 5)
@@ -382,7 +378,7 @@ public class menuAct extends Activity
                         editor.putString("displayTime", "关闭");
                         ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(false);
                         ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][0]);
-                        menubut[3] = 0;
+                        menubut[4] = 0;
                         ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     else
@@ -390,10 +386,14 @@ public class menuAct extends Activity
                         editor.putString("displayTime", "开启");
                         ((ToggleButton) v.findViewById(R.id.menulistswi)).setChecked(true);
                         ((TextView) v.findViewById(R.id.menulisttip)).setText(menutip[position][1]);
-                        menubut[3] = 1;
+                        menubut[4] = 1;
                         ((BaseAdapter)adapter).notifyDataSetChanged();
                     }
                     editor.commit();
+                }
+                else if(s.equals("横屏显示"))
+                {
+                    //stRequestedOrientation()
                 }
                 else if(s.equals("FTP文件传输"))
                 {

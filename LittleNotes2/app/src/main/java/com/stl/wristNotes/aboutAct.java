@@ -15,6 +15,11 @@ public class aboutAct extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about);
 	}
+    public void about1(View view)
+    {
+        Intent startint = new Intent(ctx, fivestarsAct.class);
+        startActivity(startint);
+    }
 	public void about2(View view)
 	{
 		Intent startint = new Intent(ctx, settileAct.class);

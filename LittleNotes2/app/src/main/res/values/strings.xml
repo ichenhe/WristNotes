@@ -12,9 +12,10 @@
     
     <string name="about_about">关于</string>
     <string name="about_currentVersion">当前版本1.60(101)</string>
+    <string name="about_fiveStars">求五星好评</string>
 	<string name="about_updateLog">更新日志</string>
 	<string name="about_contactAuthor">联系作者</string>
 	<string name="about_donatingAuthor">支持作者</string>
-	<string name="about_copyright">Copyright © 2014-2018 setTile luern0313. All rights reserved. 哔哩哔哩 - ( ゜- ゜)つロ 乾杯~ 另外祝杨永信及同类学校负责人 早！日！爆！炸！</string>
+	<string name="about_copyright">Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n哔哩哔哩 - ( ゜- ゜)つロ 乾杯~\n另外祝杨永信及同类机构负责人\n早！日！爆！炸！</string>
 	<string name="donation_donatingAuthor">支持作者</string>
 </resources>

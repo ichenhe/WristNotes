@@ -97,6 +97,10 @@
 		<activity
 			android:name="com.stl.wristNotes.novelAct">	
 		</activity>
+        
+        <activity
+            android:name="com.stl.wristNotes.fivestarsAct"> 
+		</activity>
     </application>
 </manifest>
 

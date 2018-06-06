@@ -10,7 +10,7 @@ import android.graphics.*;
 
 public class passwordAct extends Activity
 {
-	Context passctx=this;
+	Context passctx = this;
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
 	String passtext;

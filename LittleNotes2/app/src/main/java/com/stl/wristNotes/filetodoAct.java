@@ -220,7 +220,8 @@ public class filetodoAct extends Activity
                                         {
                                             if(new File(MainActivity.filedopath + MainActivity.filedofile).delete())
                                             {
-                                                fileselectAct.filelistToAdapter.remove(position - 1);
+                                                fileselectAct.filelist = fileselectAct.fileselectwillfile.list();
+                                                fileselectAct.filelistToAdapter.remove(intent.getIntExtra("selectPosition", -1));
                                                 fileselectAct.adapter.notifyDataSetChanged();
                                                 Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
                                                 finish();

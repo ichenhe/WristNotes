@@ -154,6 +154,11 @@
 
 		</activity>
 
+		<activity
+			android:name="com.stl.wristNotes.fivestarsAct">
+
+		</activity>
+
 	</application>
 
 </manifest>

@@ -20,7 +20,7 @@ public class fileselectAct extends Activity
     SharedPreferences.Editor editor;
     public static Activity fileselectCtx;
     Intent intent;
-    File fileselectwillfile;
+    public static File fileselectwillfile;
     TextView fileselecttitle;
     public static String[] filelist;
 	String[] filelist2;
@@ -68,7 +68,13 @@ public class fileselectAct extends Activity
         sortRule = sharedPreferences.getInt("sortRule", 0);
         sortReverse = sharedPreferences.getBoolean("sortReverse", false);
 
-        if(MainActivity.filewillpath.equals("")) MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
+        if(MainActivity.filewillpath.equals(""))
+        {
+            MainActivity.filewillpath = sharedPreferences.getString("filepath", Environment.getExternalStorageDirectory().toString() + "/");
+            fileCopyClip = new ArrayList<String>();
+            fileCopyClipName = new ArrayList<String>();
+            fileCopyClipMode = 0;
+        }
         fileselecttitle.setText(MainActivity.filewillpath);
         fileselecttitle.setClickable(true);
         fileselecttitle.setOnClickListener(new View.OnClickListener()
@@ -213,8 +219,8 @@ public class fileselectAct extends Activity
 
         final ArrayList<String> filedot1 = new ArrayList<String>(Arrays.asList("新建文件", "新建文件夹"));
         final ArrayList<Integer> filedoi1 = new ArrayList<Integer>(Arrays.asList(R.drawable.icon_lnewfile, R.drawable.icon_lnewfor));
-        final ArrayList<String> filedot2 = new ArrayList<String>(Arrays.asList("以名称排序", "以类型排序", "以时间排序", "以大小排序", "倒序", "只用于此文件夹"));
-        final ArrayList<Integer> filedoi2 = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0));
+        final ArrayList<String> filedot2 = new ArrayList<String>(Arrays.asList("以名称排序", "以类型排序", "以时间排序", "以大小排序", "倒序"));
+        final ArrayList<Integer> filedoi2 = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0));
         final zAdapter filedoAdapter1 = new zAdapter(getLayoutInflater(), filedot1, filedoi1);
 
         filedo1.setClickable(true);
@@ -346,7 +352,7 @@ public class fileselectAct extends Activity
                     else//选中3
                     {
                         doSelect = 3;
-                        fileselectView.scrollTo(0, 0);
+                        //fileselectView.scrollTo(0, 0);
                         filedo1.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                         filedo2.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                         filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_scl));
@@ -470,8 +476,8 @@ public class fileselectAct extends Activity
                     else
                     {
                         selectItem[position] = !selectItem[position];
-                        //((CheckBox) v.findViewById(R.id.menulistcb)).setChecked(selectItem[position]);
-                        adapter.notifyDataSetChanged();
+                        ((CheckBox) v.findViewById(R.id.menulistcb)).setChecked(selectItem[position]);
+                        //adapter.notifyDataSetChanged();
                     }
 				}
 			});
@@ -493,6 +499,7 @@ public class fileselectAct extends Activity
                                 MainActivity.filedopath = MainActivity.filewillpath;
                                 Intent intent = new Intent(fileselectCtx, filetodoAct.class);
                                 intent.putExtra("po", 0);
+                                intent.putExtra("selectPosition", position);
                                 startActivity(intent);
                             }
                             catch(Exception e)

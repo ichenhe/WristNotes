@@ -117,7 +117,7 @@ public class MainActivity extends Activity
         autoScollNowSec = autoScollSec;
         cuffMode = sharedPreferences.getString("cuffMode", "关闭");
 		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
-		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() * Math.sqrt(2) / 3).intValue();
+		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() / 2).intValue();
         try
         {
             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
@@ -220,7 +220,7 @@ public class MainActivity extends Activity
             {
                 //Toast.makeText(ctx, filepath + filename + "   " + mode, Toast.LENGTH_SHORT).show();
                 textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue(), code));
-                Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
             }
             catch(JSONException e)
@@ -495,10 +495,12 @@ public class MainActivity extends Activity
         if(cuffMode.equals("开启"))
         {
             mainLinearLayout.setPadding(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 4, 0, 0, 0);
+            if(mode == 1) mainHint.setText(getHintText(sharedPreferences));
         }
         else
         {
             mainLinearLayout.setPadding(0, 0, 0, 0);
+            if(mode == 1) mainHint.setText(getHintText(sharedPreferences));
         }
     }
 
@@ -531,7 +533,7 @@ public class MainActivity extends Activity
 
 	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
 	{
-		if(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 20 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
+		if(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 40 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
 		{
 			try
 			{
@@ -630,7 +632,7 @@ public class MainActivity extends Activity
 			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
             if(cuffMode.equals("开启"))
             {
-			    return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
+			    return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页\n" + batteryLevel + "%";
             }
             return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
 		}
@@ -640,6 +642,11 @@ public class MainActivity extends Activity
 		}
 	}
 
+    public void stRequestedOrientation()
+    {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    }
+    
     public static String join(String[] strs, String splitter)
     {
 		if(strs.length != 0)
