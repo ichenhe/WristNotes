@@ -18,7 +18,8 @@
 				android:layout_height="wrap_content"
 				android:text="编辑文档"
 				android:layout_width="match_parent"
-				style="@style/titleText"/>
+				style="@style/titleText"
+				android:id="@+id/editfileTextView2"/>
 
 			<EditText
 				android:layout_height="match_parent"
@@ -40,7 +41,8 @@
 		android:layout_width="match_parent"
 		android:orientation="horizontal"
 		android:gravity="bottom"
-		android:layout_alignParentBottom="true">
+		android:layout_alignParentBottom="true"
+		android:id="@+id/editfileLinearLayout1">
 
 		<Button
 			android:layout_height="40dp"
@@ -68,6 +70,39 @@
 			android:onClick="editfileButton2"/>
 
 	</LinearLayout>
+
+	<RelativeLayout
+		android:layout_height="40dp"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal"
+		android:layout_above="@id/editfileLinearLayout1"
+		android:background="#090909"
+		android:paddingLeft="35dp"
+		android:paddingRight="15dp"
+		android:id="@+id/editfileRelativeLayout">
+
+		<TextView
+			android:layout_height="match_parent"
+			android:text="╳"
+			android:layout_width="20dp"
+			android:layout_alignParentRight="true"
+			android:id="@+id/editfileTextView1"
+			android:gravity="center"
+			android:onClick="editfileButton4"/>
+
+		<TextView
+			android:layout_height="match_parent"
+			android:text="点击这里跳转到你正在观看的地方"
+			android:layout_width="wrap_content"
+			android:layout_toLeftOf="@id/editfileTextView1"
+			android:gravity="center"
+			android:textSize="12sp"
+			android:onClick="editfileButton3"
+			android:layout_alignParentLeft="true"
+			android:paddingRight="15dp"
+			android:paddingLeft="10dp"/>
+
+	</RelativeLayout>
 
 </RelativeLayout>
 

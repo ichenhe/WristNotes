@@ -20,7 +20,9 @@ import com.stl.wristNotes.method.*;
 import org.apache.log4j.chainsaw.Main;
 
 import static android.R.id.hint;
+
 import android.net.*;
+
 import org.json.*;
 
 public class filetodoAct extends Activity
@@ -37,7 +39,7 @@ public class filetodoAct extends Activity
     ArrayList<String> starpath;
     fAdapter adapter;
 
-	String[] openWithMime;
+    String[] openWithMime;
     JSONObject helperr;
 
     TextView title;
@@ -111,7 +113,7 @@ public class filetodoAct extends Activity
 
             if(!starpath.get(0).equals("▒▒▒▒▒"))
             {
-                for(int i = 0; i < starpath.size(); i++)
+                for (int i = 0; i < starpath.size(); i++)
                 {
                     todo.add(starpath.get(i).split("/")[starpath.get(i).split("/").length - 1]);
                     if(new File(starpath.get(i)).isDirectory()) img.add(R.drawable.starfor);
@@ -133,14 +135,14 @@ public class filetodoAct extends Activity
             hint = new ArrayList<String>(Arrays.asList("", ""));
             title.setText("新建...");
         }
-		else if(po == 6)//打开为
-		{
-			todo = new ArrayList<String>(Arrays.asList("文本", "图片", "压缩包", "音频", "视频", "其它"));
-			img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0));
-			hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", ""));
-			openWithMime = new String[]{"text/plain", "image/*", "application/zip", "audio/*", "video/*", "*/*"};
-			title.setText("打开为...");
-		}
+        else if(po == 6)//打开为
+        {
+            todo = new ArrayList<String>(Arrays.asList("文本", "图片", "压缩包", "音频", "视频", "其它"));
+            img = new ArrayList<Integer>(Arrays.asList(0, 0, 0, 0, 0, 0));
+            hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", ""));
+            openWithMime = new String[]{"text/plain", "image/*", "application/zip", "audio/*", "video/*", "*/*"};
+            title.setText("打开为...");
+        }
         else if(po == 7)
         {
             try
@@ -151,7 +153,7 @@ public class filetodoAct extends Activity
                 hint = new ArrayList<String>(Arrays.asList("", "", "", "", "", "", "", "", ""));
                 title.setText("帮助");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Toast.makeText(ctx, "帮助信息获取失败..请重试" + e.toString(), Toast.LENGTH_SHORT).show();
             }
@@ -174,44 +176,44 @@ public class filetodoAct extends Activity
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> l, View v, final int position, long id)
             {
-                @Override
-                public void onItemClick(AdapterView<?> l, View v, final int position, long id)
+                if(position != 0)
                 {
-                    if(position != 0)
+                    String s = todo.get(position - 1);
+                    if(po == 0 || po == 3)
                     {
-                        String s = todo.get(position - 1);
-                        if(po == 0 || po == 3)
+                        if(s.equals("用隐私模式打开"))
                         {
-                            if(s.equals("用隐私模式打开"))
+                            try
                             {
-                                try
-                                {
-                                    MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
-                                    editor.putInt("mode", 0);
-                                    editor.commit();
-                                    MainActivity.mode = 0;
-                                    MainActivity.mainLeft.setVisibility(View.INVISIBLE);
-                                    MainActivity.mainRight.setVisibility(View.INVISIBLE);
-                                    MainActivity.mainHint.setVisibility(View.INVISIBLE);
-                                    Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
-                                    fileselectAct.fileselectCtx.finish();
-                                    finish();
-                                }
-                                catch(IOException e)
-                                {
-                                    Toast.makeText(ctx, "打开文件错！！误！！", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                            else if(s.equals("用小说模式打开"))
-                            {
-                                fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
+                                MainActivity.textView.setText(fileOpen.fileReader(MainActivity.filedopath + MainActivity.filedofile));
+                                editor.putInt("mode", 0);
+                                editor.commit();
+                                MainActivity.mode = 0;
+                                MainActivity.mainLeft.setVisibility(View.INVISIBLE);
+                                MainActivity.mainRight.setVisibility(View.INVISIBLE);
+                                MainActivity.mainHint.setVisibility(View.INVISIBLE);
+                                Toast.makeText(ctx, "隐私模式成功打开文件:" + s + ",小心身后哦♪(´▽｀)", Toast.LENGTH_SHORT).show();
                                 fileselectAct.fileselectCtx.finish();
                                 finish();
                             }
-                            else if(s.equals("删除"))
+                            catch (IOException e)
                             {
-                                new AlertDialog.Builder(ctx)
+                                Toast.makeText(ctx, "打开文件错！！误！！", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else if(s.equals("用小说模式打开"))
+                        {
+                            fileOpen.openNovel(ctx, sharedPreferences, editor, MainActivity.filedopath, MainActivity.filedofile);
+                            fileselectAct.fileselectCtx.finish();
+                            finish();
+                        }
+                        else if(s.equals("删除"))
+                        {
+                            new AlertDialog.Builder(ctx)
                                     .setMessage("确认删除" + MainActivity.filedofile + "吗？")
                                     .setPositiveButton("确定", new DialogInterface.OnClickListener()
                                     {
@@ -233,97 +235,97 @@ public class filetodoAct extends Activity
                                         }
                                     })
                                     .setNegativeButton("取消", null).show();
-                            }
-                            else if(s.equals("属性"))
+                        }
+                        else if(s.equals("属性"))
+                        {
+                            MainActivity.helpor = 4;
+                            Intent intent = new Intent(ctx, helpAct.class);
+                            intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
+                            startActivity(intent);
+                        }
+                        else if(s.equals("分享..."))
+                        {
+                            shareFile(ctx, new File(MainActivity.filedopath + MainActivity.filedofile));
+                        }
+                        else if(s.equals("收藏该文件"))
+                        {
+                            try
                             {
-                                MainActivity.helpor = 4;
-                                Intent intent = new Intent(ctx, helpAct.class);
-                                intent.putExtra("string", new fileAttributes(MainActivity.filedofile, MainActivity.filedopath + MainActivity.filedofile).getFileAttributes());
-                                startActivity(intent);
+                                List<String> starlist = new ArrayList<>();
+                                if(!sharedPreferences.getString("star", "").equals(""))
+                                    starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+                                starlist.add(MainActivity.filedopath + MainActivity.filedofile);
+                                editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
+                                editor.commit();
+                                Toast.makeText(ctx, "已收藏该文件！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
                             }
-                            else if(s.equals("分享..."))
+                            catch (Exception e)
                             {
-                                shareFile(ctx, new File(MainActivity.filedopath + MainActivity.filedofile));
-                            }
-                            else if(s.equals("收藏该文件"))
-                            {
-                                try
-                                {
-                                    List<String> starlist = new ArrayList<>();
-                                    if(!sharedPreferences.getString("star", "").equals(""))
-                                        starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
-                                    starlist.add(MainActivity.filedopath + MainActivity.filedofile);
-                                    editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
-                                    editor.commit();
-                                    Toast.makeText(ctx, "已收藏该文件！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
-                                }
-                                catch(Exception e)
-                                {
-                                    Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                            else if(s.equals("取消收藏"))
-                            {
-                                i.putExtra("info", 1);
-                                setResult(0, i);
-                                finish();
-                            }
-                            else if(s.equals("新建..."))
-                            {
-                                Intent intent = new Intent(ctx, filetodoAct.class);
-                                intent.setClass(ctx, filetodoAct.class);
-                                intent.putExtra("po", 5);
-                                startActivity(intent);
-                            }
-                            else if(s.equals("打开为..."))
-                            {
-                                Intent intent = new Intent(ctx, filetodoAct.class);
-                                intent.putExtra("po", 6);
-                                startActivity(intent);
-                            }
-                            else if(s.equals("复制"))
-                            {
-                                fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
-                                fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
-                                fileselectAct.fileCopyClipMode = 1;
-                                fileselectAct.statusChange(ctx);
-                                finish();
-                            }
-                            else if(s.equals("剪贴"))
-                            {
-                                fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
-                                fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
-                                fileselectAct.fileCopyClipMode = 2;
-                                fileselectAct.statusChange(ctx);
-                                finish();
-                            }
-                            else
-                            {
-                                Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
                             }
                         }
-                        else if(po == 1 || po == 4)
+                        else if(s.equals("取消收藏"))
                         {
-                            if(s.equals("收藏该文件夹"))
+                            i.putExtra("info", 1);
+                            setResult(0, i);
+                            finish();
+                        }
+                        else if(s.equals("新建..."))
+                        {
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 5);
+                            startActivity(intent);
+                        }
+                        else if(s.equals("打开为..."))
+                        {
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.putExtra("po", 6);
+                            startActivity(intent);
+                        }
+                        else if(s.equals("复制"))
+                        {
+                            fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
+                            fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
+                            fileselectAct.fileCopyClipMode = 1;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
+                        else if(s.equals("剪贴"))
+                        {
+                            fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
+                            fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
+                            fileselectAct.fileCopyClipMode = 2;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
+                        else
+                        {
+                            Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else if(po == 1 || po == 4)
+                    {
+                        if(s.equals("收藏该文件夹"))
+                        {
+                            try
                             {
-                                try
-                                {
-                                    List<String> starlist = new ArrayList<String>();
-                                    if(!sharedPreferences.getString("star", "").equals(""))
-                                        starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
-                                    starlist.add(MainActivity.filedopath + MainActivity.filedofile);
-                                    editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
-                                    editor.commit();
-                                    Toast.makeText(ctx, "已收藏该文件夹！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
-                                }
-                                catch(Exception e)
-                                {
-                                    Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
-                                }
+                                List<String> starlist = new ArrayList<String>();
+                                if(!sharedPreferences.getString("star", "").equals(""))
+                                    starlist = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("star", "").split("▒")));
+                                starlist.add(MainActivity.filedopath + MainActivity.filedofile);
+                                editor.putString("star", MainActivity.join((starlist.toArray(new String[starlist.size()])), "▒"));
+                                editor.commit();
+                                Toast.makeText(ctx, "已收藏该文件夹！以后可以在快速访问中打开！", Toast.LENGTH_LONG).show();
                             }
-                            else if(s.equals("删除整个文件夹"))
+                            catch (Exception e)
                             {
-                                new AlertDialog.Builder(ctx)
+                                Toast.makeText(ctx, "收藏失败？？", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        else if(s.equals("删除整个文件夹"))
+                        {
+                            new AlertDialog.Builder(ctx)
                                     .setMessage("确认删除该文件夹以及子文件吗？")
                                     .setPositiveButton("确定", new DialogInterface.OnClickListener()
                                     {
@@ -344,223 +346,274 @@ public class filetodoAct extends Activity
                                         }
                                     })
                                     .setNegativeButton("取消", null).show();
-                            }
-                            else if(s.equals("取消收藏"))
-                            {
-                                i.putExtra("info", 1);
-                                setResult(0, i);
-                                finish();
-                            }
-                            else if(s.equals("复制"))
-                            {
-                                fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
-                                fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
-                                fileselectAct.fileCopyClipMode = 1;
-                                fileselectAct.statusChange(ctx);
-                                finish();
-                            }
-                            else if(s.equals("剪贴"))
-                            {
-                                fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
-                                fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
-                                fileselectAct.fileCopyClipMode = 2;
-                                fileselectAct.statusChange(ctx);
-                                finish();
-                            }
-                            else if(s.equals("新建..."))
-                            {
-                                Intent intent = new Intent(ctx, filetodoAct.class);
-                                intent.setClass(ctx, filetodoAct.class);
-                                intent.putExtra("po", 5);
-                                startActivity(intent);
-                            }
-                            else
-                            {
-                                Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
-                            }
                         }
-                        else if(po == 2)
+                        else if(s.equals("取消收藏"))
                         {
-                            if(position - 1 == 0)
+                            i.putExtra("info", 1);
+                            setResult(0, i);
+                            finish();
+                        }
+                        else if(s.equals("复制"))
+                        {
+                            fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
+                            fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
+                            fileselectAct.fileCopyClipMode = 1;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
+                        else if(s.equals("剪贴"))
+                        {
+                            fileselectAct.fileCopyClip = new ArrayList<String>(Arrays.asList(MainActivity.filedopath + MainActivity.filedofile));
+                            fileselectAct.fileCopyClipName = new ArrayList<String>(Arrays.asList(MainActivity.filedofile));
+                            fileselectAct.fileCopyClipMode = 2;
+                            fileselectAct.statusChange(ctx);
+                            finish();
+                        }
+                        else if(s.equals("新建..."))
+                        {
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 5);
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Toast.makeText(ctx, "很抱歉，该功能正在开发中，请等待版本更新！(tan90˚)", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else if(po == 2)
+                    {
+                        if(position - 1 == 0)
+                        {
+                            MainActivity.filewillpath = "";
+                            Intent intent = new Intent(ctx, fileselectAct.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else if(position - 1 == 1)
+                        {
+                            MainActivity.filewillpath = Environment.getExternalStorageDirectory() + "/";
+                            Intent intent = new Intent(ctx, fileselectAct.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else if(!starpath.get(0).equals("▒▒▒▒▒"))
+                        {
+                            File file = new File(starpath.get(position - 1 - 2));
+                            if(file.exists())
                             {
-                                MainActivity.filewillpath = "";
-                                Intent intent = new Intent(ctx, fileselectAct.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                            else if(position - 1 == 1)
-                            {
-                                MainActivity.filewillpath = Environment.getExternalStorageDirectory() + "/";
-                                Intent intent = new Intent(ctx, fileselectAct.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                            else if(!starpath.get(0).equals("▒▒▒▒▒"))
-                            {
-                                File file = new File(starpath.get(position - 1 - 2));
-                                if(file.exists())
+                                if(file.isDirectory())
                                 {
-                                    if(file.isDirectory())
+                                    MainActivity.filewillpath = starpath.get(position - 1 - 2) + "/";
+                                    Intent intent = new Intent(ctx, fileselectAct.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else
+                                {
+                                    if(file.length() < 1024 * 90)//90kb
                                     {
-                                        MainActivity.filewillpath = starpath.get(position - 1 - 2) + "/";
-                                        Intent intent = new Intent(ctx, fileselectAct.class);
-                                        startActivity(intent);
+                                        fileOpen.openFile(ctx, editor, hint.get(position - 1), todo.get(position - 1));
+                                        MainActivity.filepath = hint.get(position - 1);
+                                        MainActivity.filename = todo.get(position - 1);
                                         finish();
                                     }
                                     else
                                     {
-                                        if(file.length() < 1024 * 90)//90kb
-                                        {
-                                            fileOpen.openFile(ctx, editor, hint.get(position - 1), todo.get(position - 1));
-                                            MainActivity.filepath = hint.get(position - 1);
-                                            MainActivity.filename = todo.get(position - 1);
-                                            finish();
-                                        }
-                                        else
-                                        {
-                                            fileOpen.bigFile(ctx, sharedPreferences, editor, hint.get(position - 1), todo.get(position - 1));
-                                        }
+                                        fileOpen.bigFile(ctx, sharedPreferences, editor, hint.get(position - 1), todo.get(position - 1));
                                     }
                                 }
-                                else
-                                {
-                                    delete(position - 1);
-                                }
-                            }
-                        }
-                        else if(po == 5)
-                        {
-                            if(s.equals("新建文件"))
-                            {
-                                MainActivity.inputtitle = "输入文件名";
-                                MainActivity.inputset = "文件.txt";
-                                MainActivity.inputhite = "带扩展名";
-                                MainActivity.inputkeys = "";
-                                Intent intent = new Intent(ctx, inputAct.class);
-                                intent.putExtra("po", 1);
-                                startActivityForResult(intent, 0);
-                            }
-                            else if(s.equals("新建文件夹"))
-                            {
-                                MainActivity.inputtitle = "输入文件夹名";
-                                MainActivity.inputset = "文件夹";
-                                MainActivity.inputhite = "";
-                                MainActivity.inputkeys = "";
-                                Intent intent = new Intent(ctx, inputAct.class);
-                                intent.putExtra("po", 2);
-                                startActivityForResult(intent, 0);
-                            }
-                        }
-                        else if(po == 6)
-                        {
-                            Intent intent = new Intent();
-                            intent.setAction(android.content.Intent.ACTION_VIEW);
-                            intent.setDataAndType(Uri.fromFile(new File(MainActivity.filedopath + MainActivity.filedofile)), openWithMime[position - 1]);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        }
-                        else if(po == 7)
-                        {
-                            Intent intent = new Intent(ctx, helpAct.class);
-                            try
-                            {
-                                MainActivity.helpor = 6;
-                                intent.putExtra("string", (String)helperr.get(todo.get(position - 1)));
-                                startActivity(intent);
-                            }
-                            catch(JSONException e)
-                            {
-                                Toast.makeText(ctx, "帮助信息获取失败..请重试", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else if(po == 8)
-                        {
-                            MainActivity.autoScollSec = 2 + position;
-                            MainActivity.autoScollNowSec = MainActivity.autoScollSec;
-                            if(!(MainActivity.autoScoll == 0))MainActivity.mainRight.setText(String.valueOf(MainActivity.autoScollSec));
-                            editor.putInt("autoScollSec", MainActivity.autoScollSec);
-                            editor.commit();
-                            menuAct.menutip[3] = new String[]{MainActivity.autoScollSec + "秒"};
-                            ((BaseAdapter)menuAct.adapter).notifyDataSetChanged();
-                            finish();
-                        }
-                        else if(po == 9)
-                        {
-                            if(s.equals("复制"))
-                            {
-
-                            }
-                            else if(s.equals("剪贴"))
-                            {
-
-                            }
-                            else if(s.equals("删除"))
-                            {
-
-                            }
-                        }
-                    }
-                }
-            });
-
-        listView.setOnItemLongClickListener(new OnItemLongClickListener()
-            {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
-                {
-                    //String s = todo.get(position - 1);
-                    if(po == 2 && !starpath.get(0).equals("▒▒▒▒▒") && position > 2)//排除掉前两个和标题
-                    {
-                        if(new File(hint.get(position - 1) + todo.get(position - 1)).exists())
-                        {
-                            if(!new File(hint.get(position - 1) + todo.get(position - 1)).isDirectory())
-                            {
-                                MainActivity.filedopath = hint.get(position - 1);
-                                MainActivity.filedofile = todo.get(position - 1);
-                                Intent intent = new Intent(ctx, filetodoAct.class);
-                                intent.setClass(ctx, filetodoAct.class);
-                                intent.putExtra("po", 3);
-                                MainActivity.filedopo = position - 3;
-                                startActivityForResult(intent, 0);
                             }
                             else
                             {
-                                MainActivity.filedopath = hint.get(position - 1);
-                                MainActivity.filedofile = todo.get(position - 1);
-                                Intent intent = new Intent(ctx, filetodoAct.class);
-                                intent.setClass(ctx, filetodoAct.class);
-                                intent.putExtra("po", 4);
-                                MainActivity.filedopo = position - 3;
-                                startActivityForResult(intent, 0);
+                                delete(position - 1);
                             }
+                        }
+                    }
+                    else if(po == 5)
+                    {
+                        if(s.equals("新建文件"))
+                        {
+                            MainActivity.inputtitle = "输入文件名";
+                            MainActivity.inputset = "文件.txt";
+                            MainActivity.inputhite = "带扩展名";
+                            MainActivity.inputkeys = "";
+                            Intent intent = new Intent(ctx, inputAct.class);
+                            intent.putExtra("po", 1);
+                            startActivityForResult(intent, 0);
+                        }
+                        else if(s.equals("新建文件夹"))
+                        {
+                            MainActivity.inputtitle = "输入文件夹名";
+                            MainActivity.inputset = "文件夹";
+                            MainActivity.inputhite = "";
+                            MainActivity.inputkeys = "";
+                            Intent intent = new Intent(ctx, inputAct.class);
+                            intent.putExtra("po", 2);
+                            startActivityForResult(intent, 0);
+                        }
+                    }
+                    else if(po == 6)
+                    {
+                        Intent intent = new Intent();
+                        intent.setAction(android.content.Intent.ACTION_VIEW);
+                        intent.setDataAndType(Uri.fromFile(new File(MainActivity.filedopath + MainActivity.filedofile)), openWithMime[position - 1]);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                    else if(po == 7)
+                    {
+                        Intent intent = new Intent(ctx, helpAct.class);
+                        try
+                        {
+                            MainActivity.helpor = 6;
+                            intent.putExtra("string", (String) helperr.get(todo.get(position - 1)));
+                            startActivity(intent);
+                        }
+                        catch (JSONException e)
+                        {
+                            Toast.makeText(ctx, "帮助信息获取失败..请重试", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else if(po == 8)
+                    {
+                        MainActivity.autoScollSec = 2 + position;
+                        MainActivity.autoScollNowSec = MainActivity.autoScollSec;
+                        if(!(MainActivity.autoScoll == 0))
+                            MainActivity.mainRight.setText(String.valueOf(MainActivity.autoScollSec));
+                        editor.putInt("autoScollSec", MainActivity.autoScollSec);
+                        editor.commit();
+                        menuAct.menutip[3] = new String[]{"时间" + MainActivity.autoScollSec + "秒"};
+                        ((BaseAdapter) menuAct.adapter).notifyDataSetChanged();
+                        finish();
+                    }
+                    else if(po == 9)
+                    {
+                        if(s.equals("复制") || s.equals("剪贴"))
+                        {
+                            fileselectAct.fileCopyClip = new ArrayList<String>();
+                            fileselectAct.fileCopyClipName = new ArrayList<String>();
+                            for (int i = 0; i < fileselectAct.filelist.length; i++)
+                            {
+                                if(fileselectAct.selectItem[i])
+                                {
+                                    fileselectAct.fileCopyClipName.add(fileselectAct.filelist[i]);
+                                    fileselectAct.fileCopyClip.add(MainActivity.filedopath + fileselectAct.filelist[i]);
+                                }
+                            }
+
+                            if(s.equals("复制")) fileselectAct.fileCopyClipMode = 1;
+                            else if(s.equals("剪贴")) fileselectAct.fileCopyClipMode = 2;
+                            fileselectAct.statusChange(fileselectAct.fileselectCtx);
+
+                            fileselectAct.doSelect = 0;
+                            fileselectAct.filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
+                            fileselectAct.adapter.notifyDataSetChanged();
+                            finish();
+                        }
+                        else if(s.equals("删除"))
+                        {
+                            new AlertDialog.Builder(ctx)
+                                    .setMessage("确认删除你所有选择的文件和文件夹吗？")
+                                    .setPositiveButton("确定", new DialogInterface.OnClickListener()
+                                    {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which)
+                                        {
+                                            for (int i = 0; i < fileselectAct.filelist.length; i++)
+                                            {
+                                                if(fileselectAct.selectItem[i])
+                                                {
+                                                    File delectFile = new File(MainActivity.filedopath + fileselectAct.filelist[i]);
+                                                    if(delectFile.isDirectory())
+                                                    {
+                                                        if(!file.deleteDir(delectFile))
+                                                        {
+                                                            Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
+                                                            break;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if(delectFile.delete())
+                                                        {
+                                                            Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            fileselectAct.filelist = fileselectAct.fileselectwillfile.list();
+                                            fileselectAct.adapter.notifyDataSetChanged();
+                                            Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("取消", null).show();
+                        }
+                    }
+                }
+            }
+        });
+
+        listView.setOnItemLongClickListener(new OnItemLongClickListener()
+        {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> l, View v, int position, long id)
+            {
+                //String s = todo.get(position - 1);
+                if(po == 2 && !starpath.get(0).equals("▒▒▒▒▒") && position > 2)//排除掉前两个和标题
+                {
+                    if(new File(hint.get(position - 1) + todo.get(position - 1)).exists())
+                    {
+                        if(!new File(hint.get(position - 1) + todo.get(position - 1)).isDirectory())
+                        {
+                            MainActivity.filedopath = hint.get(position - 1);
+                            MainActivity.filedofile = todo.get(position - 1);
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 3);
+                            MainActivity.filedopo = position - 3;
+                            startActivityForResult(intent, 0);
                         }
                         else
                         {
-                            delete(position - 3);
+                            MainActivity.filedopath = hint.get(position - 1);
+                            MainActivity.filedofile = todo.get(position - 1);
+                            Intent intent = new Intent(ctx, filetodoAct.class);
+                            intent.setClass(ctx, filetodoAct.class);
+                            intent.putExtra("po", 4);
+                            MainActivity.filedopo = position - 3;
+                            startActivityForResult(intent, 0);
                         }
-                        return true;
                     }
                     else
                     {
-                        return false;
+                        delete(position - 3);
                     }
+                    return true;
                 }
-            });
+                else
+                {
+                    return false;
+                }
+            }
+        });
     }
 
     private void delete(final int po)
     {
         new AlertDialog.Builder(ctx)
-            .setMessage("未找到文件或文件夹，是否删除该收藏？")
-            .setPositiveButton("删除", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
+                .setMessage("未找到文件或文件夹，是否删除该收藏？")
+                .setPositiveButton("删除", new DialogInterface.OnClickListener()
                 {
-                    deleteStar(po);
-                }
-            })
-            .setNegativeButton("取消", null).show();
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        deleteStar(po);
+                    }
+                })
+                .setNegativeButton("取消", null).show();
     }
 
     private void deleteStar(int po)
@@ -606,15 +659,15 @@ public class filetodoAct extends Activity
                 mmr.setDataSource(filePath);
                 mime = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_MIMETYPE);
             }
-            catch(IllegalStateException e)
+            catch (IllegalStateException e)
             {
                 return mime;
             }
-            catch(IllegalArgumentException e)
+            catch (IllegalArgumentException e)
             {
                 return mime;
             }
-            catch(RuntimeException e)
+            catch (RuntimeException e)
             {
                 return mime;
             }
@@ -669,7 +722,7 @@ public class filetodoAct extends Activity
                 }
             }
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Toast.makeText(ctx, "回调" + e.toString(), Toast.LENGTH_SHORT).show();
         }

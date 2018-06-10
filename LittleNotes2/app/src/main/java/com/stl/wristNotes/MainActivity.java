@@ -22,7 +22,7 @@ import org.json.*;
 import java.text.*;
 import java.util.*;
 import com.stl.wristNotes.method.*;
-import org.apache.http.*;
+//import org.apache.http.*;
 import android.widget.Toolbar.*;
 //import com.mobvoi.android.gesture.*;
 

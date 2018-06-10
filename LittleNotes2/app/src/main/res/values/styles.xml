@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.NoActionBar">
+	<style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+		<item name="android:windowBackground">@color/mbackground</item>
 	</style>
-
 	<style name = "titleText">
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:layout_width">match_parent</item>
@@ -23,7 +23,7 @@
 		<item name="android:paddingRight">8sp</item>
 		<item name="android:textColor">#CCCCCC</item>item>
 	</style>
-	
+
 	<style name="listview">
 		<item name="android:cacheColorHint">#abcdef</item>
 		<!--<item name="android:listSelector">@drawable/passlist</item>-->

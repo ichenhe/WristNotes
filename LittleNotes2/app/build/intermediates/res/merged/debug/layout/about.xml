@@ -10,7 +10,7 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="vertical"
-		android:paddingBottom="16dp">
+		android:paddingBottom="15dp">
 
 		<TextView
 			style="@style/titleText"
@@ -39,7 +39,16 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:paddingBottom="15dp"
-			android:text="当前版本1.60(101)"/>
+			android:text="@string/about_currentVersion"/>
+
+		<Button
+			style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="about1"
+			android:text="@string/about_fiveStars"/>
 
 		<Button
 			style="@style/button"
@@ -48,7 +57,7 @@
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
 			android:onClick="about4"
-			android:text="更新日志"/>
+			android:text="@string/about_updateLog"/>
 
 		<Button
 			style="@style/button"
@@ -57,7 +66,7 @@
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
 			android:onClick="about2"
-			android:text="联系作者"/>
+			android:text="@string/about_contactAuthor"/>
 
 		<Button
 			style="@style/button"
@@ -66,13 +75,13 @@
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
 			android:onClick="about3"
-			android:text="支持作者"/>
+			android:text="@string/about_donatingAuthor"/>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:gravity="center"
-			android:text="Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n哔哩哔哩 - ( ゜- ゜)つロ 乾杯~\n另外祝杨永信及同类学校负责人\n早！日！爆！炸！"
+			android:text="@string/about_copyright"
 			android:textSize="10sp"/>
 
 	</LinearLayout>

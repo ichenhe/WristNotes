@@ -1,5 +1,290 @@
 [
     {
+        "outputFile": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 38,
+                    "endOffset": 89
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 94,
+                    "endColumn": 45,
+                    "endOffset": 135
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 140,
+                    "endColumn": 49,
+                    "endOffset": 185
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\color.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 190,
+                    "endColumn": 50,
+                    "endOffset": 236
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 241,
+                    "endColumn": 51,
+                    "endOffset": 288
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 293,
+                    "endColumn": 51,
+                    "endOffset": 340
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 345,
+                    "endColumn": 52,
+                    "endOffset": 393
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 398,
+                    "endColumn": 42,
+                    "endOffset": 436
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 441,
+                    "endColumn": 52,
+                    "endOffset": 489
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 494,
+                    "endColumn": 154,
+                    "endOffset": 644
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 649,
+                    "endColumn": 62,
+                    "endOffset": 707
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 712,
+                    "endColumn": 53,
+                    "endOffset": 761
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 766,
+                    "endColumn": 49,
+                    "endOffset": 811
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 816,
+                    "endColumn": 48,
+                    "endOffset": 860
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 865,
+                    "endColumn": 42,
+                    "endOffset": 903
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 908,
+                    "endColumn": 56,
+                    "endOffset": 960
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 965,
+                    "endColumn": 609,
+                    "endOffset": 1570
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1575,
+                    "endLine": 21,
+                    "endColumn": 9,
+                    "endOffset": 1725
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 1,
+                        "startOffset": 54,
+                        "endLine": 4,
+                        "endColumn": 9,
+                        "endOffset": 206
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1730,
+                    "endLine": 30,
+                    "endColumn": 9,
+                    "endOffset": 2133
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 1,
+                        "startOffset": 665,
+                        "endLine": 24,
+                        "endColumn": 9,
+                        "endOffset": 1077
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 2138,
+                    "endLine": 38,
+                    "endColumn": 9,
+                    "endOffset": 2509
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 1,
+                        "startOffset": 1082,
+                        "endLine": 33,
+                        "endColumn": 9,
+                        "endOffset": 1460
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2514,
+                    "endLine": 48,
+                    "endColumn": 9,
+                    "endOffset": 2954
+                },
+                "from": {
+                    "file": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {

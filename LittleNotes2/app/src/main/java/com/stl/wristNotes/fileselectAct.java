@@ -46,7 +46,7 @@ public class fileselectAct extends Activity
     public static ArrayList<String> fileCopyClip;
     public static ArrayList<String> fileCopyClipName;
     public static int fileCopyClipMode;
-    //0无1复制2剪贴
+    //0无 1复制 2剪贴
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -409,6 +409,7 @@ public class fileselectAct extends Activity
                             filejt2.setVisibility(View.INVISIBLE);
                             filedolist.setVisibility(View.GONE);
 
+                            filelist = fileselectwillfile.list();
                             Arrays.sort(filelist, comparator);
                             filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
                             adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, selectItem);
@@ -425,6 +426,7 @@ public class fileselectAct extends Activity
                             filejt2.setVisibility(View.INVISIBLE);
                             filedolist.setVisibility(View.GONE);
 
+                            filelist = fileselectwillfile.list();
                             Arrays.sort(filelist, comparator);
                             filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
                             adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, selectItem);

@@ -3,63 +3,90 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
+	android:descendantFocusability="blocksDescendants"
 	android:orientation="horizontal"
-	android:paddingLeft="27dp"
-	android:paddingRight="25dp"
-	android:descendantFocusability="blocksDescendants">
+	android:paddingLeft="25dp"
+	android:paddingRight="25dp">
 
-	<ImageView
-		android:id="@+id/menulistimg"
-		android:layout_width="52dp"
-		android:layout_height="52dp"
-		android:layout_centerVertical="true"/>
+	<RelativeLayout
+		android:id="@+id/menulistRelativeLayout1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true">
 
-	<TextView
-		android:id="@+id/menulisttext"
-		android:layout_width="52dp"
-		android:layout_height="52dp"
-		android:gravity="center"
-		android:text="A"
-		android:textSize="26sp"
-		android:textStyle="bold"
-		android:visibility="invisible"/>
+		<ImageView
+			android:id="@+id/menulistimg"
+			android:layout_width="52dp"
+			android:layout_height="52dp"/>
+
+		<TextView
+			android:id="@+id/menulisttext"
+			android:layout_width="52dp"
+			android:layout_height="52dp"
+			android:background="@drawable/shape_black"
+			android:gravity="center"
+			android:text="A"
+			android:textSize="26sp"
+			android:textStyle="bold"
+			android:visibility="gone"/>
+
+		<Button
+			android:id="@+id/menulistred"
+			android:layout_width="8dp"
+			android:layout_height="8dp"
+			android:layout_marginLeft="39dp"
+			android:layout_marginTop="5dp"
+			android:background="@drawable/shapr_redpoint"
+			android:visibility="gone"/>
+
+	</RelativeLayout>
 
 	<RelativeLayout
 		android:id="@+id/menulistRelativeLayout"
 		android:layout_width="wrap_content"
 		android:layout_height="54dp"
 		android:layout_alignParentRight="true"
-		android:gravity="center">
+		android:gravity="right|center">
 
 		<ImageView
 			android:id="@+id/menulistgo"
 			android:layout_width="42dp"
 			android:layout_height="42dp"
-			android:src="@drawable/go"
-			android:layout_centerInParent="true"/>
+			android:layout_centerInParent="true"
+			android:src="@drawable/go"/>
 
 		<ToggleButton
 			android:id="@+id/menulistswi"
-			android:layout_width="46dp"
+			android:layout_width="42dp"
 			android:layout_height="44dp"
-			android:textOn="开"
-			android:textOff="关"
+			android:layout_centerInParent="true"
 			android:clickable="false"
-			android:layout_centerInParent="true"/>
+			android:textOff="关"
+			android:textOn="开"/>
+
+		<CheckBox
+			android:id="@+id/menulistcb"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_centerVertical="true"
+			android:clickable="false"
+			android:focusable="false"
+			android:visibility="gone"/>
 
 	</RelativeLayout>
 
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
 		android:layout_toLeftOf="@id/menulistRelativeLayout"
-		android:layout_toRightOf="@id/menulistimg"
-		android:orientation="vertical"
+		android:layout_toRightOf="@id/menulistRelativeLayout1"
 		android:adjustViewBounds="true"
 		android:minHeight="54dp"
+		android:orientation="vertical"
 		android:paddingBottom="4dp"
-		android:paddingTop="4dp"
-		android:paddingLeft="2dp">
+		android:paddingLeft="4dp"
+		android:paddingTop="4dp">
 
 		<TextView
 			android:id="@+id/menulistText"
@@ -70,13 +97,13 @@
 			android:textSize="16sp"/>
 
 		<TextView
+			android:id="@+id/menulisttip"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="left|center"
+			android:paddingBottom="2dp"
 			android:textColor="#777777"
-			android:textSize="12sp"
-			android:id="@+id/menulisttip"
-			android:paddingBottom="2dp"/>
+			android:textSize="12sp"/>
 
 	</LinearLayout>
 

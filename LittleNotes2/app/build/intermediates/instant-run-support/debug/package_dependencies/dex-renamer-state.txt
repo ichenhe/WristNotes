@@ -1,0 +1,25 @@
+#Sat Jun 09 13:21:35 CST 2018
+renamed.7=classes.dex
+renamed.6=classes4.dex
+renamed.5=classes6.dex
+renamed.4=classes2.dex
+renamed.3=classes5.dex
+renamed.2=classes3.dex
+renamed.1=classes8.dex
+renamed.0=classes7.dex
+base.7=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\antlr-2.7.4_8c6323e3fb3cb418f366a998b39f9ce4cd4073d0
+base.6=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\ftpserver-core-1.0.6_a6763066885bbb3cebac7f6ac6c42e71b94ff123
+base.5=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\mina-core-2.0.4_bc3a91c1733009b3fbb0c8b2047a8536005ff637
+base.4=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\chardet-1.0_6bd5c4b1709f3ee4c2e48cd6fc370d513df69061
+base.3=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\log4j-1.2.14_225481d660d367fe82e73bd3be8db722f093a6af
+base.2=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\cpdetector_1.0.10_1d46e921612d9a506be35f36a684bde49330b6ee
+base.1=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\slf4j-log4j12-1.5.2_81a114f2c12480997eda04f4d0abcf910088d035
+base.0=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\slf4j-api-1.5.2_290c59f63afdf59d3d7a7c9df30269a2ee52b0f1
+file.7=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\antlr-2.7.4_8c6323e3fb3cb418f366a998b39f9ce4cd4073d0\\classes.dex
+file.6=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\ftpserver-core-1.0.6_a6763066885bbb3cebac7f6ac6c42e71b94ff123\\classes.dex
+file.5=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\mina-core-2.0.4_bc3a91c1733009b3fbb0c8b2047a8536005ff637\\classes.dex
+file.4=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\chardet-1.0_6bd5c4b1709f3ee4c2e48cd6fc370d513df69061\\classes.dex
+file.3=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\log4j-1.2.14_225481d660d367fe82e73bd3be8db722f093a6af\\classes.dex
+file.2=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\cpdetector_1.0.10_1d46e921612d9a506be35f36a684bde49330b6ee\\classes.dex
+file.1=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\slf4j-log4j12-1.5.2_81a114f2c12480997eda04f4d0abcf910088d035\\classes.dex
+file.0=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\slf4j-api-1.5.2_290c59f63afdf59d3d7a7c9df30269a2ee52b0f1\\classes.dex

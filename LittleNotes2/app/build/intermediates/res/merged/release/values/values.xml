@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="gray">#333333</color>
+    <color name="mbackground">#303030</color>
+    <color name="mbackgroundgray">#606060</color>
     <drawable name="clr_normal">#505050</drawable>
     <drawable name="clr_pressed">#303030</drawable>
     <drawable name="list_normal">#000000</drawable>
     <drawable name="list_pressed">#707070</drawable>
+    <string name="about_about">关于</string>
+    <string name="about_contactAuthor">联系作者</string>
+    <string name="about_copyright">Copyright © 2014-2018 setTile luern0313.\nAll rights reserved.\n哔哩哔哩 - ( ゜- ゜)つロ 乾杯~\n另外祝杨永信及同类机构负责人\n早！日！爆！炸！</string>
+    <string name="about_currentVersion">当前版本1.60(101)</string>
+    <string name="about_donatingAuthor">支持作者</string>
+    <string name="about_fiveStars">求五星好评</string>
+    <string name="about_updateLog">更新日志</string>
     <string name="app_name">腕上小纸条</string>
+    <string name="donation_donatingAuthor">支持作者</string>
     <string name="helptext">		请先将txt文件放入手表中，文档应使用UTF-8编码，否则会出现中文字符乱码的问题。\n        由于该应用没有配套的手机版，所以请自行找方法将文档放入手表中（如FTP）。\n\n        基本操作\n        在文本界面显示文字时长按弹出菜单界面，如果在偏好设置中开启了“触摸隐藏”功能，还可以在文本页面轻触屏幕立刻使文字隐藏，在此时长按屏幕即可恢复显示。若你开启了“启动应用隐藏”功能，你需要先长按使文字显示。（不开这些功能的人一定不是来作弊的）\n        菜单\n        在菜单和文件浏览器等界面，点击标题栏可以返回上一层\n        文档选择—可以选择打开文件，长按文件会弹出对这个文件的选项。其中用隐私模式打开可以在退出应用再进入后打开上一个打开的文件而不打开这个文件。\n        显示设置—可以调节文字亮度和文字大小。\n        偏好设置—可以设置密码，触摸隐藏和启动应用隐藏。\n        手表优化—针对圆形智能手表端的设置。可以设置屏幕四周不显示文字空出的大小。\n        密码\n        你可以设置密码以防不测。在偏好设置中可以开启密码服务。另外，你可以伪装密码输入的界面，在偏好设置-密码界面伪装中，你输入的字会出现在密码输入界面的标题栏中。</string>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.NoActionBar">
+    <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+		<item name="android:windowBackground">@color/mbackground</item>
 	</style>
     <style name="button">
 		<item name="android:layout_height">wrap_content</item>

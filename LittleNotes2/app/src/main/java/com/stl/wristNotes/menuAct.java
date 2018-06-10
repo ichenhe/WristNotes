@@ -142,10 +142,10 @@ public class menuAct extends Activity
             i = new Intent();
             i.putExtra("info", -1);
             setResult(0, i);
-            menuList = new String[]{"删除该小说记录", "文件属性"};
-            menuimg = new int[]{R.drawable.rubb, R.drawable.about};
-            menubut = new int[]{-1, -1};
-            menutip = new String[][]{{""}, {""}};
+            menuList = new String[]{"删除该小说记录", "已看完", "文件属性"};
+            menuimg = new int[]{R.drawable.rubb,R.drawable.icon_complete, R.drawable.about};
+            menubut = new int[]{-1, -1, -1};
+            menutip = new String[][]{{""}, {"我看完这本小说了"}, {""}};
             menutitle.setText("小说记录");
         }
 
@@ -508,6 +508,10 @@ public class menuAct extends Activity
                     menuintent = new Intent(ctx, filetodoAct.class);
                     menuintent.putExtra("po", 8);
                     startActivity(menuintent);
+                }
+                else if(s.equals("已看完"))
+                {
+
                 }
                 else if(s.equals("袖口模式"))
                 {

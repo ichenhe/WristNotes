@@ -26,12 +26,13 @@
 			<TextView
 				android:id="@+id/mainHint"
 				android:layout_width="match_parent"
-				android:layout_height="45dp"
-				android:gravity="bottom|center"
+				android:layout_height="wrap_content"
+				android:gravity="center"
 				android:paddingBottom="5dp"
 				android:text="\?\?:\?\?\n\?\?/\?\?\?  \?\?%"
 				android:textColor="#969696"
-				android:textStyle="bold"/>
+				android:textStyle="bold"
+				android:paddingTop="5dp"/>
 
 			<TextView
 				android:id="@+id/mainTextView"
@@ -45,31 +46,49 @@
 
 	</ScrollView>
 
-	<Button
-		android:id="@+id/mainButtonLeft"
+	<LinearLayout
+		android:layout_height="match_parent"
 		android:layout_width="40dp"
-		android:layout_height="100dp"
-		android:layout_gravity="center"
-		android:background="?android:attr/selectableItemBackgroundBorderless"
-		android:text="◀"
-		android:textSize="10sp"
-		android:textStyle="bold"
+		android:orientation="vertical"
+		android:gravity="center"
 		android:layout_alignParentLeft="true"
 		android:layout_centerVertical="true"
-		android:paddingRight="12dp"/>
+		android:paddingTop="20dp"
+		android:paddingBottom="20dp">
 
-	<Button
-		android:id="@+id/mainButtonRight"
+		<Button
+			android:id="@+id/mainButtonLeft"
+			android:layout_width="40dp"
+			android:layout_height="60dp"
+			android:background="?android:attr/selectableItemBackgroundBorderless"
+			android:text="◀"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			android:paddingRight="12dp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="match_parent"
 		android:layout_width="40dp"
-		android:layout_height="100dp"
-		android:layout_gravity="center"
-		android:background="?android:attr/selectableItemBackgroundBorderless"
-		android:text="▶"
-		android:textSize="10sp"
-		android:textStyle="bold"
+		android:orientation="vertical"
+		android:gravity="center"
 		android:layout_alignParentRight="true"
 		android:layout_centerVertical="true"
-		android:paddingLeft="12dp"/>
+		android:paddingTop="20dp"
+		android:paddingBottom="20dp">
+
+		<Button
+			android:id="@+id/mainButtonRight"
+			android:layout_width="40dp"
+			android:layout_height="60dp"
+			android:background="?android:attr/selectableItemBackgroundBorderless"
+			android:text="▶"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			android:paddingLeft="12dp"/>
+
+	</LinearLayout>
 
 	<LinearLayout
 		android:layout_height="30dp"

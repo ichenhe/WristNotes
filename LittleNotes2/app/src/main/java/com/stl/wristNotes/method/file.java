@@ -93,7 +93,6 @@ public class file
 				}
 			}
 		}
-		// 目录此时为空，可以删除
 		return dir.delete();
 	}
 
