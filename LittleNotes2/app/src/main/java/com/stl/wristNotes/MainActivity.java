@@ -91,7 +91,7 @@ public class MainActivity extends Activity
 
 	int scrollLength;
 
-
+    public static BufferedReader novelReader;//小说
 
 	@Override
     protected void onCreate(Bundle savedInstanceState)
@@ -218,18 +218,16 @@ public class MainActivity extends Activity
         {
             try
             {
-                //Toast.makeText(ctx, filepath + filename + "   " + mode, Toast.LENGTH_SHORT).show();
-                textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue(), code));
+                novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
+                 novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()) * 500);
+                textView.setText(fileOpen.novelReader(500));
                 //Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
-            }
-            catch(JSONException e)
-            {
-                Toast.makeText(ctx, "json未知错误！", Toast.LENGTH_SHORT).show();
             }
             catch(Exception e)
             {
                 Toast.makeText(ctx, "未知错误！", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             }
         }
         batterylevel();
@@ -425,7 +423,8 @@ public class MainActivity extends Activity
                             List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
                             novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
                             novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-                            textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
+
+                            textView.setText(fileOpen.novelReader(-500));
                             mainScrollView.fullScroll(View.FOCUS_UP);
                             editor.putString("novelList", novellist.toString());
                             editor.commit();
@@ -542,7 +541,7 @@ public class MainActivity extends Activity
 				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 				//textView.setText("");
-				textView.setText(fileOpen.novelReader(filepath + filename, Integer.valueOf(novelpage.get(p - 1)).intValue(), code));
+				textView.setText(fileOpen.novelReader(500));
 				mainScrollView.fullScroll(View.FOCUS_UP);
 				editor.putString("novelList", novellist.toString());
 				editor.commit();
@@ -602,7 +601,7 @@ public class MainActivity extends Activity
             }
             else//显示文字
             {
-                textView.setTextColor(Color.argb(light * 40, 255, 255, 255));
+                textView.setTextColor(Color.argb(light * 40 - 10, 255, 255, 255));
                 isalpha = 0;
 				if(mode == 1)
 				{
@@ -715,7 +714,15 @@ public class MainActivity extends Activity
 		//销毁广播 
 		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
 		//ctx.unregisterReceiver(this);
-	}
+        if(mode == 1) try
+        {
+            novelReader.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 	/*private boolean isAdded = false; // 是否已增加悬浮窗
 	 private static WindowManager wm;

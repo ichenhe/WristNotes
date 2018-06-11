@@ -102,7 +102,7 @@ public class passwordAct extends Activity
 							{
 								//Intent passint = new Intent(passwordAct.this,MainActivity.class);
 								MainActivity.pass = 1;
-								MainActivity.textView.setTextColor(Color.argb(255, MainActivity.light * 40, MainActivity.light * 40, MainActivity.light * 40));
+								MainActivity.textView.setTextColor(Color.argb(MainActivity.light * 40 - 10, 255, 255, 255));
 								finish();
 							}
 							else

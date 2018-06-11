@@ -26,22 +26,21 @@ public class fileOpen
             temp.append(temp1 + "\n");
         }
         bReader.close();
-        MainActivity.textView.setTextColor(Color.argb(255, MainActivity.light * 40, MainActivity.light * 40, MainActivity.light * 40));
+        MainActivity.textView.setTextColor(Color.argb(MainActivity.light * 40 - 10, 255, 255, 255));
         return temp.toString();
     }
 
-    public static String novelReader(String path, int page, String code) throws IOException
+    public static String novelReader(int skip) throws IOException
     {
-        BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), code));
         StringBuffer temp = new StringBuffer();
-        bReader.skip(page * 500);
+        MainActivity.novelReader.skip(skip);
         char[] ch = new char[500];
-        bReader.read(ch, 0, 500);
+        MainActivity.novelReader.read(ch, 0, 500);
         for (char b : ch) temp.append(b);
-        bReader.close();
         //textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
         return temp.toString();
     }
+
 	
 	public static void openNovel(final Context ctx, SharedPreferences sp, SharedPreferences.Editor ed, String path, String name)
     {
@@ -87,7 +86,8 @@ public class fileOpen
 				novellist.put("path", MainActivity.join(novelpath.toArray(new String[novelpath.size()]), "▒"));
 				novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 
-				MainActivity.textView.setText(novelReader(path + name, 0, code));
+                MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(path + name), code));
+				MainActivity.textView.setText(novelReader(500));
                 ed.putString("novelList", novellist.toString());
                 MainActivity.p = novelname.size();
 
@@ -95,7 +95,9 @@ public class fileOpen
             }
             else
             {
-                MainActivity.textView.setText(novelReader(path + name, Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue(), code));
+                MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(path + name), code));
+                MainActivity.novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() * 500);
+                MainActivity.textView.setText(novelReader(500));
                 Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
             MainActivity.mode = 1;

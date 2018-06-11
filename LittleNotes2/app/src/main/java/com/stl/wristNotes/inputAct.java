@@ -97,7 +97,10 @@ public class inputAct extends Activity
                         List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
                         novelpage.set(MainActivity.p - 1, (Integer.valueOf(inputedit.getText().toString()).intValue() - 1) + "");
                         novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-                        MainActivity.textView.setText(fileOpen.novelReader(MainActivity.filepath + MainActivity.filename, Integer.valueOf(inputedit.getText().toString()).intValue() - 1, MainActivity.code));
+
+                        MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(MainActivity.filepath + MainActivity.filename), MainActivity.code));
+                        MainActivity.novelReader.skip((Integer.valueOf(inputedit.getText().toString()).intValue() - 1) * 500);
+                        MainActivity.textView.setText(fileOpen.novelReader(500));
                         MainActivity.mainScrollView.fullScroll(View.FOCUS_UP);
                         editor.putString("novelList", novellist.toString());
                         editor.commit();

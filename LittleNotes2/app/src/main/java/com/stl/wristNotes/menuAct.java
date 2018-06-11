@@ -259,7 +259,7 @@ public class menuAct extends Activity
                 {
 					int light = Integer.parseInt(s) * 45;
                     if(light > 255) light = 255;
-                    MainActivity.textView.setTextColor(Color.argb(Integer.parseInt(s) * 40, 255, 255, 255));
+                    MainActivity.textView.setTextColor(Color.argb(Integer.parseInt(s) * 40 - 10, 255, 255, 255));
 					MainActivity.mainLeft.setTextColor(Color.argb(light, 255, 255, 255));
 					MainActivity.mainRight.setTextColor(Color.argb(light, 255, 255, 255));
 					MainActivity.mainHint.setTextColor(Color.argb(light, 255, 255, 255));
@@ -670,7 +670,7 @@ class mAdapter extends BaseAdapter
 		
 		if(MainActivity.cho == 1)//亮度调整
 		{
-			int l = Integer.valueOf(mData[position]).intValue() * 40;
+			int l = Integer.valueOf(mData[position]).intValue() * 40 - 10;
 			//name.setTextColor(Color.argb(255, l, l, l));
 			//name.setBackgroundColor(Color.argb(255, 0, 0, 0));
             TextView text = (TextView) layoutview.findViewById(R.id.menulisttext);
