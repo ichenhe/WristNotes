@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<ListView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:id="@+id/myNovel"
+		style="@style/listview"
+		android:dividerHeight="1dp"/>
+
+	<!--<include
+		layout="@layout/mynoveltext"/>-->
+    
+    <include
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        layout="@layout/widget_clickbg"
+        android:id="@+id/novelClickBg"
+        android:visibility="gone"/>
+
+    <include
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        layout="@layout/widget_clickbutton"
+        android:id="@+id/novelClickBu"
+		android:visibility="gone"/>
+
+</RelativeLayout>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="FTP文件传输"
+			android:layout_width="match_parent"
+			style="@style/titleText"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:gravity="center"
+			android:textSize="14sp"
+			android:id="@+id/ftpTextView1"
+			android:paddingLeft="20dp"
+			android:paddingRight="20dp"
+			android:paddingTop="10dp"
+			android:paddingBottom="5dp"
+			android:text="请先开启Wi-Fi\n两个设备要在同一个Wi-Fi下哦=^_^="/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:paddingRight="20dp"
+			android:paddingLeft="20dp"
+			android:layout_marginBottom="5dp"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="用户名"
+				android:layout_width="wrap_content"
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:id="@+id/ftpEditText1"
+				android:text="user"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:paddingRight="20dp"
+			android:paddingLeft="20dp"
+			android:layout_marginBottom="5dp"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="根目录"
+				android:layout_width="wrap_content"
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:id="@+id/ftpEditText2"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:paddingRight="20dp"
+			android:paddingLeft="20dp"
+			android:layout_marginBottom="5dp"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="端口"
+				android:layout_width="wrap_content"
+				android:textSize="16sp"
+				android:layout_marginRight="5dp"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:id="@+id/ftpEditText3"
+				android:text="2221"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="FTP开关"
+				android:layout_width="wrap_content"
+				android:textSize="18sp"
+				android:layout_marginRight="5dp"/>
+
+			<ToggleButton
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/ftpToggleButton1"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/ftpTextView2"
+			android:paddingTop="5dp"
+			android:paddingRight="20dp"
+			android:paddingLeft="20dp"
+			android:textSize="14sp"
+			android:text="如无特殊需要无需修改上方选项，点击开关打开FTP"
+			android:paddingBottom="40dp"/>
+
+	</LinearLayout>
+
+</ScrollView>
+
