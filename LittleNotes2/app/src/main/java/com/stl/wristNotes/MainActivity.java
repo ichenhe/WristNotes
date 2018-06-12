@@ -219,8 +219,11 @@ public class MainActivity extends Activity
             try
             {
                 novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
-                 novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue()) * 500);
-                textView.setText(fileOpen.novelReader(500));
+                if(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() != 1)
+                {
+                    novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() - 1) * 500);
+                }
+                textView.setText(fileOpen.novelReader(0));
                 //Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
 				mainHint.setText(getHintText(sharedPreferences));
             }
@@ -424,7 +427,12 @@ public class MainActivity extends Activity
                             novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
                             novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 
-                            textView.setText(fileOpen.novelReader(-500));
+                            novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
+                            if(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() != 1)
+                            {
+                                novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() - 1) * 500);
+                            }
+                            textView.setText(fileOpen.novelReader(0));
                             mainScrollView.fullScroll(View.FOCUS_UP);
                             editor.putString("novelList", novellist.toString());
                             editor.commit();
@@ -434,7 +442,7 @@ public class MainActivity extends Activity
                         catch(Exception e)
                         {
                             if(e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
-                            else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
+                            else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show(); e.printStackTrace();
                         }
                     }
                     else if(autoScoll == 1)
@@ -541,7 +549,7 @@ public class MainActivity extends Activity
 				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
 				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 				//textView.setText("");
-				textView.setText(fileOpen.novelReader(500));
+				textView.setText(fileOpen.novelReader(0));
 				mainScrollView.fullScroll(View.FOCUS_UP);
 				editor.putString("novelList", novellist.toString());
 				editor.commit();

@@ -33,7 +33,7 @@ public class fileOpen
     public static String novelReader(int skip) throws IOException
     {
         StringBuffer temp = new StringBuffer();
-        MainActivity.novelReader.skip(skip);
+        if(skip != 0) MainActivity.novelReader.skip(skip);
         char[] ch = new char[500];
         MainActivity.novelReader.read(ch, 0, 500);
         for (char b : ch) temp.append(b);
@@ -87,7 +87,7 @@ public class fileOpen
 				novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 
                 MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(path + name), code));
-				MainActivity.textView.setText(novelReader(500));
+				MainActivity.textView.setText(novelReader(0));
                 ed.putString("novelList", novellist.toString());
                 MainActivity.p = novelname.size();
 
@@ -96,8 +96,11 @@ public class fileOpen
             else
             {
                 MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(path + name), code));
-                MainActivity.novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() * 500);
-                MainActivity.textView.setText(novelReader(500));
+                if(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() != 1)
+                {
+                    MainActivity.novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() * 500);
+                }
+                MainActivity.textView.setText(novelReader(0));
                 Toast.makeText(ctx, "已跳转至上次观看位置", Toast.LENGTH_SHORT).show();
             }
             MainActivity.mode = 1;

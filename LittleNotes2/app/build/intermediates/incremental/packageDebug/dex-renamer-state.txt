@@ -1,7 +1,4 @@
-#Sun Jun 10 12:43:12 CST 2018
-base.0=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4caf604b2adde35a6baca45bb6d9e13f0b526f8c
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_b1df01b3eb24eee894560522e7421c1b54991827\\classes.dex
-base.1=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_b1df01b3eb24eee894560522e7421c1b54991827
-file.0=D\:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4caf604b2adde35a6baca45bb6d9e13f0b526f8c\\classes.dex
+#Tue Jun 12 13:03:32 CST 2018
+base.0=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
