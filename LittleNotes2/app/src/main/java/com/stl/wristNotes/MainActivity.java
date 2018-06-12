@@ -219,9 +219,9 @@ public class MainActivity extends Activity
             try
             {
                 novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
-                if(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() != 1)
+                if(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() != 0)
                 {
-                    novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() - 1) * 500);
+                    novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() * 500);
                 }
                 textView.setText(fileOpen.novelReader(0));
                 //Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
@@ -424,25 +424,28 @@ public class MainActivity extends Activity
                         {
                             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
                             List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
-                            novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
-                            novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-
-                            novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
-                            if(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() != 1)
+                            if(Integer.valueOf(novelpage.get(p - 1)).intValue() != 0)
                             {
-                                novelReader.skip((Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() - 1) * 500);
+                                novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
+                                novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+
+                                novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
+                                novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() * 500);
+                                textView.setText(fileOpen.novelReader(0));
+                                mainScrollView.fullScroll(View.FOCUS_UP);
+                                editor.putString("novelList", novellist.toString());
+                                editor.commit();
+                                mainHint.setText(getHintText(sharedPreferences));
+                                //batteryLevel();
                             }
-                            textView.setText(fileOpen.novelReader(0));
-                            mainScrollView.fullScroll(View.FOCUS_UP);
-                            editor.putString("novelList", novellist.toString());
-                            editor.commit();
-                            mainHint.setText(getHintText(sharedPreferences));
-                            //batteryLevel();
+                            else
+                            {
+                                Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
+                            }
                         }
                         catch(Exception e)
                         {
-                            if(e.toString().contains("charCount")) Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
-                            else Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show(); e.printStackTrace();
+                            Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show(); e.printStackTrace();
                         }
                     }
                     else if(autoScoll == 1)
@@ -544,17 +547,23 @@ public class MainActivity extends Activity
 		{
 			try
 			{
-				novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-				List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
-				novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
-				novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-				//textView.setText("");
-				textView.setText(fileOpen.novelReader(0));
-				mainScrollView.fullScroll(View.FOCUS_UP);
-				editor.putString("novelList", novellist.toString());
-				editor.commit();
-				mainHint.setText(getHintText(sharedPreferences));
-				//batteryLevel();
+			    novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+                List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
+                novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
+                novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+			    String text = fileOpen.novelReader(0);
+			    if(!text.equals(""))
+                {
+                    textView.setText(text);
+                    mainScrollView.fullScroll(View.FOCUS_UP);
+                    editor.putString("novelList", novellist.toString());
+                    editor.commit();
+                    mainHint.setText(getHintText(sharedPreferences));
+                }
+                else
+                {
+
+                }
 			}
 			catch(JSONException e)
 			{

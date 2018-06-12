@@ -96,7 +96,7 @@ public class fileOpen
             else
             {
                 MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(path + name), code));
-                if(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() != 1)
+                if(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() != 0)
                 {
                     MainActivity.novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[MainActivity.p - 1]).intValue() * 500);
                 }
