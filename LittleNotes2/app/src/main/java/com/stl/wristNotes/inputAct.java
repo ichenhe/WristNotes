@@ -77,40 +77,33 @@ public class inputAct extends Activity
                 }
                 else if(MainActivity.inputact == 2)
                 {
-                        /*try
-						{
-							MainActivity.novelReader(MainActivity.filepath + MainActivity.filename, Integer.valueOf(inputedit.getText().toString()).intValue());
-							Toast.makeText(ctx, "已跳转(^-^)", Toast.LENGTH_SHORT).show();
-							finish();
-						}
-						catch (IOException e)
-						{
-							Toast.makeText(ctx, "文件不存在！→_→", Toast.LENGTH_LONG).show();
-						}
-						catch (NumberFormatException e)
-						{
-							Toast.makeText(ctx, "请输入整数！-_-#", Toast.LENGTH_LONG).show();
-						}*/
                     try
                     {
-                        JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-                        List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
-                        novelpage.set(MainActivity.p - 1, (Integer.valueOf(inputedit.getText().toString()).intValue() - 1) + "");
-                        novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-
-                        MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(MainActivity.filepath + MainActivity.filename), MainActivity.code));
-                        if(Integer.valueOf(inputedit.getText().toString()).intValue() != 1)
+                        if(inputedit.getText().toString() != "")
                         {
-                            MainActivity.novelReader.skip((Integer.valueOf(inputedit.getText().toString()).intValue() - 1) * 500);
+                            JSONObject novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+                            List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
+                            novelpage.set(MainActivity.p - 1, (Integer.valueOf(inputedit.getText().toString()).intValue() - 1) + "");
+                            novellist.put("page", MainActivity.join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+
+                            MainActivity.novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(MainActivity.filepath + MainActivity.filename), MainActivity.code));
+                            if(Integer.valueOf(inputedit.getText().toString()).intValue() != 1)
+                            {
+                                MainActivity.novelReader.skip((Integer.valueOf(inputedit.getText().toString()).intValue() - 1) * 500);
+                            }
+                            MainActivity.textView.setText(fileOpen.novelReader(0));
+                            MainActivity.mainScrollView.fullScroll(View.FOCUS_UP);
+                            editor.putString("novelList", novellist.toString());
+                            editor.commit();
+                            MainActivity.mainHint.setText(MainActivity.getHintText(sharedPreferences));
+                            //batteryLevel();
+                            Toast.makeText(ctx, "已跳转(^-^)", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
-                        MainActivity.textView.setText(fileOpen.novelReader(0));
-                        MainActivity.mainScrollView.fullScroll(View.FOCUS_UP);
-                        editor.putString("novelList", novellist.toString());
-                        editor.commit();
-                        MainActivity.mainHint.setText(MainActivity.getHintText(sharedPreferences));
-                        //batteryLevel();
-                        Toast.makeText(ctx, "已跳转(^-^)", Toast.LENGTH_SHORT).show();
-                        finish();
+                        else
+                        {
+                            Toast.makeText(ctx, "你好像什么也没有输入→_→", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     catch (Exception e)
                     {
