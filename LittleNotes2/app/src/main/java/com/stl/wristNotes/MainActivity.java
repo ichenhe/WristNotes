@@ -569,6 +569,7 @@ public class MainActivity extends Activity
                     {
                         novelComplete.add(filepath + filename);
                         editor.putString("novelComplete", join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
+                        editor.commit();
                     }
                     Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
                 }

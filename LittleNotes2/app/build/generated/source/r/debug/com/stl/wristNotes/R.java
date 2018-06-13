@@ -124,7 +124,6 @@ public final class R {
         public static final int functiontext=0x7f070051;
         public static final int helpTextView1=0x7f070017;
         public static final int helpTextView2=0x7f070016;
-        public static final int imageView=0x7f070034;
         public static final int inputButton=0x7f07001a;
         public static final int inputEdit=0x7f070019;
         public static final int inputText=0x7f070018;
@@ -156,6 +155,7 @@ public final class R {
         public static final int mynoveltextButton=0x7f070037;
         public static final int novelClickBg=0x7f070039;
         public static final int novelClickBu=0x7f07003a;
+        public static final int novelComplete=0x7f070034;
         public static final int passwordButton=0x7f07003d;
         public static final int passwordEdit=0x7f07003c;
         public static final int passwordText=0x7f07003b;

@@ -284,8 +284,22 @@ public class novelAct extends Activity
 			{
 				novelComplete.add(novelpath.get(choose));
 				editor.putString("novelComplete", MainActivity.join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
+				editor.commit();
 			}
 			Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
+			simpleAdapter.notifyAll();
+		}
+		else if(data.getIntExtra("info", -1) == 4 && choose != -1)
+		{
+			ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
+			if(novelComplete.contains(novelpath.get(choose)))
+			{
+				novelComplete.add(novelpath.get(choose));
+				editor.putString("novelComplete", MainActivity.join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
+				editor.commit();
+			}
+			Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
+			simpleAdapter.notifyAll();
 		}
 	}
 }

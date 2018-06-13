@@ -9,6 +9,8 @@ import android.view.*;
 import android.widget.*;
 import android.widget.AdapterView.*;
 
+import org.apache.log4j.chainsaw.Main;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -145,10 +147,20 @@ public class menuAct extends Activity
             i = new Intent();
             i.putExtra("info", -1);
             setResult(0, i);
-            menuList = new String[]{"删除该小说记录", "已看完", "文件属性"};
+            ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
+            if(!novelComplete.contains(MainActivity.filepath + MainActivity.filename))
+            {
+                menuList = new String[]{"删除该小说记录", "已看完", "文件属性"};
+                menutip = new String[][]{{""}, {"我看完这本小说了"}, {""}};
+            }
+            else
+            {
+                menuList = new String[]{"删除该小说记录", "没看完", "文件属性"};
+                menutip = new String[][]{{""}, {"我还没看完这本小说..."}, {""}};
+            }
             menuimg = new int[]{R.drawable.rubb,R.drawable.icon_complete, R.drawable.about};
             menubut = new int[]{-1, -1, -1};
-            menutip = new String[][]{{""}, {"我看完这本小说了"}, {""}};
+
             menutitle.setText("小说记录");
         }
 
@@ -515,6 +527,12 @@ public class menuAct extends Activity
                 else if(s.equals("已看完"))
                 {
                     i.putExtra("info", 3);
+                    setResult(0, i);
+                    finish();
+                }
+                else if(s.equals("没看完"))
+                {
+                    i.putExtra("info", 4);
                     setResult(0, i);
                     finish();
                 }

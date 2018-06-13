@@ -36,10 +36,10 @@ public class fileOpen
         if(skip != 0) MainActivity.novelReader.skip(skip);
         char[] ch = new char[500];
         MainActivity.novelReader.read(ch, 0, 500);
-        for (char b : ch)
+        for (int i = 0; i < ch.length; i++)
         {
-            if((int)b == 0) return "";
-            temp.append(b);
+            if((int)ch[i] == 0 && i == 0) return "";
+            temp.append(ch[i]);
         }
         //textView.setTextColor(Color.argb(255, light * 8, light * 8, light * 8));
         return temp.toString();
