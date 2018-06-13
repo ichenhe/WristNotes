@@ -4,6 +4,7 @@ import android.app.*;
 import android.content.*;
 import android.graphics.*;
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
@@ -552,7 +553,8 @@ public class MainActivity extends Activity
                 novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
                 novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 			    String text = fileOpen.novelReader(0);
-			    if(!text.equals(""))
+                Log.i("Debug", text);
+                if(!text.equals(""))
                 {
                     textView.setText(text);
                     mainScrollView.fullScroll(View.FOCUS_UP);
@@ -560,9 +562,15 @@ public class MainActivity extends Activity
                     editor.commit();
                     mainHint.setText(getHintText(sharedPreferences));
                 }
-                else
+                else//看完了
                 {
-
+                    ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
+                    if(!novelComplete.contains(filepath + filename))
+                    {
+                        novelComplete.add(filepath + filename);
+                        editor.putString("novelComplete", join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
+                    }
+                    Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
                 }
 			}
 			catch(JSONException e)

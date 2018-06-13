@@ -9,6 +9,9 @@ import android.view.*;
 import android.widget.*;
 import android.widget.AdapterView.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class menuAct extends Activity
 {
     SharedPreferences sharedPreferences;
@@ -511,7 +514,9 @@ public class menuAct extends Activity
                 }
                 else if(s.equals("已看完"))
                 {
-
+                    i.putExtra("info", 3);
+                    setResult(0, i);
+                    finish();
                 }
                 else if(s.equals("袖口模式"))
                 {

@@ -1,8 +1,11 @@
 package com.stl.wristNotes;
 
 import android.app.*;
+import android.graphics.Color;
 import android.os.*;
 import android.widget.*;
+
+import java.lang.reflect.Array;
 import java.util.*;
 import org.json.*;
 import android.content.*;
@@ -22,9 +25,9 @@ public class novelAct extends Activity
 	ArrayList<String> novelpath;
 	ArrayList<String> novelpage;
 	Button novelbutton;
-	Map<String, Object> listItem;
-	List<Map<String, Object>> listItems;
-	SimpleAdapter simpleAdapter;
+	ArrayList<String> nameList;
+	ArrayList<String> pageList;
+	nAdapter simpleAdapter;
 	ListView listView;
 
 	int choose = -1;
@@ -36,7 +39,8 @@ public class novelAct extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.novel);
 
-		listItems = new ArrayList<Map<String,Object>>();
+		nameList = new ArrayList<String>();
+		pageList = new ArrayList<String>();
 		listView = (ListView) findViewById(R.id.myNovel);
 		LayoutInflater infla = LayoutInflater.from(this);
 		View footView = infla.inflate(R.layout.mynoveltext, null);
@@ -85,12 +89,9 @@ public class novelAct extends Activity
 
 			for (int i = 0; i < novelname.size(); i++)
 			{
-				listItem=new HashMap<String,Object>();
-				listItem.put("header", novelname.get(i));
-				listItem.put("second", "看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
-				listItems.add(listItem);
+				nameList.add(novelname.get(i));
+				pageList.add("看到第" + (Integer.valueOf(novelpage.get(i)).intValue() + 1) + "页\n大概一共有" + (int)Math.ceil(new File(novelpath.get(i)).length() / 1250) + "页");
 			}
-
 		}
         catch (JSONException e)
         {
@@ -101,7 +102,7 @@ public class novelAct extends Activity
 			Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_LONG).show();
 		}
 		
-		simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
+		simpleAdapter = new nAdapter(getLayoutInflater(), nameList, pageList, novelpath);
 		if(sharedPreferences.getString("function", "00000").split("")[4].equals("0"))//功能提醒
 		{
             final View menuClickBg = findViewById(R.id.novelClickBg);
@@ -206,10 +207,10 @@ public class novelAct extends Activity
 	{
 		try
 		{
-			novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			novelname = new ArrayList<String>(Arrays.asList(novellist.getString("name").split("▒")));
-			novelpath = new ArrayList<String>(Arrays.asList(novellist.getString("path").split("▒")));
-			novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
+			//novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+			//novelname = new ArrayList<String>(Arrays.asList(novellist.getString("name").split("▒")));
+			//novelpath = new ArrayList<String>(Arrays.asList(novellist.getString("path").split("▒")));
+			//novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
 			novelname.remove(j);
 			novelpath.remove(j);
 			novelpage.remove(j);
@@ -220,7 +221,8 @@ public class novelAct extends Activity
 			editor.putString("novelList", novellist.toString());
 			editor.commit();
 
-			listItems.remove(j);
+			nameList.remove(j);
+			pageList.remove(j);
 			simpleAdapter.notifyDataSetChanged();
 			//simpleAdapter = new SimpleAdapter(this, listItems, R.layout.mynovelitem, new String[]{"header","second"}, new int[]{R.id.mynovelitemTextView1, R.id.mynovelitemTextView2});
 			//listView.setAdapter(simpleAdapter);
@@ -275,5 +277,75 @@ public class novelAct extends Activity
 			intent.putExtra("string", new fileAttributes(novelname.get(choose), novelpath.get(choose)).getFileAttributes());
 			startActivity(intent);
 		}
+		else if(data.getIntExtra("info", -1) == 3 && choose != -1)
+		{
+			ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
+			if(!novelComplete.contains(novelpath.get(choose)))
+			{
+				novelComplete.add(novelpath.get(choose));
+				editor.putString("novelComplete", MainActivity.join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
+			}
+			Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
+		}
+	}
+}
+
+class nAdapter extends BaseAdapter
+{
+	private LayoutInflater mInflater;
+	private View layoutview;
+
+	private ArrayList<String> name;
+	private ArrayList<String> page;
+	private ArrayList<String> path;
+
+	private TextView nameTextview;
+	private TextView pageTextview;
+	private ImageView completeImg;
+
+	public nAdapter(LayoutInflater inflater, ArrayList<String> nameList, ArrayList<String> pageList, ArrayList<String> pathList)
+	{
+		mInflater = inflater;
+		name = nameList;
+		page = pageList;
+		path = pathList;
+	}
+
+	@Override
+	public int getCount()
+	{
+		return name.size();
+	}
+
+	@Override
+	public Object getItem(int position)
+	{
+		return position;
+	}
+
+	@Override
+	public long getItemId(int position)
+	{
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertview, ViewGroup viewGroup)
+	{
+		layoutview = mInflater.inflate(R.layout.mynovelitem, null);
+
+		nameTextview = (TextView) layoutview.findViewById(R.id.mynovelitemTextView1);
+		pageTextview = (TextView) layoutview.findViewById(R.id.mynovelitemTextView2);
+
+		nameTextview.setText(name.get(position));
+		pageTextview.setText(page.get(position));
+		ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(MainActivity.sharedPreferences.getString("novelComplete", "").split("▒")));
+		if(novelComplete.contains(path.get(position)))
+		{
+			completeImg = (ImageView) layoutview.findViewById(R.id.novelComplete);
+			completeImg.setVisibility(View.VISIBLE);
+		}
+
+		return layoutview;
 	}
 }
