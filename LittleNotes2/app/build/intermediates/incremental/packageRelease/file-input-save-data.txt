@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jun 14 17:40:57 CST 2018
+#Thu Jun 14 18:15:07 CST 2018
 60.set=ANDROID_RESOURCE
 52.set=ANDROID_RESOURCE
 53.base=F\:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main

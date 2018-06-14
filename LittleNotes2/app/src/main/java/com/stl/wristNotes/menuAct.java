@@ -146,7 +146,7 @@ public class menuAct extends Activity
             menuList = new String[]{"跳转页数", "智能翻页", "自动翻页", "自动翻页速度"};
             menuimg = new int[]{0, 0, 0, 0};
             menubut = new int[]{2, getState("smartScroll", "开启", "关闭"), 0, 2};
-            menutip = new String[][]{{"跳转到任意一页"}, {"已关闭", "已开启\n翻页键先滚动到页面底部再翻页"}, {"已关闭", "已开启\n系统会自动翻页"}, {MainActivity.autoScollSec + "秒"}};
+            menutip = new String[][]{{"跳转到任意一页"}, {"已关闭", "已开启\n翻页键先滚动到页面底部再翻页"}, {"已关闭", "已开启\n系统会自动翻页"}, {"自动翻页时间：" + MainActivity.autoScollSec + "秒"}};
             menutitle.setText("阅读菜单");
             if(MainActivity.autoScoll != 0) menubut[2] = 1;
         }
@@ -225,6 +225,18 @@ public class menuAct extends Activity
             {
                 position -= tip;
                 String s = menuList[position];
+
+                if(MainActivity.cho == 0)
+                {
+                    String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "11111011").split("");
+                    if(fun[position + 1].equals("1"))
+                    {
+                        fun[position + 1] = "0";
+                        editor.putString("menuFunction", MainActivity.join(fun, ""));
+                        editor.commit();
+                    }
+                }
+
                 if(s.equals("打开文档"))
                 {
                     MainActivity.filewillpath = "";
@@ -439,6 +451,7 @@ public class menuAct extends Activity
                     {
                         passint = new Intent(ctx, novelAct.class);
                         startActivity(passint);
+                        finish();
                     }
                 }
                 else if(s.equals("主题选择"))
@@ -500,6 +513,7 @@ public class menuAct extends Activity
                 else if(s.equals("重置新功能提示"))
                 {
                     editor.putString("function", "00000");
+                    editor.putString("menuFunction", "11111011");
                     editor.commit();
                     Toast.makeText(ctx, "已重置！重启应用就能正常查看喵~", Toast.LENGTH_SHORT).show();
                 }
@@ -725,7 +739,11 @@ class mAdapter extends BaseAdapter
 		}
         else if(MainActivity.cho == 0)
         {
-            layoutview.findViewById(R.id.menulistred).setVisibility(View.VISIBLE);
+            String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "11111011").split("");
+            if(fun[position + 1].equals("1"))
+            {
+                layoutview.findViewById(R.id.menulistred).setVisibility(View.VISIBLE);
+            }
         }
 
         if(mData[position].equals("横屏显示") && mData[position].equals("竖屏显示"))

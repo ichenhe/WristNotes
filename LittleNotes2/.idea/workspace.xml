@@ -16,17 +16,12 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da5b341-06b6-45fc-98b4-37197b9fa616" name="Default" comment="优化耗电基本完成。。">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_antlr_2_7_4_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_chardet_1_0_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_cpdetector_1_0_10_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_ftpserver_core_1_0_6_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_log4j_1_2_14_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_mina_core_2_0_4_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_slf4j_api_1_5_2_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_jars___D__lpr_Android_Project_WanShangXiaoZhiTiao_LittleNotes2_app_src_main_lib_slf4j_log4j12_1_5_2_jar_unspecified_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml" afterPath="" />
+    <list default="true" id="3da5b341-06b6-45fc-98b4-37197b9fa616" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-14-18-07-51-340.rawproto" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-14-18-09-39-939.rawproto" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-14-18-10-39-547.rawproto" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-14-18-13-03-254.rawproto" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-14-18-14-57-573.rawproto" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -35,74 +30,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app-release.apk" afterPath="$PROJECT_DIR$/app/app-release.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/fileselectAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/fileselectAct.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/filetodoAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/filetodoAct.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/helpAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/helpAct.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/mAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/mAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/menuAct.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/method/fileOpen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/method/fileOpen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/novelAct$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/novelAct$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/novelAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/novelAct.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/zAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/release/com/stl/wristNotes/zAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-release.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-release.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/stl/wristNotes/test/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/stl/wristNotes/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/stl/wristNotes/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/stl/wristNotes/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/release/com/stl/wristNotes/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/release/com/stl/wristNotes/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/stl/wristNotes/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/stl/wristNotes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/release/com/stl/wristNotes/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/release/com/stl/wristNotes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/release/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/release/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/release/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/release/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/dex-renamer-state.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/file-input-save-data.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/donation.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/donation.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/fivestars.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/fivestars.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/updated.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/updated.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/reports/lint-results-release-fatal.html" afterPath="$PROJECT_DIR$/app/build/reports/lint-results-release-fatal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/novelAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/novelAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/donation.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/donation.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fivestars.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fivestars.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/updated.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/updated.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../UpdateLog.txt" afterPath="$PROJECT_DIR$/../UpdateLog.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -164,11 +107,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="503" column="34" selection-start-line="503" selection-start-column="34" selection-end-line="503" selection-end-column="34" />
+            <state relative-caret-position="128">
+              <caret line="202" column="54" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -181,7 +124,7 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="36" column="176" selection-start-line="36" selection-start-column="176" selection-end-line="36" selection-end-column="176" />
+              <caret line="36" column="153" selection-start-line="36" selection-start-column="153" selection-end-line="36" selection-end-column="153" />
               <folding />
             </state>
           </provider>
@@ -190,18 +133,28 @@
       <file leaf-file-name="novelAct.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/novelAct.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="313" column="35" selection-start-line="313" selection-start-column="35" selection-end-line="313" selection-end-column="35" />
+            <state relative-caret-position="178">
+              <caret line="105" column="69" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuAct.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menuAct.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="422" column="54" selection-start-line="422" selection-start-column="54" selection-end-line="422" selection-end-column="54" />
+            <state relative-caret-position="338">
+              <caret line="151" column="9" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filetodoAct.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/filetodoAct.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1605">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -221,7 +174,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="22" column="173" selection-start-line="22" selection-start-column="173" selection-end-line="22" selection-end-column="173" />
+              <caret line="22" column="150" selection-start-line="22" selection-start-column="150" selection-end-line="22" selection-end-column="150" />
               <folding />
             </state>
           </provider>
@@ -1967,10 +1920,10 @@
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/release/layout/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fivestars.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/updated.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/updated.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java" />
       </list>
     </option>
   </component>
@@ -2010,7 +1963,64 @@
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="AndroidView">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LittleNotes2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LittleNotes2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LittleNotes2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wristNotes" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LittleNotes2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wristNotes" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filetodoAct.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
     </panes>
   </component>
@@ -2368,7 +2378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528813648547</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="没什么问题的话，就是1.6发行版了，更新横竖屏旋屏等">
+      <created>1528969797352</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528969797352</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2389,10 +2406,10 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2299427" sideWeight="0.4944134" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2299427" sideWeight="0.4944134" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325419" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2277937" sideWeight="0.48440748" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2277937" sideWeight="0.48440748" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2442,7 +2459,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="优化耗电基本完成。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化耗电基本完成。。" />
+    <MESSAGE value="没什么问题的话，就是1.6发行版了，更新横竖屏旋屏等" />
+    <MESSAGE value="不。。这个才是1.6发行版，更新主菜单红点能点掉" />
+    <option name="LAST_COMMIT_MESSAGE" value="不。。这个才是1.6发行版，更新主菜单红点能点掉" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2451,17 +2470,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mynovelitem.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -2766,17 +2774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fivestars.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2784,6 +2781,38 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/inputAct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="95" column="62" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/AndroidSDK/sources/android-24/android/content/res/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="509" column="28" selection-start-line="509" selection-start-column="28" selection-end-line="509" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/novelAct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="105" column="69" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="202" column="54" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -2799,18 +2828,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="173" selection-start-line="22" selection-start-column="173" selection-end-line="22" selection-end-column="173" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/inputAct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="95" column="62" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -2821,39 +2845,31 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="36" column="176" selection-start-line="36" selection-start-column="176" selection-end-line="36" selection-end-column="176" />
+          <caret line="36" column="153" selection-start-line="36" selection-start-column="153" selection-end-line="36" selection-end-column="153" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/novelAct.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/helpAct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="313" column="35" selection-start-line="313" selection-start-column="35" selection-end-line="313" selection-end-column="35" />
+        <state relative-caret-position="285">
+          <caret line="22" column="150" selection-start-line="22" selection-start-column="150" selection-end-line="22" selection-end-column="150" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/AndroidSDK/sources/android-24/android/content/res/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/filetodoAct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="509" column="28" selection-start-line="509" selection-start-column="28" selection-end-line="509" selection-end-column="28" />
+        <state relative-caret-position="-1605">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/menuAct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="422" column="54" selection-start-line="422" selection-start-column="54" selection-end-line="422" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stl/wristNotes/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="503" column="34" selection-start-line="503" selection-start-column="34" selection-end-line="503" selection-end-column="34" />
+        <state relative-caret-position="338">
+          <caret line="151" column="9" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
           <folding />
         </state>
       </provider>
