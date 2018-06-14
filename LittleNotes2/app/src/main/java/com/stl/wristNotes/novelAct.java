@@ -192,7 +192,7 @@ public class novelAct extends Activity
 				{
 					MainActivity.cho = 8;
 					Intent intent = new Intent(ctx, menuAct.class);
-					//intent.putExtra("position", position);
+					intent.putExtra("path", novelpath.get(position - 1));
 					startActivityForResult(intent, 0);
 					choose = position - isHeadview;
 					//startActivity(intent);
@@ -287,19 +287,19 @@ public class novelAct extends Activity
 				editor.commit();
 			}
 			Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
-			simpleAdapter.notifyAll();
+			simpleAdapter.notifyDataSetChanged();
 		}
 		else if(data.getIntExtra("info", -1) == 4 && choose != -1)
 		{
 			ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
 			if(novelComplete.contains(novelpath.get(choose)))
 			{
-				novelComplete.add(novelpath.get(choose));
+                novelComplete.remove(novelpath.get(choose));
 				editor.putString("novelComplete", MainActivity.join(novelComplete.toArray(new String[novelComplete.size()]), "▒"));
 				editor.commit();
 			}
-			Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
-			simpleAdapter.notifyAll();
+			Toast.makeText(ctx, "已去掉标记", Toast.LENGTH_SHORT).show();
+			simpleAdapter.notifyDataSetChanged();
 		}
 	}
 }

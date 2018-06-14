@@ -2,6 +2,7 @@ package com.stl.wristNotes;
 
 import android.app.*;
 import android.content.*;
+import android.content.res.Configuration;
 import android.graphics.*;
 import android.os.*;
 import android.util.Log;
@@ -91,6 +92,8 @@ public class MainActivity extends Activity
 	IntentFilter batteryLevelFilter;
 
 	int scrollLength;
+    public static boolean orientation = false;
+    public static boolean isOrientation = false;
 
     public static BufferedReader novelReader;//小说
 
@@ -190,11 +193,16 @@ public class MainActivity extends Activity
         try
         {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
-			if(sharedPreferences.getInt("isUpdated", 0) < 82)
+			/*if(sharedPreferences.getInt("isUpdated", 0) < 82)
 			{
 				editor.putString("function", "00000");
 				editor.commit();
-			}
+			}*/
+			if(sharedPreferences.getInt("isUpdated", 0) < 104)
+            {
+                editor.putString("function", "00000");
+                editor.commit();
+            }
             if(sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
             {
                 Intent startint = new Intent(ctx, updated.class);
@@ -490,6 +498,15 @@ public class MainActivity extends Activity
     protected void onResume()
     {
         if(autoScoll == 3 && isalpha == 0) autoReadChange(1);
+
+        if(isOrientation && orientation){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            isOrientation = false;
+        }
+        else if(isOrientation && !orientation){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            isOrientation = false;
+        }
         super.onResume();
     }
 

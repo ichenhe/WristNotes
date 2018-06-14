@@ -5,6 +5,7 @@ import android.content.*;
 import android.content.pm.*;
 import android.graphics.*;
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.widget.AdapterView.*;
@@ -111,7 +112,14 @@ public class menuAct extends Activity
         }
         else if(MainActivity.cho == 3)
         {
-            menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "横屏显示", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
+            if(MainActivity.orientation)
+            {
+                menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "竖屏显示", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
+            }
+            else
+            {
+                menuList = new String[]{"触摸隐藏文字", "启动应用隐藏文字", "横屏显示", "重置新功能提示", "隐藏文字显示时间", "密码保护", "更改密码", "密码入口伪装"};
+            }
             menuimg = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
             menubut = new int[]{getState("touchHideText", "关闭", "关闭"), getState("startHideText", "关闭", "关闭"), -1, -1, getState("displayTime", "关闭", "关闭"), getState("password", "", ""), 2, 2};
             menutip = new String[][]{{"已关闭", "已开启\n长按可重新显示文字"}, {"已关闭", "已开启\n要先长按使文字显示"}, {""}, {"重新显示新功能提示"}, {"已关闭", "已开启\n点击隐藏文字后屏幕会显示当前时间"}, {"已关闭", "已开启"}, {"更改你的密码"}, {"更改密码输入界面标题栏的文字"}};
@@ -148,17 +156,20 @@ public class menuAct extends Activity
             i.putExtra("info", -1);
             setResult(0, i);
             ArrayList<String> novelComplete = new ArrayList<String>(Arrays.asList(sharedPreferences.getString("novelComplete", "").split("▒")));
-            if(!novelComplete.contains(MainActivity.filepath + MainActivity.filename))
+            //Log.i("Debug", getIntent().getStringArrayExtra("path"));
+            if(!novelComplete.contains(getIntent().getStringExtra("path")))
             {
                 menuList = new String[]{"删除该小说记录", "已看完", "文件属性"};
                 menutip = new String[][]{{""}, {"我看完这本小说了"}, {""}};
+                menuimg = new int[]{R.drawable.rubb,R.drawable.icon_complete, R.drawable.about};
             }
             else
             {
                 menuList = new String[]{"删除该小说记录", "没看完", "文件属性"};
                 menutip = new String[][]{{""}, {"我还没看完这本小说..."}, {""}};
+                menuimg = new int[]{R.drawable.rubb, R.drawable.icon_cancel, R.drawable.about};
             }
-            menuimg = new int[]{R.drawable.rubb,R.drawable.icon_complete, R.drawable.about};
+
             menubut = new int[]{-1, -1, -1};
 
             menutitle.setText("小说记录");
@@ -406,9 +417,12 @@ public class menuAct extends Activity
                     }
                     editor.commit();
                 }
-                else if(s.equals("横屏显示"))
+                else if(s.equals("横屏显示") || s.equals("竖屏显示"))
                 {
-                    //stRequestedOrientation()
+                    MainActivity.orientation = !MainActivity.orientation;
+                    MainActivity.isOrientation = true;
+                    Toast.makeText(ctx, "回到主界面来旋转屏幕", Toast.LENGTH_LONG).show();
+                    ((BaseAdapter)adapter).notifyDataSetChanged();
                 }
                 else if(s.equals("FTP文件传输"))
                 {
@@ -712,6 +726,12 @@ class mAdapter extends BaseAdapter
         else if(MainActivity.cho == 0)
         {
             layoutview.findViewById(R.id.menulistred).setVisibility(View.VISIBLE);
+        }
+
+        if(mData[position].equals("横屏显示") && mData[position].equals("竖屏显示"))
+        {
+            if(MainActivity.orientation) name.setText("竖屏显示");
+            else name.setText("横屏显示");
         }
 
 
