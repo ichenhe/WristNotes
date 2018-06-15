@@ -25,7 +25,7 @@ public class fileselectAct extends Activity
     public static String[] filelist;
 	String[] filelist2;
 	public static ArrayList<String> filelistToAdapter;
-	ListView fileselectView;
+	public static ListView fileselectView;
 	public static zAdapter adapter;
 
     public static View headView;
@@ -577,7 +577,13 @@ public class fileselectAct extends Activity
                     if(success == 1)
                     {
                         Toast.makeText(ctx, "创建成功！", Toast.LENGTH_SHORT).show();
-                        filelistToAdapter.add(data.getStringExtra("info"));
+                        doSelect = 0;
+                        filelist = fileselectwillfile.list();
+                        Arrays.sort(filelist, comparator);
+                        filelistToAdapter = new ArrayList<String>(Arrays.asList(filelist));
+                        selectItem = new boolean[filelistToAdapter.size()];
+                        adapter = new zAdapter(filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, selectItem);
+                        fileselectView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                     }
                     else if(success == 0)

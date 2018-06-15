@@ -543,8 +543,14 @@ public class filetodoAct extends Activity
                                                     }
                                                 }
                                             }
+                                            fileselectAct.doSelect = 0;
                                             fileselectAct.filelist = fileselectAct.fileselectwillfile.list();
-                                            fileselectAct.adapter.notifyDataSetChanged();
+                                            Arrays.sort(fileselectAct.filelist, fileselectAct.comparator);
+                                            fileselectAct.filelistToAdapter = new ArrayList<String>(Arrays.asList(fileselectAct.filelist));
+                                            fileselectAct.selectItem = new boolean[fileselectAct.filelistToAdapter.size()];
+                                            fileselectAct.adapter = new zAdapter(fileselectAct.filelistToAdapter, getLayoutInflater(), MainActivity.filewillpath, fileselectAct.selectItem);
+                                            fileselectAct.fileselectView.setAdapter(fileselectAct.adapter);
+                                            fileselectAct.filedo3.setBackground(ctx.getDrawable(R.drawable.bg_filedo_noscl));
                                             Toast.makeText(ctx, "删除成功！~(≥▽≤)~", Toast.LENGTH_SHORT).show();
                                             finish();
                                         }
