@@ -535,7 +535,7 @@ public class filetodoAct extends Activity
                                                     }
                                                     else
                                                     {
-                                                        if(delectFile.delete())
+                                                        if(!delectFile.delete())
                                                         {
                                                             Toast.makeText(ctx, "删除失败？？喵喵喵？ºΔº", Toast.LENGTH_SHORT).show();
                                                             break;
