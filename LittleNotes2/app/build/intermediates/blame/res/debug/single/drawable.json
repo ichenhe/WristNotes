@@ -1,5 +1,29 @@
 [
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_complete.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_complete.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\xs.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\xs.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\help.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\help.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon.jpg"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_new.png",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_new.png"
     },
@@ -32,12 +56,20 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\setting.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bluetooth.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\bluetooth.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_full.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_full.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\passlist.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\passlist.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\star.jpg",
@@ -48,12 +80,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_anim_to_on.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_on_disabled.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_on_disabled.xml"
-    },
-    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\history.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\history.jpg"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_on_disabled.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_on_disabled.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_off_disabled.xml",
@@ -70,6 +102,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_complete.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_complete.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_lnewfor.png",
@@ -112,8 +148,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_off.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\folder.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\folder.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_plus_32px.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_plus_32px.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\history.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\history.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\go.jpg",
@@ -124,8 +172,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\novelfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\novelfile.jpg"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\files.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\files.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_cancel.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_cancel.png"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_off_disabled.xml",
@@ -134,6 +190,14 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\profile.png",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\profile.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\apkfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\apkfile.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\style_checkbox.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\style_checkbox.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\preference.jpg",
@@ -160,6 +224,14 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_anim_to_on.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_sort.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_sort.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_on.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_on.xml"
     },
@@ -180,16 +252,24 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_on_disabled.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_anim_to_off.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_anim_to_off.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\number_picker_divider_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\number_picker_divider_ticwear.xml"
     },
     {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_anim_to_off.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_anim_to_off.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\about.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\about.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_anim_to_on.xml",
@@ -220,6 +300,10 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\unknowfile.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_more.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_more.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\doc.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\doc.jpg"
     },
@@ -244,12 +328,20 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\password.jpg"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\number_picker_divider_ticwear.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\number_picker_divider_ticwear.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_anim_to_off.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_anim_to_off.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\number_picker_divider_ticwear.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\number_picker_divider_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_filedo_noscl.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\bg_filedo_noscl.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.jpg",
@@ -264,12 +356,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_off_disabled.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\favicon.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\favicon.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_lnewfor.png",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_lnewfor.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_clickbutton.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_clickbutton.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_anim_to_on.xml",
@@ -282,6 +382,10 @@
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bluetooth.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\bluetooth.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\helps.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\helps.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_of3.png",
@@ -304,8 +408,16 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\createfor.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\audio.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\audio.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\createfor.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\createfor.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_anim_to_off.xml",
@@ -320,12 +432,20 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\qrcode.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\nostar.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\nostar.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_off_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_off_disabled.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_on_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_on_disabled.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.jpg",
@@ -344,12 +464,20 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\audio.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_cancel.png",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_cancel.png"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_anim_to_off.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_anim_to_off.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\helps.jpg",
@@ -368,8 +496,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_enter.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_anim_to_off.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_anim_to_off.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\qrcode.jpg",
@@ -380,12 +516,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_full.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\clock.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\clock.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_on_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_on_disabled.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_on_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_on_disabled.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\starfor.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\starfor.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_off.xml",
@@ -396,12 +540,20 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_complete.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\xs.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\xs.jpg"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\unknowfile.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\unknowfile.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\unknowfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\unknowfile.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_full.xml",
@@ -456,12 +608,28 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\filecs.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shapr_redpoint.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shapr_redpoint.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_btn_ok.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_btn_ok.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_full.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_full.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\theme.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\theme.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_new.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_new.png"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\nostar.jpg",
@@ -480,12 +648,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_on.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ftp.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\ftp.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_full.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_full.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_on.xml",
@@ -504,8 +680,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_volumenone_32px.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\rubb.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\rubb.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_on.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_on.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_on_disabled.xml",
@@ -518,6 +702,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bluetooth.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\bluetooth.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\files.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\files.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\theme.jpg",
@@ -540,8 +728,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_anim_to_off.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\profile.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\profile.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_2.jpg",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_2.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small.xml",
@@ -584,12 +780,32 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\img_novelcomplete.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\img_novelcomplete.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_separator_horizontal.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_separator_horizontal.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\passbutton.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\passbutton.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\password.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\password.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\imgfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\imgfile.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check.xml",
@@ -612,6 +828,14 @@
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\passbutton.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\preference.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\preference.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_filedolist.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_filedolist.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_off_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_off_disabled.xml"
     },
@@ -628,6 +852,10 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_new.png"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\about.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\about.jpg"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\click.png",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\click.png"
     },
@@ -640,8 +868,24 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_lnewfile.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_lnewfile.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_enter_normal.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_enter_normal.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\star.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\star.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ftp.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\ftp.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sdfiles.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\sdfiles.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_volumenone_32px.xml",
@@ -664,8 +908,24 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_clickbutton.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\favicon.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\favicon.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_on.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_on.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_full.xml",
@@ -682,6 +942,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_black.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_black.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_minus_32px.xml",
@@ -704,6 +968,10 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\profile.png"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edit.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\edit.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_off_disabled.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_off_disabled.xml"
     },
@@ -712,12 +980,32 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\setting.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check_small_off.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check_small_off.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\txtfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\txtfile.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\time_picker_header_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\time_picker_header_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\click.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\click.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\doc.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\doc.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\preference.jpg",
@@ -734,6 +1022,10 @@
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\time_picker_header_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\time_picker_header_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\passbutton.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\passbutton.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_anim_to_on.xml",
@@ -804,12 +1096,28 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_of3.png"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_full.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_full.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_radio_small_off.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_small_off.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_black.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_black.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\filecs.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\filecs.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_paste.png",
@@ -828,6 +1136,10 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_sort.png"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\help.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\help.jpg"
     },
@@ -836,8 +1148,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_radio_full.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_cancel.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_cancel.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_check.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_check.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\qrcode.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\qrcode.jpg"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\folder.jpg",
@@ -848,8 +1168,16 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shapr_redpoint.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\file_stage_paste.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\file_stage_paste.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_round_item_icon_background.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_round_item_icon_background.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\createfile.jpg",
@@ -864,6 +1192,14 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\shape_black.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\go.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\go.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\setting.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\setting.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_ic_switch_on.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_ic_switch_on.xml"
     },
@@ -872,16 +1208,32 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\txtfile.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_lnewfor.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_lnewfor.png"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tic_separator_horizontal.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\drawable\\tic_separator_horizontal.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\donation.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\donation.jpg"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edit.jpg",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\edit.jpg"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\createfile.jpg",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\createfile.jpg"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.jpg",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\imgfile.jpg",
@@ -918,6 +1270,14 @@
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\star.jpg",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\star.jpg"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_filedo_scl.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\bg_filedo_scl.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_of3.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable\\icon_of3.png"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",

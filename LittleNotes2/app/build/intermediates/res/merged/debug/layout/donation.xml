@@ -23,7 +23,7 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:padding="10dp"
-			android:text="维护项目不易，望慷慨解囊"
+			android:text="新晋大学生维护项目不易，望慷慨解囊"
 			android:textSize="16sp"
 			tools:ignore="HardcodedText"/>
 
@@ -50,7 +50,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:paddingBottom="30dp"
-			android:text="呆木\n有趣\n*映丹\n*磊\n*庭瑞\n*子峻\n*林霞\n*建坤\n*新宇\n*新荣\n*峻晨\n*厚余\n*梓澍\n*杰基\n*洁\n*诚业\n*宇\n*家铭\n回忆之前\n*阳鎏\n*志强\n*逸伦\n*晨杭\n*辉\n*子琦\n*子尧\n*建明\n*海波\n*霄然\n*炜成\n*俊斌\n洛逸轩\n*徐兵\n*帅\n*泽聪\n*鑫\n*宇栋\n*佳霖\n*黄杰\n*海波\n*明宇\n（很抱歉支付宝不能私聊表示感谢）"
+			android:text="呆木\n有趣\n*映丹\n*磊\n*庭瑞\n*子峻\n*林霞\n*建坤\n*新宇\n*新荣\n*峻晨\n*厚余\n*梓澍\n*杰基\n*洁\n*诚业\n*宇\n*家铭\n回忆之前\n*阳鎏\n*志强\n*逸伦\n*晨杭\n*辉\n*子琦\n*子尧\n*建明\n*海波\n*霄然\n*炜成\n*俊斌\n洛逸轩\n*徐兵\n*帅\n*泽聪\n*鑫\n*宇栋\n*佳霖\n*黄杰\n*海波\n*明宇\n*星\n*海波\n*思聪\n*京浩\n*博伦\n*振川\n*有涛\n*有涛\n*焕然\*n霞\n*吉文（很抱歉支付宝不能私聊表示感谢）"
 			android:paddingRight="20dp"
 			android:paddingLeft="20dp"
 			android:gravity="center"/>

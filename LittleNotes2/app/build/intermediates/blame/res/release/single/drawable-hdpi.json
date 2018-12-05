@@ -4,6 +4,10 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_launcher.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_launcher.png",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },
@@ -22,5 +26,9 @@
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_account_minus.png",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable-hdpi\\ic_account_minus.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_account_minus.png",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\drawable-hdpi\\ic_account_minus.png"
     }
 ]

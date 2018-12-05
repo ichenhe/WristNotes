@@ -21,8 +21,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.json.*;
+
 import java.text.*;
 import java.util.*;
+
 import com.stl.wristNotes.method.*;
 //import org.apache.http.*;
 import android.widget.Toolbar.*;
@@ -41,7 +43,7 @@ public class MainActivity extends Activity
     public static String inputset = "";
     public static String inputhite = "";
     public static int inputact;
-	public static String inputkeys = "";
+    public static String inputkeys = "";
     //外部-fileSelect
     public static String filepath;
     public static String filename;
@@ -51,7 +53,7 @@ public class MainActivity extends Activity
     //外部-filetodo
     public static String filedofile = "";
     public static String filedopath = "";
-	public static int filedopo = -1;
+    public static int filedopo = -1;
     //外部-help
     public static int helpor = 1;
 
@@ -66,7 +68,9 @@ public class MainActivity extends Activity
     public static Button mainRight;
     public static TextView mainHint;
     public static ScrollView mainScrollView;
-	public static LinearLayout mainLinearLayout;
+    public static LinearLayout mainLinearLayout;
+    public static Button mainScreen;
+    public static RelativeLayout mainRelative;
 
     public static int cho = 0;
     String startHideText;
@@ -87,24 +91,24 @@ public class MainActivity extends Activity
     static Runnable autoReadRunnable;
 
     JSONObject novellist;
-	BroadcastReceiver batteryLevelReceiver;
-	public static int batteryLevel;//电量
-	IntentFilter batteryLevelFilter;
+    BroadcastReceiver batteryLevelReceiver;
+    public static int batteryLevel;//电量
+    IntentFilter batteryLevelFilter;
 
-	int scrollLength;
+    int scrollLength;
     public static boolean orientation = false;
     public static boolean isOrientation = false;
 
     public static BufferedReader novelReader;//小说
 
-	@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
 
-		//以下是各种储存信息的读取
+        //以下是各种储存信息的读取
         sharedPreferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
@@ -120,31 +124,33 @@ public class MainActivity extends Activity
         autoScoll = sharedPreferences.getInt("autoScoll", 0);
         autoScollNowSec = autoScollSec;
         cuffMode = sharedPreferences.getString("cuffMode", "关闭");
-		filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
-		scrollLength = new Double(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() / 2).intValue();
+        filewillpath = Environment.getExternalStorageDirectory().toString() + "/";
+        scrollLength = new Double(((WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth() / 2).intValue();
         try
         {
             novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
         }
-        catch(JSONException e)
+        catch (JSONException e)
         {
             Toast.makeText(ctx, "小说观看记录解析错误，请尝试重启应用程序或重新安装喵", Toast.LENGTH_LONG).show();
         }
 
-		//主界面的控件
+        //主界面的控件
         mainLeft = (Button) findViewById(R.id.mainButtonLeft);
         mainRight = (Button) findViewById(R.id.mainButtonRight);
         mainHint = (TextView) findViewById(R.id.mainHint);
         mainScrollView = (ScrollView) findViewById(R.id.mainScrollView);
-		mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
+        mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);    //scroll套着的layout
+        mainScreen = (Button) findViewById(R.id.mainScreen);
+        mainRelative = (RelativeLayout) findViewById(R.id.mainRelative);
 
         int l = light * 45;
         if(l > 255) l = 255;
-		mainLeft.setTextColor(Color.argb(l, 255, 255, 255));
-		mainRight.setTextColor(Color.argb(l, 255, 255, 255));
-		mainHint.setTextColor(Color.argb(l, 255, 255, 255));
+        mainLeft.setTextColor(Color.argb(l, 255, 255, 255));
+        mainRight.setTextColor(Color.argb(l, 255, 255, 255));
+        mainHint.setTextColor(Color.argb(l, 255, 255, 255));
 
-		//从外部打开，调用这里，获取文件路径及文件大小判断等
+        //从外部打开，调用这里，获取文件路径及文件大小判断等
         Intent intent = getIntent();
         String action = intent.getAction();
         if(intent.ACTION_VIEW.equals(action))
@@ -154,13 +160,13 @@ public class MainActivity extends Activity
             {
                 filepath = URLDecoder.decode(filepath, "UTF-8");
             }
-            catch(UnsupportedEncodingException e)
+            catch (UnsupportedEncodingException e)
             {
                 Toast.makeText(ctx, "路径解码错误。。我也不知道怎么办", Toast.LENGTH_LONG).show();
             }
             String[] filet1 = filepath.split("/");
             filepath = "/";
-            for(int i = 3; i < filet1.length - 1; i++)
+            for (int i = 3; i < filet1.length - 1; i++)
             {
                 filepath += filet1[i] + "/";
             }
@@ -178,9 +184,9 @@ public class MainActivity extends Activity
                 fileOpen.bigFile(ctx, sharedPreferences, editor, filepath, filename);
                 mode = 1;
             }
-			//Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
-			editor.putInt("mode", mode);
-			editor.commit();
+            //Toast.makeText(ctx, fileOpen.getFileEncode((filepath + filename)), Toast.LENGTH_LONG).show();
+            editor.putInt("mode", mode);
+            editor.commit();
         }
 
         //createFloatView()
@@ -188,19 +194,25 @@ public class MainActivity extends Activity
 
         textView = (TextView) findViewById(R.id.mainTextView);
 
-		//检查应用是否为更新版本或新安装
+        //检查应用是否为更新版本或新安装
         PackageManager pm = ctx.getPackageManager();//context为当前Activity上下文
         try
         {
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), 0);
-			/*if(sharedPreferences.getInt("isUpdated", 0) < 82)
+            /*if(sharedPreferences.getInt("isUpdated", 0) < 82)
 			{
 				editor.putString("function", "00000");
 				editor.commit();
 			}*/
-			if(sharedPreferences.getInt("isUpdated", 0) < 104)
+            if(sharedPreferences.getInt("isUpdated", 0) < 104)
             {
                 editor.putString("function", "00000");
+                editor.commit();
+            }
+            if(sharedPreferences.getInt("isUpdated", 0) < 107)//配套表盘红点
+            {
+                String fun = sharedPreferences.getString("menuFunction", "111111011");
+                editor.putString("menuFunction", fun.substring(0, 3) + "1" + fun.substring(3));
                 editor.commit();
             }
             if(sharedPreferences.getInt("isUpdated", 0) < pi.versionCode)
@@ -209,9 +221,9 @@ public class MainActivity extends Activity
                 startActivity(startint);
             }
         }
-        catch(PackageManager.NameNotFoundException e)
+        catch (PackageManager.NameNotFoundException e)
         {
-			Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
+            Toast.makeText(ctx, "应用版本信息获取失败", Toast.LENGTH_LONG).show();
         }
 
         cuffModeChange(ctx);//袖口模式
@@ -234,9 +246,9 @@ public class MainActivity extends Activity
                 }
                 textView.setText(fileOpen.novelReader(0));
                 //Toast.makeText(ctx, "已跳转至上次观看位置，请享用∼", Toast.LENGTH_SHORT).show();
-				mainHint.setText(getHintText(sharedPreferences));
+                mainHint.setText(getHintText(sharedPreferences));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Toast.makeText(ctx, "未知错误！", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
@@ -265,24 +277,24 @@ public class MainActivity extends Activity
                 {
                     textView.setText("正在打开文件...\n请稍后喵...");
                     runOnUiThread(new Runnable()
+                    {
+                        @Override
+                        public void run()
                         {
-                            @Override
-                            public void run()
-                            { 
-                                try
-                                {
-                                    textView.setText(fileOpen.fileReader(filepath + filename));
-                                }
-                                catch(Exception e)
-                                {
-                                    textView.setText("打开文件错误。。请重试试试");
-                                }
+                            try
+                            {
+                                textView.setText(fileOpen.fileReader(filepath + filename));
                             }
-                        });
+                            catch (Exception e)
+                            {
+                                textView.setText("打开文件错误。。请重试试试");
+                            }
+                        }
+                    });
                 }
             }
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Toast.makeText(ctx, "未知错误喵。。", Toast.LENGTH_SHORT).show();
         }
@@ -291,12 +303,12 @@ public class MainActivity extends Activity
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if(mode == 1)
-			{
-				mainLeft.setVisibility(View.INVISIBLE);
-			    mainRight.setVisibility(View.INVISIBLE);
-				mainHint.setVisibility(View.INVISIBLE);
-			}
+            if(mode == 1)
+            {
+                mainLeft.setVisibility(View.INVISIBLE);
+                mainRight.setVisibility(View.INVISIBLE);
+                mainHint.setVisibility(View.INVISIBLE);
+            }
         }
         else
         {
@@ -330,53 +342,54 @@ public class MainActivity extends Activity
             pass = 1;
         }
 
-		try
-		{
+        try
+        {
             if(sharedPreferences.getString("function", "00000").split("")[1].equals("0") && mode == 1)
             {
                 final View menuClickBg = findViewById(R.id.mainClickBg);
                 final View menuClickBu = findViewById(R.id.mainClickBu);
 
-                ((Button)menuClickBg.findViewById(R.id.clickBg1)).getLayoutParams().height = 0;
-                ((Button)menuClickBg.findViewById(R.id.clickBg2)).getLayoutParams().height = 79;//title高度
+                ((Button) menuClickBg.findViewById(R.id.clickBg1)).getLayoutParams().height = 0;
+                ((Button) menuClickBg.findViewById(R.id.clickBg2)).getLayoutParams().height = 79;//title高度
 
-                ((TextView)menuClickBu.findViewById(R.id.clickBu2)).setText("点击上方标题栏\n可以查看更多阅读选项喵~");
+                ((TextView) menuClickBu.findViewById(R.id.clickBu2)).setText("点击上方标题栏\n可以查看更多阅读选项喵~");
 
                 menuClickBg.setVisibility(View.VISIBLE);
                 menuClickBu.setVisibility(View.VISIBLE);
 
                 menuClickBu.findViewById(R.id.clickBu3).setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View p1)
                     {
-                        @Override
-                        public void onClick(View p1)
-                        {
-                            String[] function = sharedPreferences.getString("function", "00000").split("");
-                            function[1] = "1";
-                            editor.putString("function", MainActivity.join(function, ""));
-                            editor.commit();
+                        String[] function = sharedPreferences.getString("function", "00000").split("");
+                        function[1] = "1";
+                        editor.putString("function", MainActivity.join(function, ""));
+                        editor.commit();
 
-                            menuClickBg.setVisibility(View.GONE);
-                            menuClickBu.setVisibility(View.GONE);
-                        }
-                    });
+                        menuClickBg.setVisibility(View.GONE);
+                        menuClickBu.setVisibility(View.GONE);
+                    }
+                });
 
 
                 menuClickBu.findViewById(R.id.clickBu4).setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View p1)
                     {
-                        @Override
-                        public void onClick(View p1)
-                        {
-                            startActivity(new Intent(ctx, settileAct.class));
-                        }
-                    });
+                        startActivity(new Intent(ctx, settileAct.class));
+                    }
+                });
             }
-		}
-		catch(Exception e)
-		{
-			Toast.makeText(ctx, "提示信息显示错误..", Toast.LENGTH_LONG).show();
-		}
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(ctx, "提示信息显示错误..", Toast.LENGTH_LONG).show();
+        }
 
-		autoReadRunnable = new Runnable(){
+        autoReadRunnable = new Runnable()
+        {
             @Override
             public void run()
             {
@@ -393,7 +406,7 @@ public class MainActivity extends Activity
                 }
                 //要做的事情，这里再次调用此Runnable对象，以实现每一秒实现一次的定时器操作
                 autoReadHandler.postDelayed(this, 1000);
-            }  
+            }
         };
 
         if(autoScoll == 1)
@@ -405,92 +418,93 @@ public class MainActivity extends Activity
         textView.setTextSize(sharedPreferences.getInt("bs", 14));
         textView.setClickable(true);
         textView.setOnClickListener(new OnClickListener()
-			{
-				@Override
-				public void onClick(View p1)
-				{
-					textClick();
-				}
-			});
+        {
+            @Override
+            public void onClick(View p1)
+            {
+                textClick();
+            }
+        });
         textView.setOnLongClickListener(new OnLongClickListener()
-			{
-				@Override
-				public boolean onLongClick(View p1)
-				{
-					textLongClick();
-					return true;
-				}
-			});
+        {
+            @Override
+            public boolean onLongClick(View p1)
+            {
+                textLongClick();
+                return true;
+            }
+        });
 
         mainLeft.setOnClickListener(new OnClickListener()
-			{
-				@Override
-				public void onClick(View p1)
-				{
-                    if(autoScoll == 0)
+        {
+            @Override
+            public void onClick(View p1)
+            {
+                if(autoScoll == 0)
+                {
+                    try
                     {
-                        try
+                        novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+                        List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
+                        if(Integer.valueOf(novelpage.get(p - 1)).intValue() != 0)
                         {
-                            novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-                            List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
-                            if(Integer.valueOf(novelpage.get(p - 1)).intValue() != 0)
-                            {
-                                novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
-                                novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
+                            novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() - 1));
+                            novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
 
-                                novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
-                                novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() * 500);
-                                textView.setText(fileOpen.novelReader(0));
-                                mainScrollView.fullScroll(View.FOCUS_UP);
-                                editor.putString("novelList", novellist.toString());
-                                editor.commit();
-                                mainHint.setText(getHintText(sharedPreferences));
-                                //batteryLevel();
-                            }
-                            else
-                            {
-                                Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
-                            }
+                            novelReader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath + filename), code));
+                            novelReader.skip(Integer.valueOf(novellist.getString("page").split("▒")[p - 1]).intValue() * 500);
+                            textView.setText(fileOpen.novelReader(0));
+                            mainScrollView.fullScroll(View.FOCUS_UP);
+                            editor.putString("novelList", novellist.toString());
+                            editor.commit();
+                            mainHint.setText(getHintText(sharedPreferences));
+                            //batteryLevel();
                         }
-                        catch(Exception e)
+                        else
                         {
-                            Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show(); e.printStackTrace();
+                            Toast.makeText(ctx, "已是第一页！", Toast.LENGTH_SHORT).show();
                         }
                     }
-                    else if(autoScoll == 1)
+                    catch (Exception e)
                     {
-                        autoReadChange(3);
+                        Toast.makeText(ctx, "发生未知错误！", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
-                    else if(autoScoll == 3)
-                    {
-                        autoReadChange(1);
-                    }
-				}
-			});
+                }
+                else if(autoScoll == 1)
+                {
+                    autoReadChange(3);
+                }
+                else if(autoScoll == 3)
+                {
+                    autoReadChange(1);
+                }
+            }
+        });
 
         mainRight.setOnClickListener(new OnClickListener()
-			{
-				@Override
-				public void onClick(View p1)
-				{
-                    if(autoScoll == 0)
-                    {
-				    	novelScroll(mainLinearLayout, mainScrollView, false);
-                    }
-				}
-			});
+        {
+            @Override
+            public void onClick(View p1)
+            {
+                if(autoScoll == 0)
+                {
+                    novelScroll(mainLinearLayout, mainScrollView, false);
+                }
+            }
+        });
 
         mainHint.setClickable(true);
         mainHint.setOnClickListener(new OnClickListener()
-			{
-				@Override
-				public void onClick(View p1)
-				{
-					MainActivity.cho = 7;
-					Intent intent = new Intent(ctx, menuAct.class);
-					startActivity(intent);
-				}
-			});
+        {
+            @Override
+            public void onClick(View p1)
+            {
+                MainActivity.cho = 7;
+                Intent intent = new Intent(ctx, menuAct.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //Activity重新启动
@@ -499,11 +513,13 @@ public class MainActivity extends Activity
     {
         if(autoScoll == 3 && isalpha == 0) autoReadChange(1);
 
-        if(isOrientation && orientation){
+        if(isOrientation && orientation)
+        {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             isOrientation = false;
         }
-        else if(isOrientation && !orientation){
+        else if(isOrientation && !orientation)
+        {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             isOrientation = false;
         }
@@ -522,7 +538,7 @@ public class MainActivity extends Activity
     {
         if(cuffMode.equals("开启"))
         {
-            mainLinearLayout.setPadding(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 4, 0, 0, 0);
+            mainLinearLayout.setPadding(((WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() / 4, 0, 0, 0);
             if(mode == 1) mainHint.setText(getHintText(sharedPreferences));
         }
         else
@@ -559,17 +575,17 @@ public class MainActivity extends Activity
         }
     }
 
-	public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
-	{
-		if(((WindowManager)ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 40 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
-		{
-			try
-			{
-			    novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+    public void novelScroll(LinearLayout layout, ScrollView scroll, Boolean isAuto)
+    {
+        if(((WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() + scroll.getScrollY() + 40 >= layout.getMeasuredHeight() || (smartScroll.equals("关闭") && !isAuto))
+        {
+            try
+            {
+                novellist = new JSONObject(sharedPreferences.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
                 List<String> novelpage = new ArrayList<String>(Arrays.asList(novellist.getString("page").split("▒")));
                 novelpage.set(p - 1, String.valueOf(Integer.valueOf(novelpage.get(p - 1)).intValue() + 1));
                 novellist.put("page", join(novelpage.toArray(new String[novelpage.size()]), "▒"));
-			    String text = fileOpen.novelReader(0);
+                String text = fileOpen.novelReader(0);
                 Log.i("Debug", text);
                 if(!text.equals(""))
                 {
@@ -590,21 +606,21 @@ public class MainActivity extends Activity
                     }
                     Toast.makeText(ctx, "你已经看完这本小说啦！在“我的小说”里已经贴上了记号", Toast.LENGTH_SHORT).show();
                 }
-			}
-			catch(JSONException e)
-			{
-				Toast.makeText(ctx, "json错误" + e.toString(), Toast.LENGTH_SHORT).show();
-			}
-			catch(Exception e)
-			{
-				Toast.makeText(ctx, "错误" + e.toString(), Toast.LENGTH_SHORT).show();
-			}
-		}
-		else
-		{
-			scroll.smoothScrollTo(0, scroll.getScrollY() + scrollLength);
-		}
-	}
+            }
+            catch (JSONException e)
+            {
+                Toast.makeText(ctx, "json错误" + e.toString(), Toast.LENGTH_SHORT).show();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(ctx, "错误" + e.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        else
+        {
+            scroll.smoothScrollTo(0, scroll.getScrollY() + scrollLength);
+        }
+    }
 
     public void textClick()
     {
@@ -612,16 +628,16 @@ public class MainActivity extends Activity
         {
             textView.setTextColor(Color.argb(0, 0, 0, 0));
             isalpha = 1;
-			if(mode == 1)
-			{
-				MainActivity.mainLeft.setVisibility(View.INVISIBLE);
-				MainActivity.mainRight.setVisibility(View.INVISIBLE);
-				MainActivity.mainHint.setVisibility(View.INVISIBLE);
-			}
+            if(mode == 1)
+            {
+                MainActivity.mainLeft.setVisibility(View.INVISIBLE);
+                MainActivity.mainRight.setVisibility(View.INVISIBLE);
+                MainActivity.mainHint.setVisibility(View.INVISIBLE);
+            }
             if(autoScoll == 1) autoReadChange(3);
             if(sharedPreferences.getString("displayTime", "关闭").equals("开启"))
             {
-                ((TextView)findViewById(R.id.mainTime)).setText(new SimpleDateFormat("HH:mm").format(new Date()));
+                ((TextView) findViewById(R.id.mainTime)).setText(new SimpleDateFormat("HH:mm").format(new Date()));
                 findViewById(R.id.mainTime).setVisibility(View.VISIBLE);
             }
         }
@@ -646,12 +662,12 @@ public class MainActivity extends Activity
             {
                 textView.setTextColor(Color.argb(light * 40 - 10, 255, 255, 255));
                 isalpha = 0;
-				if(mode == 1)
-				{
-					MainActivity.mainLeft.setVisibility(View.VISIBLE);
-					MainActivity.mainRight.setVisibility(View.VISIBLE);
-					MainActivity.mainHint.setVisibility(View.VISIBLE);
-				}
+                if(mode == 1)
+                {
+                    MainActivity.mainLeft.setVisibility(View.VISIBLE);
+                    MainActivity.mainRight.setVisibility(View.VISIBLE);
+                    MainActivity.mainHint.setVisibility(View.VISIBLE);
+                }
                 if(autoScoll == 3) autoReadChange(1);
                 if(sharedPreferences.getString("displayTime", "关闭").equals("开启"))
                 {
@@ -666,50 +682,82 @@ public class MainActivity extends Activity
         }
     }
 
-	public static String getHintText(SharedPreferences sp)
-	{
-		try
-		{
-			JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
-			ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
+    public static String getHintText(SharedPreferences sp)
+    {
+        try
+        {
+            JSONObject novellist = new JSONObject(sp.getString("novelList", "{\"name\" : \"\", \"path\" : \"\", \"page\" : \"\"}"));
+            ArrayList<String> novelpage = new ArrayList(Arrays.asList(novellist.getString("page").split("▒")));
             if(cuffMode.equals("开启"))
             {
-			    return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页\n" + batteryLevel + "%";
+                return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页\n" + batteryLevel + "%";
             }
             return new SimpleDateFormat("HH:mm").format(new Date()) + "\n" + (Integer.valueOf(novelpage.get(p - 1)).intValue() + 1) + "页  " + batteryLevel + "%";
-		}
-		catch(JSONException e)
-		{
-			return "";
-		}
-	}
+        }
+        catch (JSONException e)
+        {
+            return "";
+        }
+    }
 
     public void stRequestedOrientation()
     {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
-    
-    public static String join(String[] strs, String splitter)
+
+    public void buttonScreenShot(View v)
     {
-		if(strs.length != 0)
-		{
-			StringBuffer sb = new StringBuffer();
-			sb.append(strs[0]);
-			for(int i = 1; i < strs.length; i++)
-			{
-				//Toast.makeText(fileselectCtx, strs[i], Toast.LENGTH_SHORT);
-				sb.append(splitter + strs[i]);
-			}
-			return sb.toString();
-		}
-		else
-		{
-			return "";
-		}
+        v.setVisibility(View.GONE);
+        String sdf = new SimpleDateFormat("yy-MM-dd HH-mm-ss").format(new Date());
+        String fname = Environment.getExternalStorageDirectory() + "/腕上小纸条表盘截图/" + sdf + ".png";
+        mainRelative.setDrawingCacheEnabled(true);
+        //mainRelative.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+        //mainRelative.layout(0, 0, mainRelative.getMeasuredWidth(), mainRelative.getMeasuredHeight());
+        mainRelative.buildDrawingCache();
+        Bitmap sbitmap = mainRelative.getDrawingCache();
+        if(sbitmap != null)
+        {
+            try
+            {
+                FileOutputStream out = new FileOutputStream(fname);
+                sbitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                Toast.makeText(ctx, "截图" + sdf + "已保存，你可以继续截图或者使用表盘查看", Toast.LENGTH_SHORT).show();
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(ctx, "获取截图失败...", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            Toast.makeText(ctx, "获取截图失败.....", Toast.LENGTH_SHORT).show();
+        }
+        v.setVisibility(View.VISIBLE);
     }
 
-	public void batterylevel()
-	{
+
+    public static String join(String[] strs, String splitter)
+    {
+        if(strs.length != 0)
+        {
+            StringBuffer sb = new StringBuffer();
+            sb.append(strs[0]);
+            for (int i = 1; i < strs.length; i++)
+            {
+                //Toast.makeText(fileselectCtx, strs[i], Toast.LENGTH_SHORT);
+                sb.append(splitter + strs[i]);
+            }
+            return sb.toString();
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    public void batterylevel()
+    {
         if(batteryLevelReceiver == null)
         {
             batteryLevelReceiver = new BroadcastReceiver()
@@ -732,7 +780,7 @@ public class MainActivity extends Activity
             batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             registerReceiver(batteryLevelReceiver, batteryLevelFilter);
         }
-	}
+    }
 
     //挠挠
     public boolean onSingleTapSidePanel(MotionEvent e)
@@ -750,13 +798,13 @@ public class MainActivity extends Activity
     }
 
 
-	@Override
-	protected void onDestroy()
-	{
-		super.onDestroy();
-		//销毁广播 
-		if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
-		//ctx.unregisterReceiver(this);
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        //销毁广播
+        if(batteryLevelReceiver != null) unregisterReceiver(batteryLevelReceiver);
+        //ctx.unregisterReceiver(this);
         if(mode == 1) try
         {
             novelReader.close();

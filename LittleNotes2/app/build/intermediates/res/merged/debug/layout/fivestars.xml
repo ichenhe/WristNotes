@@ -25,7 +25,7 @@
 			android:paddingLeft="18dp"
 			android:paddingRight="18dp"
 			android:paddingTop="10dp"
-			android:text="求应用商店给个五星好评...\n可能会发一个表盘也请支持一下~"
+			android:text="求应用商店给个五星好评...\n我已经发布的表盘“腕上星球”可以将实时的地球影像显示在表盘上，也可以在表盘市场了解一下~"
 			android:textSize="16sp"/>
 
 		<Button

@@ -228,7 +228,7 @@ public class menuAct extends Activity
 
                 if(MainActivity.cho == 0)
                 {
-                    String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "11111011").split("");
+                    String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "111111011").split("");
                     if(fun[position + 1].equals("1"))
                     {
                         fun[position + 1] = "0";
@@ -259,6 +259,11 @@ public class menuAct extends Activity
                     }
 
                 }
+                else if(s.equals("小纸条配套表盘"))
+                {
+                    Intent intent = new Intent(ctx, clockAct.class);
+                    startActivity(intent);
+                }
                 else if(s.equals("显示设置") || s.equals("偏好设置"))
                 {
                     if(s.equals("显示设置")) MainActivity.cho = 2;
@@ -266,12 +271,6 @@ public class menuAct extends Activity
                     menuintent = new Intent(ctx, menuAct.class);
                     startActivity(menuintent);
                     finish();
-                }
-                else if(s.equals("会员购"))
-                {
-                    MainActivity.helpor = 7;
-                    Intent intent = new Intent(ctx, helpAct.class);
-                    startActivity(intent);
                 }
                 else if(s.equals("帮助"))
                 {
@@ -513,7 +512,7 @@ public class menuAct extends Activity
                 else if(s.equals("重置新功能提示"))
                 {
                     editor.putString("function", "00000");
-                    editor.putString("menuFunction", "11111011");
+                    editor.putString("menuFunction", "111111011");
                     editor.commit();
                     Toast.makeText(ctx, "已重置！重启应用就能正常查看喵~", Toast.LENGTH_SHORT).show();
                 }
@@ -739,7 +738,7 @@ class mAdapter extends BaseAdapter
 		}
         else if(MainActivity.cho == 0)
         {
-            String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "11111011").split("");
+            String[] fun = MainActivity.sharedPreferences.getString("menuFunction", "111111011").split("");
             if(fun[position + 1].equals("1"))
             {
                 layoutview.findViewById(R.id.menulistred).setVisibility(View.VISIBLE);
@@ -751,7 +750,6 @@ class mAdapter extends BaseAdapter
             if(MainActivity.orientation) name.setText("竖屏显示");
             else name.setText("横屏显示");
         }
-
 
         return layoutview;
     }

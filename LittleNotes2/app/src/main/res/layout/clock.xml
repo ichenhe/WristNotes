@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/clockDef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="配套表盘"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="腕上小纸条新推出“腕上小纸条配套表盘”！增加特有功能：倾斜手腕自动锁定,把查看“学习资料”的过程放到表盘，更高效！更安全！ \n你也可以自行导入图片做自定义背景表盘哦\n（tic表盘市场下载，下载表盘后用本应用绑定使用）"
+                android:textSize="16sp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:onClick="buttonMarket"
+                android:text="进入表盘市场查看"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/clockDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="配套表盘"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="你已经下载了表盘，点击下面的“开启截图”按钮，回到小纸条主界面给您要看的文档截图，表盘会读取截图并显示"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/clockScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:onClick="buttonOpenScreen"
+                android:text="开启截图按钮"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:onClick="buttonMana"
+                android:text="管理截图"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

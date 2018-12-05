@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stl.wristNotes"
-    android:versionCode="104"
-    android:versionName="1.60" >
+    android:versionCode="107"
+    android:versionName="1.70" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -21,6 +21,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
 
     <application
         android:allowBackup="true"
@@ -47,36 +50,24 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name="com.stl.wristNotes.menuAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.helpAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.passwordAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.fileselectAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.startAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.inputAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.editfileAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.filetodoAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.aboutAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.settileAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.donationAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.updated" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.ftpAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.novelAct" >
-        </activity>
-        <activity android:name="com.stl.wristNotes.fivestarsAct" >
-        </activity>
+        <activity android:name="com.stl.wristNotes.menuAct" />
+        <activity android:name="com.stl.wristNotes.helpAct" />
+        <activity android:name="com.stl.wristNotes.passwordAct" />
+        <activity android:name="com.stl.wristNotes.fileselectAct" />
+        <activity android:name="com.stl.wristNotes.startAct" />
+        <activity android:name="com.stl.wristNotes.inputAct" />
+        <activity android:name="com.stl.wristNotes.editfileAct" />
+        <activity android:name="com.stl.wristNotes.filetodoAct" />
+        <activity android:name="com.stl.wristNotes.aboutAct" />
+        <activity android:name="com.stl.wristNotes.settileAct" />
+        <activity android:name="com.stl.wristNotes.donationAct" />
+        <activity android:name="com.stl.wristNotes.updated" />
+        <activity android:name="com.stl.wristNotes.ftpAct" />
+        <activity android:name="com.stl.wristNotes.novelAct" />
+        <activity android:name="com.stl.wristNotes.fivestarsAct" />
+        <activity
+            android:name="com.stl.wristNotes.clockAct"
+            android:exported="true" />
     </application>
 
 </manifest>

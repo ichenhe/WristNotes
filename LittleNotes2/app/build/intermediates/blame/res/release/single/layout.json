@@ -1,19 +1,19 @@
 [
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\about.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\about.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbutton.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
-    },
-    {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\help.xml",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\help.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_newfunction.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_newfunction.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\patternlock.xml",
@@ -24,28 +24,12 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menu.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\start.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_action.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\about.xml",
@@ -56,44 +40,48 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_title.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_title.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_title.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_filedo.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\item_filedo.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fivestars.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fivestars.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\ftp.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\ftp.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\updated.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\updated.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\editfile.xml",
@@ -108,40 +96,40 @@
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\editfile.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbg.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbg.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynovelitem.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynovelitem.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbg.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbg.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynoveltext.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynoveltext.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\ftp.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\ftp.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\about.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\about.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_newfunction.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_newfunction.xml"
-    },
-    {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\updated.xml",
@@ -152,24 +140,16 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynoveltext.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynoveltext.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menu.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
-    },
-    {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_file.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_file.xml"
-    },
-    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\novel.xml",
@@ -180,28 +160,24 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynoveltext.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\start.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_newfunction.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_newfunction.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\seekbar.xml",
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\seekbar.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menu.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
     },
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\updated.xml",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\updated.xml"
-    },
-    {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fivestars.xml",
@@ -212,24 +188,32 @@
         "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\help.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynovelitem.xml",
-        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynovelitem.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\start.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
     },
     {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbutton.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
-    },
-    {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
-    },
-    {
-        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
-        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_view.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_search_view.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\editfile.xml",
@@ -248,12 +232,276 @@
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbg.xml"
     },
     {
-        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
-        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_lines.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_lines.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\help.xml",
         "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\help.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbutton.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\input.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\input.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menu.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menu.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynovelitem.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynovelitem.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\start.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_title.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_title.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_filedo.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\item_filedo.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fivestars.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fivestars.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fivestars.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fivestars.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\ftp.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\ftp.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\donation.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\donation.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbutton.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\novel.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\novel.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\about.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\about.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynovelitem.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynovelitem.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\menulist.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\menulist.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_newfunction.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_newfunction.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynoveltext.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynoveltext.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\clock.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\clock.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_media.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_file.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_file.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_filedo.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\item_filedo.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\start.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\start.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_newfunction.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_newfunction.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_file.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_file.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\main.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\mynovelitem.xml",
+        "source": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\mynovelitem.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\help.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\help.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\fileselect.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\fileselect.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_clickbutton.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_clickbutton.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\settile.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\settile.xml"
+    },
+    {
+        "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\password.xml",
+        "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\password.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\widget_title.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\widget_title.xml"
+    },
+    {
+        "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\filetodo.xml",
+        "source": "F:\\lpr\\Android\\LittleNotes2\\app\\src\\main\\res\\layout\\filetodo.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\ftp.xml",
@@ -262,5 +510,13 @@
     {
         "merged": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\item_filedo.xml",
         "source": "D:\\lpr\\Android Project\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\item_filedo.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\editfile.xml",
+        "source": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\src\\main\\res\\layout\\editfile.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\layout\\select_dialog_item_material.xml"
     }
 ]

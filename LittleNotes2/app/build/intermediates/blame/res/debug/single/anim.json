@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\scale_in_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\scale_in_ticwear.xml"
     },
@@ -12,12 +16,28 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\front_scale_out_ticwear.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\scale_in_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\scale_in_ticwear.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\slide_in_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\front_scale_out_ticwear.xml",
@@ -28,16 +48,32 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\scale_out_ticwear.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\scale_out_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\scale_out_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\slide_in_ticwear.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\front_scale_in_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\front_scale_in_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "F:\\lpr\\Android\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_ticwear.xml",
@@ -46,5 +82,9 @@
     {
         "merged": "F:\\lpr\\Android\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_ticwear.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\c877203d59e6ec91f4df164854c0c6d28831c4e6\\output\\res\\anim\\slide_out_ticwear.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\wsxzt\\WanShangXiaoZhiTiao\\LittleNotes2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Android\\.android\\build-cache\\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     }
 ]

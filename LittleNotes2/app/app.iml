@@ -22,7 +22,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
     <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
     <exclude-output />
@@ -104,13 +104,25 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 24 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="slf4j-log4j12-1.5.2" level="project" />
-    <orderEntry type="library" exported="" name="cpdetector_1.0.10" level="project" />
-    <orderEntry type="library" exported="" name="slf4j-api-1.5.2" level="project" />
-    <orderEntry type="library" exported="" name="mina-core-2.0.4" level="project" />
-    <orderEntry type="library" exported="" name="chardet-1.0" level="project" />
-    <orderEntry type="library" exported="" name="ftpserver-core-1.0.6" level="project" />
-    <orderEntry type="library" exported="" name="log4j-1.2.14" level="project" />
-    <orderEntry type="library" exported="" name="antlr-2.7.4" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\mina-core-2.0.4.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\ftpserver-core-1.0.6.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\antlr-2.7.4.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-annotations:24.2.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-media-compat-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-api-1.5.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-log4j12-1.5.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-fragment-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-v4-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-vector-drawable-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-utils-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\chardet-1.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\cpdetector_1.0.10.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-ui-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="__local_jars__:F.\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\log4j-1.2.14.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-compat-24.2.1" level="project" />
   </component>
 </module>

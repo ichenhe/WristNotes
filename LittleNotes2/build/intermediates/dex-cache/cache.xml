@@ -3,75 +3,228 @@
 
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\log4j-1.2.14.jar"
+        jar="C:\Android\.android\build-cache\cd34b11ae1c6c7f3fe58e52705fb270b29fe11ec\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="03b254c872b95141751f414e353a25c2ac261b51">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\log4j-1.2.14_88e4c436147c9b3ddeaa71a155f6fdbccd92133a.jar" />
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_04e74ad9ac30e34b684dd7c8c13965ce4370744a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\antlr-2.7.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="56e971d779b8aeee0366d11a613dcf9f7882a3b1">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\antlr-2.7.4_37f01fa05866881f69a1afbc8d868428ea124071.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\cpdetector_1.0.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5e823a42ddfad49a445a89d15566792b9ed8ecac">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\cpdetector_1.0.10_bc93b10fa713d9b961019f9d49e16e0a94c4eb66.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-log4j12-1.5.2.jar"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-log4j12-1.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f7dd2d714d5abb161b4141660ce0d3a7a3e3dd22">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\slf4j-log4j12-1.5.2_fa467d717244a617595821635796cde77f468f71.jar" />
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\slf4j-log4j12-1.5.2_5a833618bd2109d758441109f1118ce890e92314.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-api-1.5.2.jar"
+        jar="C:\Android\.android\build-cache\ff283445125ed90c5b7f0d067badd4d12ac4f202\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="e34106d9d126209c508655456857ec903b5636f8">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\slf4j-api-1.5.2_4c23f142f20e7f43992d8864315235fed1f2647f.jar" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_2f7348808ca9a5979b0a514a87778a029e7ba51c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\ftpserver-core-1.0.6.jar"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\log4j-1.2.14.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="03b254c872b95141751f414e353a25c2ac261b51">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\log4j-1.2.14_4e3d9408b578801f60524e6528b9db92441ae28e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\2c0d08c3230de71c9e57b6f87d68a4d90cf52278\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_579df39a61de50719936daed34415271dbcbb205.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android SDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\constraint-layout-solver-1.0.2_9d50352ac000c48add521d719c0323e4b09055a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\fc682e76897439fa3dc2575274ed91f9bda26412\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_66dc7d67d5511dd35ea6d6da30afd8fce543a8bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\ftpserver-core-1.0.6.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="2ad1570cd6c0d7ea7ca4d3c26a205e02452f5d7d">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\ftpserver-core-1.0.6_2a977389f54504e7a79e7095c68a1cccc13e0dc9.jar" />
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\ftpserver-core-1.0.6_49182f29d16ec9d56b0b0dd8c14ead5b5c2ea4c3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\mina-core-2.0.4.jar"
+        jar="C:\Android\.android\build-cache\49b07118e0e1c0d0eb15ee26af67938949e54ef3\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_7d82ed8b6c344aee08bcee21c199a1b8de5fff24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\slf4j-api-1.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e34106d9d126209c508655456857ec903b5636f8">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\slf4j-api-1.5.2_b4eb3af29a550dfa2758313f46a4df193e324b6d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\ea4ff17d7ec50f1ee496415ee317a4c31c4358dc\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_f8cf0e6060f1b85d3c516cac65a07239decbc19d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\fc682e76897439fa3dc2575274ed91f9bda26412\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_ea64c4f40386f549cefb496e6618f9fe2c6e93f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\ee64e1602df0e6e46ad9b7ae7350c5a927f8ddcd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_65deb168914734591d60c0fee6d55d2e1b637da6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\7ceb0dc44a03e7870648a695ab9a92c78bd96aa6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_5cc4b623c55afa074e8cfddf533bf0418619bd59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\ff283445125ed90c5b7f0d067badd4d12ac4f202\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_7601b08c99934fa9d423a58efb0a3a2d04f2d194.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\8e9d462977e53229985604e1c099547d69d09e84\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_e7f13ced661406119ceec7eea934a4d0916ad419.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\ea4ff17d7ec50f1ee496415ee317a4c31c4358dc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_de531554be5d0ffff41b5562d5aaf40ae01424ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\8e9d462977e53229985604e1c099547d69d09e84\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_7c399ab0636f2783b047169e6554e7e4fc207e61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android SDK\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\support-annotations-24.2.1_a0e69e4d2f9b001c80d6e8e47e720a734d5f65e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\.android\build-cache\8d2113afdb3aef2e2e96125c706c5616dca6fd75\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_24e60b4d1efab888d1fa683332c5f9059381d5c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\antlr-2.7.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="56e971d779b8aeee0366d11a613dcf9f7882a3b1">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\antlr-2.7.4_699ed8f17ad291da34ce126efbff21293f0c25b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\mina-core-2.0.4.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="7fdb2aabfa2c942c2853158864abdebf27dc1003">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\mina-core-2.0.4_3ff28844e5cdbbe546236ff500516b7cb9aee470.jar" />
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\mina-core-2.0.4_eca1dce356232aaaea8c1b151268b6008f71d103.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\chardet-1.0.jar"
+        jar="C:\Android\.android\build-cache\49b07118e0e1c0d0eb15ee26af67938949e54ef3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\classes_42845d1175e1d2a869830d6346c11087f7b716e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\cpdetector_1.0.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e823a42ddfad49a445a89d15566792b9ed8ecac">
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\cpdetector_1.0.10_0e1976be087990ad64341ab275fcf786040d7afc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\src\main\lib\chardet-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f7c063ce9ef5c742bebdd1712be9180d618fb559">
-        <dex dex="F:\lpr\Android\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\chardet-1.0_3722e344c94d01205048b87afa55be58fe21682a.jar" />
+        <dex dex="F:\AndroidProject\wsxzt\WanShangXiaoZhiTiao\LittleNotes2\app\build\intermediates\pre-dexed\release\chardet-1.0_35ed429ada5aca97dd7c3a6fe8ba667dbed56c28.jar" />
     </item>
 
 </items>

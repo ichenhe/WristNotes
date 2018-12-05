@@ -1,109 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.stl.wristNotes" >
+    package="com.stl.wristNotes">
 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/> 
-	
-	<uses-permission android:name="android.permission.GET_TASKS"/>
-		
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
-	<uses-feature android:name="android.hardware.type.watch"/>
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-		
-		<meta-data
-			android:name="com.google.android.wearable.standalone"
-			android:value="true" />
-		
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
         <activity
-            android:name="com.stl.wristNotes.MainActivity"
-			android:launchMode="singleTask"	>
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-			<intent-filter>
-                    <action android:name="android.intent.action.VIEW"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
-                <data android:mimeType="text/plain"></data>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-
-		<activity
-			android:name="com.stl.wristNotes.menuAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.helpAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.passwordAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.fileselectAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.startAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.inputAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.editfileAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.filetodoAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.aboutAct">
-		</activity>
-
-		<activity
-			android:name="com.stl.wristNotes.settileAct">
-		</activity>
-		
-		<activity
-			android:name="com.stl.wristNotes.donationAct">
-		</activity>
-		
-		<activity
-			android:name="com.stl.wristNotes.updated">	
-		</activity>
-		
-		<activity
-			android:name="com.stl.wristNotes.ftpAct">	
-		</activity>
-		
-		<activity
-			android:name="com.stl.wristNotes.novelAct">	
-		</activity>
-        
-        <activity
-            android:name="com.stl.wristNotes.fivestarsAct"> 
-		</activity>
+        <activity android:name=".menuAct" />
+        <activity android:name=".helpAct" />
+        <activity android:name=".passwordAct" />
+        <activity android:name=".fileselectAct" />
+        <activity android:name=".startAct" />
+        <activity android:name=".inputAct" />
+        <activity android:name=".editfileAct" />
+        <activity android:name=".filetodoAct" />
+        <activity android:name=".aboutAct" />
+        <activity android:name=".settileAct" />
+        <activity android:name=".donationAct" />
+        <activity android:name=".updated" />
+        <activity android:name=".ftpAct" />
+        <activity android:name=".novelAct" />
+        <activity android:name=".fivestarsAct" />
+        <activity android:name=".clockAct"
+                  android:exported="true"/>
     </application>
+
 </manifest>
-
-
-
-

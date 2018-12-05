@@ -25,7 +25,7 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:paddingTop="5dp"
-			android:text="应用持续更新，欢迎常来看看！" />
+			android:text="应用完结了！谢谢大家！" />
 
 		<ImageView
 			android:layout_height="100dp"
@@ -34,7 +34,7 @@
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="当前版本：1.60\n更新内容：\n◆小说模式支持自动翻页了！点击小说屏幕顶部的时间提示试试吧\n◆更新浏览文件的导航条，支持排序、复制粘贴、多选操作等功能\n◆大幅优化看小说时的耗电\n◆优化编辑文档体验，进入提示是否下翻到观看点\n◆可以设置旋转屏幕\n◆可选在隐藏文字后，显示当前时间做伪装\n◆小说看完后的标记\n◆重新设计操作提示，让你们看完不点掉（阴险）"
+			android:text="当前版本：1.70\n更新内容：\n◆新推出腕上小纸条配套表盘！把查看“学习资料”的过程放到表盘，更高效！更安全！\n◆给出pro用户不能使用ftp的解决方案\n◆修复bug"
 			android:layout_width="wrap_content"
 			android:padding="15dp"/>
 
